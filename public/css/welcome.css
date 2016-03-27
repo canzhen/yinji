@@ -32,8 +32,10 @@ body{
 	-o-background-size:cover;
 	min-height:1050px;
 }
-.myfont{
-	font-family:Microsoft YaHei;
+.title-maobixingshu{
+	font-family:yygmbxs;
+	font-size:70px;
+	text-align:center;
 }
 .wrap{
 	margin: 0 auto;

@@ -3,18 +3,20 @@
 <head>
 <title>印迹</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<meta name="keywords" content="Flat Dark Web Login Form Responsive Templates, Iphone Widget Template, Smartphone login forms,Login form, Widget Template, Responsive Templates, a Ipad 404 Templates, Flat Responsive Templates" />
-<link href="/css/style.css" rel='stylesheet' type='text/css' />
-<!--webfonts-->
-<link href='http://fonts.useso.com/css?family=PT+Sans:400,700,400italic,700italic|Oswald:400,300,700' rel='stylesheet' type='text/css'>
-<link href='http://fonts.useso.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-<!--//webfonts-->
-<script src="http://ajax.useso.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="application/x-javascript"> 
+	addEventListener("load",
+		function(){setTimeout(hideURLbar,0);},false);
+	function hideURLbar(){ window.scrollTo(0,1); }
+</script>
+<link href="/css/myfont.css" rel='stylesheet' type='text/css'/>
+<link href="/css/welcome.css" rel='stylesheet' type='text/css'/>
+<script src="/js/jquery.min.js"></script>
 </head>
+
 <body>
  <!--SIGN UP-->
-	<h1 class="myfont">印迹</h1>
+	</br></br></br></br>
+	<div class="title-maobixingshu">印迹</div>
 	<div class="login-form">
 		<div class="head-info">
 			<label class="lbl-1"> </label>
