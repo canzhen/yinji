@@ -39,6 +39,12 @@ body{
 .login-font{
 	font-weight:bold;
 }
+.rmbMeArea{
+	margin-top:8%;
+	font-size:14px;
+	color:white;
+	font-family:"Microsoft YaHei";
+}
 .wrap{
 	margin: 0 auto;
 	width: 80%;

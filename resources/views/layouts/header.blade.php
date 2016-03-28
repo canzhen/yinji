@@ -10,12 +10,13 @@
             <link rel="stylesheet" href="/css/lib/bootstrap/bootstrap.min.css">
             <link rel="stylesheet" href="/css/lib/bootstrap/bootstrap-theme.min.css">
             <link rel="stylesheet" href="/css/lib/fontAwesome/css/font-awesome.css">
+			<link rel='stylesheet' href="/css/lib/myfont.css"/>
         @show
         
     </head>
 	
 	
-    <body ng-app="wabotApp">
+    <body ng-app="yinjiApp">
         @section('body')
         @show
         <div>
@@ -24,6 +25,7 @@
 				<script src="/js/lib/angularjs/angular.min.js"></script>
 				<script src="/js/lib/angularjs/angular-animate.min.js"></script>
 				<script src="/js/lib/angularjs/angular-route.min.js"></script>
+				<script src="/js/yinji.js"></script>
 				<script src="/js/lib/bootstrap.min.js"></script>
 			@show
         </div>

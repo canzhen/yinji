@@ -12,7 +12,31 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('login');
+});
+
+Route::get('/test', function () {
+    return view('test');
+});
+
+Route::get('/test', function () {
+    return view('test');
+});
+
+
+
+// Authentication routes
+Route::get('/login', 'Auth\AuthController@getLogin');
+Route::post('/login', 'Auth\AuthController@postLogin');
+Route::get('/logout', 'Auth\AuthController@getLogout');
+Route::get('/intended','Auth\AuthController@gotoIntenedPage');
+
+Route::get('/auth/success', function() {
+	return view('auth.success');
+});
+
+Route::get('/auth/error', function() {
+	return view('auth.error');
 });
 
 /*

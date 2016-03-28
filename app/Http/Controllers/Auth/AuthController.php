@@ -39,6 +39,37 @@ class AuthController extends Controller
     {
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
     }
+	
+	/**
+	* Login Method,created to check with the database
+	* 
+	* Created by Zhou canzhen on 2016/03/28
+	*/
+	public function postLogin(){
+		$name = Request::get('username');
+		$password = Request::get('password');
+		$remember = Request::get('remember');
+		$data = array('name'=>$name,'password'=>$password);
+		
+		if (\Auth::attempt($data,$remember)){
+			$privilege = \DB::table('users')
+						->where('name', '=',$name)
+						->pluck('privilege');
+			if (strcmp($privilege,'superadmin')==0){
+				$_SESSION['privilege']='superadmin';
+			}else{
+				$_SESSION['privilege']='admin';
+			}
+			return 1;//login success,it's just normal user
+		}else{
+			return 0;
+		}
+	}
+	
+	public function gotoIntenedPage(){
+		return \Redirect::intended('/');
+	}
+	
 
     /**
      * Get a validator for an incoming registration request.
@@ -69,4 +100,8 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+	
+	
+    protected $redirectPath = '/auth/success';
+    protected $loginPath = '/auth/error';
 }
