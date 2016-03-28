@@ -1,20 +1,25 @@
-<!DOCTYPE html>
-<html>	
-<head>
-<title>印迹</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="application/x-javascript"> 
-	addEventListener("load",
-		function(){setTimeout(hideURLbar,0);},false);
-	function hideURLbar(){ window.scrollTo(0,1); }
-</script>
-<link href="/css/myfont.css" rel='stylesheet' type='text/css'/>
-<link href="/css/welcome.css" rel='stylesheet' type='text/css'/>
-<script src="/js/jquery.min.js"></script>
-</head>
+@extends('layouts.header')
 
-<body>
- <!--SIGN UP-->
+@section('title','印迹 - 登录')
+
+@section('header')
+	@parent
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="/css/myfont.css" rel='stylesheet' type='text/css'/>
+	<link href="/css/welcome.css" rel='stylesheet' type='text/css'/>
+@stop
+
+@section('footer')
+	@parent
+	<script type="application/x-javascript"> 
+		addEventListener("load",
+			function(){setTimeout(hideURLbar,0);},false);
+		function hideURLbar(){ window.scrollTo(0,1); }
+	</script>
+@stop
+
+@section('body')
+	<!--SIGN UP-->
 	</br></br></br></br>
 	<div class="title-maobixingshu">印迹</div>
 	<div class="login-form">
@@ -37,9 +42,7 @@
 			<input type="submit" value="Login" >
 		</div>
 	</div>
- <div class="copy-rights">
+	<div class="copy-rights">
 	<p>Copyright &copy; 2016.Company name All rights reserved.</p>
- </div>
-
-</body>
-</html>
+	</div>
+@stop
