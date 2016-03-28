@@ -1,12 +1,12 @@
 @extends('layouts.header')
 
-@section('title','印迹 - 登录')
+@section('title','登录')
 
 @section('header')
 	@parent
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="/css/myfont.css" rel='stylesheet' type='text/css'/>
-	<link href="/css/welcome.css" rel='stylesheet' type='text/css'/>
+	<link href="/css/index.css" rel='stylesheet' type='text/css'/>
 @stop
 
 @section('footer')
@@ -21,7 +21,8 @@
 @section('body')
 	<!--SIGN UP-->
 	</br></br></br></br>
-	<div class="title-maobixingshu">印迹</div>
+	<div class="mbxs title-maobixingshu">印迹</div>
+	</br></br>
 	<div class="login-form">
 		<div class="head-info">
 			<label class="lbl-1"> </label>
@@ -33,15 +34,16 @@
 			<img src="/images/avtar.png" />
 		</div>
 		<form>
-			<input type="text" class="text" value="Username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}" >
+			<input type="text" class="text gbkt" value="用户名" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '用户名';}" >
 			<div class="key">
-				<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+				<input type="password" value="密码" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '密码';}">
 			</div>
 		</form>
 		<div class="signin">
-			<input type="submit" value="Login" >
+			<input type="submit" class="gbkt login-font" value="登录" >
 		</div>
 	</div>
+	</br></br>
 	<div class="copy-rights">
 	<p>Copyright &copy; 2016.Company name All rights reserved.</p>
 	</div>

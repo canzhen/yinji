@@ -1,5 +1,36 @@
 @font-face {
-    /* font-properties */
-    font-family: yygmbxs;
+    /* 毛笔行书 */
+    font-family: mbxs;
     src:url('/fonts/yyg-maobixingshu.ttf');
+}
+.mbxs{
+	font-family:mbxs;
+}
+
+@font-face {
+    /* 钢笔行书 */
+    font-family: gbxs;
+    src:url('/fonts/gangbixingshu.ttf');
+}
+.gbxs{
+	font-family:gbxs;
+}
+
+@font-face {
+    /* 钢笔行书 */
+    font-family: stfyt;
+    src:url('/fonts/shutifangyanti.ttf');
+}
+.stfyt{
+	font-family:stfyt;
+}
+
+
+@font-face {
+    /* 钢笔行书 */
+    font-family: gbkt;
+    src:url('/fonts/gangbikaiti.ttf');
+}
+.gbkt{
+	font-family:gbkt;
 }

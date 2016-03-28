@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title>@yield('title') - Ó¡¼£ Yinji</title>
+        <title>@yield('title') - Ó¡¼£</title>
         <script>
         </script>
         @section('header')
@@ -13,6 +13,8 @@
         @show
         
     </head>
+	
+	
     <body ng-app="wabotApp">
         @section('body')
         @show
