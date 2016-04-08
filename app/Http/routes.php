@@ -19,13 +19,45 @@ Route::get('/test', function () {
     return view('test');
 });
 
-Route::get('/test', function () {
-    return view('test');
+
+/*
+ * 数据库方面的操作
+ */
+
+//注册用户
+Route::get('/db/addUser', function() {
+    $name=$_GET['username'];
+    $email=$_GET['email'];
+    $privilege=$_GET['privilege'];
+    $password=$_GET['password'];
+    $id = DB::table('users')
+        ->insertGetId(
+            array(
+                'name' => $name,
+                'email' => $email,
+                'privilege' => $privilege,
+                'password' => Hash::make($password)
+            )
+        );
+});
+//登录验证密码
+Route::get('/db/checkPwd', function() {
+    $name=$_SESSION['editPwdUserName'];
+    $inputPwd = $_GET['inputPwd'];
+
+    if (\Auth::validate(
+        array(
+            'name'=>$name,
+            'password'=>$inputPwd))){
+        return 1;//登录成功
+    }else{
+        return 0;//登录失败
+    }
 });
 
-
-
-// Authentication routes
+/*
+ * 身份验证方面的操作
+ */
 Route::get('/login', 'Auth\AuthController@getLogin');
 Route::post('/login', 'Auth\AuthController@postLogin');
 Route::get('/logout', 'Auth\AuthController@getLogout');

@@ -5,7 +5,7 @@
 yinjiApp.controller('loginController',
 function loginController($scope,$http,$rootScope){
 	//check name and pwd
-	$scope.errMsg = 'test';
+	//$scope.errMsg = 'test';
 	$scope.login = function(){
 		$http({
 			method: 'POST',
@@ -18,11 +18,24 @@ function loginController($scope,$http,$rootScope){
 		})
         .success(function(data) {
             if (data==1) {
-				$scope.errMsg = 'µÇÂ¼³É¹¦£¡½«ÔÚ1Ãëºó×Ô¶¯Ìø×ª......';
+				$scope.errMsg = 'ç™»å½•æˆåŠŸï¼Œè‡ªåŠ¨è·³è½¬é¡µé¢...';
 				window.setTimeout("window.location='intended'",1000);
             } else {
-				$scope.errMsg = 'ÓÃ»§Ãû»òÃÜÂë´íÎó£¬ÇëÖØĞÂÊäÈë';                
+				$scope.errMsg = 'ç™»å½•å¤±è´¥ï¼Œç”¨æˆ·åæˆ–å¯†ç é”™è¯¯';
             }
         });
+	};
+
+	$scope.addUser = function(){
+		$http({
+			method:'GET',
+			url:"/db/addUser",
+			params:{
+				'username':$scope.username,
+				'email':'scx@163.com',
+				'password':$scope.pwd,
+				'privilege':'user'
+			}
+		})
 	};
 });

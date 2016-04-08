@@ -40,10 +40,16 @@ body{
 	font-weight:bold;
 }
 .rmbMeArea{
-	margin-top:8%;
 	font-size:14px;
 	color:white;
 	font-family:"Microsoft YaHei";
+	float:left;
+	margin-left:19%;
+	margin-top:0px;
+	margin-bottom:20px;
+}
+.text{
+	font-size:18px;
 }
 .wrap{
 	margin: 0 auto;

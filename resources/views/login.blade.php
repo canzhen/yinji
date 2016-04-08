@@ -40,7 +40,8 @@
 					<input type="password" value="密码" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '密码';}" ng-model="pwd">
 				</div>
 				<div class="rmbMeArea">
-					<input type="checkbox" ng-model="remember"> 记住我　　
+					<input type="checkbox" ng-model="remember">
+					<span class="text mbxs"> 记住我</span>　　
 					<span class="errMsg">
 						@{{errMsg}}
 					</span>
@@ -49,7 +50,6 @@
 				<div class="signin">
 					<input type="submit" class="gbkt login-font" value="登录" >
 				</div>
-			
 			</form>
 		</div>
 		
