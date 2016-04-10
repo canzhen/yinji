@@ -19,6 +19,11 @@ Route::get('/test', function () {
     return view('test');
 });
 
+Route::get('/register', function () {
+    return view('register');
+});
+
+
 
 /*
  * 数据库方面的操作
@@ -27,19 +32,31 @@ Route::get('/test', function () {
 //注册用户
 Route::get('/db/addUser', function() {
     $name=$_GET['username'];
-    $email=$_GET['email'];
-    $privilege=$_GET['privilege'];
     $password=$_GET['password'];
+    $privilege='user';
     $id = DB::table('users')
         ->insertGetId(
             array(
                 'name' => $name,
-                'email' => $email,
-                'privilege' => $privilege,
-                'password' => Hash::make($password)
+                'password' => Hash::make($password),
+                'privilege' => $privilege
             )
         );
+    return $id;
 });
+
+
+
+//查看是否有用户存在
+Route::get('/db/checkUser', function() {
+    $name = $_GET['username'];
+    $result = DB::table('users')->where('name','=',$name)->first();
+    if ($result != NULL){
+        return 0;
+    }else return 1;
+});
+
+
 //登录验证密码
 Route::get('/db/checkPwd', function() {
     $name=$_SESSION['editPwdUserName'];

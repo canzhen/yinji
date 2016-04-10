@@ -1,0 +1,31 @@
+input[type="text"] {
+    width: 70%;
+    padding: 1em 2em 1em 3em;
+    color: #9199aa;
+    font-size: 18px;
+    outline: none;
+    background: url(../images/adm.png) no-repeat 10px 15px;
+    border: none;
+    font-weight: 100;
+    border-bottom: 1px solid#484856;
+    margin-top: 0.4em;
+}
+input[type="password"]{
+    width: 70%;
+    padding: 1em 2em 1em 3em;
+    color: #dd3e3e;
+    font-size: 18px;
+    outline: none;
+    background: url(../images/key.png) no-repeat 10px 23px;
+    border: none;
+    font-weight: 100;
+    border-bottom: 1px solid#484856;
+    margin-top: 0.4em;
+}
+.errMsg{
+    font-size:15px;
+    margin-top:30px;
+    margin-left:60px;
+    margin-bottom:20px;
+    float:left;
+}

@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title>@yield('title') - ”°º£</title>
+        <title>@yield('title') - Âç∞Ëøπ</title>
         <script>
         </script>
         @section('header')
