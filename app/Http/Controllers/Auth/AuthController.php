@@ -48,10 +48,10 @@ class AuthController extends Controller
 	public function postLogin(){
 		$name = $_GET['username'];
 		$password = $_GET['password'];
-		//$remember = $_GET['remember'];
+		$remember = $_GET['remember'];
 		$data = array('name'=>$name,'password'=>$password);
 
-		if (\Auth::attempt($data)){
+		if (\Auth::attempt($data,$remember)){
 			$privilege = \DB::table('users')
 						->where('name', '=',$name)
 						->pluck('privilege');

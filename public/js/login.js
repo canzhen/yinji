@@ -5,7 +5,8 @@
 yinjiApp.controller('loginController',
 function loginController($scope,$http,$rootScope){
 	//check name and pwd
-	//$scope.errMsg = 'test';
+	if ($scope.remember == null)
+		$scope.remember = false;
 	$scope.login = function(){
 		$http({
 			method: 'POST',
@@ -13,7 +14,7 @@ function loginController($scope,$http,$rootScope){
 			params:{
 				'username':$scope.username,
 				'password':$scope.pwd,
-				//'remember':$scope.remember
+				'remember':$scope.remember
 			}
 		})
         .success(function(data) {

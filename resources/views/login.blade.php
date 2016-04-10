@@ -10,7 +10,7 @@
 
 @section('footer')
 	@parent
-	<script type="application/x-javascript"> 
+	<script type="application/x-javascript">
 		addEventListener("load",
 			function(){setTimeout(hideURLbar,0);},false);
 		function hideURLbar(){ window.scrollTo(0,1); }
@@ -20,9 +20,8 @@
 
 @section('body')
 	<div ng-controller="loginController">
-		</br></br></br></br>
-		<div class="mbxs title-maobixingshu">印迹</div>
 		</br></br>
+		<div class="mbxs title-maobixingshu">印迹</div>
 		<div class="login-form">
 			<div class="head-info">
 				<label class="lbl-1"> </label>
