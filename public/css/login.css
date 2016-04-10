@@ -48,6 +48,9 @@ body{
 	margin-top:0px;
 	margin-bottom:20px;
 }
+.errMsg{
+	color:red;
+}
 .text{
 	font-size:18px;
 }

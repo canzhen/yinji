@@ -41,7 +41,7 @@
 				</div>
 				<div class="rmbMeArea">
 					<input type="checkbox" ng-model="remember">
-					<span class="text mbxs"> 记住我</span>　　
+					<span class="text mbxs"> 记住我</span>　
 					<span class="errMsg">
 						@{{errMsg}}
 					</span>

@@ -46,19 +46,19 @@ class AuthController extends Controller
 	* Created by Zhou canzhen on 2016/03/28
 	*/
 	public function postLogin(){
-		$name = Request::get('username');
-		$password = Request::get('password');
-		$remember = Request::get('remember');
+		$name = $_GET['username'];
+		$password = $_GET['password'];
+		//$remember = $_GET['remember'];
 		$data = array('name'=>$name,'password'=>$password);
-		
-		if (\Auth::attempt($data,$remember)){
+
+		if (\Auth::attempt($data)){
 			$privilege = \DB::table('users')
 						->where('name', '=',$name)
 						->pluck('privilege');
-			if (strcmp($privilege,'superadmin')==0){
-				$_SESSION['privilege']='superadmin';
-			}else{
+			if (strcmp($privilege[0],'admin')==0){
 				$_SESSION['privilege']='admin';
+			}else{
+				$_SESSION['privilege']='user';
 			}
 			return 1;//login success,it's just normal user
 		}else{
