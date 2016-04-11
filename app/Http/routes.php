@@ -13,7 +13,7 @@
 //Route::group(['middleware'=>'auth'], function(){//中间件，拦截，用于身份验证
 
     Route::get('/', function () {
-        return view('auth.login');
+        return view('index');
     });
 
     Route::get('/test', function () {
@@ -23,8 +23,6 @@
     Route::get('/register', function () {
         return view('auth.register');
     });
-
-
 
     /*
      * 数据库方面的操作
