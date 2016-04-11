@@ -29,14 +29,16 @@
 
 				<div class="clearfix"> </div>
 			</div>
+
+			<div id = "login">
+				<a href="contact.html">登录</a>
+			</div>
 		</div>
 	</div>
 	<!--导航栏结束-->
 
 
-	<div id = "login">
-		<a href="contact.html">登录</a>
-	</div>
+	
 
 	@section('content')
 	@show
