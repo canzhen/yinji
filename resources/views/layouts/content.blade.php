@@ -7,38 +7,36 @@
 			<div class="header-main">
 				<div class="header-left">
 					<div class="logo">
-						<a href="index.html"><h1>印记</h1></a>
+						<a href="#"><h1 class="stfyt">印迹</h1></a>
 					</div>
 					
 					<div class="top-nav">
-						<ul class="res"> 
-							<li><a href="services.html">服务</a></li>
-							<li><a href="about.html">关于</a></li>
-							<li><a href="contact.html">联系我们</a></li>
+						<ul class="res" > 
+							<li><a href="#" class="stfyt">服务</a></li>
+							<li><a href="#" class="stfyt">关于</a></li>
+							<li><a href="#" class="stfyt">联系我们</a></li>
 						</ul>
 					</div>
 				</div>
 
 				<div class="header-right">
 				    <div class="search">
-						<input type="text" value="查找" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '查找';}"/>
+						<input class="stfyt" type="text" value="查找" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '查找';}"/>
 						<input type="submit"  value=""/>		
 					</div>
-					
+					<a href="login" class="stfyt">登录</a>
 				</div>
 
 				<div class="clearfix"> </div>
+				
 			</div>
 
-			<div id = "login">
-				<a href="contact.html">登录</a>
-			</div>
+			<!-- <div id = "login">
+				<a href="login" class="stfyt">登录</a>
+			</div -->
 		</div>
 	</div>
 	<!--导航栏结束-->
-
-
-	
 
 	@section('content')
 	@show
@@ -47,7 +45,8 @@
 	<div class="footer">
 		<div class="container">
 			<div class="footer-main">
-				<p>Copyright &copy; 2015.Company name All rights reserved. Yinji</p>
+				<p>Copyright &copy;
+				2016.　ZCZ All rights reserved.</p>
 			</div>
 		</div>
 	</div>

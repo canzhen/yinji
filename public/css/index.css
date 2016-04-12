@@ -16,9 +16,12 @@ html, body{
 	background-color: #fff;
 	width: 100%;
 	z-index:9999;
-	padding: 20px 0px;
+	padding: 10px 0px;
 	font-family: "微软雅黑";
+	/*border: 1px solid #000;*/
 }
+
+
 
 #login{
 	position: absolute;
@@ -27,37 +30,50 @@ html, body{
 	margin-left: 20px;
 	/*border: 1px solid #000;*/
 	right: 0px;
-	top: 35px;
+	top: 25px;
 	text-align: center;
 	font-family: "微软雅黑";
 }
 
 #login a:hover{
 	color: #000;
+	text-decoration: none;
 }
 
 .header-main {
-  padding: 0px 25px 0px 10px;
-
+  padding: 0px 10px 0px 10px;
+  /*border: 1px solid #000;*/
 }
-.logo a h1 {
+.logo a {
   font-size: 2em;
   font-weight: 700;
   color: #000;
   margin: 0em;
 }
+
+.logo h1{
+	font-size: 40px;
+	font-weight: 700;
+    color: #000;
+    margin: 0em;
+}
+
 .logo a:hover {
 	text-decoration:none;
 }
 .header-left {
 	float: left;
-	padding: 5px 0px 0px 0px;
+	padding: 5px 0px 5px 0px;
 }
 .header-right {
 	float: right;
 	text-align: center;
-	padding: 5px 0px 0px 0px;
+	padding: 10px 10px 0px 0px;
 }
+.header-right a{
+	text-decoration: none;
+}
+
 .top-nav {
 	display: inline-block;
 }
@@ -82,10 +98,11 @@ span.menu{
      display:none;
   }
 .search {
-	width: 100%;
+	width: 70%;
 	background: #EBEBEB;
 	border-radius: 20px;
 	display: inline-block;
+	margin-right: 20px;
 }
 .search input[type="text"] {
 	border: none;
@@ -151,6 +168,7 @@ span.ser-img {
 .header-right {
 	float: none;
 }
+
 .top-nav ul {
   padding: 4px 0px 0px 0px;
 }
@@ -204,7 +222,7 @@ span.roundplay-bwn {
 .slider {
 	position: relative;
 	/*top: 80px;*/
-	padding-top: 80px;
+	padding-top: 75px;
 }
 .rslides {
   position: relative;
