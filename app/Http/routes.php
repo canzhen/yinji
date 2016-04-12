@@ -24,6 +24,10 @@
         return view('auth.register');
     });
 
+    Route::get('/home', function () {
+        return view('home');
+    });
+
     /*
      * 数据库方面的操作
      */

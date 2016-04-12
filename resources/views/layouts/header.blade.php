@@ -11,6 +11,7 @@
             <link rel="stylesheet" href="/css/lib/bootstrap/bootstrap-theme.min.css">
             <link rel="stylesheet" href="/css/lib/fontAwesome/css/font-awesome.css">
 			<link rel='stylesheet' href="/css/lib/myfont.css"/>
+            <link rel="stylesheet" href="/css/content.css"  type="text/css" media="all"/>
         @show
         
     </head>

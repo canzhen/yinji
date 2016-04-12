@@ -30,10 +30,6 @@
 				<div class="clearfix"> </div>
 				
 			</div>
-
-			<!-- <div id = "login">
-				<a href="login" class="stfyt">登录</a>
-			</div -->
 		</div>
 	</div>
 	<!--导航栏结束-->
@@ -43,12 +39,7 @@
 
 	<!--版权区域-->
 	<div class="footer">
-		<div class="container">
-			<div class="footer-main">
-				<p>Copyright &copy;
-				2016.　ZCZ All rights reserved.</p>
-			</div>
-		</div>
+		<p>Copyright &copy;2016.　ZCZ All rights reserved.</p>
 	</div>
 	<!--版权区域结束-->
 
