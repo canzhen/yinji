@@ -24,18 +24,10 @@
 						<input class="stfyt" type="text" value="查找" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '查找';}"/>
 						<input type="submit"  value=""/>		
 					</div>
-					<a href="login" class="stfyt">登录</a>
+					<a href="/login" class="stfyt">登录</a>
 				</div>
 
 				<div class="clearfix"> </div>
-<<<<<<< HEAD
-			</div>
-
-			<div id = "login">
-				<a href="/login">登录</a>
-=======
-				
->>>>>>> origin/gui
 			</div>
 		</div>
 	</div>
@@ -45,19 +37,9 @@
 	@show
 
 	<!--版权区域-->
-<<<<<<< HEAD
-	<div class="footer">
-		<div class="container">
-			<div class="footer-main">
-				<p>Copyright &copy; 2016.Company name All rights reserved. Yinji</p>
-			</div>
-		</div>
-	</div>
-=======
 	<!-- <div class="footer">
 		<p>Copyright &copy;2016.　ZCZ All rights reserved.</p>
 	</div> -->
->>>>>>> origin/gui
 	<!--版权区域结束-->
 
 @stop
