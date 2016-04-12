@@ -5,6 +5,7 @@
 @section('header')
 	@parent
 	<link href="/css/index.css" rel="stylesheet" type="text/css" media="all"/>
+	
 @show
 
 @section('footer')
@@ -33,7 +34,6 @@
 		    </ul>
 		</div>
     </div>
-	    <!-- <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >网页模板</a></div> -->
 	<!--幻灯片区域结束-->
 
 	<div id="small-dialog5" class="mfp-hide"></div>
