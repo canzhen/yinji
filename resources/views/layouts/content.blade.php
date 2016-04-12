@@ -7,7 +7,7 @@
 			<div class="header-main">
 				<div class="header-left">
 					<div class="logo">
-						<a href="index.html"><h1>印记</h1></a>
+						<a href="/"><h1>印记</h1></a>
 					</div>
 					
 					<div class="top-nav">
@@ -31,7 +31,7 @@
 			</div>
 
 			<div id = "login">
-				<a href="contact.html">登录</a>
+				<a href="/login">登录</a>
 			</div>
 		</div>
 	</div>
