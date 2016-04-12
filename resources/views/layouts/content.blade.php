@@ -38,9 +38,9 @@
 	@show
 
 	<!--版权区域-->
-	<div class="footer">
+	<!-- <div class="footer">
 		<p>Copyright &copy;2016.　ZCZ All rights reserved.</p>
-	</div>
+	</div> -->
 	<!--版权区域结束-->
 
 @stop
