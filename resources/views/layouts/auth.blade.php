@@ -27,10 +27,7 @@
 		</br></br>
 
 		<div class="copy-rights">
-			<p>
-				Copyright &copy;
-				2016.　ZCZ All rights reserved.
-			</p>
+			<p>Copyright &copy; 2016.Company name All rights reserved. Yinji</p>
 		</div>
 	</div>
 @stop

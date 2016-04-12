@@ -47,7 +47,7 @@
 	<div class="footer">
 		<div class="container">
 			<div class="footer-main">
-				<p>Copyright &copy; 2015.Company name All rights reserved. Yinji</p>
+				<p>Copyright &copy; 2016.Company name All rights reserved. Yinji</p>
 			</div>
 		</div>
 	</div>
