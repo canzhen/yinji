@@ -3,8 +3,6 @@
 
     <head>
         <title>@yield('title') - 印迹</title>
-        <script>
-        </script>
         @section('header')
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
             <link rel="stylesheet" href="/css/lib/bootstrap/bootstrap.min.css">
@@ -20,15 +18,13 @@
     <body ng-app="yinjiApp">
         @section('body')
         @show
-        <div>
-			@section('footer')
-				<script src="/js/lib/jquery.min.js"></script>
-				<script src="/js/lib/angularjs/angular.min.js"></script>
-				<script src="/js/lib/angularjs/angular-animate.min.js"></script>
-				<script src="/js/lib/angularjs/angular-route.min.js"></script>
-				<script src="/js/yinji.js"></script>
-				<script src="/js/lib/bootstrap.min.js"></script>
-			@show
-        </div>
+        @section('footer')
+            <script src="/js/lib/jquery.min.js"></script>
+            <script src="/js/lib/angularjs/angular.min.js"></script>
+            <script src="/js/lib/angularjs/angular-animate.min.js"></script>
+            <script src="/js/lib/angularjs/angular-route.min.js"></script>
+            <script src="/js/yinji.js"></script>
+            <script src="/js/lib/bootstrap.min.js"></script>
+        @show
     </body>
 </html>

@@ -22,7 +22,7 @@
 				<div class="header-right">
 				    <div class="search">
 						<input type="text" value="查找" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '查找';}"/>
-						<input type="submit"  value=""/>		
+						<input type="submit"  value=""/>
 					</div>
 					<a href="/login">登录</a>
 				</div>

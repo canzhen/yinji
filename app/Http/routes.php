@@ -32,6 +32,11 @@
         return view('home');
     });
 
+    //用户创建纪念册
+    Route::get('/create_album', function () {
+        return view('create_album');
+    });
+
     /*
      * 数据库方面的操作
      */

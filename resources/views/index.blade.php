@@ -5,14 +5,12 @@
 @section('header')
 	@parent
 	<link href="/css/index.css" rel="stylesheet" type="text/css" media="all"/>
-	
-@show
+@stop
 
 @section('footer')
 	@parent
 	<script src="/js/index.js"></script>
-
-@show
+@stop
 
 
 @section('content')
