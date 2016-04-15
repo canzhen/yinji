@@ -60,8 +60,10 @@ class AuthController extends Controller
 			}else{
 				$_SESSION['privilege']='user';
 			}
+			$_SESSION[ifLoggedIn] = 'y';//set the value to yes
 			return 1;//login success,it's just normal user
 		}else{
+			$_SESSION[ifLoggedIn] = 'n';//set the value to no
 			return 0;
 		}
 	}
