@@ -116,3 +116,19 @@ function setImagePreview1(avalue) {
 	}
 	return true;
 }
+
+//点击图片边框变红
+function changecolor(obj){
+	var ele = document.getElementById(obj);
+// obj.style.border="soild 2px #333333";
+// obj.border="2"
+// window.alert(obj);
+//document.getElementById(obj).style.border="2px soild #000";
+//document.getElementById(obj).style.border = "1px solid #000";
+if(ele.className == 'noBorder')
+	 ele.className = 'hasBorder';
+	// alert("asfasf");
+else{
+	ele.className = 'noBorder'
+}
+}

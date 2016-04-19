@@ -1055,7 +1055,7 @@ p.profile-description {
   margin-left: 25px;
   cursor: pointer;
 
-  /*border: 1px solid #000;*/
+  /*border: 1px solid red;*/
 }
 .book-style p{
  text-align: center;
@@ -1686,4 +1686,12 @@ a:focus {
 	.htmleaf-header h1 {
 		font-size: 2.8em;
 	}
+}
+
+.hasBorder{
+  border: 1px solid #000;
+}
+
+.noBorder{
+  border: none;
 }
