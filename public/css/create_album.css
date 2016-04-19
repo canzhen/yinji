@@ -744,13 +744,13 @@ h1, h2, h3, h4, h5 {
 }
 
 .main-content,
-.banner-bg {
-  
+
+.banner-bg{
+
   float: right;
   width: 77%;
-}
-.banner-bg{
   /*border: 1px solid #000;*/
+  margin-top: 74px;
   margin-bottom: 60px;
 }
 
@@ -944,7 +944,17 @@ hr {
   /*color: white;*/
   color: #333333;
   overflow-y: hidden;
+  /*border: 1px solid #000;*/
+  margin-top: 74px;
 }
+/*
+.target-fix{
+  position: relative;
+  top: -44px; // 偏移值
+  display: block;
+  height: 0;
+  overflow: hidden; 
+}*/
 
 .main-navigation {
   margin: 30px 0;
@@ -1245,7 +1255,7 @@ p.profile-description {
   /*border: 1px solid #000;*/
   width: 45%;
   height: 55%;
-  margin-left: 10px;
+  margin-left: 40px;
   margin-top: 170px;
 }
 /*封面图片*/

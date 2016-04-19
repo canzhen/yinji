@@ -5,6 +5,7 @@
 @section('header')
 	@parent
 	<link href="/css/index.css" rel="stylesheet" type="text/css" media="all"/>
+	<link rel="stylesheet" type="text/css" href="/css/create_album.css">
 @stop
 
 @section('footer')
@@ -12,6 +13,12 @@
 	<script src="/js/create_album.js"></script>
 	<script src="/js/lib/plugins.min.js"></script>
 	<script src="/js/lib/modernizr-2.6.2.min.js"></script>
+
+	<script src="js/create_album/custom-file-input.js"></script>
+	<script src="js/create_album/vendor/modernizr-2.6.2.min.js"></script>	
+	<script src="js/create_album/vendor/jquery-1.10.2.min.js"></script>
+	<script src="js/create_album/min/plugins.min.js"></script>
+	<script src="js/create_album/min/main.min.js"></script>
 @stop
 
 
@@ -40,7 +47,7 @@
                     </ul>
                 </div>
             </div>
-        </div>
+</div>
 		
         <!-- SIDEBAR -->
         <div class="sidebar-menu hidden-xs hidden-sm">
@@ -48,14 +55,14 @@
                 <div class="profile-image">
                     <img src="/images/create_album/profile.jpg" alt="用户头像">
                 </div>
-                <h3 class="profile-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户名字</h3>
-                <p class="profile-description">&nbsp;&nbsp;&nbsp;创建一本时光书</p>
+                <h3 class="profile-title">&nbsp;&nbsp;用户名字</h3>
+                <p class="profile-description">&nbsp;创建一本时光书</p>
             </div> <!-- top-section -->
             <div class="main-navigation">
                 <ul class="navigation">
-                    <li><a href="#top"><i class="fa fa-heart"></i>纪念册风格</a></li>
-                    <li><a href="#about"><i class="fa fa-photo"></i>编辑封面</a></li>
-                    <li><a href="#projects"><i class="fa fa-pencil"></i>填写简介</a></li>
+                    <li><a  href="#top"><i class="fa fa-heart"></i>纪念册风格</a></li>
+                    <li><a  href="#about"><i class="fa fa-photo"></i>编辑封面</a></li>
+                    <li><a  href="#projects"><i class="fa fa-pencil"></i>填写简介</a></li>
                 </ul>
             </div> 
         </div> 
@@ -68,37 +75,37 @@
 	            <div class="book-style">
 	                <p class="book-name"><strong>亲亲宝贝</strong></p>
 	                <p class="book-description">记录宝贝成长的点滴</p>
-	            	<img src="/images/create_album/亲子记录.jpg" alt="亲子记录">
+	            	<img src="/images/create_album/baby.jpg" alt="亲子记录">
 	            </div>
 
 	            <div class="book-style">
 	                <p class="book-name"><strong>减肥健身</strong></p>
 	                <p class="book-description">健康生活每一天</p>
-	            	<img src="/images/create_album/减肥健身.jpg" alt="减肥健身">
+	            	<img src="/images/create_album/health.jpg" alt="减肥健身">
 	            </div>
 
 	            <div class="book-style">
 	                <p class="book-name"><strong>旅行游记</strong></p>
 	                <p class="book-description">旅途中的点点滴滴不会遗忘</p>
-	            	<img src="/images/create_album/旅行游记.jpg" alt="旅行游记">
+	            	<img src="/images/create_album/travel.jpg" alt="旅行游记">
 	            </div>
 
 	            <div class="book-style">
 	                <p class="book-name"><strong>爱情永驻</strong></p>
 	                <p class="book-description">因为有你才有爱情</p>
-	            	<img src="/images/create_album/爱情永驻.jpg" alt="爱情永驻">
+	            	<img src="/images/create_album/love.jpg" alt="爱情永驻">
 	            </div>
 
 	            <div class="book-style">
 	                <p class="book-name"><strong>生活随笔</strong></p>
 	                <p class="book-description">随时记录生活的琐碎</p>
-	            	<img src="/images/create_album/生活随笔.jpg" alt="生活随笔">
+	            	<img src="/images/create_album/live.jpg" alt="生活随笔">
 	            </div>
 
 	            <div class="book-style">
 	                <p class="book-name"><strong>其他</strong></p>
 	                <p class="book-description">记录从不需要理由</p>
-	            	<img src="/images/create_album/其他.jpg" alt="其他">
+	            	<img src="/images/create_album/other.jpg" alt="其他">
 	            </div>
             </div>
             
@@ -151,7 +158,7 @@
 										<tr>
 										<td height="101" align="center">
 										<div id="localImag1">
-										   <img id="preview1" src="/images/create_album/书的封面.jpg" width="500" height="550" style="display: block; width: 500px; height: 550px;">
+										   <img id="preview1" src="/images/create_album/bookCover.jpg" width="500" height="550" style="display: block; width: 500px; height: 550px;">
 										</div>
 										</td>
 										</tr>
@@ -161,7 +168,6 @@
 										
 						                <label for="doc1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>选择本地图片&hellip;</span></label>
 						                </td>
-						                <script src="js/custom-file-input.js"></script>
 										</tr>
 									</tbody>
 								</table>
@@ -194,7 +200,6 @@
 										
 						                <label for="doc"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>选择本地图片&hellip;</span></label>
 						                </td>
-						                <script src="js/custom-file-input.js"></script>
 										</tr>
 									</tbody>
 							</table>
