@@ -1241,7 +1241,7 @@ p.profile-description {
   -webkit-transform: translate3d(0, 0.5em, 0);
   transform: translate3d(0, 0.5em, 0);
 }
-.container{
+.container-album{
   /*border: 1px solid #000;*/
   width: 45%;
   height: 55%;
@@ -1480,7 +1480,7 @@ a:focus {
 	pointer-events: none;
 }
 
-.htmleaf-container{
+.htmleaf-container-album{
 	margin: 0 auto;
 	text-align: center;
 	overflow: hidden;

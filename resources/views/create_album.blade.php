@@ -17,7 +17,7 @@
 
 @section('content')
 <div class="responsive-header visible-xs visible-sm">
-            <div class="container">
+            <div class="container-album">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="top-section">
@@ -120,7 +120,7 @@
 
                             <!-- 模板 -->
 
-                            <div class="container">
+                            <div class="container-album">
 								<section class="content bgcolor-1">
 									<span class="input input--haruki">
 										<input class="input__field input__field--haruki" type="text" id="input-1" />

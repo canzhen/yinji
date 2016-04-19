@@ -2,6 +2,7 @@
 <html>
 
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>@yield('title') - 印迹</title>
         @section('header')
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -11,7 +12,6 @@
 			<link rel='stylesheet' href="/css/lib/myfont.css"/>
             <link rel="stylesheet" href="/css/content.css"  type="text/css" media="all"/>
         @show
-        
     </head>
 	
 	
@@ -23,6 +23,7 @@
             <script src="/js/lib/angularjs/angular.min.js"></script>
             <script src="/js/lib/angularjs/angular-animate.min.js"></script>
             <script src="/js/lib/angularjs/angular-route.min.js"></script>
+            <script src="/js/lib/angularjs/angular-file-upload.min.js"></script>
             <script src="/js/yinji.js"></script>
             <script src="/js/lib/bootstrap.min.js"></script>
         @show
