@@ -1,0 +1,116 @@
+/*左侧导航栏*/
+#contentLeft {
+	position: fixed;
+	z-index: 10;
+	width: 250px;
+	height: 87.3%;
+	top: 85px;
+	background-color: rgb(241,241,241);
+	padding-top: 200px;
+}
+
+#leftNavigation {
+list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+#leftNavigation li{
+	height: 50px;
+	padding-top: 10px;
+}
+
+#leftNavigation li a {
+	line-height: 50px;
+	font-size: 0.875rem;
+
+	text-decoration: none;
+	display: block;
+	padding: 0.8rem 1rem 0.8rem 3rem;
+	color: #000;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	position: relative;
+	-webkit-transition: color 0.2s ease;
+	transition: color 0.2s ease;
+}
+
+#leftNavigation li a, #leftNavigation li a .leftNavIcon {
+  line-height: 120%;
+}
+
+#leftNavigation li a .leftNavIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3rem;
+  padding: 0.8rem 0;
+  text-align: center;
+}
+
+#leftNavigation li:hover{
+	background-color: #CCCCCC;
+}
+
+
+/*纪念册页面标题*/
+/*.book-set{
+	float: left;
+	border: 1px solid #000;
+	width: 200px;
+	height: 250px;
+	margin-left: 100px;
+	border-radius: 15px;
+	overflow: hidden;
+}
+
+.book-set img{
+	position: absolute;
+	width: 200px;
+	height: 250px;
+	z-index: -22;
+	border-radius: 15px;
+}*/
+
+
+
+.free-wall {
+	margin: 15px;
+	border: 1px solid #000;
+	border: 1px solid #000;
+	margin-top: 85px;
+	margin-left: 260px;
+	width: 1080px;
+	height: 80%; 
+}
+.book-set {
+	width: 221.2px;
+	border: 1px solid #000;
+}
+.info {
+	padding: 15px;
+	color: #333;
+}
+.book-set img {
+	margin: 0px;
+	padding: 0px;
+	display: block;
+}
+
+
+
+
+
+.test{
+	width: 80%;
+	height: 80%;
+	margin-top: 20%;
+	margin-left: 10%;
+	background-color: #999;
+	display: none;
+}
+
+.test p{
+	margin-top: 10px;
+	margin-left: 10px;
+}
