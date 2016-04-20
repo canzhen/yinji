@@ -47,24 +47,27 @@
 	            </div>
 	</div>
 		
-    <!-- SIDEBAR -->
+    <!-- 创建纪念册右边导航栏 -->
     <div class="sidebar-menu hidden-xs hidden-sm">
+    	<!-- 用户头像及用户昵称 -->
         <div class="top-section">
             <div class="profile-image">
                 <img src="/images/create_album/profile.jpg" alt="用户头像">
             </div>
             <h3 class="profile-title">&nbsp;&nbsp;用户名字</h3>
             <p class="profile-description">&nbsp;创建一本时光书</p>
-        </div> <!-- top-section -->
+        </div> <!-- 用户头像及用户昵称结束 -->
+        <!-- 导航栏 -->
         <div class="main-navigation">
             <ul class="navigation">
                 <li><a  href="#top"><i class="fa fa-heart"></i>纪念册风格</a></li>
                 <li><a  href="#about"><i class="fa fa-photo"></i>编辑封面</a></li>
                 <li><a  href="#projects"><i class="fa fa-pencil"></i>填写简介</a></li>
             </ul>
-        </div> 
-    </div> 
+        </div> <!-- 导航栏结束 -->
+    </div> <!-- 创建纪念册右边导航栏结束 -->
     	
+    <!-- 纪念册风格 -->
     <div class="banner-bg" id="top">
         <div class="book-style-text">
         	<p>快为你的纪念册选一个风格吧：</p>
@@ -105,11 +108,10 @@
                 <p class="book-description">记录从不需要理由</p>
             	<img src="/images/create_album/other.jpg" alt="其他" onclick="this.style.border='solid 2px #666666'">
             </div>
-        </div>
-        
-    </div>
+        </div>       
+    </div><!-- 纪念册风格结束 -->
 
-    <!-- MAIN CONTENT -->
+    <!-- 封面设计和填写简介 -->
     <div class="main-content">
         <div class="fluid-container">
 
@@ -123,7 +125,7 @@
 		                    	<p class="design-title">快来设计你的封面吧：</p>
 		                    </div>
 
-	                        <!-- 模板 -->
+	                        <!-- 输入框模板模板 -->
 	                        <div class="container-album">
 								<section class="content bgcolor-1">
 									<span class="input input--haruki">
@@ -145,11 +147,10 @@
 										</label>
 									</span>
 								</section>
-							</div><!-- /container -->
+							</div><!-- 输入框模板结束 -->
 
 							<div class="book-cover-picture">
 	                        	<p>封面照片：</p><br/>
-	                        	<!-- <img src="/images/create_album/书的封面.jpg"> -->
 	                        	<table width="100%" border="0" cellspacing="0" cellpadding="0">
 									<tbody>
 										<tr>
@@ -215,8 +216,7 @@
 	                        	<input type="submit" value="提交" style="width:100px;height:30px;color:white;background:rgb(169,169,169);">
 	                        </div>
                     </div>
-                </div>
-                
+                </div>   <!-- 填写简介结束 -->            
                 <hr>
                 <hr>
             </div>
