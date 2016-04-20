@@ -129,21 +129,21 @@
 	                        <div class="container-album">
 								<section class="content bgcolor-1">
 									<span class="input input--haruki">
-										<input class="input__field input__field--haruki" type="text" id="input-1" />
+										<input class="input__field input__field--haruki" type="text" id="input-1" maxlength="10"/>
 										<label class="input__label input__label--haruki" for="input-1">
-											<span class="input__label-content input__label-content--haruki">纪念册名字：</span>
+											<span class="input__label-content input__label-content--haruki">纪念册名字（10字以内）：</span>
 										</label>
 									</span>
 									<span class="input input--haruki">
-										<input class="input__field input__field--haruki" type="text" id="input-2" />
+										<input class="input__field input__field--haruki" type="text" id="input-2" maxlength="10"/>
 										<label class="input__label input__label--haruki" for="input-2">
-											<span class="input__label-content input__label-content--haruki">作者名字：</span>
+											<span class="input__label-content input__label-content--haruki">作者名字（10字以内）：</span>
 										</label>
 									</span>
 									<span class="input input--haruki">
-										<input class="input__field input__field--haruki" type="text" id="input-3" />
+										<input class="input__field input__field--haruki" type="text" id="input-3" maxlength="20"/>
 										<label class="input__label input__label--haruki" for="input-3">
-											<span class="input__label-content input__label-content--haruki">想加在封面的话：</span>
+											<span class="input__label-content input__label-content--haruki">想加在封面的话（20字以内）：</span>
 										</label>
 									</span>
 								</section>
@@ -207,10 +207,7 @@
 						<!-- 填写简介 -->
 	                        <div id="book-introduction_description">
 	                            <p>填写纪念册内容简介:</p>
-	                        	<textarea name="description" id="description" autofocus rows="10" cols="70">
-	                
-	                        	</textarea>
-
+	                        	<textarea name="description" id="description" rows="10" cols="50" wrap="hard"></textarea>
 	                        </div>
 	                        <div id="send">
 	                        	<input type="submit" value="提交" style="width:100px;height:30px;color:white;background:rgb(169,169,169);">

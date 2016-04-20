@@ -1392,13 +1392,16 @@ p.profile-description {
 
 #book-introduction_description textarea{
   margin-top: 10px;
+  font-weight: bold;
+  font-family: "楷体";
+  font-size: 20px;
+  color: #929292;
 }
 /*提交按钮*/
 #send{
   border: 1px solid #000;
   margin-left: 800px;
 }
-
 
 /*
 ================
