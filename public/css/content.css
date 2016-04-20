@@ -17,23 +17,6 @@ body{
 	margin-right: 70px;
 }
 
-#login{
-	position: absolute;
-	width: 100px;
-	height: 30px;
-	margin-left: 20px;
-	/*border: 1px solid #000;*/
-	right: 0px;
-	top: 25px;
-	text-align: center;
-	/*font-family: "gangbikaiti";*/
-}
-
-#login a:hover{
-	color: #000;
-	text-decoration: none;
-}
-
 .header-main {
   padding: 0px 10px 0px 10px;
   /*border: 1px solid #000;*/
@@ -65,10 +48,6 @@ body{
 	text-align: center;
 	padding: 10px 10px 0px 0px;
 	font-family: "微软雅黑";
-}
-.header-right a{
-	text-decoration: none;
-
 }
 
 span.menu{
@@ -183,7 +162,6 @@ span.ser-img {
 	position: fixed;
 	bottom: 0px;
 	width: 99%;
-	margin-left: 50px;
 	z-index: 1000;
 	background-color: #fff;
 }
@@ -199,15 +177,13 @@ span.ser-img {
 .top-nav {
 	display: inline-block;
 	height: 29px;
-	width: 500px;
+	width: 660px;
 	font-family: "微软雅黑";
-
 }
 
 .top-nav  ul {
 	padding: 0px;
 	list-style: none;
-
 }
 
 .top-nav  ul li {
@@ -226,9 +202,9 @@ span.ser-img {
 }
 
 .res {
-	width:420px; 
+	width:620px; 
 	height:36px; 
-	margin:0 auto;
+	margin:0 20px;
 }
 
 .res li{
