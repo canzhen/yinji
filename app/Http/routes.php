@@ -31,6 +31,10 @@
     Route::get('/home', function () {
         return view('home');
     });
+	
+	Route::get('/record', function () {
+        return view('record');
+    });
 
     //用户创建纪念册
     Route::get('/create_album', function () {

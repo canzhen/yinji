@@ -1,0 +1,217 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/*----------------------导航设计-----------------------*/
+.sidebar-menu {
+  float: left;
+  width: 18%;
+  height: 100%;
+  position: fixed;
+  /*background-color: #5f6d7e;*/
+  background-color:rgb(241,241,241);
+  /*color: white;*/
+  color: #333333;
+  overflow-y: hidden;
+}
+
+.main-navigation {
+  margin: 30px 0;
+}
+.main-navigation li {
+  display: block;
+}
+.main-navigation li a {
+  padding: 15px 40px;
+  display: block;
+  /*color: white;*/
+  color: rgb(170,170,170);
+  font-size: 14px;
+}
+.main-navigation li a i {
+  margin-right: 15px;
+  font-size: 24px;
+}
+.main-navigation li a:hover {
+  /*background: #5b6878;*/
+  background: #666666;
+}
+.main-navigation li a.active {
+  background: #333333;
+}
+.main-navigation li a.active:hover {
+  background: #333333;
+}
+
+@media screen and (max-width: 1290px) {
+  .sidebar-menu {
+    overflow-y: scroll;
+    width: 30%;
+  }
+}
+
+h3.profile-title {
+  margin-bottom: 5px;
+
+  /*color: white;*/
+  color: #333333;
+  font-size: 18px;
+  font-family: 'robotobold';
+}
+p.profile-description {
+  margin-bottom: 5px;
+
+  /*color: white;*/
+  color: #333333;
+  font-size: 18px;
+  font-family: 'robotobold';
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border: 4px solid white;
+  -webkit-border-radius: 75px;
+  border-radius: 75px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.profile-image img {
+  width: 100%;
+}
+
+.top-section {
+  padding: 40px;
+}
+
+/*缩页后导航*/
+.responsive-header {
+  /*background: #5f6d7e;*/
+  background-color:rgb(241,241,241);
+  text-align: center;
+}
+@media screen and (max-width: 992px) {
+  .responsive-header .main-navigation {
+    margin-top: 10px;
+    display: none;
+  }
+}
+@media screen and (max-width: 992px) {
+  .responsive-header p {
+    color: #333333;
+  }
+}
+@media screen and (max-width: 992px) {
+  .responsive-header .profile-image {
+    float: left;
+    width: 100px;
+    height: 100px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    overflow: hidden;
+    margin-right: 30px;
+  }
+  .responsive-header .profile-content {
+    text-align: left;
+    margin-top: 30px;
+    overflow: hidden;
+  }
+}
+
+/*----------------------右侧内容设计-----------------------*/
+/*右侧div居中*/
+.wrap{
+	width:400px;
+	margin:0 auto;
+}
+/*输入块*/
+.writediv{
+	width:680px;
+	background-color:#949494;
+	border:2px solid #000000;
+	padding-bottom:10px;
+	text-align:center;
+}
+
+.mydiv111{
+	width:680px;
+	/*background-color:#FDD7E4;*/
+	background-color:#FFFFFF;
+	border:2px solid #000000
+}
+
+.divpic{
+	padding-left:35px;
+}
+
+.divdate{
+	border:2px solid black;
+	width:250px;
+	padding-left:40px;
+	padding-top:10px;
+	padding-bottom:10px;
+	margin-left:10px;
+}
+.divdate2{
+	width:150px;
+	
+}
+
+/*P*/
+.label1{
+	color:#FFFFFF;
+	font-size : 20px;
+	font-family : 微软雅黑;
+	background-color:black;
+}
+.datep{
+	color:#FFFFFF;
+	font-size : 27px;
+	font-family : 微软雅黑;
+	background-color:black;
+	font-weight:bold;
+	padding-left:10px;
+}
+.diary{
+	color:black;
+	font-size : 20px;
+	font-family : 微软雅黑;
+	padding-left:10px;
+}
+.selectdatep{
+	font-family : 微软雅黑;
+	font-size : 20px;
+}
+
+/*图片*/
+.mypic{
+	width:200px;
+	height:200px;
+	margin-bottom:12px;
+}
+
+/*下拉框*/
+.selectdate{
+	float:left;
+	background: transparent;
+    width: 100px;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    height: 34px;
+}
+
+/*按钮*/
+.datebutton{
+	background-color:black;
+	width:140px;
+	color:white;
+	margin-top:5px;
+	font-family : 微软雅黑;
+	font-size : 18px;
+	border:0;
+}
