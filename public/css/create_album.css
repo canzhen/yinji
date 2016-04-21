@@ -1008,6 +1008,7 @@ p.profile-description {
 }
 .profile-image img {
   width: 100%;
+  height: 100%;
 }
 
 .top-section {
@@ -1692,7 +1693,7 @@ a:focus {
 }
 
 .hasBorder{
-  border: 1px solid #000;
+  border: 4px solid #666666;
 }
 
 .noBorder{
