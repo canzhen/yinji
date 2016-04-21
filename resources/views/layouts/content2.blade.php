@@ -12,14 +12,20 @@
 					
 					<div class="top-nav">
 						<ul class="res" > 
-							<li class = "topLine"><a href="#">服务</a>
+							<li class = "topLine"><a href="#">纪念册</a>
 								 <ul>
-									<li class = "spec"><a href="#">纪念册</a></li>
-									<li><a href="#">刊印</a></li>
+									<li class = "spec"><a href="#">查看纪念册</a></li>
+									<li><a href="#">创建纪念册</a></li>
 								</ul> 
 							</li>
-							<li class = "topLine"><a href="#">关于</a>
+							<li class = "topLine"><a href="#">刊印</a>
 								
+							</li>
+							<li class = "topLine"><a href="#">个人信息</a>
+								<ul>
+									<li class = "spec"><a href="#">查看个人信息</a></li>
+									<li><a href="#">管理收货地址</a></li>
+								</ul> 
 							</li>
 							<li class = "topLine"><a href="#">联系我们</a></li>
 						</ul>
@@ -31,7 +37,7 @@
 						<input  type="text" value="查找" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '查找';}"/>
 						<input type="submit"  value=""/>		
 					</div>
-					<a href="login" id = "loginBtn">登录</a>
+					<a href="/" id = "logoffBtn">注销</a>
 				</div>
 
 				<div class="clearfix"> </div>

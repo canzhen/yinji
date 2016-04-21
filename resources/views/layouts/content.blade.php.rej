@@ -1,0 +1,14 @@
+diff a/resources/views/layouts/content.blade.php b/resources/views/layouts/content.blade.php	(rejected hunks)
+@@ -38,9 +38,9 @@
+ 	@show
+ 
+ 	<!--ç‰ˆæƒåŒºåŸŸ-->
+-	<div class="footer">
++	<!-- <div class="footer">
+ 		<p>Copyright &copy;2016.ã€€ZCZ All rights reserved.</p>
+-	</div>
++	</div> -->
+ 	<!--ç‰ˆæƒåŒºåŸŸç»“æŸ-->
+ 
+ @stop
+\ No newline at end of file
