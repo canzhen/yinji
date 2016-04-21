@@ -9,7 +9,7 @@
 
 @section('footer')
 	@parent
-	<script src="/js/index.js"></script>
+	<script src="/js/index_home/index.js"></script>
 @stop
 
 
