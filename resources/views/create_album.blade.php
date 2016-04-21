@@ -82,31 +82,31 @@
             <div class="book-style">
                 <p class="book-name"><strong>减肥健身</strong></p>
                 <p class="book-description">健康生活每一天</p>
-            	<img src="/images/create_album/health.jpg" alt="减肥健身" onclick="this.style.border='solid 2px #666666'">
+            	<img class = "noBorder" id = "img2" src="/images/create_album/health.jpg" alt="减肥健身" onclick="changecolor(this.id)">
             </div>
 
             <div class="book-style">
                 <p class="book-name"><strong>旅行游记</strong></p>
                 <p class="book-description">旅途中的点点滴滴不会遗忘</p>
-            	<img src="/images/create_album/travel.jpg" alt="旅行游记" onclick="this.style.border='solid 2px #666666'">
+            	<img class = "noBorder" id = "img3" src="/images/create_album/travel.jpg" alt="旅行游记" onclick="changecolor(this.id)">
             </div>
 
             <div class="book-style">
                 <p class="book-name"><strong>爱情永驻</strong></p>
                 <p class="book-description">因为有你才有爱情</p>
-            	<img src="/images/create_album/love.jpg" alt="爱情永驻" onclick="this.style.border='solid 2px #666666'">
+            	<img class = "noBorder" id = "img4" src="/images/create_album/love.jpg" alt="爱情永驻" onclick="changecolor(this.id)">
             </div>
 
             <div class="book-style">
                 <p class="book-name"><strong>生活随笔</strong></p>
                 <p class="book-description">随时记录生活的琐碎</p>
-            	<img src="/images/create_album/live.jpg" alt="生活随笔" onclick="this.style.border='solid 2px #666666'">
+            	<img class = "noBorder" id = "img5" src="/images/create_album/live.jpg" alt="生活随笔" onclick="changecolor(this.id)">
             </div>
 
             <div class="book-style">
                 <p class="book-name"><strong>其他</strong></p>
                 <p class="book-description">记录从不需要理由</p>
-            	<img src="/images/create_album/other.jpg" alt="其他" onclick="this.style.border='solid 2px #666666'">
+            	<img class = "noBorder" id = "img6" src="/images/create_album/other.jpg" alt="其他" onclick="changecolor(this.id)">
             </div>
         </div>       
     </div><!-- 纪念册风格结束 -->
