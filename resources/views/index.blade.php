@@ -1,4 +1,9 @@
-@extends('layouts.content')
+@if(Session::get('ifLoggedIn')=='y')
+	@extends('layouts.content')
+@elseif (Session::get('ifLoggedIn')=='n')
+	@extends('layouts.content_logged')
+@endif
+
 
 @section('title','首页')
 
