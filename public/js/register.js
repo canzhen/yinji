@@ -11,9 +11,9 @@ yinjiApp.controller('authController',
 			if ($scope.username != null){
 				$http({
 					method: 'GET',//注意，这里必须要用GET方法
-					url:'/db/checkUser',
+					url:'/auth/checkUser',
 					params:{
-						'username':$scope.username,
+						'username':$scope.username
 					}
 				}).success(function(data) {
 					if (data == 0) {
@@ -47,7 +47,7 @@ yinjiApp.controller('authController',
 			}else if($userChecked == true){
 				$http({
 					method: 'GET',//注意，这里必须要用GET方法
-					url:'/db/addUser',
+					url:'/auth/addUser',
 					params:{
 						'username':$scope.username,
 						'password':$scope.pwd
@@ -60,14 +60,14 @@ yinjiApp.controller('authController',
 						$scope.errMsg = '注册成功，自动登录...';
 						$http({
 							method: 'POST',
-							url:'/login',
+							url:'/auth/login',
 							params:{
 								'username':$scope.username,
 								'password':$scope.pwd,
-								'remember':$scope.remember
+								'remember':true
 							}
 						});
-						window.setTimeout("window.location='intended'",1000);
+						//window.setTimeout("window.location='intended'",1000);
 					} else {
 						$scope.errMsgColor = "red";//错误消息为红色
 						$scope.errMsg = 'oops，注册失败...猿猿正在努力查找错误原因中...';

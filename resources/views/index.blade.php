@@ -1,7 +1,7 @@
 @if(Session::get('ifLoggedIn')=='y')
 	@extends('layouts.content')
-@elseif ()
-	@extends('layouts.content2')
+@elseif (Session::get('ifLoggedIn')=='n')
+	@extends('layouts.content_logged')
 @endif
 
 

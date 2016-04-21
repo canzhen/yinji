@@ -15,6 +15,7 @@
 @section('auth')
 
 	<form ng-submit="register()">
+
 		<div class="gbkt" >
 			<input type="text" style="font-size:16px;"
 				   placeholder="请输入用户名" ng-blur="checkUserExist()" ng-model="username">

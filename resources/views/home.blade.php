@@ -1,4 +1,4 @@
-@extends('layouts.content2')
+@extends('layouts.content_logged')
 
 @section('title','首页')
 
