@@ -90,7 +90,9 @@
 
 </div>
 
-@section('sidebar-content')
-@show
+<div class="sidebar-content">
+	@section('sidebar-content')
+	@show
+</div>
 
 @stop
