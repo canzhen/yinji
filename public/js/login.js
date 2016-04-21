@@ -15,7 +15,7 @@ function loginController($scope,$http,$rootScope){
 		}else{
 			$http({
 				method: 'POST',
-				url:'/login',
+				url:'/auth/login',
 				params:{
 					'username':$scope.username,
 					'password':$scope.pwd,
