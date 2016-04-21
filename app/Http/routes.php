@@ -31,6 +31,10 @@
     Route::get('/home', function () {
         return view('home');
     });
+	
+	Route::get('/record', function () {
+        return view('record');
+    });
 
     /*
      * 数据库方面的操作
