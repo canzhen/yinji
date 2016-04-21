@@ -16,6 +16,10 @@
         return view('index');
     });
 
+    Route::get('/company_index', function () {
+        return view('company_index');
+    });
+
     Route::get('/test', function () {
         return view('test');
     });

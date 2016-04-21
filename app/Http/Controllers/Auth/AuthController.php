@@ -57,19 +57,39 @@ class AuthController extends Controller
 			$privilege = \DB::table('users')
 						->where('name', '=',$name)
 						->pluck('privilege');
-			if (strcmp($privilege[0],'admin')==0){
-				$_SESSION['privilege']='admin';
-			}else{
-				$_SESSION['privilege']='user';
-			}
 			$_SESSION['ifLoggedIn'] = 'y';//set the value to yes
-			return 1;//login success,it's just normal user
+			if (strcmp($privilege[0],'superadmin')==0){
+				$_SESSION['privilege']='superadmin';
+				return 3;
+			}else if (strcmp($privilege[0],'company')==0){
+				$_SESSION['privilege']='company';
+				return 2;
+			}else{
+				$_SESSION['privilege']='admin';
+				return 1;
+			}
 		}else{
 			$_SESSION['ifLoggedIn'] = 'n';//set the value to no
 			return 0;
 		}
 	}
-	
+
+	/**
+	 * User log out of this system
+	 * @return mixed
+	 *
+	 * Created by Zhou Canzhen on 2016/04/21
+	 */
+	public function getLogout() {
+		if(\Auth::check())
+		{
+			\Auth::logout();
+			$_SESSION['ifLoggedIn']='n';
+		}
+		return \Redirect::intended('/');
+	}
+
+
 	public function gotoIntenedPage(){
 		return \Redirect::intended('/');
 	}

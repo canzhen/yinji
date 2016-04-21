@@ -23,14 +23,18 @@ function loginController($scope,$http,$rootScope){
 				}
 			})
 			.success(function(data) {
-				console.log(data);
-				if (data==1) {
-					$scope.errMsgColor = "green";//登录成功，为绿色
-					$scope.errMsg = '登录成功，自动跳转页面...';
-					window.setTimeout("window.location='intended'",1000);
-				} else {
+				if (data==0) {
 					$scope.errMsgColor = "red";//登录失败，错误消息为红色
 					$scope.errMsg = '登录失败，用户名或密码错误...';
+				} else {
+					$scope.errMsgColor = "green";//登录成功，为绿色
+					$scope.errMsg = '登录成功，自动跳转页面...';
+					if (data==2){//公司用户
+						window.setTimeout("window.location='/company_index'",1000);
+					}else{
+						window.setTimeout("window.location='/'",1000);
+					}
+
 				}
 			});
 		}
