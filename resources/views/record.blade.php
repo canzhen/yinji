@@ -107,6 +107,7 @@
 					<br/>
 				</div>
 				<div align="right">
+					<input class="datebutton" type="button" value=""></input>
 					<input class="datebutton" type="button" value="发送"></input>
 				</div>
 			</form>
