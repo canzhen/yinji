@@ -16,8 +16,19 @@
         return view('index');
     });
 
-    Route::get('/company_index', function () {
-        return view('company_index');
+    /*公司部分*/
+    Route::get('/cpy_addTemplate', function () {
+        return view('company.cpy_addTemplate');
+    });
+
+
+    Route::get('/cpy_index', function () {
+        return view('company.cpy_index');
+    });
+    /*公司部分结束*/
+
+    Route::get('/getRequest', function () {
+        //var files = Request.Files;
     });
 
     Route::get('/test', function () {

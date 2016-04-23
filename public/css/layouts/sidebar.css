@@ -154,9 +154,12 @@ ul {
 }
 
 .sidebar-content{
+	position:absolute;
 	border-top: 1px solid #dfdfdf;
 	padding-left: 12%;
 	height: 100%;
+	overflow-y:auto;
+	overflow-x:hidden;
 }
 
 .sidebar-item-auth{
