@@ -10,7 +10,6 @@
 
 @section('footer')
 	@parent
-	<script src="/js/lib/jquery.min.js"></script>
 	<script src="/js/company/cpy_addTemplate.js"></script>
 	<script src="/js/lib/fileinput/fileinput_locale_zh.js" type="text/javascript"></script>
 	<script src="/js/lib/bootstrap.min.js" type="text/javascript"></script>

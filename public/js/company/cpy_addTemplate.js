@@ -2212,7 +2212,3 @@ $(document).ready(function() {
 	 });
 	 */
 });
-
-
-
-

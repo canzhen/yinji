@@ -80,7 +80,6 @@
 
 	<a  href="/auth/logout" style="text-decoration:none">
 		<div class="sidebar-item-level1 sidebar-item-auth">
-
 			<span  class="sidebar-item-level1-icon">
 			<i class="fa fa-external-link fa-fw"></i>
 			</span>
