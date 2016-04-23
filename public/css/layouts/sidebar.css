@@ -32,6 +32,14 @@
 	height: 100%;
 }
 
+.sidebar-content{
+	border-top: 1px solid #dfdfdf;
+	padding-left: 12%;
+	height: 100%;
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+
 .sidebar-title {
 	position: relative;
 	min-height: 80px;
@@ -153,14 +161,6 @@ ul {
 	list-style: none;
 }
 
-.sidebar-content{
-	position:absolute;
-	border-top: 1px solid #dfdfdf;
-	padding-left: 12%;
-	height: 100%;
-	overflow-y:auto;
-	overflow-x:hidden;
-}
 
 .sidebar-item-auth{
 	font-size:10px;
