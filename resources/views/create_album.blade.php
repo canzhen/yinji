@@ -46,7 +46,7 @@
 	                </div>
 	            </div>
 	</div>
-		
+
     <!-- 创建纪念册右边导航栏 -->
     <div class="sidebar-menu hidden-xs hidden-sm">
     	<!-- 用户头像及用户昵称 -->
@@ -66,7 +66,7 @@
             </ul>
         </div> <!-- 导航栏结束 -->
     </div> <!-- 创建纪念册右边导航栏结束 -->
-    	
+
     <!-- 纪念册风格 -->
     <div class="banner-bg" id="top">
         <div class="book-style-text">
@@ -108,7 +108,7 @@
                 <p class="book-description">记录从不需要理由</p>
             	<img class = "noBorder" id = "img6" src="/images/create_album/other.jpg" alt="其他" onclick="changecolor(this.id)">
             </div>
-        </div>       
+        </div>
     </div><!-- 纪念册风格结束 -->
 
     <!-- 封面设计和填写简介 -->
@@ -116,7 +116,7 @@
         <div class="fluid-container">
 
             <div class="content-wrapper">
-            
+
                 <!-- 封面设计 -->
                 <div class="page-section" id="about">
 	                <div class="row">
@@ -163,14 +163,14 @@
 										<tr>
 										<td align="center" style="padding-top:10px;">
 											<input type="file" name="file" id="doc1" style="width:500px;" class="inputfile inputfile-1" onchange="javascript:setImagePreview1();" data-multiple-caption="{count} files selected" multiple />
-										
+
 						                    <label for="doc1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>选择本地图片&hellip;</span></label>
 						                </td>
 										</tr>
 									</tbody>
 								</table>
 	                        </div>
-		                   
+
 	                	</div>
                 	</div>
                 </div>
@@ -198,7 +198,7 @@
 									<tr>
 									<td align="center" style="padding-top:10px;">
 										<input type="file" name="file" id="doc" style="width:200px;" class="inputfile inputfile-1" onchange="javascript:setImagePreview();" data-multiple-caption="{count} files selected" multiple />
-									
+
 					                <label for="doc"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>选择本地图片&hellip;</span></label>
 					                </td>
 									</tr>
@@ -213,7 +213,7 @@
 	                        	<input type="submit" value="提交" style="width:100px;height:30px;color:white;background:rgb(169,169,169);">
 	                        </div>
                     </div>
-                </div>   <!-- 填写简介结束 -->            
+                </div>   <!-- 填写简介结束 -->
                 <hr>
                 <hr>
             </div>

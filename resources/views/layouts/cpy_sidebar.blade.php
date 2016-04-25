@@ -8,6 +8,8 @@
 	<link href="/css/company/cpy_sidebar/morris.css" rel="stylesheet">
 	<link href="/css/company/cpy_sidebar/metisMenu.min.css" rel="stylesheet">
 	<link href="/css/company/cpy_sidebar/timeline.css" rel="stylesheet">
+	<link href="/css/company/cpy_sidebar/dataTables.bootstrap.css" rel="stylesheet">
+	<link href="/css/company/cpy_sidebar/responsive.dataTables.css" rel="stylesheet">
 @stop
 
 @section('footer')
@@ -33,11 +35,14 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+				<a class="navbar-brand mbxs" style="font-size:20px" href="/cpy_index">印迹</a>
 			</div>
 			<!-- /.navbar-header -->
 
 			<ul class="nav navbar-top-links navbar-right">
+
+				<!--消息提醒-->
+				<!--
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
 						<i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
@@ -86,9 +91,12 @@
 							</a>
 						</li>
 					</ul>
-					<!-- /.dropdown-messages -->
 				</li>
-				<!-- /.dropdown -->
+				-->
+				<!--消息提醒结束-->
+
+				<!--任务完成情况-->
+				<!--
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
 						<i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
@@ -165,9 +173,13 @@
 							</a>
 						</li>
 					</ul>
-					<!-- /.dropdown-tasks -->
 				</li>
-				<!-- /.dropdown -->
+				-->
+				<!--任务完成情况结束-->
+
+
+
+				<!--新消息提醒-->
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
 						<i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
@@ -176,7 +188,7 @@
 						<li>
 							<a href="#">
 								<div>
-									<i class="fa fa-comment fa-fw"></i> New Comment
+									<i class="fa fa-comment fa-fw"></i> 新评论
 									<span class="pull-right text-muted small">4 minutes ago</span>
 								</div>
 							</a>
@@ -185,60 +197,27 @@
 						<li>
 							<a href="#">
 								<div>
-									<i class="fa fa-twitter fa-fw"></i> 3 New Followers
+									<i class="fa fa-edit fa-fw"></i> 新订单
 									<span class="pull-right text-muted small">12 minutes ago</span>
 								</div>
 							</a>
 						</li>
-						<li class="divider"></li>
-						<li>
-							<a href="#">
-								<div>
-									<i class="fa fa-envelope fa-fw"></i> Message Sent
-									<span class="pull-right text-muted small">4 minutes ago</span>
-								</div>
-							</a>
-						</li>
-						<li class="divider"></li>
-						<li>
-							<a href="#">
-								<div>
-									<i class="fa fa-tasks fa-fw"></i> New Task
-									<span class="pull-right text-muted small">4 minutes ago</span>
-								</div>
-							</a>
-						</li>
-						<li class="divider"></li>
-						<li>
-							<a href="#">
-								<div>
-									<i class="fa fa-upload fa-fw"></i> Server Rebooted
-									<span class="pull-right text-muted small">4 minutes ago</span>
-								</div>
-							</a>
-						</li>
-						<li class="divider"></li>
-						<li>
-							<a class="text-center" href="#">
-								<strong>See All Alerts</strong>
-								<i class="fa fa-angle-right"></i>
-							</a>
-						</li>
 					</ul>
-					<!-- /.dropdown-alerts -->
 				</li>
-				<!-- /.dropdown -->
+				<!--新消息提醒结束-->
+
+
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
 						<i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-user">
-						<li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+						<li><a href="#"><i class="fa fa-user fa-fw"></i> 个人信息</a>
 						</li>
-						<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+						<li><a href="#"><i class="fa fa-gear fa-fw"></i> 设置</a>
 						</li>
 						<li class="divider"></li>
-						<li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+						<li><a href="/auth/logout"><i class="fa fa-sign-out fa-fw"></i> 退出登录</a>
 						</li>
 					</ul>
 					<!-- /.dropdown-user -->
@@ -246,6 +225,7 @@
 				<!-- /.dropdown -->
 			</ul>
 			<!-- /.navbar-top-links -->
+
 
 			<div class="navbar-default sidebar" role="navigation">
 				<div class="sidebar-nav navbar-collapse">
@@ -262,92 +242,78 @@
 							<!-- /input-group -->
 						</li>
 						<li>
-							<a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+							<a href="/cpy_index"><i class="fa fa-dashboard fa-fw"></i> 首页</a>
 						</li>
 						<li>
-							<a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+							<a href="#"><i class="fa fa-picture-o fa-fw"></i> 模板管理 <span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li>
-									<a href="flot.html">Flot Charts</a>
+									<a href="/cpy_addTemplate">模板上传</a>
 								</li>
 								<li>
-									<a href="morris.html">Morris.js Charts</a>
+									<a href="/cpy_checkTemplate">模板查看</a>
 								</li>
 							</ul>
 							<!-- /.nav-second-level -->
 						</li>
 						<li>
-							<a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
-						</li>
-						<li>
-							<a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
-						</li>
-						<li>
-							<a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
+							<a href="#"><i class="fa fa-edit fa-fw"></i> 订单管理 <span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li>
-									<a href="panels-wells.html">Panels and Wells</a>
+									<a href="#">查看订单</a>
 								</li>
 								<li>
-									<a href="buttons.html">Buttons</a>
-								</li>
-								<li>
-									<a href="notifications.html">Notifications</a>
-								</li>
-								<li>
-									<a href="typography.html">Typography</a>
-								</li>
-								<li>
-									<a href="icons.html"> Icons</a>
-								</li>
-								<li>
-									<a href="grid.html">Grid</a>
+									<a href="#">订单回收</a>
 								</li>
 							</ul>
 							<!-- /.nav-second-level -->
 						</li>
 						<li>
-							<a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+							<a href="#"><i class="fa fa-user fa-fw"></i> 用户管理 <span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li>
-									<a href="#">Second Level Item</a>
+									<a href="#">查看用户</a>
 								</li>
 								<li>
-									<a href="#">Second Level Item</a>
+									<a href="#">用户评价</a>
 								</li>
 								<li>
-									<a href="#">Third Level <span class="fa arrow"></span></a>
+									<a href="#">修改用户信息</a>
+								</li>
+							</ul>
+							<!-- /.nav-second-level -->
+						</li>
+						<li>
+							<a href="#"><i class="fa fa-sitemap fa-fw"></i> 公司管理<span class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li>
+									<a href="#">公司信息</a>
+								</li>
+								<li>
+									<a href="#">销售报表</a>
+								</li>
+								<li>
+									<a href="#">业绩信息 <span class="fa arrow"></span></a>
 									<ul class="nav nav-third-level">
 										<li>
-											<a href="#">Third Level Item</a>
+											<a href="#">业绩信息1</a>
 										</li>
 										<li>
-											<a href="#">Third Level Item</a>
+											<a href="#">业绩信息2</a>
 										</li>
 										<li>
-											<a href="#">Third Level Item</a>
-										</li>
-										<li>
-											<a href="#">Third Level Item</a>
+											<a href="#">业绩信息3</a>
 										</li>
 									</ul>
 									<!-- /.nav-third-level -->
 								</li>
-							</ul>
-							<!-- /.nav-second-level -->
-						</li>
-						<li>
-							<a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-							<ul class="nav nav-second-level">
 								<li>
-									<a href="blank.html">Blank Page</a>
-								</li>
-								<li>
-									<a href="login.html">Login Page</a>
+									<a href="#">员工信息</a>
 								</li>
 							</ul>
 							<!-- /.nav-second-level -->
 						</li>
+
 					</ul>
 				</div>
 				<!-- /.sidebar-collapse -->
@@ -356,9 +322,19 @@
 		</nav>
 
 
-		<div class="sidebar-content">
-			@section('sidebar-content')
-			@show
+		<div id="page-wrapper">
+			<div class="container-fluid">
+				<!-- Page Heading -->
+				<div class="row">
+					<div class="col-lg-12">
+						<h3 class="page-header">
+							@yield('cpy_subtitle')<small>　@yield('cpy_subtitle_small')</small>
+						</h3>
+					</div>
+				</div>
+				@section('sidebar-content')
+				@show
+			</div>
 		</div>
 
 
@@ -366,84 +342,5 @@
 	<!-- /#wrapper -->
 
 
-<!--
-<div ng-controller="SiderCtrl" class="sidebar">
-
-	<div class="sidebar-title">
-		<img class="nav-logo" alt="Brand" src="/images/logo.png">
-		<span class="nav-name">印 迹</span>
-		<span class="nav-name-small">Yinji</span>
-	</div>
-
-    <div>
-        <a  href="/" style="text-decoration:none">
-	    <div  class="sidebar-item-level1">
-	    	<span  class="sidebar-item-level1-icon">
-			<i class="fa fa-home fa-fw"></i>
-			</span>
-			印迹首页
-		</div>
-		</a>
-	</div>
-	<div class="sidebar-item-level1">
-		<span class="sidebar-item-level1-icon" style="font-size:13px;margin-left:2px;">
-		<i class="fa fa-book fa-fw"></i>
-		</span>
-		模板管理
-	</div>
-	<ul class="sidebar-item-level2">
-		<li><a href="/">模板上传</a></li>
-		<li><a href="/">模板查看</a></li>
-	</ul>
-
-
-	<div class="sidebar-item-level1">
-		<span class="sidebar-item-level1-icon">
-		<i class="fa fa-edit fa-fw"></i>
-		</span>
-		订单管理
-	</div>
-	<ul class="sidebar-item-level2">
-		<li ><a href="/">查看订单</a></li>
-		<li><a href="/">订单回收</a></li>
-	</ul>
-
-	<div class="sidebar-item-level1">
-		<span class="sidebar-item-level1-icon">
-		<i class="fa fa-user fa-fw"></i>
-		</span>
-		用户管理
-	</div>
-	<ul class="sidebar-item-level2">
-		<li><a href="/">查看用户</a></li>
-		<li><a href="/">用户评价</a></li>
-		<li><a href="/">修改信息</a></li>
-	</ul>
-
-
-	<div class="sidebar-item-level1">
-		<span class="sidebar-item-level1-icon">
-		<i class="fa fa-cogs fa-fw"></i>
-		</span>
-		公司管理
-	</div>
-	<ul class="sidebar-item-level2">
-		<li><a href="/">公司信息</a></li>
-		<li><a href="/">销售报表</a></li>
-		<li><a href="/">业绩信息</a></li>
-		<li><a href="/">员工信息</a></li>
-	</ul>
-
-	<a  href="/auth/logout" style="text-decoration:none">
-		<div class="sidebar-item-level1 sidebar-item-auth">
-			<span  class="sidebar-item-level1-icon">
-			<i class="fa fa-external-link fa-fw"></i>
-			</span>
-			退出登录
-		</div>
-	</a>
-
-</div>
--->
 
 @stop
