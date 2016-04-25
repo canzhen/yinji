@@ -1,4 +1,4 @@
-@extends('layouts.sidebar')
+@extends('layouts.cpy_sidebar')
 
 @section('title','公司首页')
 
