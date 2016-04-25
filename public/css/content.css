@@ -1,0 +1,298 @@
+body{
+	font-family: "宋体";
+}
+
+.header {
+	opacity:0.7;
+	position: fixed;
+	top: 0px;
+	background-color: #fff;
+	width: 100%;
+	z-index:9999;
+	padding: 10px 0px;
+}
+
+.header-content{
+	margin-left: 70px;
+	margin-right: 70px;
+}
+
+#login{
+	position: absolute;
+	width: 100px;
+	height: 30px;
+	margin-left: 20px;
+	/*border: 1px solid #000;*/
+	right: 0px;
+	top: 25px;
+	text-align: center;
+	/*font-family: "gangbikaiti";*/
+}
+
+#login a:hover{
+	color: #000;
+	text-decoration: none;
+}
+
+.header-main {
+  padding: 0px 10px 0px 10px;
+  /*border: 1px solid #000;*/
+}
+.logo a {
+  font-size: 2em;
+  font-weight: 700;
+  color: #000;
+  margin: 0em;
+}
+
+.logo h1{
+	font-size: 40px;
+	font-weight: 700;
+    color: #000;
+    margin: 0em;
+}
+
+.logo a:hover {
+	text-decoration:none;
+}
+.header-left {
+	float: left;
+	padding: 5px 0px 5px 0px;
+}
+.header-right {
+	float: right;
+	width: 300px;
+	text-align: center;
+	padding: 10px 10px 0px 0px;
+	font-family: "微软雅黑";
+}
+.header-right a{
+	text-decoration: none;
+
+}
+
+span.menu{
+     display:none;
+  }
+.search {
+	width: 70%;
+	background: #EBEBEB;
+	border-radius: 20px;
+	display: inline-block;
+	margin-right: 20px;
+}
+.search input[type="text"] {
+	border: none;
+	background: none;
+	outline: none;
+	width: 80%;
+	padding: 8px 0px 8px 12px;
+	-webkit-appearance: none;
+	font-size: 14px;
+	font-weight: 400;
+	color: #777;
+}
+.search input[type="submit"] {
+	background:url(../images/search.png)no-repeat;
+	height:18px;
+	border: none;
+	width: 16%;
+	outline: none;
+	vertical-align:middle;
+}
+.logo {
+	margin: 0px 45px 0px 0px;
+	display: inline-block;
+}
+.logo  a {
+	display: block;
+}
+
+@media(max-width:640px){
+.logo {
+	margin: 0px 5px 0px 0px;	
+}
+.logo img {
+	width: 75%;
+}
+.header-left {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+.search input[type="text"] {
+	padding: 6px 0px 6px 10px;
+}
+}
+@media(max-width:480px){
+.top-nav {
+		float: right;
+}
+.header-left {
+	margin: 7px 0px 0px 0px;
+}
+span.dot {
+	display: none;
+}
+.search {
+	display: none;
+}
+span.ser-img {
+	display: none;
+}
+.header-left {
+	float: none;
+}
+.header-right {
+	float: none;
+}
+
+.top-nav ul {
+  padding: 4px 0px 0px 0px;
+}
+.header-main {
+  padding: 0px 0px 0px 0px;
+}
+}
+@media(max-width:320px){	
+	.header-right {
+		float: none;
+		padding: 10px 0px 0px 0px;
+		text-align: left;
+	}
+	.top-nav ul {
+	  padding: 3px 0px 0px 0px;
+	}
+	.header-left img {
+		width: 65%;
+	}
+	.caption {
+		top: 15%;
+	}
+	span.roundplay-bwn {
+		width: 32px;
+		background-size: 100%;
+	}
+	.top-nav ul li a {
+		font-size: 16px;
+		padding: 0px 3px;
+	}
+}
+
+/*--footer start here--*/
+.footer {
+	/*position: fixed;*/
+	margin-bottom: 0px;
+	padding: 5px 0px;
+}
+
+.footer{
+	width: 90%;
+	margin-left: 50px;
+}
+
+.footer p {
+	font-size: 16px;
+	color: #000;
+	text-align: center;
+}
+
+
+/*导航效果*/
+.top-nav {
+	display: inline-block;
+	height: 29px;
+	width: 500px;
+	font-family: "微软雅黑";
+}
+
+.top-nav  ul {
+	padding: 0px;
+	list-style: none;
+}
+
+.top-nav  ul li {
+	display: inline-block;
+}
+
+.top-nav  ul li a {
+	font-size: 17px;
+	font-weight: 400;
+	padding:0px 10px;
+	color: #777;
+}
+
+.top-nav  ul li a:hover, .top-nav  ul li a.active {
+	color:#3488d0;
+}
+
+.res {
+	width:420px; 
+	height:36px; 
+	margin:0 auto;
+}
+
+.res li{
+	float:left; 	
+	width: 130px;
+	text-align:center;
+
+}
+
+.res li ul li{
+	background: #fff;
+	line-height: 28px;
+	border-bottom: 1px solid #fff;
+
+}
+
+/*设置导航栏字体大小*/
+.res li ul a{
+	font-size: 13px;
+}
+
+.res a {
+	display:block
+
+}
+
+.res li ul li a:hover { 
+	display:block;
+	background: #CCC;
+	border-bottom: 1px solid #BBB;
+}
+
+.res ul{
+	display:none;
+	margin-top: 0px;
+}
+
+.topLine:hover{
+	height: 30px;
+	border-top: 2px solid #CCC;
+}
+
+
+.res li:hover ul{
+	display:block; 
+	position:absolute; 
+	width:100px; 
+	top:46px; 	
+}
+
+
+
+.res li:hover ul li{ 
+	line-height: 28px;
+	background: #fff;
+}
+
+/*列表第一行设置10像素的上间距*/
+.spec{
+	padding-top: 30px;
+}
+
+a:link {text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover {text-decoration:none;}
+a:active {text-decoration:none;}
+

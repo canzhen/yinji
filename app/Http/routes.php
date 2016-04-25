@@ -10,50 +10,73 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+//Route::group(['middleware'=>'auth'], function(){//中间件，拦截，用于身份验证
 
-Route::get('/', function () {
-    return view('login');
-});
+    Route::get('/', function () {
+        return view('index');
+    });
 
-Route::get('/test', function () {
-    return view('test');
-});
+    Route::get('/test', function () {
+        return view('test');
+    });
+
+    Route::get('/register', function () {
+        return view('auth.register');
+    });
+
+    Route::get('/home', function () {
+        return view('home');
+    });
+
+    /*
+     * 数据库方面的操作
+     */
+
+    //注册用户
+    Route::get('/db/addUser', function() {
+        $name=$_GET['username'];
+        $password=$_GET['password'];
+        $privilege='user';
+        $id = DB::table('users')
+            ->insertGetId(
+                array(
+                    'name' => $name,
+                    'password' => Hash::make($password),
+                    'privilege' => $privilege
+                )
+            );
+        return $id;
+    });
 
 
-/*
- * 数据库方面的操作
- */
 
-//注册用户
-Route::get('/db/addUser', function() {
-    $name=$_GET['username'];
-    $email=$_GET['email'];
-    $privilege=$_GET['privilege'];
-    $password=$_GET['password'];
-    $id = DB::table('users')
-        ->insertGetId(
+    //查看是否有用户存在
+    Route::get('/db/checkUser', function() {
+        $name = $_GET['username'];
+        $result = DB::table('users')->where('name','=',$name)->first();
+        if ($result != NULL){
+            return 0;
+        }else return 1;
+    });
+
+
+    //登录验证密码
+    Route::get('/db/checkPwd', function() {
+        $name=$_SESSION['editPwdUserName'];
+        $inputPwd = $_GET['inputPwd'];
+
+        if (\Auth::validate(
             array(
-                'name' => $name,
-                'email' => $email,
-                'privilege' => $privilege,
-                'password' => Hash::make($password)
-            )
-        );
-});
-//登录验证密码
-Route::get('/db/checkPwd', function() {
-    $name=$_SESSION['editPwdUserName'];
-    $inputPwd = $_GET['inputPwd'];
+                'name'=>$name,
+                'password'=>$inputPwd))){
+            return 1;//登录成功
+        }else{
+            return 0;//登录失败
+        }
+    });
 
-    if (\Auth::validate(
-        array(
-            'name'=>$name,
-            'password'=>$inputPwd))){
-        return 1;//登录成功
-    }else{
-        return 0;//登录失败
-    }
-});
+//});
+
 
 /*
  * 身份验证方面的操作
