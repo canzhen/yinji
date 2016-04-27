@@ -32,7 +32,7 @@ function loginController($scope,$http,$rootScope){
 					if (data==2){//公司用户
 						window.setTimeout("window.location='/cpy_index'",1000);
 					}else{
-						window.setTimeout("window.location='/'",1000);
+						window.setTimeout("window.location='/home'",1000);
 					}
 
 				}

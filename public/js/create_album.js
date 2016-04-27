@@ -1,3 +1,68 @@
+window.allImg = new Array("img1_baby","img2_health","img3_travel","img4_love","img5_live","img6_other");
+window.imgCategory = "0";
+
+
+yinjiApp.controller('albumController',
+	function createAlbumController($scope,$http,$rootScope){
+		//创建纪念册
+		$scope.createAlbum = function(){
+			//输入验证通过
+			if($scope.checkAlbumInput()){
+				if($scope.nameOfAuthor == null || $scope.nameOfAuthor == "")
+					$scope.nameOfAuthor = $_SESSION['userName'];
+
+				if($scope.contentOfDesc == null || $scope.contentOfDesc == "") 
+					$scope.contentOfDesc = "作者很懒，什么都没有留下";
+
+				$http({
+					method: 'GET',//注意，这里必须要用GET方法
+					url:'/db/addAlbum',
+					params:{
+						'userId': $_SESSION['userId'],
+						'albumName': $scope.nameOfAlbum,
+						'category': imgCategory,
+						'description': $scope.contentOfDesc,
+						'authorName': $scope.nameOfAuthor,
+						'motto': $scope.nameOfMotto
+					}
+				})
+				.success(function(data){
+					console.log(data);
+					if(data != null){
+						
+					}
+				});
+			}
+			else{
+				alert("failed");
+			}
+		}
+
+		/**
+		 * 判断“创建纪念册”输入条件是否完整
+		 * @return {[bool]} [是否输入完整]
+		 */
+		$scope.checkAlbumInput = function(){
+			var bName = true;
+			var bCategory = true;
+			//判断纪念册名
+			if($scope.nameOfAlbum == null || $scope.nameOfAlbum == ""){
+				bName = false;
+				alert("请输入纪念册名称");
+			}
+			//判断纪念册类别
+			if(imgCategory == 0){
+				bCategory = false;
+				alert("请选择纪念册类别");
+			}
+			return (bName && bCategory);
+		}
+	});
+
+
+
+
+
 // 封面设计文本框输入
 ( function( window ) {
 
