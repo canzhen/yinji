@@ -1,7 +1,6 @@
 function viewmypic(mypic,imgfile) {        
 	if (imgfile.value){
 		var imgview=document.getElementById("imgview");
-		var str=imgfile.value;
 		var arr=str.split(",");
 		for(var i=0;i<arr.length;i++){
 			var img=document.createElement("img");
@@ -12,7 +11,13 @@ function viewmypic(mypic,imgfile) {
 			imgview.appendChild(img);
 		}
 	}        
-}   
+}
+
+//自定义时间
+function ableTime() {
+	alert("1");
+	document.getElementsByName("year").removeAttribute('disabled');
+}
 //上传图片文件模板
 (function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);      
 

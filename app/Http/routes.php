@@ -123,3 +123,12 @@ Route::get('/auth/error', function() {
 Route::group(['middleware' => ['web']], function () {
     //
 });
+
+
+/*
+ * 控制器和路由
+ */
+ 
+ //绑定RecordController的增加函数和record.blade.php
+ //Route::get('/record/add','RecordController@addRecord');
+ Route::post('/record/add','RecordController@addRecord');
