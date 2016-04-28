@@ -260,7 +260,7 @@
 							<a href="#"><i class="fa fa-edit fa-fw"></i> 订单管理 <span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li>
-									<a href="#">查看订单</a>
+									<a href="/cpy_checkOrder">查看订单</a>
 								</li>
 								<li>
 									<a href="#">订单回收</a>

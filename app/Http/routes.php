@@ -28,6 +28,10 @@
     Route::get('/cpy_checkTemplate', function () {
         return view('company.cpy_checkTemplate');
     });
+
+    Route::get('/cpy_checkOrder', function () {
+        return view('company.cpy_checkOrder');
+    });
     /*公司部分结束*/
 
     Route::get('/getRequest', function () {
@@ -78,6 +82,15 @@ Route::get('/auth/addUser',function(){
         );
     return $id;
 });
+
+
+/*
+ * 公司方面的操作
+ */
+Route::get('/cpy/getOrders','CpyController@getOrders');
+
+
+
 //Route::get('/auth/addUser','Auth\AuthController@addUser');//添加用户
 Route::get('/auth/checkUser','Auth\AuthController@checkUser');//查看是否有用户存在
 Route::get('/auth/checkPwd','Auth\AuthController@checkPwd');//查看用户名密码是否正确

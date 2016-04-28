@@ -234,7 +234,6 @@
 							</tbody>
 						</table>
 					</div>
-					</div>
 					<div class="text-right">
 						<a href="#">查看所有订单 <i class="fa fa-arrow-circle-right"></i></a>
 					</div>
