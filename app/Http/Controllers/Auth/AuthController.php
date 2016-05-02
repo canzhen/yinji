@@ -57,20 +57,20 @@ class AuthController extends Controller
 			$privilege = \DB::table('users')
 						->where('name', '=',$name)
 						->pluck('privilege');
-			$_SESSION['ifLoggedIn'] = 'y';//set the value to yes
+			\Session::put('ifLoggedIn','y');//set the value to yes
 			if (strcmp($privilege[0],'superadmin')==0){
-				$_SESSION['privilege']='superadmin';
-				return 3;
-			}else if (strcmp($privilege[0],'company')==0){
-				$_SESSION['privilege']='company';
-				return 2;
+				\Session::put('privilege','superadmin');
+				return 3;//管理员
+			}else if (strcmp($privilege[0],'staff')==0){
+				\Session::put('privilege','staff');
+				return 2;//公司用户，普通职工
 			}else{
-				$_SESSION['privilege']='admin';
-				return 1;
+				\Session::put('privilege','admin');
+				return 2;//公司用户，经理之类的人
 			}
 		}else{
-			$_SESSION['ifLoggedIn'] = 'n';//set the value to no
-			return 0;
+			\Session::put('ifLoggedIn','n');//set the value to no
+			return 0;//密码错误
 		}
 	}
 

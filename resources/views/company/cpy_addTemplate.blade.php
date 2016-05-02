@@ -1,6 +1,6 @@
 @extends('layouts.cpy_sidebar')
 
-@section('title','公司首页')
+@section('title','模板上传')
 @section('cpy_subtitle','模板上传')
 
 @section('header')

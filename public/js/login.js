@@ -23,6 +23,7 @@ function loginController($scope,$http,$rootScope){
 				}
 			})
 			.success(function(data) {
+				console.log(data);
 				if (data==0) {
 					$scope.errMsgColor = "red";//登录失败，错误消息为红色
 					$scope.errMsg = '登录失败，用户名或密码错误...';

@@ -11,7 +11,7 @@
 |
 */
 //Route::group(['middleware'=>'auth'], function(){//中间件，拦截，用于身份验证
-
+Route::group(['middleware'=>'web'],function(){
     Route::get('/', function () {
         return view('index');
     });
@@ -31,6 +31,10 @@
 
     Route::get('/cpy_checkOrder', function () {
         return view('company.cpy_checkOrder');
+    });
+
+    Route::get('/cpy_info',function(){
+        return view('company.cpy_info');
     });
     /*公司部分结束*/
 
@@ -63,7 +67,7 @@
         return view('create_album');
     });
 
-//});
+});
 
 /*
  * 数据库方面的操作

@@ -287,7 +287,7 @@
 							<a href="#"><i class="fa fa-sitemap fa-fw"></i> 公司管理<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li>
-									<a href="#">公司信息</a>
+									<a href="/cpy_info">公司信息</a>
 								</li>
 								<li>
 									<a href="#">销售报表</a>
@@ -307,9 +307,16 @@
 									</ul>
 									<!-- /.nav-third-level -->
 								</li>
+								<?php
+									echo \Session::get('privilege','default');
+									if (\Session::get('privilege','default')=='admin'){
+								?>
 								<li>
 									<a href="#">员工信息</a>
 								</li>
+								<?php
+									}
+								?>
 							</ul>
 							<!-- /.nav-second-level -->
 						</li>
