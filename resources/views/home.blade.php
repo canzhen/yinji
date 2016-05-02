@@ -10,33 +10,14 @@
 @section('footer')
 	@parent
 	<!-- <script src="/js/jquery.sliphover.min.js"></script>
-	<script src="/js/freewall.js"></script>
-	<script src = "/js/home.js"></script> -->
+	<script src="/js/freewall.js"></script>-->
+	<script src = "/js/index_home/home.js"></script> 
 	<!-- <script src = "/js/<jquery class="ssd-vertical-nav"></jquery>igation.min.js"></script> -->
 @stop
 
 @section('content')
 
-<!-- 
-	<div id="container" class="free-wall">
-	    <div class="book-set">
-	        <img src="/images/mo.jpg" width="100%" title="this isasdfsdafsdfdcaption">
-	    </div>
-
-	    <div class="book-set">
-	        <img src="/images/mo.jpg" width="100%" title="this is the caption">
-	    </div>
-	</div> -->
-
-	<!-- <div id = "container">
-		<div id = "book1" class = "book-set">
-			
-		</div>
-
-
-
-
-	</div> -->
+<div ng-controller="testController">
 
 	<div class = "pictureSlide">
 		<div id="myCarousel" class="carousel slide">
@@ -45,7 +26,7 @@
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 				<li data-target="#myCarousel" data-slide-to="1"></li>
 				<li data-target="#myCarousel" data-slide-to="2"></li>
-			</ol>   
+			</ol>
 		<!-- 轮播（Carousel）项目 -->
 		<div class="carousel-inner">
 			<div class="item active">
@@ -64,6 +45,8 @@
 		</div> 
 
 
-	</div>
 
+
+	</div>
+</div>
 @stop

@@ -15,8 +15,13 @@
 @stop
 
 @section('body')
-	<div style="background:url(/images/record/background.jpg)">
-		<div class="responsive-header visible-xs visible-sm">
+
+<div style="background:url(/images/record/background.jpg)">
+<!-- <div style="background:url(/images/record/background_baby.jpg); background-repeat: no-repeat;"> -->
+<!-- 	<div id="background">
+	<img src="/images/record/background_baby.jpg">
+</div> -->
+        <div class="responsive-header visible-xs visible-sm">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -42,7 +47,7 @@
             </div>
         </div>
         <!-- SIDEBAR -->
-		<div class="sidebar-menu hidden-xs hidden-sm">
+       <div class="sidebar-menu hidden-xs hidden-sm">
             <div class="top-section">
                 <div class="profile-image">
                     <img src="/images/record/profile.jpg" alt="用户头像">
@@ -89,7 +94,7 @@
 			</div>
         </div> <!-- .sidebar-menu -->
 		
-		<div class="wrap">
+	<div class="wrap">
 		<br/>
 		<div class="writediv">
 			<p class="label1">你的生活有什么新动态？</p>
@@ -118,41 +123,43 @@
 		
 		<br/><br/><br/><br/>
 		<div>
-		<div class="mydiv111">
-			<p class="datep">2016年4月13日 16:30</p>
-			<p class="diary">培根土豆小饼</p>
-			<div class="divpic">
-				<img class="mypic" src="/images/record/g1.jpg" />
-				<img src="/images/record/g2.jpg" class="mypic"/>
-				<img src="/images/record/g4.jpg" class="mypic"/>
+			<div class="mydiv111">
+				<p class="datep">2016年4月13日 16:30</p>
+				<p class="diary">培根土豆小饼</p>
+				<div class="divpic">
+					<img class="mypic" src="/images/record/g1.jpg" />
+					<img src="/images/record/g2.jpg" class="mypic"/>
+					<img src="/images/record/g4.jpg" class="mypic"/>
+				</div>
 			</div>
-		</div>
-		<br/>
-		<div class="mydiv111">
-			<p class="datep">2016年4月11日 15:04</p>
-			<p class="diary">一到下午这个时候又困…又饿…怎么破？…</p>
-			<div class="divpic">
-				<img src="/images/record/g3.jpg" class="mypic"/>
+			<br/>
+			<div class="mydiv111">
+				<p class="datep">2016年4月11日 15:04</p>
+				<p class="diary">一到下午这个时候又困…又饿…怎么破？…</p>
+				<div class="divpic">
+					<img src="/images/record/g3.jpg" class="mypic"/>
+				</div>
 			</div>
-		</div>
-		<br/>
-		<div class="mydiv111">
-			<p class="datep">2016年4月10日 10:30</p>
-			<p class="diary">【喷香牛肉焖饭】营养丰富又香味十足，煮出来的米饭油光发亮特别的诱惑！绵绵的土豆，微甜的胡萝卜，牛肉香深入米饭，撒一把葱花搅拌下开动啦！</p>
-			<div class="divpic">
-				<img src="/images/record/g5.jpg" class="mypic"/>
-				<img src="/images/record/g6.jpg" class="mypic"/>
-				<img src="/images/record/g7.jpg" class="mypic"/>
-				<img src="/images/record/g8.jpg" class="mypic"/>
-				<img src="/images/record/g9.jpg" class="mypic"/>
-				<img src="/images/record/g10.jpg" class="mypic"/>
-				<img src="/images/record/g11.jpg" class="mypic"/>
-				<img src="/images/record/g12.jpg" class="mypic"/>
-				<img src="/images/record/g13.jpg" class="mypic"/>
+			<br/>
+			<div class="mydiv111">
+				<p class="datep">2016年4月10日 10:30</p>
+				<p class="diary">【喷香牛肉焖饭】营养丰富又香味十足，煮出来的米饭油光发亮特别的诱惑！绵绵的土豆，微甜的胡萝卜，牛肉香深入米饭，撒一把葱花搅拌下开动啦！</p>
+				<div class="divpic">
+					<img src="/images/record/g5.jpg" class="mypic"/>
+					<img src="/images/record/g6.jpg" class="mypic"/>
+					<img src="/images/record/g7.jpg" class="mypic"/>
+					<img src="/images/record/g8.jpg" class="mypic"/>
+					<img src="/images/record/g9.jpg" class="mypic"/>
+					<img src="/images/record/g10.jpg" class="mypic"/>
+					<img src="/images/record/g11.jpg" class="mypic"/>
+					<img src="/images/record/g12.jpg" class="mypic"/>
+					<img src="/images/record/g13.jpg" class="mypic"/>
+				</div>
 			</div>
-		</div>
 		</div>
 	</div>
+
+
 	
 	<table id="links">
       <tr>

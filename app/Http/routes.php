@@ -113,6 +113,36 @@ Route::get('/auth/error', function() {
     return view('auth.error');
 });
 
+
+/*
+ * 纪念册操作
+ */
+
+//创建纪念册
+Route::get('/db/addAlbum', function() {
+    $userId = $_GET['userId'];
+    $albumName = $_GET['albumName'];
+    $category = $_GET['category'];
+    $authorName = $_GET['authorName']; 
+    $motto = $_GET['motto'];
+    $description = $_GET['description'];
+
+    $id = DB::table('albums')
+        ->insertGetId(
+            array(
+                'user_id' => $userId,
+                'name' => $albumName,
+                'category' => $category,
+                'author_name' => $authorName, 
+                'motto' => $motto,
+                'description' => $description       
+            )
+        );
+    return $id;
+});
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

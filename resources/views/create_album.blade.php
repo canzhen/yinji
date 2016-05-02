@@ -21,6 +21,7 @@
 
 
 @section('content')
+<div ng-controller="albumController">
 	<div class="responsive-header visible-xs visible-sm">
 	            <div class="container-album">
 	                <div class="row">
@@ -76,39 +77,45 @@
             <div class="book-style">
                 <p class="book-name"><strong>亲亲宝贝</strong></p>
                 <p class="book-description">记录宝贝成长的点滴</p>
-            	<img class = "noBorder" id = "img1" src="/images/create_album/baby.jpg" alt="亲子记录" onclick="changecolor(this.id)">
+            	<img class = "noBorder" id = "img1_baby" src="/images/create_album/baby.jpg" alt="亲子记录" 
+            		onclick="changecolor(this.id,1)">
             </div>
 
             <div class="book-style">
                 <p class="book-name"><strong>减肥健身</strong></p>
                 <p class="book-description">健康生活每一天</p>
-            	<img class = "noBorder" id = "img2" src="/images/create_album/health.jpg" alt="减肥健身" onclick="changecolor(this.id)">
+            	<img class = "noBorder" id = "img2_health" src="/images/create_album/health.jpg" alt="减肥健身" 
+            		onclick="changecolor(this.id,2)">
             </div>
 
             <div class="book-style">
                 <p class="book-name"><strong>旅行游记</strong></p>
                 <p class="book-description">旅途中的点点滴滴不会遗忘</p>
-            	<img class = "noBorder" id = "img3" src="/images/create_album/travel.jpg" alt="旅行游记" onclick="changecolor(this.id)">
+            	<img class = "noBorder" id = "img3_travel" src="/images/create_album/travel.jpg" alt="旅行游记" 
+            		onclick="changecolor(this.id,3)">
             </div>
 
             <div class="book-style">
                 <p class="book-name"><strong>爱情永驻</strong></p>
                 <p class="book-description">因为有你才有爱情</p>
-            	<img class = "noBorder" id = "img4" src="/images/create_album/love.jpg" alt="爱情永驻" onclick="changecolor(this.id)">
+            	<img class = "noBorder" id = "img4_love" src="/images/create_album/love.jpg" alt="爱情永驻" 
+            		onclick="changecolor(this.id,4)">
             </div>
 
             <div class="book-style">
                 <p class="book-name"><strong>生活随笔</strong></p>
                 <p class="book-description">随时记录生活的琐碎</p>
-            	<img class = "noBorder" id = "img5" src="/images/create_album/live.jpg" alt="生活随笔" onclick="changecolor(this.id)">
+            	<img class = "noBorder" id = "img5_live" src="/images/create_album/live.jpg" alt="生活随笔" 
+            		onclick="changecolor(this.id,5)">
             </div>
 
             <div class="book-style">
                 <p class="book-name"><strong>其他</strong></p>
                 <p class="book-description">记录从不需要理由</p>
-            	<img class = "noBorder" id = "img6" src="/images/create_album/other.jpg" alt="其他" onclick="changecolor(this.id)">
+            	<img class = "noBorder" id = "img6_other" src="/images/create_album/other.jpg" alt="其他" 
+            		onclick="changecolor(this.id,6)">
             </div>
-        </div>
+        </div>       
     </div><!-- 纪念册风格结束 -->
 
     <!-- 封面设计和填写简介 -->
@@ -219,5 +226,5 @@
             </div>
         </div>
     </div>
-
+</div>
 @stop
