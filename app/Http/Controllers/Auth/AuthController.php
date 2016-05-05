@@ -74,7 +74,6 @@ class AuthController extends Controller
 				$_SESSION['privilege']='admin';
 				return 1;
 			}
-			
 			$privilege = \DB::table('users')
 						->where('name', '=',$name)
 						->pluck('privilege');
@@ -94,15 +93,6 @@ class AuthController extends Controller
 			\Session::put('ifLoggedIn','n');//set the value to no
 			return 0;//密码错误
 		}
-	}
-
-
-	public function testLogin(){
-
-		$val = $_SESSION['userName'];
-		
-		return $val;
-		//return "hello";
 	}
 
 	/**

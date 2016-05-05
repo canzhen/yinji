@@ -4,21 +4,21 @@
 
 @section('header')
 	@parent
+
 	<link rel="stylesheet" type="text/css" href="/css/home.css">
 @stop
 
 @section('footer')
 	@parent
-	<!-- <script src="/js/jquery.sliphover.min.js"></script>
-	<script src="/js/freewall.js"></script>-->
+	<script src="/js/index_home/modernizr.custom.72835.js"></script>
+	<script src="/js/index_home/jquery.circlemouse.js"></script>
 	<script src = "/js/index_home/home.js"></script> 
-	<!-- <script src = "/js/<jquery class="ssd-vertical-nav"></jquery>igation.min.js"></script> -->
 @stop
 
 @section('content')
 
-<div ng-controller="testController">
-
+<div >
+<!-- ng-controller="testController" -->
 	<div class = "pictureSlide">
 		<div id="myCarousel" class="carousel slide">
 		<!-- 轮播（Carousel）指标 -->
@@ -44,9 +44,27 @@
 		<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
 		</div> 
 
+	</div>
+
+	
 
 
+	<div class="normal-trigger-area">
+		<a href="#" id="circle"  class="ec-circle" style = "background: url(/images/mo.jpg);">
+			<h3>Hovered</h3>
+		</a>	
+	</div>
 
+	<div class="normal-trigger-area">
+		<a href="#" id="circle"  class="ec-circle" style = "background: url(/images/mo.jpg);">
+			<h3>Hovered</h3>
+		</a>	
+	</div>
+
+	<div class="normal-trigger-area">
+		<a href="#" id="circle"  class="ec-circle" style = "background: url(/images/mo.jpg);">
+			<h3>Hovered</h3>
+		</a>	
 	</div>
 </div>
 @stop

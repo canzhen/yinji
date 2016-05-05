@@ -16,15 +16,15 @@ yinjiApp.controller('albumController',
 
 				$http({
 					method: 'GET',//注意，这里必须要用GET方法
-					url:'/db/addAlbum',
-					params:{
-						'userId': $_SESSION['userId'],
-						'albumName': $scope.nameOfAlbum,
-						'category': imgCategory,
-						'description': $scope.contentOfDesc,
-						'authorName': $scope.nameOfAuthor,
-						'motto': $scope.nameOfMotto
-					}
+					url:'/testSession',
+					// params:{
+					// 	'userId': $_SESSION['userId'],
+					// 	'albumName': $scope.nameOfAlbum,
+					// 	'category': imgCategory,
+					// 	'description': $scope.contentOfDesc,
+					// 	'authorName': $scope.nameOfAuthor,
+					// 	'motto': $scope.nameOfMotto
+					// }
 				})
 				.success(function(data){
 					console.log(data);
