@@ -124,7 +124,7 @@ Route::get('/db/addAlbum', function() {
     return $id;
 });
 
-
+Route::get('/testSession', 'Album\AlbumController@testSession');
 
 /*
 |--------------------------------------------------------------------------
