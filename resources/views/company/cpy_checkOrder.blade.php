@@ -25,8 +25,9 @@
 						<thead>
 						<tr>
 							<th>订单编号</th>
-							<th>订单日期</th>
-							<th>订单数量</th>
+							<th>日期</th>
+							<th>单价</th>
+							<th>数量</th>
 							<th>订单状态</th>
 							<th>用户账号</th>
 							<th>发货地址</th>
@@ -38,12 +39,16 @@
 						<tr ng-repeat="x in deployedOrder">
 							<td ng-bind="x.id"></td>
 							<td ng-bind="x.order_date"></td>
+							<td ng-bind="x.price"></td>
 							<td ng-bind="x.quantity"></td>
 							<td ng-bind="x.status"></td>
 							<td ng-bind="x.user_name"></td>
 							<td ng-bind="x.address"></td>
 							<td ng-bind="x.comment"></td>
-							<td><a href="#" ng-click="deleteOrder(x)">删除</a></td>
+							<td>
+								<a href="" ng-click="deleteOrder(x)">删除</a>　
+								<a href="" ng-click="getOrderDetail(x)" data-toggle="modal" data-target="#orderDetailModal">修改</a>
+							</td>
 						</tr>
 						</tbody>
 					</table>
@@ -53,5 +58,52 @@
 				</div>
 			</div>
 		</div>
+
+
+		<!--查看订单详情的弹出框-->
+		<div class="modal fade" id="orderDetailModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content"><!--modal的内容-->
+					<div class="modal-header">
+						<!--关闭modal的按钮-->
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="modalLabel">修改订单</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-inner">
+							<form>
+								<div>
+									<span>订单数量：</span>
+									<input type="text" value="@{{ orderDetail.quantity }}"/>
+								</div>
+								<div>
+									<span>订单单价：</span>
+									<input type="text" value="@{{ orderDetail.price }}"/>
+								</div>
+								<div>
+									<span>订单状态：</span>
+									<input type="text" value="@{{ orderDetail.status }}"/>
+								</div>
+								<div>
+									<span>发货地址：</span>
+									<input type="text" value="@{{ orderDetail.address }}"/>
+								</div>
+								<div>
+									<span>备注信息：</span>
+									<input type="text" value="@{{ orderDetail.comment }}"/>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+						<button type="button" class="btn btn-primary" ng-click="addUser()" ng-disabled="newUser.name == NULL || newUser.pwd == NULL || msgIndex == 1">保存</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 @stop

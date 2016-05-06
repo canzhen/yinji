@@ -5,6 +5,7 @@
 yinjiApp.controller('checkOrderCtrl',
 	function($scope,$http){
 		$scope.deployedOrder = {};
+		$scope.orderDetail = {};
 
 		$http.get("/cpy/getOrders")
 		.success(function (response)
@@ -29,5 +30,14 @@ yinjiApp.controller('checkOrderCtrl',
 					alert("oops,删除失败！");
 				}
 			});
+		}
+
+
+		$scope.getOrderDetail = function(x){
+			$scope.orderDetail.quantity = x.quantity;
+			$scope.orderDetail.price = x.price;
+			$scope.orderDetail.status = x.status;
+			$scope.orderDetail.address = x.address;
+			$scope.orderDetail.comment = x.comment;
 		}
 });
