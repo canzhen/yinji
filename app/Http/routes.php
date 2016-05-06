@@ -12,6 +12,8 @@
 */
 //Route::group(['middleware'=>'auth'], function(){//中间件，拦截，用于身份验证
 Route::group(['middleware'=>'web'],function(){
+    date_default_timezone_set('prc');//设置默认时区
+
     Route::get('/', function () {
         return view('index');
     });
