@@ -23,7 +23,7 @@ class Orders extends Migration
             $table->timestamp('order_date');//下单日期
             $table->timestamp('delivery_date');//发货日期
             $table->string('comment')->nullable();//备注
-            //$table->timestamps();
+            $table->timestamps();
         });
 
 //        Schema::table('orders', function (Blueprint $table) {
@@ -35,7 +35,8 @@ class Orders extends Migration
                 array(
                     'user_name' => 'jp',
                     'album_name' => '我的减肥日记',
-                    'quantity' => '1',
+                    'price'=> 43,
+                    'quantity' => 1,
                     'address' => '山西省阳泉市盂县xx镇！',
                     'status'=> '已付款',
                     'comment'=>'可不可以给我弄瘦一点啊！'

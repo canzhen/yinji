@@ -5,6 +5,7 @@
 
 @section('header')
 	@parent
+	<link rel="stylesheet" href="/css/company/cpy_checkOrder.css">
 @stop
 
 @section('footer')
@@ -61,7 +62,7 @@
 
 
 		<!--查看订单详情的弹出框-->
-		<div class="modal fade" id="orderDetailModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+			<div class="modal fade" id="orderDetailModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content"><!--modal的内容-->
 					<div class="modal-header">
@@ -73,33 +74,43 @@
 					</div>
 					<div class="modal-body">
 						<div class="form-inner">
-							<form>
+							<form class="myForm">
+								<div>
+									<span>订单编号：&nbsp @{{ orderDetail.id }}</span>
+								</div>
 								<div>
 									<span>订单数量：</span>
-									<input type="text" value="@{{ orderDetail.quantity }}"/>
+									<input type="text" ng-model="orderDetail.quantity"/>
+									<span style="color:red" ng-show="orderDetail.quantity == ''">*此项必填</span>
 								</div>
 								<div>
 									<span>订单单价：</span>
-									<input type="text" value="@{{ orderDetail.price }}"/>
+									<input type="text" ng-model="orderDetail.price"/>
+									<span style="color:red" ng-show="orderDetail.price == ''">*此项必填</span>
 								</div>
 								<div>
 									<span>订单状态：</span>
-									<input type="text" value="@{{ orderDetail.status }}"/>
+									<input type="text" ng-model="orderDetail.status"/>
+									<span style="color:red" ng-show="orderDetail.status == ''">*此项必填</span>
 								</div>
 								<div>
 									<span>发货地址：</span>
-									<input type="text" value="@{{ orderDetail.address }}"/>
+									<input type="text" ng-model="orderDetail.address"/>
+									<span style="color:red" ng-show="orderDetail.address == ''">*此项必填</span>
 								</div>
 								<div>
 									<span>备注信息：</span>
-									<input type="text" value="@{{ orderDetail.comment }}"/>
+									<input type="text" ng-model="orderDetail.comment"/>
+									<span style="color:red" ng-show="orderDetail.comment == ''">*此项必填</span>
 								</div>
 							</form>
 						</div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-						<button type="button" class="btn btn-primary" ng-click="addUser()" ng-disabled="newUser.name == NULL || newUser.pwd == NULL || msgIndex == 1">保存</button>
+						<button type="button" class="btn btn-primary" ng-click="editOrder()"
+								ng-disabled="orderDetail.quantity == '' || orderDetail.price == ''
+								|| orderDetail.status == '' || orderDetail.adress == ''">修改</button>
 					</div>
 				</div>
 			</div>

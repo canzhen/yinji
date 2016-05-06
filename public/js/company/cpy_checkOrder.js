@@ -6,6 +6,7 @@ yinjiApp.controller('checkOrderCtrl',
 	function($scope,$http){
 		$scope.deployedOrder = {};
 		$scope.orderDetail = {};
+		var tempDetail = {};
 
 		$http.get("/cpy/getOrders")
 		.success(function (response)
@@ -34,10 +35,55 @@ yinjiApp.controller('checkOrderCtrl',
 
 
 		$scope.getOrderDetail = function(x){
+			$scope.orderDetail.id = x.id;
 			$scope.orderDetail.quantity = x.quantity;
 			$scope.orderDetail.price = x.price;
 			$scope.orderDetail.status = x.status;
 			$scope.orderDetail.address = x.address;
 			$scope.orderDetail.comment = x.comment;
+			tempDetail = new Array(x,x.quantity,x.price,x.status,x.address,x.comment);
+		}
+
+		$scope.editOrder = function(){
+			if ($scope.orderDetail.quantity == tempDetail[1]&&
+				$scope.orderDetail.price == tempDetail[2]&&
+				$scope.orderDetail.status == tempDetail[3]&&
+				$scope.orderDetail.address == tempDetail[4]&&
+				$scope.orderDetail.comment == tempDetail[5])
+				alert("对不起，您没有进行任何修改！");
+			else{
+				$http({
+					method:'GET',
+					url:'/cpy/editOrder',
+					params:{
+						'id':$scope.orderDetail.id,
+						'quantity':$scope.orderDetail.quantity,
+						'price':$scope.orderDetail.price,
+						'status':$scope.orderDetail.status,
+						'address':$scope.orderDetail.address,
+						'comment':$scope.orderDetail.comment
+					}
+				}).success(function(response){
+					if (response == 1){
+						alert("修改成功！");
+						$('#orderDetailModal').modal('hide');
+					}
+					else {
+						alert("oops...修改失败...");
+						$('#orderDetailModal').modal('hide');
+					}
+				});
+				updateOrderData($scope.orderDetail);
+			}
+		}
+
+		function updateOrderData(detail){
+			var index = $scope.deployedOrder.indexOf(tempDetail[0])
+			$scope.deployedOrder[index].quantity = detail.quantity;
+			$scope.deployedOrder[index].price = detail.price;
+			$scope.deployedOrder[index].status = detail.status;
+			$scope.deployedOrder[index].address = detail.address;
+			$scope.deployedOrder[index].comment = detail.comment;
+			tempDetail = {};
 		}
 });

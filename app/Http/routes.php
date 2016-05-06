@@ -93,6 +93,7 @@ Route::get('/auth/addUser',function(){
  */
 Route::get('/cpy/getOrders','CpyController@getOrders');
 Route::get('/cpy/deleteOrder','CpyController@deleteOrder');
+Route::get('/cpy/editOrder','CpyController@editOrder');
 
 
 

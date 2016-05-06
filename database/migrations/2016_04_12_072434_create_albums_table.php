@@ -24,6 +24,7 @@ class CreateAlbumsTable extends Migration
             $table->string('description')->nullable();
             $table->string('motto')->nullable();
             $table->string('author_name')->nullable();
+            $table->timestamps();
         });
 
         Schema::table('albums', function (Blueprint $table) {
