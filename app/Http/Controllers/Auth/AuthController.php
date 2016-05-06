@@ -74,35 +74,11 @@ class AuthController extends Controller
 				$_SESSION['privilege']='admin';
 				return 1;
 			}
-			
-			$privilege = \DB::table('users')
-						->where('name', '=',$name)
-						->pluck('privilege');
-			\Session::put('ifLoggedIn','y');//set the value to yes
-			if (strcmp($privilege[0],'superadmin')==0){
-				\Session::put('privilege','superadmin');
-				return 3;//管理员
-			}else if (strcmp($privilege[0],'staff')==0){
-				\Session::put('privilege','staff');
-				return 2;//公司用户，普通职工
-			}else{
-				\Session::put('privilege','admin');
-				return 2;//公司用户，经理之类的人
-			}
 
 		}else{
 			\Session::put('ifLoggedIn','n');//set the value to no
 			return 0;//密码错误
 		}
-	}
-
-
-	public function testLogin(){
-
-		$val = $_SESSION['userName'];
-		
-		return $val;
-		//return "hello";
 	}
 
 	/**
