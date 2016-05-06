@@ -14,7 +14,7 @@
 
 
 @section('sidebar-content')
-	<div ng-controller="checkOrderCtrl" class="col-lg-4">
+	<div ng-controller="checkOrderCtrl" class="col-lg-12">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h3 class="panel-title"><i class="fa fa-money fa-fw"></i>订单列表</h3>

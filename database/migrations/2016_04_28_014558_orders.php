@@ -26,10 +26,22 @@ class Orders extends Migration
             //$table->timestamps();
         });
 
-        Schema::table('orders', function (Blueprint $table) {
-            $table->foreign('album_name')->references('name')->on('albums')->onDelete('cascade');
-        });
+//        Schema::table('orders', function (Blueprint $table) {
+//            $table->foreign('album_name')->references('name')->on('albums')->onDelete('cascade');
+//        });
 
+        DB::table('orders')->insert(
+            array(
+                array(
+                    'user_name' => 'jp',
+                    'album_name' => '我的减肥日记',
+                    'quantity' => '1',
+                    'address' => '山西省阳泉市盂县xx镇！',
+                    'status'=> '已付款',
+                    'comment'=>'可不可以给我弄瘦一点啊！'
+                )
+            )
+        );
     }
 
     /**
@@ -39,6 +51,6 @@ class Orders extends Migration
      */
     public function down()
     {
-
+        Schema::drop('orders');
     }
 }
