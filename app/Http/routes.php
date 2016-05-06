@@ -92,6 +92,7 @@ Route::get('/auth/addUser',function(){
  * 公司方面的操作
  */
 Route::get('/cpy/getOrders','CpyController@getOrders');
+Route::get('/cpy/deleteOrder','CpyController@deleteOrder');
 
 
 

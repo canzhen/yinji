@@ -31,6 +31,7 @@
 							<th>用户账号</th>
 							<th>发货地址</th>
 							<th>备注信息</th>
+							<th>操作</th>
 						</tr>
 						</thead>
 						<tbody>
@@ -42,6 +43,7 @@
 							<td ng-bind="x.user_name"></td>
 							<td ng-bind="x.address"></td>
 							<td ng-bind="x.comment"></td>
+							<td><a href="#" ng-click="deleteOrder(x)">删除</a></td>
 						</tr>
 						</tbody>
 					</table>

@@ -12,4 +12,11 @@ class CpyController extends Controller
     public function getOrders(){
         return Order::all();
     }
+
+    public function deleteOrder(){
+        $orderId = $_GET['id'];
+        if (Order::where('id',$orderId)->delete())
+            return 1;
+        else return 0;
+    }
 }
