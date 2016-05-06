@@ -37,4 +37,26 @@ class CpyController extends Controller
             return 1;
         else return 0;
     }
+
+    public function uploadTemplate(){
+        $path = app_path()."\\..\\public\\company\\template\\".'zcz\\';
+        if (!empty($_FILES)){
+            //得到上传文件的临时流
+            $tempFile = $_FILES['file_data']['tmp_name'];
+            //得到文件原名
+            $fileName = iconv("UTF-8","GB2312",$_FILES['file_data']['name']);
+            $fileParts = pathinfo($_FILES['file_data']['name']);
+            //保存服务器地址，若不存在该文件夹，则新建
+            if (!is_dir($path))
+                mkdir($path);
+
+            if (move_uploaded_file($tempFile,$path.$fileName)){
+                $info = $path.$fileName;
+            }else{
+                $info = $fileName."上传失败！";
+            }
+
+            echo $info;
+        }
+    }
 }

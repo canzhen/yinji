@@ -190,9 +190,9 @@
 			uploadClass: 'btn btn-xs btn-default',
 			uploadTitle: 'Upload file',
 			indicatorNew: '<i class="fa fa-circle-arrow-down text-warning"></i>',
-			indicatorSuccess: '<i class="glyphicon glyphicon-ok-sign file-icon-large text-success"></i>',
-			indicatorError: '<i class="glyphicon glyphicon-exclamation-sign text-danger"></i>',
-			indicatorLoading: '<i class="glyphicon glyphicon-hand-up text-muted"></i>',
+			indicatorSuccess: '<i class="fa fa-ok-sign file-icon-large text-success"></i>',
+			indicatorError: '<i class="fa fa-exclamation-sign text-danger"></i>',
+			indicatorLoading: '<i class="fa fa-hand-up text-muted"></i>',
 			indicatorNewTitle: 'Not uploaded yet',
 			indicatorSuccessTitle: 'Uploaded',
 			indicatorErrorTitle: 'Upload Error',
@@ -1588,7 +1588,7 @@
 				frameClass = '';
 			if (isDisabled === true) {
 				frameClass = ' btn disabled';
-				footer += '<div class="file-other-error text-danger"><i class="glyphicon glyphicon-exclamation-sign"></i></div>';
+				footer += '<div class="file-other-error text-danger"><i class="fa fa-exclamation-sign"></i></div>';
 			}
 			self.$preview.append("\n" + previewOtherTemplate
 					.repl('{previewId}', previewId)
@@ -2068,7 +2068,7 @@
 		customPreviewTags: {},
 		previewSettings: defaultPreviewSettings,
 		fileTypeSettings: defaultFileTypeSettings,
-		previewFileIcon: '<i class="glyphicon glyphicon-file"></i>',
+		previewFileIcon: '<i class="fa fa-file"></i>',
 		browseIcon: '<i class="fa fa-folder-open fa-fw"></i> &nbsp;',
 		browseClass: 'btn btn-primary',
 		removeIcon: '<i class="fa fa-trash fa-fw"></i> ',
@@ -2190,10 +2190,11 @@
 
 
 $("#file-1").fileinput({
-	uploadUrl: '#', // you must set a valid URL here else you will get an error
+	uploadUrl: '/cpy/uploadTemplate', // you must set a valid URL here else you will get an error
 	allowedFileExtensions : ['jpg', 'png','gif'],
 	overwriteInitial: false,
-	maxFileSize: 1000,
+	name:'images',
+	maxFileSize: 7000,
 	maxFilesNum: 10,
 	//allowedFileTypes: ['image', 'video', 'flash'],
 	slugCallback: function(filename) {
