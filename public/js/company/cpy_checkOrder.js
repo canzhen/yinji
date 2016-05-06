@@ -86,4 +86,4 @@ yinjiApp.controller('checkOrderCtrl',
 			$scope.deployedOrder[index].comment = detail.comment;
 			tempDetail = {};
 		}
-});
+	});
