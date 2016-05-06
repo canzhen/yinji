@@ -39,7 +39,8 @@ class CpyController extends Controller
     }
 
     public function uploadTemplate(){
-        $path = app_path()."\\..\\public\\company\\template\\".'zcz\\';
+
+        $path = app_path()."\\..\\public\\company\\template\\".$_SESSION['userName'].'\\';
         if (!empty($_FILES)){
             //得到上传文件的临时流
             $tempFile = $_FILES['file_data']['tmp_name'];
@@ -48,15 +49,17 @@ class CpyController extends Controller
             $fileParts = pathinfo($_FILES['file_data']['name']);
             //保存服务器地址，若不存在该文件夹，则新建
             if (!is_dir($path))
-                mkdir($path);
+                mkdir($path,0777,true);
 
             if (move_uploaded_file($tempFile,$path.$fileName)){
-                $info = $path.$fileName;
+                $info = array();
             }else{
-                $info = $fileName."上传失败！";
+                $info = array(
+                    'error'=>'上传失败！'
+                );
             }
 
-            echo $info;
+            return json_encode($info);
         }
     }
 }

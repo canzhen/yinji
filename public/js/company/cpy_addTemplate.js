@@ -532,6 +532,8 @@
 				case 'filebatchuploadcomplete':
 				case 'filebatchuploadsuccess':
 				case 'fileuploaded':
+					alert('上传成功！');
+					break;
 				case 'fileclear':
 				case 'filecleared':
 				case 'filereset':
@@ -2141,7 +2143,7 @@
 
 	$.fn.fileinput.locales.cn = {
 		fileSingle: '文件',
-		filePlural: '多个文件',
+		filePlural: '个文件',
 		browseLabel: '选择 &hellip;',
 		removeLabel: '移除',
 		removeTitle: '移除选择文件',
@@ -2150,8 +2152,8 @@
 		uploadLabel: '上传',
 		uploadTitle: '上传选择文件',
 		msgSizeTooLarge: '文件 "{name}" (<b>{size} KB</b>) 超出最大限制大小<b>{maxSize} KB</b>. 请重新选择文件上传！',
-		msgFilesTooLess: '必须选择至少<b>{n}</b> {files}上传. 请重新上传！',
-		msgFilesTooMany: 'Number of files selected for upload <b>({n})</b> exceeds maximum allowed limit of <b>{m}</b>. Please retry your upload!',
+		msgFilesTooLess: '必须选择至少<b>{n}</b>{files}上传. 请重新上传！',
+		msgFilesTooMany: '上传的文件数<b>({n})</b> 超过最大文件限制<b>{m}</b>，请重新选择文件上传！',
 		msgFileNotFound: '找不到文件 "{name}"！',
 		msgFileSecured: '无法访问文件"{name}"。',
 		msgFileNotReadable: '文件"{name}"不可读.',
@@ -2182,34 +2184,23 @@
 			$input.fileinput();
 		}
 	});
+
+
+	$("#file-1").on("fileuploaded",
+		function(event, data, previewId, index) {
+			console.log('event:'+event+"\ndata:"+data+"\npreviewId:"+previewId+"\nindex:"+index);
+			//alert("上传成功！");
+		});
 })(window.jQuery);
-
-
-
-
-
 
 $("#file-1").fileinput({
 	uploadUrl: '/cpy/uploadTemplate', // you must set a valid URL here else you will get an error
-	allowedFileExtensions : ['jpg', 'png','gif'],
+	allowedFileExtensions : ['jpg', 'png','jpeg'],
 	overwriteInitial: false,
-	name:'images',
 	maxFileSize: 7000,
 	maxFilesNum: 10,
 	//allowedFileTypes: ['image', 'video', 'flash'],
 	slugCallback: function(filename) {
 		return filename.replace('(', '_').replace(']', '_');
 	}
-});
-$(document).ready(function() {
-	$("#test-upload").fileinput({
-		'showPreview' : false,
-		'allowedFileExtensions' : ['jpg', 'png','gif'],
-		'elErrorContainer': '#errorBlock'
-	});
-	/*
-	 $("#test-upload").on('fileloaded', function(event, file, previewId, index) {
-	 alert('i = ' + index + ', id = ' + previewId + ', file = ' + file.name);
-	 });
-	 */
 });

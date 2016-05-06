@@ -12,7 +12,11 @@
 */
 //Route::group(['middleware'=>'auth'], function(){//中间件，拦截，用于身份验证
 Route::group(['middleware'=>'web'],function(){
-    date_default_timezone_set('prc');//设置默认时区
+    date_default_timezone_set('prc');//设置默认时区到中国的时区
+
+    Route::get('test',function(){
+        return $_SESSION['userName'];
+    });
 
     Route::get('/', function () {
         return view('index');
@@ -42,10 +46,6 @@ Route::group(['middleware'=>'web'],function(){
 
     Route::get('/getRequest', function () {
         //var files = Request.Files;
-    });
-
-    Route::get('/test', function () {
-        return view('test');
     });
 
     Route::get('/login', function () {
