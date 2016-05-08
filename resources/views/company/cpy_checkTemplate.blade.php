@@ -15,11 +15,14 @@
 
 @section('sidebar-content')
 	<div ng-controller="checkTemplateCtrl" class="container">
-		<div class="row">
-			<div class="span1">
-				{{HTML::image('company/template/yinji/DSC_0123_副本.jpg')}}
-			</div>
-
-		</div>
+		<span class="col-lg-1 carousel-inner img-responsive img-rounded">
+			<img src="company/template/yinji/1.jpg">
+		</span>
+		<span class="col-lg-1 carousel-inner img-responsive img-rounded">
+			<img src="company/template/yinji/1.jpg">
+		</span>
+		<span class="col-lg-1 carousel-inner img-responsive img-rounded">
+			<img src="company/template/yinji/1.jpg">
+		</span>
 	</div>
 @stop

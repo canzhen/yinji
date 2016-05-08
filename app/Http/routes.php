@@ -68,7 +68,6 @@ Route::group(['middleware'=>'web'],function(){
     Route::get('/create_album', function () {
         return view('create_album');
     });
-
 });
 
 /*
