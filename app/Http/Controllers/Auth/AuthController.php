@@ -67,7 +67,8 @@ class AuthController extends Controller
             if (strcmp($privilege,'superadmin')==0){
 				$_SESSION['privilege']='superadmin';
 				return 3;
-			}else if (strcmp($privilege,'company')==0){
+			}else if (strcmp($privilege,'staff')==0 ||
+						strcmp($privilege,'admin')==0){
 				$_SESSION['privilege']='company';
 				return 2;
 			}else{

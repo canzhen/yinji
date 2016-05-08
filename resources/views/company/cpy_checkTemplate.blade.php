@@ -5,6 +5,7 @@
 
 @section('header')
 	@parent
+	<link rel="stylesheet" href="/css/company/cpy_checkTemplate.css">
 @stop
 
 @section('footer')
@@ -14,15 +15,18 @@
 
 
 @section('sidebar-content')
-	<div ng-controller="checkTemplateCtrl" class="container">
-		<span class="col-lg-1 carousel-inner img-responsive img-rounded">
-			<img src="company/template/yinji/1.jpg">
-		</span>
-		<span class="col-lg-1 carousel-inner img-responsive img-rounded">
-			<img src="company/template/yinji/1.jpg">
-		</span>
-		<span class="col-lg-1 carousel-inner img-responsive img-rounded">
-			<img src="company/template/yinji/1.jpg">
-		</span>
+	<div ng-controller="checkTemplateCtrl" class="container-fluid">
+		<div class="row" id="mainbody">
+			<div class="thumbnail" ng-repeat="x in deployedImgs" on-finish-render-filters>
+				<div class="imgs">
+					<img ng-src="@{{ x.saving_path }}">
+				</div>
+				<div class="captain">
+					<div class="title">@{{ x.template_name }}</div>
+					<div class="description">@{{ x.description }}</div>
+					<div class="author">作者：@{{ x.author_name }}</div>
+				</div>
+			</div>
+		</div>
 	</div>
 @stop

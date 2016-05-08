@@ -30,12 +30,14 @@ function loginController($scope,$http,$rootScope){
 				} else {
 					$scope.errMsgColor = "green";//登录成功，为绿色
 					$scope.errMsg = '登录成功，自动跳转页面...';
+					window.setTimeout("window.location='/intended'",1000);
+					/*
 					if (data==2){//公司用户
-						window.setTimeout("window.location='/cpy_index'",1000);
+						window.setTimeout("window.location='/intended'",1000);
 					}else{
-						window.setTimeout("window.location='/home'",1000);
+						window.setTimeout("window.location='/intended'",1000);
 					}
-
+					*/
 				}
 			});
 		}
