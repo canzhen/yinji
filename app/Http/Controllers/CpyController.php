@@ -123,8 +123,15 @@ class CpyController extends Controller
         return Template::all();
     }
 
+    /**
+     * 删除某个模板
+     * @return 是否删除成功
+     */
     public function deleteTemplate(){
-
+        $name = $_GET['name'];
+        if (Template::where('template_name',$name)->delete())
+            return 1;
+        else return 0;
     }
 
 

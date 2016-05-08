@@ -63,9 +63,16 @@ yinjiApp.controller('checkTemplateCtrl',
 				method:'GET',
 				url:'/cpy/deleteTemplate',
 				params:{
-
+					'name':x.template_name
 				}
 			})
+			.success(function(response){
+				if (response==1) {
+					alert("删除成功！");
+					$scope.deployedImgs.splice($scope.deployedImgs.indexOf(x),1);
+				}else if (response==0)
+					alert("oops，删除失败...");
+			});
 		}
 });
 
