@@ -14,7 +14,7 @@ class Templates extends Migration
     {
         Schema::create('templates', function (Blueprint $table) {
             $table->increments('id');//模板号
-            $table->string('template_name');//模板名
+            $table->string('template_name')->unique();//模板名
             $table->string('author_name');//制作模板的作者名
             $table->string('saving_path');//模板存储的路径
             $table->string('description')->nullable();//模板介绍

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use App\Template;
 use App\Order;
@@ -58,6 +59,7 @@ class CpyController extends Controller
      */
     public function uploadTemplate(){
 
+
         $path = app_path()."\\..\\public\\company\\template\\".$_SESSION['userName'].'\\';
         if (!empty($_FILES)){
             //得到上传文件的临时流
@@ -69,18 +71,17 @@ class CpyController extends Controller
             if (!is_dir($path))
                 mkdir($path,0777,true);
 
-            if (move_uploaded_file($tempFile,$path.$fileName)){
-                $info = array();
-            }else{
-                $info = array(
-                    'error'=>'上传失败！'
-                );
-            }
-
             //往templates表中新增数据
             $author_name = $_SESSION['userName'];
             $saving_path = "company\\template\\".$_SESSION['userName'].'\\'.$fileName;
-            $this->addTemplate($fileName,$author_name,$saving_path,"没有描述");
+            $info = array('response'=>0);
+            if ($this->addTemplate($fileName,$author_name,$saving_path,"没有描述")){
+                //成功往数据库添加数据之后才把图片保存到硬盘，这样可以防止重名
+                if (move_uploaded_file($tempFile,$path.$fileName)){
+                    $info = array('response'=>1);
+                }
+            }
+
 
             return json_encode($info);
         }
@@ -96,23 +97,35 @@ class CpyController extends Controller
      * @return 是否添加模板成功
      */
     public function addTemplate($template_name,$author_name,$saving_path,$description){
-        $result = Template::create(
-            array(
-            'template_name'=>$template_name,
-            'author_name'=>$author_name,
-            'saving_path'=>$saving_path,
-            'description'=>$description
-        ));
-        if ($result != null)
-            return true;
-        else return false;
+        try{
+            $result = Template::create(
+                array(
+                    'template_name'=>$template_name,
+                    'author_name'=>$author_name,
+                    'saving_path'=>$saving_path,
+                    'description'=>$description
+                ));
+            if ($result != null)
+                return true;
+            else return false;
+        }catch(QueryException $e){
+            return false;
+        }
+
     }
 
 
+    /**
+     * 获取所有模板
+     * @return 返回所有的模板
+     */
     public function getTemplates(){
         return Template::all();
     }
 
+    public function deleteTemplate(){
+
+    }
 
 
 }

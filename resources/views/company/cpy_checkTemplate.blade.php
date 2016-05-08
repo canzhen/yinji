@@ -18,13 +18,16 @@
 	<div ng-controller="checkTemplateCtrl" class="container-fluid">
 		<div class="row" id="mainbody">
 			<div class="thumbnail" ng-repeat="x in deployedImgs" on-finish-render-filters>
-				<div class="imgs">
-					<img ng-src="@{{ x.saving_path }}">
-				</div>
+				<a href="#">
+					<div class="imgs"">
+						<img ng-src="@{{ x.saving_path }}">
+					</div>
+				</a>
 				<div class="captain">
 					<div class="title">@{{ x.template_name }}</div>
 					<div class="description">@{{ x.description }}</div>
 					<div class="author">作者：@{{ x.author_name }}</div>
+					<div class="author"><a href="" ng-click="deleteTemplate(x)">删除模板</a></div>
 				</div>
 			</div>
 		</div>

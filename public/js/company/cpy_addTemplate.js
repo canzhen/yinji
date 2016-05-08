@@ -2188,8 +2188,11 @@
 
 	$("#file-1").on("fileuploaded",
 		function(event, data, previewId, index) {
-			console.log('event:'+event+"\ndata:"+data+"\npreviewId:"+previewId+"\nindex:"+index);
-			//alert("上传成功！");
+			console.log(data.response.response);
+			if(data.response.response == 1)
+				alert("上传成功！");
+			else if (data.response.response == 0)
+				alert("对不起，模板名已存在，请修改模板名再上传！");
 		});
 })(window.jQuery);
 

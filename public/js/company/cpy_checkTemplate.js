@@ -58,7 +58,16 @@ yinjiApp.controller('checkTemplateCtrl',
 			}
 		});
 
-	});
+		$scope.deleteTemplate = function(x){
+			$http({
+				method:'GET',
+				url:'/cpy/deleteTemplate',
+				params:{
+
+				}
+			})
+		}
+});
 
 yinjiApp.directive('onFinishRenderFilters', function ($timeout) {
 
