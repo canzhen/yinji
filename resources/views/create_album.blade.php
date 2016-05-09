@@ -160,7 +160,7 @@
 							</div><!-- 输入框模板结束 -->
 
 							<div class="book-cover-picture">
-	                        	<p>封面照片：</p><br/>
+	                        	<p class="book-cover-picture-p">封面照片：</p><br/>
 	                        	<table width="100%" border="0" cellspacing="0" cellpadding="0">
 									<tbody>
 										<tr>
@@ -231,8 +231,8 @@
 	                        </div>
                     </div>
                 </div>   <!-- 填写简介结束 -->
-                <hr>
-                <hr>
+                <!-- <hr>
+                <hr> -->
             </div>
         </div>
     </div>
