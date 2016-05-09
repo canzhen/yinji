@@ -1375,7 +1375,7 @@ p.profile-description {
 #book-introduction_description{
   /*position: absolute;*/
   /*border: 1px solid #000;*/
-  width: 500px;
+  width: 600px;
   height: 350px;
   padding-top: 8%;
   padding-left: 8%;
@@ -1400,8 +1400,8 @@ p.profile-description {
 }
 /*提交按钮*/
 #send{
-  border: 1px solid #000;
-  margin-left: 800px;
+  /*border: 1px solid #000;*/
+  margin-left: 890px;
 }
 
 /*

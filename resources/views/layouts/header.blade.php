@@ -13,6 +13,7 @@
 			<link rel='stylesheet' href="/css/lib/myfont.css"/>
             <link rel="stylesheet" href="/css/content.css"  type="text/css" media="all"/>
             <link rel="stylesheet" href="/css/lib/bootstrap/bootstrap.min.css">
+
         @show
     </head>
 	

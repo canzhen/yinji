@@ -6,6 +6,8 @@
 	@parent
 	<link href="/css/index.css" rel="stylesheet" type="text/css" media="all"/>
 	<link rel="stylesheet" type="text/css" href="/css/create_album.css">
+	<link rel="stylesheet" href="css/buttons.css">
+   
 @stop
 
 @section('footer')
@@ -17,6 +19,7 @@
 	<script src="js/create_album/vendor/modernizr-2.6.2.min.js"></script>	
 	<script src="js/create_album/min/plugins.min.js"></script>
 	<script src="js/create_album/min/main.min.js"></script>
+	
 @stop
 
 
@@ -214,10 +217,17 @@
 						<!-- 填写简介 -->
 	                        <div id="book-introduction_description">
 	                            <p>填写纪念册内容简介:</p>
-	                        	<textarea name="description" id="description" rows="10" cols="50" wrap="hard"></textarea>
-	                        </div>
+	                        	<!-- <textarea name="description" id="description" rows="10" cols="50" wrap="hard"></textarea> -->
+	                        	<form role="form">
+								  <div class="form-group">
+								    <!-- <label for="name">文本框</label> -->
+								    <textarea class="form-control" rows="9"></textarea>
+								  </div>
+								</form>
+	                        </div> 
 	                        <div id="send">
-	                        	<input type="submit" value="提交" style="width:100px;height:30px;color:white;background:rgb(169,169,169);">
+	                        	<input class="button button-3d button-box button-jumbo" type="submit" value="提交" >
+	                        	<!-- <a href="/home" class="button button-raised button-primary button-pill">Visit Us!</a> -->
 	                        </div>
                     </div>
                 </div>   <!-- 填写简介结束 -->
