@@ -29,7 +29,7 @@ yinjiApp.controller('albumController',
 				.success(function(data){
 					console.log(data);
 					if(data != null){
-						
+						console.log(data);
 					}
 				});
 			}
@@ -37,6 +37,7 @@ yinjiApp.controller('albumController',
 				alert("failed");
 			}
 		}
+
 
 		/**
 		 * 判断“创建纪念册”输入条件是否完整
@@ -61,9 +62,14 @@ yinjiApp.controller('albumController',
 
 
 
-
-
-
+//点击图片边框变红
+function changecolor(obj, num){
+	for(var i = 0; i < allImg.length; i++){
+		document.getElementById(allImg[i]).className = 'noBorder';
+	}
+	document.getElementById(obj).className = 'hasBorder';
+	imgCategory = num;
+}
 
 
 
@@ -256,12 +262,5 @@ function setImagePreview1(avalue) {
 	return true;
 }
 
-//点击图片边框变红
-function changecolor(obj, num){
-	for(var i = 0; i < allImg.length; i++){
-		document.getElementById(allImg[i]).className = 'noBorder';
-	}
-	document.getElementById(obj).className = 'hasBorder';
-	imgCategory = num;
-}
+
 
