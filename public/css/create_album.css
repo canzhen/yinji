@@ -956,11 +956,11 @@ hr {
   display: block;
   /*color: white;*/
   color: rgb(170,170,170);
-  font-size: 14px;
+  /*font-size: 14px;*/
 }
 .main-navigation li a i {
   margin-right: 15px;
-  font-size: 24px;
+  /*font-size: 24px;*/
 }
 .main-navigation li a:hover {
   /*background: #5b6878;*/
@@ -1070,14 +1070,6 @@ p.profile-description {
   margin-left: 20px;
   margin-top: 30px;
 }
-.book-style-text p{
-  /*background-color:rgb(241,241,241);*/
-  font-family: "楷体";
-  font-size: 30px;
-  color: #666666;
-  text-align: center;
-
-}
 .book-style-text{
   height: 60px;
   /*border: 1px solid #000;*/
@@ -1102,13 +1094,6 @@ p.profile-description {
   height: 60px;
   padding-top: 15px;
   background-color:rgb(241,241,241);
-}
-.design-title {
-  
-  font-family: "楷体";
-  font-size: 30px;
-  text-align: center;
-  color: #666666;
 }
 
 /*封面模板*/
@@ -1252,16 +1237,10 @@ p.profile-description {
 .book-cover-picture{
   /*border: 1px solid #000;*/
   margin-top: -525px;
-  margin-left: 480px;
-  width: 500px;
-  height: 600px;
+  margin-left: 530px;
+  width: 550px;
+  height: 700px;
   padding: 25px;
-}
-.book-cover-picture p{
-  /*float: left;*/
-  color: #333333;
-  font-size: 20px;
-  font-weight: bold;
 }
 .book-cover-picture img{
   width: 450px;
@@ -1286,11 +1265,6 @@ p.profile-description {
 }
 
 /*编辑本书的简介照片*/
-.book-introduction-photo p{
-  margin-left: 50px;
-  margin-top: 10px;
-  color: #336666;
-}
 .book-introduction-photo{
   /*border: 1px solid #000;*/
   width: 300px;
@@ -1401,7 +1375,9 @@ p.profile-description {
 /*提交按钮*/
 #send{
   /*border: 1px solid #000;*/
-  margin-left: 890px;
+  /*margin-left: 890px;*/
+  margin-top: 20px;
+  margin-left: 315%;
 }
 
 /*
@@ -1698,4 +1674,39 @@ a:focus {
 
 .noBorder{
   border: none;
+}
+
+/*对页面中字体字体的设置*/
+.book-description, .book-name, .book-cover-picture-p, .main-navigation, .input__label-content
+, .book-style-text p, .design-title, .book-introduction p, .book-introduction-photo{
+  font-family: "楷体"; 
+}
+/*书风格的描述，书的风格，主导航栏的字体*/
+.book-description, .book-name, .main-navigation{
+  font-size: 20px;
+  color: #333333;
+}
+/*书名，作者，想说的话*/
+.input__label-content{
+  font-size: 15px;
+}
+/*封面照片*/
+.book-cover-picture-p{
+  font-size: 30px;
+  color: #333333;
+  font-weight: bold;
+ }
+ /*三个大标题*/
+.book-style-text p, .design-title, .book-introduction p{
+  font-size: 30px;
+  color: #666666;
+  font-weight: bold;
+  text-align: center;
+}
+/*编辑本书的简介照片*/
+.book-introduction-photo p{
+  margin-left: 50px;
+  margin-top: 10px;
+  font-size: 20px;
+  color: #666666;
 }
