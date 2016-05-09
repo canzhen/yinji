@@ -20,9 +20,19 @@ class RecordController extends Controller
 		$record =new Record();
 		//$data['name']
 		$record -> description = Request::input('description');
-		//$record -> picpath = Request::input('imgfile');
-		$img1 = Request::input('imgfile[0]');
-		echo $img1;
+
+		$picPath = Request::input('imgfile');
+		$file = Request::file('imgfile');
+		if($file->isValid()){
+			$clientName = $file->getClientOriginalName();
+			$tmpName = $file->getFileName();
+			$realPath = $file->getRealPath();
+			$extension = $file->getClientOriginalExtension();
+			$mimeTye = $file->getMimeType();
+			$newName = md5(date('ymdhis').$clientName).".".$extension;
+			$path = $file->move(app_path().'\storage\uploads\record',$newName);
+			$record -> picpath = app_path().'\storage\uploads\record'.$newName;
+		}
 
 		$year = Request::input('year');
 		$month =  Request::input('month');
@@ -43,5 +53,10 @@ class RecordController extends Controller
 		echo "<script>alert('发送成功')</script>";
 		//页面重定向
 		return redirect('/record');
+	}
+
+	private function picToServer()
+	{
+
 	}
 }

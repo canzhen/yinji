@@ -10,7 +10,7 @@
 
 @section('footer')
 	@parent
-	<script src="js/rePic.js"></script>
+	<script src="{{asset('js/rePic.js')}}"></script>
 	<script src="js/create_album/vendor/modernizr-2.6.2.min.js"></script>
 @stop
 
@@ -102,7 +102,7 @@
 						</div>
 					<br/>
 						<div align="center">
-							<input name="imgfile" type="file"multiple id="imgfile" onchange="viewmypic(showing1,this.form.imgfile);" accept="image/*"/>
+							<input name="imgfile" type="file"multiple id="imgfile" size="10" onchange="viewmypic(showing1,this.form.imgfile);" />
 							<br/>
 						</div>
 				<div>
