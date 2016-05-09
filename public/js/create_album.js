@@ -63,6 +63,10 @@ yinjiApp.controller('albumController',
 
 
 
+
+
+
+
 // 封面设计文本框输入
 ( function( window ) {
 
@@ -253,13 +257,11 @@ function setImagePreview1(avalue) {
 }
 
 //点击图片边框变红
-function changecolor(obj){
-	var ele = document.getElementById(obj);
-if(ele.className == 'noBorder')
-	 ele.className = 'hasBorder';
-	// alert("asfasf");
-else{
-	ele.className = 'noBorder'
-}
+function changecolor(obj, num){
+	for(var i = 0; i < allImg.length; i++){
+		document.getElementById(allImg[i]).className = 'noBorder';
+	}
+	document.getElementById(obj).className = 'hasBorder';
+	imgCategory = num;
 }
 
