@@ -1,0 +1,9 @@
+.leftImg{
+    float:left;
+    max-width:100% !important;
+    border-radius: 6px;
+}
+
+.rightText{
+    padding-top:10px;
+}

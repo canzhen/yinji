@@ -67,32 +67,18 @@ class AuthController extends Controller
             if (strcmp($privilege,'superadmin')==0){
 				$_SESSION['privilege']='superadmin';
 				return 3;
-			}else if (strcmp($privilege,'company')==0){
+			}else if (strcmp($privilege,'staff')==0 ||
+						strcmp($privilege,'admin')==0){
 				$_SESSION['privilege']='company';
 				return 2;
 			}else{
 				$_SESSION['privilege']='admin';
 				return 1;
 			}
-			
-			// $privilege = \DB::table('users')
-			// 			->where('name', '=',$name)
-			// 			->pluck('privilege');
-			// $_SESSION['ifLoggedIn'] = 'y';//set the value to yes
-			// if (strcmp($privilege[0],'superadmin')==0){
-			// 	$_SESSION['privilege']='superadmin';
-			// 	return 3;
-			// }else if (strcmp($privilege[0],'company')==0){
-			// 	$_SESSION['privilege']='company';
-			// 	return 2;
-			// }else{
-			// 	$_SESSION['privilege']='admin';
-			// 	return 1;
-			// }
 
 		}else{
-			$_SESSION['ifLoggedIn'] = 'n';//set the value to no
-			return 0;
+			\Session::put('ifLoggedIn','n');//set the value to no
+			return 0;//密码错误
 		}
 	}
 

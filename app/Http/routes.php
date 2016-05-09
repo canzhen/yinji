@@ -10,12 +10,18 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-//Route::group(['middleware'=>'auth'], function(){//中间件，拦截，用于身份验证
+Route::group(['middleware'=>'web'],function(){
+    date_default_timezone_set('prc');//设置默认时区到中国的时区
+
+    Route::get('test',function(){
+        return $_SESSION['userName'];
+    });
 
     Route::get('/', function () {
         return view('index');
     });
 
+//Route::group(['middleware'=>'auth'], function() {//中间件，拦截，用于身份验证
     /*公司部分*/
     Route::get('/cpy_index', function () {
         return view('company.cpy_index');
@@ -28,14 +34,19 @@
     Route::get('/cpy_checkTemplate', function () {
         return view('company.cpy_checkTemplate');
     });
+
+    Route::get('/cpy_checkOrder', function () {
+        return view('company.cpy_checkOrder');
+    });
+
+    Route::get('/cpy_info', function () {
+        return view('company.cpy_info');
+    });
     /*公司部分结束*/
+//});
 
     Route::get('/getRequest', function () {
         //var files = Request.Files;
-    });
-
-    Route::get('/test', function () {
-        return view('test');
     });
 
     Route::get('/login', function () {
@@ -58,8 +69,7 @@
     Route::get('/create_album', function () {
         return view('create_album');
     });
-
-//});
+});
 
 /*
  * 数据库方面的操作
@@ -78,6 +88,20 @@ Route::get('/auth/addUser',function(){
         );
     return $id;
 });
+
+
+/*
+ * 公司方面的操作
+ */
+Route::get('/cpy/getOrders','CpyController@getOrders');
+Route::get('/cpy/deleteOrder','CpyController@deleteOrder');
+Route::get('/cpy/editOrder','CpyController@editOrder');
+Route::post('/cpy/uploadTemplate','CpyController@uploadTemplate');
+Route::get('/cpy/getTemplates','CpyController@getTemplates');
+Route::get('/cpy/deleteTemplate','CpyController@deleteTemplate');
+
+
+
 //Route::get('/auth/addUser','Auth\AuthController@addUser');//添加用户
 Route::get('/auth/checkUser','Auth\AuthController@checkUser');//查看是否有用户存在
 Route::get('/auth/checkPwd','Auth\AuthController@checkPwd');//查看用户名密码是否正确

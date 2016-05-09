@@ -17,24 +17,25 @@ class CreateAlbumsTable extends Migration
     {
         Schema::create('albums', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id');
+            $table->string('user_name');
             $table->string('saving_path');
             $table->string('name');
             $table->unsignedInteger('category');
             $table->string('description')->nullable();
             $table->string('motto')->nullable();
             $table->string('author_name')->nullable();
+            $table->timestamps();
         });
 
         Schema::table('albums', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_name')->references('name')->on('users')->onDelete('cascade');
             $table->foreign('category')->references('id')->on('albums_category')->onDelete('cascade');
         });
 
         DB::table('albums')->insert(
             array(
                 array(
-                    'user_id' => '1',
+                    'user_name' => 'zcz',
                     'saving_path' => '',
                     'name' => '我的减肥日记',
                     'category' => '1',
