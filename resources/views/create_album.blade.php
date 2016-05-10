@@ -6,7 +6,7 @@
 	@parent
 	<link href="/css/index.css" rel="stylesheet" type="text/css" media="all"/>
 	<link rel="stylesheet" type="text/css" href="/css/create_album.css">
-	<link rel="stylesheet" href="css/buttons.css">
+	<link rel="stylesheet" href="/css/buttons.css">
    
 @stop
 
