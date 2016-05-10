@@ -1,44 +1,53 @@
-// $(document).ready(function(){
-// 	// $(".test").css("display", "none");
+$(function() {		
+	$('.ec-circle').circlemouse({
+		onMouseEnter	: function( el ) {
+			el.addClass('ec-circle-hover');
+		},
+		onMouseLeave	: function( el ) {	
+			el.removeClass('ec-circle-hover');	
+		},
+		onClick			: function( el ) {	
+			alert('clicked');	
+		}
+	});
+});
 
-// 	$(".book-set").hover(function(){
-// 		// window.alert("dafsdfsd");
-// 		$(".test").slideDown();
-// 	});
-// });
-
-// var wall = new freewall("#freewall");
-// wall.reset({
-// 	selector: '#book1',
-// 	animate: true,
-// 	cellW: 200,
-// 	cellH: 'auto',
-// 	onResize: function() {
-// 		wall.fitWidth();
-// 	}
-// });
-
-// wall.container.find('#book1 img').load(function() {
-// 	wall.fitWidth();
-// });
-
-// //call sliphover
-// $('#freewall').sliphover();
-
-var wall = new freewall("#container");
-			wall.reset({
-				selector: '.book-set',
-				animate: true,
-				cellW: 200,
-				cellH: 'auto',
-				onResize: function() {
-					wall.fitWidth();
-				}
-			});
+yinjiApp.controller('testController',
+	function test($scope,$http,$rootScope){
+		$http({
+			method: 'GET',//注意，这里必须要用GET方法
+			url:'/testSession',
 			
-			wall.container.find('.book-set img').load(function() {
-				wall.fitWidth();
-			});
+		}).success(function(data) {
+			if(data != null){
+				console.log(data);
+			}
+			else{
+				console.log("false");
+			}
+		});
+	});
 
-			//call sliphover
-			$('#container').sliphover();
+function test(){
+	alert("adfsd");
+}
+
+
+// var wall = new freewall("#imgContainer");
+// 	wall.reset({
+// 		selector: '.book-set',
+// 		animate: true,
+// 		cellW: 200,
+// 		cellH: 'auto',
+// 		onResize: function() {
+// 			wall.fitWidth();
+// 		}
+// 	});
+
+// 	wall.container.find('.book-set img').load(function() {
+// 		wall.fitWidth();
+// 	});
+
+// 	//call sliphover
+// 	$('#imgContainer').sliphover();
+

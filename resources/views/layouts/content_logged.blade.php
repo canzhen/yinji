@@ -37,7 +37,7 @@
 						<input  type="text" value="查找" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '查找';}"/>
 						<input type="submit"  value=""/>		
 					</div>
-					<a href="/" id = "logoffBtn">注销</a>
+					<a href="/auth/logout" id = "logoffBtn">注销</a>
 				</div>
 
 				<div class="clearfix"> </div>

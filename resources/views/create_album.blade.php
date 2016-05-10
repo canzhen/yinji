@@ -6,21 +6,27 @@
 	@parent
 	<link href="/css/index.css" rel="stylesheet" type="text/css" media="all"/>
 	<link rel="stylesheet" type="text/css" href="/css/create_album.css">
+	<link rel="stylesheet" href="/css/buttons.css">
+   
 @stop
 
 @section('footer')
 	@parent
-	<script src="/js/create_album.js"></script>
+	
 	<script src="/js/lib/plugins.min.js"></script>
 	<script src="/js/lib/modernizr-2.6.2.min.js"></script>
 	<script src="js/create_album/custom-file-input.js"></script>
 	<script src="js/create_album/vendor/modernizr-2.6.2.min.js"></script>	
 	<script src="js/create_album/min/plugins.min.js"></script>
 	<script src="js/create_album/min/main.min.js"></script>
+	<script src="/js/create_album.js"></script>
+	
 @stop
 
 
 @section('content')
+<div ng-controller="albumController">
+<form ng-submit="createAlbum()">
 	<div class="responsive-header visible-xs visible-sm">
 	            <div class="container-album">
 	                <div class="row">
@@ -46,7 +52,7 @@
 	                </div>
 	            </div>
 	</div>
-		
+
     <!-- 创建纪念册右边导航栏 -->
     <div class="sidebar-menu hidden-xs hidden-sm">
     	<!-- 用户头像及用户昵称 -->
@@ -66,7 +72,7 @@
             </ul>
         </div> <!-- 导航栏结束 -->
     </div> <!-- 创建纪念册右边导航栏结束 -->
-    	
+
     <!-- 纪念册风格 -->
     <div class="banner-bg" id="top">
         <div class="book-style-text">
@@ -76,37 +82,43 @@
             <div class="book-style">
                 <p class="book-name"><strong>亲亲宝贝</strong></p>
                 <p class="book-description">记录宝贝成长的点滴</p>
-            	<img class = "noBorder" id = "img1" src="/images/create_album/baby.jpg" alt="亲子记录" onclick="changecolor(this.id)">
+            	<img class = "noBorder" id = "img1_baby" src="/images/create_album/baby.jpg" alt="亲子记录" 
+            		onclick="changecolor(this.id,1)">
             </div>
 
             <div class="book-style">
                 <p class="book-name"><strong>减肥健身</strong></p>
                 <p class="book-description">健康生活每一天</p>
-            	<img class = "noBorder" id = "img2" src="/images/create_album/health.jpg" alt="减肥健身" onclick="changecolor(this.id)">
+            	<img class = "noBorder" id = "img2_health" src="/images/create_album/health.jpg" alt="减肥健身" 
+            		onclick="changecolor(this.id,2)">
             </div>
 
             <div class="book-style">
                 <p class="book-name"><strong>旅行游记</strong></p>
                 <p class="book-description">旅途中的点点滴滴不会遗忘</p>
-            	<img class = "noBorder" id = "img3" src="/images/create_album/travel.jpg" alt="旅行游记" onclick="changecolor(this.id)">
+            	<img class = "noBorder" id = "img3_travel" src="/images/create_album/travel.jpg" alt="旅行游记" 
+            		onclick="changecolor(this.id,3)">
             </div>
 
             <div class="book-style">
                 <p class="book-name"><strong>爱情永驻</strong></p>
                 <p class="book-description">因为有你才有爱情</p>
-            	<img class = "noBorder" id = "img4" src="/images/create_album/love.jpg" alt="爱情永驻" onclick="changecolor(this.id)">
+            	<img class = "noBorder" id = "img4_love" src="/images/create_album/love.jpg" alt="爱情永驻" 
+            		onclick="changecolor(this.id,4)">
             </div>
 
             <div class="book-style">
                 <p class="book-name"><strong>生活随笔</strong></p>
                 <p class="book-description">随时记录生活的琐碎</p>
-            	<img class = "noBorder" id = "img5" src="/images/create_album/live.jpg" alt="生活随笔" onclick="changecolor(this.id)">
+            	<img class = "noBorder" id = "img5_live" src="/images/create_album/live.jpg" alt="生活随笔" 
+            		onclick="changecolor(this.id,5)">
             </div>
 
             <div class="book-style">
                 <p class="book-name"><strong>其他</strong></p>
                 <p class="book-description">记录从不需要理由</p>
-            	<img class = "noBorder" id = "img6" src="/images/create_album/other.jpg" alt="其他" onclick="changecolor(this.id)">
+            	<img class = "noBorder" id = "img6_other" src="/images/create_album/other.jpg" alt="其他" 
+            		onclick="changecolor(this.id,6)">
             </div>
         </div>       
     </div><!-- 纪念册风格结束 -->
@@ -116,7 +128,7 @@
         <div class="fluid-container">
 
             <div class="content-wrapper">
-            
+
                 <!-- 封面设计 -->
                 <div class="page-section" id="about">
 	                <div class="row">
@@ -150,7 +162,7 @@
 							</div><!-- 输入框模板结束 -->
 
 							<div class="book-cover-picture">
-	                        	<p>封面照片：</p><br/>
+	                        	<p class="book-cover-picture-p">封面照片：</p><br/>
 	                        	<table width="100%" border="0" cellspacing="0" cellpadding="0">
 									<tbody>
 										<tr>
@@ -163,14 +175,14 @@
 										<tr>
 										<td align="center" style="padding-top:10px;">
 											<input type="file" name="file" id="doc1" style="width:500px;" class="inputfile inputfile-1" onchange="javascript:setImagePreview1();" data-multiple-caption="{count} files selected" multiple />
-										
+
 						                    <label for="doc1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>选择本地图片&hellip;</span></label>
 						                </td>
 										</tr>
 									</tbody>
 								</table>
 	                        </div>
-		                   
+
 	                	</div>
                 	</div>
                 </div>
@@ -198,7 +210,7 @@
 									<tr>
 									<td align="center" style="padding-top:10px;">
 										<input type="file" name="file" id="doc" style="width:200px;" class="inputfile inputfile-1" onchange="javascript:setImagePreview();" data-multiple-caption="{count} files selected" multiple />
-									
+
 					                <label for="doc"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>选择本地图片&hellip;</span></label>
 					                </td>
 									</tr>
@@ -207,17 +219,26 @@
 						<!-- 填写简介 -->
 	                        <div id="book-introduction_description">
 	                            <p>填写纪念册内容简介:</p>
-	                        	<textarea name="description" id="description" rows="10" cols="50" wrap="hard"></textarea>
-	                        </div>
+	                        	<!-- <textarea name="description" id="description" rows="10" cols="50" wrap="hard"></textarea> -->
+	                        	<form role="form">
+								  <div class="form-group">
+								    <!-- <label for="name">文本框</label> -->
+								    <textarea class="form-control" rows="9"></textarea>
+								  </div>
+								</form>
+	                        </div> 
 	                        <div id="send">
-	                        	<input type="submit" value="提交" style="width:100px;height:30px;color:white;background:rgb(169,169,169);">
+	                        	<input  class="button button-3d button-box button-jumbo" type="submit" value="提交" 
+	                        	>
+	                        	<!-- <a href="/home" class="button button-raised button-primary button-pill">Visit Us!</a> -->
 	                        </div>
                     </div>
-                </div>   <!-- 填写简介结束 -->            
-                <hr>
-                <hr>
+                </div>   <!-- 填写简介结束 -->
+                <!-- <hr>
+                <hr> -->
             </div>
         </div>
     </div>
-
+</form>
+</div>
 @stop

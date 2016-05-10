@@ -15,8 +15,13 @@
 @stop
 
 @section('body')
-	<div style="background:url(/images/record/background.jpg)">
-		<div class="responsive-header visible-xs visible-sm">
+
+<div style="background:url(/images/record/background.jpg)">
+<!-- <div style="background:url(/images/record/background_baby.jpg); background-repeat: no-repeat;"> -->
+<!-- 	<div id="background">
+	<img src="/images/record/background_baby.jpg">
+</div> -->
+        <div class="responsive-header visible-xs visible-sm">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -42,7 +47,7 @@
             </div>
         </div>
         <!-- SIDEBAR -->
-		<div class="sidebar-menu hidden-xs hidden-sm">
+       <div class="sidebar-menu hidden-xs hidden-sm">
             <div class="top-section">
                 <div class="profile-image">
                     <img src="/images/record/profile.jpg" alt="用户头像">
@@ -88,8 +93,7 @@
 				<input class="datebutton" type="button" value="转到"/>
 			</div>
         </div> <!-- .sidebar-menu -->
-
-		<div class="wrap">
+	<div class="wrap">
 		<br/>
 			<div class="writediv">
 				<form action="/record/add" method="post" enctype="multipart/form-data">
@@ -105,7 +109,6 @@
 							<input name="imgfile" type="file"multiple id="imgfile" size="10" onchange="viewmypic(showing1,this.form.imgfile);" />
 							<br/>
 						</div>
-				<div>
 					<input type="button" class="userDefineTime" value="自定义时间:" onclick="ableTime();"/>
 					<select id="year" name="year" class="">
 						<option ></option>
@@ -142,50 +145,51 @@
 						<option>00</option><option>05</option><option>10</option><option>15</option><option>20</option><option>25</option>
 						<option>30</option><option>35</option><option>40</option><option>45</option><option>50</option><option>55</option>
 					</select>
-				</div>
 				<div align="right">
 					<input class="datebutton" type="submit" value="发送"/>
 				</div>
-			</form>
-		</div>
+				</form>
+			</div>
 		
 		<br/><br/><br/><br/>
 		<div>
-		<div class="mydiv111">
-			<p class="datep">2016年4月13日 16:30</p>
-			<p class="diary">培根土豆小饼</p>
-			<div class="divpic">
-				<img class="mypic" src="/images/record/g1.jpg" />
-				<img src="/images/record/g2.jpg" class="mypic"/>
-				<img src="/images/record/g4.jpg" class="mypic"/>
+			<div class="mydiv111">
+				<p class="datep">2016年4月13日 16:30</p>
+				<p class="diary">培根土豆小饼</p>
+				<div class="divpic">
+					<img class="mypic" src="/images/record/g1.jpg" />
+					<img src="/images/record/g2.jpg" class="mypic"/>
+					<img src="/images/record/g4.jpg" class="mypic"/>
+				</div>
 			</div>
-		</div>
-		<br/>
-		<div class="mydiv111">
-			<p class="datep">2016年4月11日 15:04</p>
-			<p class="diary">一到下午这个时候又困…又饿…怎么破？…</p>
-			<div class="divpic">
-				<img src="/images/record/g3.jpg" class="mypic"/>
+			<br/>
+			<div class="mydiv111">
+				<p class="datep">2016年4月11日 15:04</p>
+				<p class="diary">一到下午这个时候又困…又饿…怎么破？…</p>
+				<div class="divpic">
+					<img src="/images/record/g3.jpg" class="mypic"/>
+				</div>
 			</div>
-		</div>
-		<br/>
-		<div class="mydiv111">
-			<p class="datep">2016年4月10日 10:30</p>
-			<p class="diary">【喷香牛肉焖饭】营养丰富又香味十足，煮出来的米饭油光发亮特别的诱惑！绵绵的土豆，微甜的胡萝卜，牛肉香深入米饭，撒一把葱花搅拌下开动啦！</p>
-			<div class="divpic">
-				<img src="/images/record/g5.jpg" class="mypic"/>
-				<img src="/images/record/g6.jpg" class="mypic"/>
-				<img src="/images/record/g7.jpg" class="mypic"/>
-				<img src="/images/record/g8.jpg" class="mypic"/>
-				<img src="/images/record/g9.jpg" class="mypic"/>
-				<img src="/images/record/g10.jpg" class="mypic"/>
-				<img src="/images/record/g11.jpg" class="mypic"/>
-				<img src="/images/record/g12.jpg" class="mypic"/>
-				<img src="/images/record/g13.jpg" class="mypic"/>
+			<br/>
+			<div class="mydiv111">
+				<p class="datep">2016年4月10日 10:30</p>
+				<p class="diary">【喷香牛肉焖饭】营养丰富又香味十足，煮出来的米饭油光发亮特别的诱惑！绵绵的土豆，微甜的胡萝卜，牛肉香深入米饭，撒一把葱花搅拌下开动啦！</p>
+				<div class="divpic">
+					<img src="/images/record/g5.jpg" class="mypic"/>
+					<img src="/images/record/g6.jpg" class="mypic"/>
+					<img src="/images/record/g7.jpg" class="mypic"/>
+					<img src="/images/record/g8.jpg" class="mypic"/>
+					<img src="/images/record/g9.jpg" class="mypic"/>
+					<img src="/images/record/g10.jpg" class="mypic"/>
+					<img src="/images/record/g11.jpg" class="mypic"/>
+					<img src="/images/record/g12.jpg" class="mypic"/>
+					<img src="/images/record/g13.jpg" class="mypic"/>
+				</div>
 			</div>
-		</div>
 		</div>
 	</div>
+</div>
+
 	
 	<table id="links">
       <tr>

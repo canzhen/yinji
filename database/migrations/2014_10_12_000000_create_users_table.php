@@ -21,8 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('name')->unique();
             $table->string('password');
 			$table->string('privilege');
-            $table->string('email');
-            $table->char('phone_number',11);
+            $table->string('email')->nullable();
+            $table->char('phone_number',11)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
@@ -70,6 +70,13 @@ class CreateUsersTable extends Migration
                     'privilege' => 'user',
                     'email' => 'hxt@126.com',
                     'phone_number' => '13258205819'
+                ),
+                array(
+                    'name' => 'yinji',
+                    'password' => Hash::make('123'),
+                    'privilege' => 'staff',
+                    'email' => 'yinji@yj.com',
+                    'phone_number' => '10000000000'
                 )
             )
         );
