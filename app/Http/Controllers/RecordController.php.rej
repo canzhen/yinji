@@ -1,0 +1,14 @@
+diff a/app/Http/Controllers/RecordController.php b/app/Http/Controllers/RecordController.php	(rejected hunks)
+@@ -51,7 +51,12 @@
+ 		$record->save();
+ 		//提醒成功
+ 		echo "<script>alert('发送成功')</script>";
+ 		//页面重定向
+ 		return redirect('/record');
+ 	}
++
++	private function picToServer()
++	{
++
++	}
+ }
