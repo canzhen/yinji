@@ -12,19 +12,21 @@
 
 @section('footer')
 	@parent
-	<script src="/js/create_album.js"></script>
+	
 	<script src="/js/lib/plugins.min.js"></script>
 	<script src="/js/lib/modernizr-2.6.2.min.js"></script>
 	<script src="js/create_album/custom-file-input.js"></script>
 	<script src="js/create_album/vendor/modernizr-2.6.2.min.js"></script>	
 	<script src="js/create_album/min/plugins.min.js"></script>
 	<script src="js/create_album/min/main.min.js"></script>
+	<script src="/js/create_album.js"></script>
 	
 @stop
 
 
 @section('content')
 <div ng-controller="albumController">
+<form ng-submit="createAlbum()">
 	<div class="responsive-header visible-xs visible-sm">
 	            <div class="container-album">
 	                <div class="row">
@@ -226,7 +228,8 @@
 								</form>
 	                        </div> 
 	                        <div id="send">
-	                        	<input class="button button-3d button-box button-jumbo" type="submit" value="提交" >
+	                        	<input  class="button button-3d button-box button-jumbo" type="submit" value="提交" 
+	                        	>
 	                        	<!-- <a href="/home" class="button button-raised button-primary button-pill">Visit Us!</a> -->
 	                        </div>
                     </div>
@@ -236,5 +239,6 @@
             </div>
         </div>
     </div>
+</form>
 </div>
 @stop
