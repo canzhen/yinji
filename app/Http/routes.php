@@ -42,6 +42,14 @@ Route::group(['middleware'=>'web'],function(){
     Route::get('/cpy_info', function () {
         return view('company.cpy_info');
     });
+
+    Route::get('/cpy_newOrdersManage', function () {
+        return view('company.cpy_newOrdersManage');
+    });
+
+    Route::get('/cpy_checkEvaluation', function () {
+        return view('company.cpy_checkEvaluation');
+    });
     /*公司部分结束*/
 //});
 
@@ -100,8 +108,12 @@ Route::post('/cpy/uploadTemplate','CpyController@uploadTemplate');
 Route::get('/cpy/getTemplates','CpyController@getTemplates');
 Route::get('/cpy/deleteTemplate','CpyController@deleteTemplate');
 
+Route::get('/cpy/getIndexMsg','CpyController@getIndexMsg');
+Route::get('/cpy/getUndoneOrders','CpyController@getUndoneOrders');
 
-
+Route::get('/cpy/getEvaluations','CpyController@getEvaluations');
+Route::get('/cpy/getGoodEva','CpyController@getGoodEva');
+Route::get('/cpy/getBadEva','CpyController@getBadEva');
 //Route::get('/auth/addUser','Auth\AuthController@addUser');//添加用户
 Route::get('/auth/checkUser','Auth\AuthController@checkUser');//查看是否有用户存在
 Route::get('/auth/checkPwd','Auth\AuthController@checkPwd');//查看用户名密码是否正确

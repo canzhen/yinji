@@ -8,9 +8,49 @@ use App\Template;
 use App\Order;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Evaluation;
 
 class CpyController extends Controller
 {
+
+    /**
+     * 加载首页信息
+     * @return 未完成订单的数量、总评论数
+     */
+    public function getIndexMsg(){
+        $undoneOrderNum=Order::where('status','未完成')->count();
+        $evaNum=Evaluation::all()->count();
+        return array('undoneOrderNum' => $undoneOrderNum, 'evaNum' => $evaNum);
+    }
+    /**
+     * 获取未完成订单信息
+     * @return 未完成订单信息数组
+     */
+    public function getUndoneOrders(){
+        return Order::where('status','未完成')->get();
+    }
+    /**
+     * 获取所有评价
+     * @return 所有评价
+     */
+    public function getEvaluations(){
+        return Evaluation::all();
+    }
+    /**
+     * 获取所有好评
+     * @return 所有好评
+     */
+    public function getGoodEva(){
+        return Evaluation::where('content','like','%漂亮%')->orWhere('content','like','%精致%')
+            ->orWhere('content','like','%棒%')->orWhere('content','like','%很好看%')->get();
+    }
+    /**
+     * 获取所有差评
+     * @return 所有差评
+     */
+    public function getBadEva(){
+        return Evaluation::where('content','like','%不好%')->orWhere('content','like','%丑%')->get();
+    }
     /**
      * 获取所有订单
      * @return 所有订单
