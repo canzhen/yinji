@@ -37,8 +37,8 @@
 					<a href="#" class="lb-close">x Close</a>
 					<img src="@{{ x.saving_path }}" alt="image01" />
 					<div>
-						<h3>pointe <span>/point/</h3>
-						<p>Dance performed on the tips of the toes</p>
+						<h3>@{{ x.template_name }} <span>/@{{ x.author_name }}/</h3>
+						<p>@{{ x.description }}</p>
 					</div>
 				</div>
 			</div>
