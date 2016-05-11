@@ -77,6 +77,7 @@ class CpyController extends Controller
             $info = array('response'=>0);
             if ($this->addTemplate($fileName,$author_name,$saving_path,"没有描述")){
                 //成功往数据库添加数据之后才把图片保存到硬盘，这样可以防止重名
+                $info = array('response'=>$author_name);
                 if (move_uploaded_file($tempFile,$path.$fileName)){
                     $info = array('response'=>1);
                 }

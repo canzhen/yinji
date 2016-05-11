@@ -26,7 +26,7 @@
 						<thead>
 						<tr>
 							<th>订单编号</th>
-							<th>日期</th>
+							<th>下单日期</th>
 							<th>单价</th>
 							<th>数量</th>
 							<th>订单状态</th>
