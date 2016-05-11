@@ -12,7 +12,6 @@
 	@parent
 	<script src="js/record/rePic.js"></script>
 	<script src="js/record/re_checkRecord.js"></script>
-	<script src="js/yinji.js"></script>
 	<script src="js/create_album/vendor/modernizr-2.6.2.min.js"></script>
 @stop
 
@@ -154,25 +153,12 @@
 			</div>
 		
 		<br/><br/><br/><br/>
-		<div>
-			<div class="mydiv111" >
-				<p class="datep">2222</p>
-				<p class="diary">aaa</p>
-				<div class="divpic">
-					<img class="mypic" src="" />
-				</div>
-			</div>
-		</div>
-
-		<div ng-app="yinjiApp" ng-controller="checkRecordCtrl">
-			<tr ng-repeat="x in records">
-				<td ng-bind="x.showTime"></td>
-			</tr>
+		<div ng-controller="checkRecordCtrl">
 			<div class="mydiv111" ng-repeat="x in records">
-				<p class="datep" ></p>
-				<p class="diary"></p>
-				<div class="divpic">
-					<img class="mypic" src="" />
+				<p class="datep" ng-bind="x.showTime"></p>
+				<p class="diary" ng-bind="x.description"></p>
+				<div class="divpic" ng-bind="x.picPath">
+					<img class="mypic" src="@{{}}" />
 				</div>
 			</div>
 		</div>
