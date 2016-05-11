@@ -26,6 +26,8 @@
 				<div class="captain">
 					<div class="title">@{{ x.template_name }}</div>
 					<div class="description">@{{ x.description }}</div>
+					<div class="time">创建时间：@{{ x.created_at }}</div>
+					<div class="time">修改时间：@{{ x.updated_at }}</div>
 					<div class="author">作者：@{{ x.author_name }}</div>
 					<div class="author"><a href="" ng-click="deleteTemplate(x)">删除模板</a></div>
 				</div>

@@ -15,7 +15,7 @@ yinjiApp.controller('checkTemplateCtrl',
 		$scope.$on('ngRepeatFinished', function (ngRepeatFinishedEvent) {
 			//下面是在table render完成后执行的js
 
-			var maxWidth = 210,maxHeight = 210;
+			var maxWidth = 250,maxHeight = 250;
 			//为图片设置自适应大小
 			//$("#mainbody img").addClass("carousel-inner img-responsive img-rounded");
 

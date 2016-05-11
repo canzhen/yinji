@@ -10,7 +10,7 @@
 }
 
 #mainbody .thumbnail{
-    width:250px;
+    width:300px;
     padding-left:10px;
 }
 
@@ -38,7 +38,16 @@
 
 #mainbody .thumbnail .captain .description
 {
+    font-size: 12px;
+    margin: 5px 0;
+    text-align: left;
+}
 
+#mainbody .thumbnail .captain .time
+{
+    font-size: 12px;
+    margin: 5px 0;
+    text-align: left;
 }
 
 #mainbody .thumbnail .captain .author
