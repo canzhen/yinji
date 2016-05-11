@@ -10,7 +10,9 @@
 
 @section('footer')
 	@parent
-	<script src="{{asset('js/rePic.js')}}"></script>
+	<script src="js/record/rePic.js"></script>
+	<script src="js/record/re_checkRecord.js"></script>
+	<script src="js/yinji.js"></script>
 	<script src="js/create_album/vendor/modernizr-2.6.2.min.js"></script>
 @stop
 
@@ -153,42 +155,29 @@
 		
 		<br/><br/><br/><br/>
 		<div>
-			<div class="mydiv111">
-				<p class="datep">2016年4月13日 16:30</p>
-				<p class="diary">培根土豆小饼</p>
+			<div class="mydiv111" >
+				<p class="datep">2222</p>
+				<p class="diary">aaa</p>
 				<div class="divpic">
-					<img class="mypic" src="/images/record/g1.jpg" />
-					<img src="/images/record/g2.jpg" class="mypic"/>
-					<img src="/images/record/g4.jpg" class="mypic"/>
+					<img class="mypic" src="" />
 				</div>
 			</div>
-			<br/>
-			<div class="mydiv111">
-				<p class="datep">2016年4月11日 15:04</p>
-				<p class="diary">一到下午这个时候又困…又饿…怎么破？…</p>
+		</div>
+
+		<div ng-app="yinjiApp" ng-controller="checkRecordCtrl">
+			<tr ng-repeat="x in records">
+				<td ng-bind="x.showTime"></td>
+			</tr>
+			<div class="mydiv111" ng-repeat="x in records">
+				<p class="datep" ></p>
+				<p class="diary"></p>
 				<div class="divpic">
-					<img src="/images/record/g3.jpg" class="mypic"/>
-				</div>
-			</div>
-			<br/>
-			<div class="mydiv111">
-				<p class="datep">2016年4月10日 10:30</p>
-				<p class="diary">【喷香牛肉焖饭】营养丰富又香味十足，煮出来的米饭油光发亮特别的诱惑！绵绵的土豆，微甜的胡萝卜，牛肉香深入米饭，撒一把葱花搅拌下开动啦！</p>
-				<div class="divpic">
-					<img src="/images/record/g5.jpg" class="mypic"/>
-					<img src="/images/record/g6.jpg" class="mypic"/>
-					<img src="/images/record/g7.jpg" class="mypic"/>
-					<img src="/images/record/g8.jpg" class="mypic"/>
-					<img src="/images/record/g9.jpg" class="mypic"/>
-					<img src="/images/record/g10.jpg" class="mypic"/>
-					<img src="/images/record/g11.jpg" class="mypic"/>
-					<img src="/images/record/g12.jpg" class="mypic"/>
-					<img src="/images/record/g13.jpg" class="mypic"/>
+					<img class="mypic" src="" />
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
+
 
 	
 	<table id="links">
@@ -198,5 +187,5 @@
          </td>
       </tr>
    </table>
-		
+</div>
 @stop

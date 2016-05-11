@@ -19,6 +19,7 @@ class RecordController extends Controller
 		//获取表单数据
 		$record =new Record();
 		//$data['name']
+		$record -> name = $_SESSION['userName'];
 		$record -> description = Request::input('description');
 
 		$picPath = Request::input('imgfile');
@@ -58,5 +59,33 @@ class RecordController extends Controller
 	private function picToServer()
 	{
 
+	}
+
+	public function selectRecord()
+	{
+		return Record::all();
+	}
+
+	public function deleteRecord(){
+		$recordId = $_GET['id'];
+		if (Record::where('id',$recordId)->delete())
+			return 1;
+		else return 0;
+	}
+
+	public function editRecord(){
+		$id = $_GET['id'];
+		$price = $_GET['price'];
+		$status = $_GET['status'];
+		$address = $_GET['address'];
+		$comment = $_GET['comment'];
+		if (Order::where('id',$id)->update(array(
+				'price'=>$price,
+				'status'=>$status,
+				'address'=>$address,
+				'comment'=>$comment
+		)))
+			return 1;
+		else return 0;
 	}
 }
