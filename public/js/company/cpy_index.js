@@ -5,7 +5,8 @@
 yinjiApp.controller('cpyIndexController',
 	function($scope,$http){
 		$scope.deployedOrder = {};
-
+		$scope.undoneOrderNum;
+		$scope.evaNum;
 		$http.get("/cpy/getOrders")
 		.success(function (response)
 		{
@@ -16,4 +17,12 @@ yinjiApp.controller('cpyIndexController',
 					$scope.deployedOrder[i] = response[i];
 			}
 		});
+
+		$http.get("/cpy/getIndexMsg")
+		.success(function (response)
+		{
+			$scope.undoneOrderNum=response.undoneOrderNum;
+			$scope.evaNum=response.evaNum;
+		});
+
 	});
