@@ -1,0 +1,66 @@
+.sidebarContent{
+	margin: 4% 8% auto 13%;
+}
+
+#basicInfo > div > h3{
+	padding-bottom:10px;
+}
+
+#basicInfo > div > div{
+	padding-left:30px;
+	width:40%;
+}
+
+#basicInfo input{
+	height:40px;
+}
+
+#safetyInfo > div > h3{
+	padding-bottom:10px;
+}
+
+
+#safetyInfo > div > div{
+	padding-left:30px;
+	width:60%;
+}
+
+#safetyInfo form{
+	height:40px;
+}
+
+#safetyInfo button{
+	width:50px;
+	height:30px;
+	float:right;
+	padding-bottom:10px;
+}
+
+#safetyInfo > div > div > form > span{
+	font-size:18px;
+}
+
+
+
+.divide-line{
+	margin-top:10px;
+	margin-bottom:10px;
+	height: 1px;
+	border-top: 1px solid #ddd;
+	text-align: center;
+}
+
+.sidebarUl{
+	position:fixed;
+	width:8%;
+	margin-left:1%;
+}
+
+.sidebarUl > li{
+	font-size:16px;
+}
+
+.sidebarUl > li > a{
+
+	color:#000;
+}
