@@ -148,7 +148,7 @@ Route::get('/db/addAlbum', function() {
     return $id;
 });
 
-// 展示纪念册
+// 展示纪念册asdfasdfsd
 Route::get('/displayAlbum', 'Album\AlbumController@displayAlbum');
 Route::get('/addAlbum', 'Album\AlbumController@addAlbum');
 Route::get('/getCurAlbumInfo', 'Album\AlbumController@getCurAlbumInfo');
