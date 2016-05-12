@@ -19,7 +19,7 @@ class RecordController extends Controller
 		//获取表单数据
 		$record =new Record();
 		//$data['name']
-		$record -> name = $_SESSION['userName'];
+		//$record -> name = $_SESSION['userName'];
 		$record -> description = Request::input('description');
 
 		$picPath = Request::input('imgfile');
