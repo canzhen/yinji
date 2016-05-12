@@ -75,4 +75,15 @@ class UserController extends BaseController
 		else
 			return 0;
 	}
+
+
+	public function checkIfMobile(){
+		$name = $_SESSION['userName'];
+
+		$user = User::where('name','=',$name)->first();
+		if ($user->phone_number == null)
+			return 0;
+		else
+			return $user->phone_number;
+	}
 }

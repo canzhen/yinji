@@ -80,6 +80,18 @@ yinjiApp.controller('userInfoCtrl',
             $scope.username = response;
         });
 
+        //查看该用户是否设置了手机
+        $http.get("/usr/checkIfMobile")
+        .success(function(response){
+            if (response != 0){
+                $scope.ifMobile = "green";
+                $scope.phoneNumber = response;
+            }else{
+                $scope.ifMobile = "red";
+            }
+        })
+
+
         //查看用户名是否已存在
         $scope.checkUserExist = function(){
             $http({
@@ -180,6 +192,6 @@ yinjiApp.controller('userInfoCtrl',
                 }
             });
 
-            $('#editPwd').modal('hide');
+            $('#editPwdModal').modal('hide');
         };
 });

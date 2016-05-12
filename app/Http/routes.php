@@ -51,6 +51,10 @@ Route::group(['middleware'=>'web'],function(){
     Route::get('/cpy_checkEvaluation', function () {
         return view('company.cpy_checkEvaluation');
     });
+
+    Route::get('/cpy_userInformation', function () {
+        return view('company.userInformation');
+    });
     /*公司部分结束*/
 //});
 
@@ -128,6 +132,7 @@ Route::get('/usr/checkExistUser','UserController@checkExistUser');
 Route::get('/usr/editUsername','UserController@editUsername');
 Route::get('/usr/checkPwd','UserController@checkPwd');
 Route::get('/usr/editPwd','UserController@editPwd');
+Route::get('/usr/checkIfMobile','UserController@checkIfMobile');
 
 
 Route::get('/testSession', 'Album\AlbumController@testSession');
