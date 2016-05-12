@@ -125,6 +125,7 @@ Route::get('/auth/error', function() {
  * 用户方面的操作
  */
 Route::get('/usr/checkExistUser','UserController@checkExistUser');
+Route::get('/usr/editUsername','UserController@editUsername');
 
 
 Route::get('/testSession', 'Album\AlbumController@testSession');

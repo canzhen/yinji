@@ -8,7 +8,7 @@ yinjiApp.controller('userInfoCtrl',
         $scope.msg = "";
         $scope.msgIndex = 0;
         $scope.errMsgColor = "red";
-        
+
         //获取用户名并显示在首页上
         $http.get("/getUserName")
         .success(function (response)
@@ -38,4 +38,25 @@ yinjiApp.controller('userInfoCtrl',
                 }
             });
         };
+
+        $scope.editUsername = function(){
+            $http({
+                method:'GET',
+                url:"/usr/editUsername",
+                params:{
+                    'newUsername':$scope.newUsername
+                }
+            })
+            .success(function(response){
+                console.log(response);
+                if (response == 1){
+                    $scope.username = $scope.newUsername;
+                    alert("修改用户名成功！");
+                }else{
+                    alert("修改用户名失败...");
+                }
+
+            });
+            $('#editUserName').modal('hide');
+        }
 });

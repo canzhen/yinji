@@ -115,7 +115,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-					<button type="button" class="btn btn-primary" ng-click="addUser()" ng-disabled="newUser.name == NULL || newUser.pwd == NULL || msgIndex == 1">保存</button>
+					<button type="button" class="btn btn-primary" ng-click="editUsername()" ng-disabled="newUsername == NULL">确认修改</button>
 				</div>
 			</div>
 		</div>
