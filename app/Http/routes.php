@@ -148,8 +148,14 @@ Route::get('/db/addAlbum', function() {
     return $id;
 });
 
-Route::get('/testSession', 'Album\AlbumController@testSession');
-
+Route::get('/displayAlbum', 'Album\AlbumController@displayAlbum');
+Route::get('/addAlbum', 'Album\AlbumController@addAlbum');
+Route::get('/getCurAlbumInfo', 'Album\AlbumController@getCurAlbumInfo');
+Route::get('/getCurAlbum', function(){
+    return $_SESSION['curAlbum'];
+});
+Route::get('/updateAlbum', 'Album\AlbumController@updateAlbum');
+Route::get('/deleteAlbum', 'Album\AlbumController@deleteAlbum');
 /*
 |--------------------------------------------------------------------------
 | Application Routes

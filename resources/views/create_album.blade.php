@@ -45,7 +45,7 @@
 	                <a href="#" class="toggle-menu"><i class="fa fa-bars"></i></a>
 	                <div class="main-navigation responsive-menu">
 	                    <ul class="navigation">
-	                        <li><a href="#top"><i class="fa fa fa-heart"></i>纪念册风格</a></li>
+	                        <li ><a href="#top" ><i class="fa fa fa-heart"></i>纪念册风格</a></li>
 	                        <li><a href="#about"><i class="fa fa-photo"></i>编辑封面</a></li>
 	                        <li><a href="#projects"><i class="fa fa-pencil"></i>填写简介</a></li>
 	                    </ul>
@@ -141,19 +141,19 @@
 	                        <div class="container-album">
 								<section class="content bgcolor-1">
 									<span class="input input--haruki">
-										<input class="input__field input__field--haruki" type="text" id="input-1" maxlength="10"/>
+										<input class="input__field input__field--haruki" type="text" id="input-1" maxlength="10" ng-model = "nameOfAlbum"/>
 										<label class="input__label input__label--haruki" for="input-1">
 											<span class="input__label-content input__label-content--haruki">纪念册名字（10字以内）：</span>
 										</label>
 									</span>
 									<span class="input input--haruki">
-										<input class="input__field input__field--haruki" type="text" id="input-2" maxlength="10"/>
+										<input class="input__field input__field--haruki" type="text" id="input-2" maxlength="10" ng-model = "nameOfAuthor"/>
 										<label class="input__label input__label--haruki" for="input-2">
 											<span class="input__label-content input__label-content--haruki">作者名字（10字以内）：</span>
 										</label>
 									</span>
 									<span class="input input--haruki">
-										<input class="input__field input__field--haruki" type="text" id="input-3" maxlength="20"/>
+										<input class="input__field input__field--haruki" type="text" id="input-3" maxlength="20" ng-model = "nameOfMotto"/>
 										<label class="input__label input__label--haruki" for="input-3">
 											<span class="input__label-content input__label-content--haruki">想加在封面的话（20字以内）：</span>
 										</label>
@@ -161,7 +161,7 @@
 								</section>
 							</div><!-- 输入框模板结束 -->
 
-							<div class="book-cover-picture">
+							 <div class="book-cover-picture">
 	                        	<p class="book-cover-picture-p">封面照片：</p><br/>
 	                        	<table width="100%" border="0" cellspacing="0" cellpadding="0">
 									<tbody>
@@ -209,7 +209,7 @@
 									</tr>
 									<tr>
 									<td align="center" style="padding-top:10px;">
-										<input type="file" name="file" id="doc" style="width:200px;" class="inputfile inputfile-1" onchange="javascript:setImagePreview();" data-multiple-caption="{count} files selected" multiple />
+										<input type="file" name="myfile" id="doc" style="width:200px;" class="inputfile inputfile-1" onchange="javascript:setImagePreview();" data-multiple-caption="{count} files selected" multiple />
 
 					                <label for="doc"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>选择本地图片&hellip;</span></label>
 					                </td>
@@ -223,13 +223,15 @@
 	                        	<form role="form">
 								  <div class="form-group">
 								    <!-- <label for="name">文本框</label> -->
-								    <textarea class="form-control" rows="9"></textarea>
+								    <textarea id = "albumDesc" class="form-control" rows="9" 
+								    	ng-model = "contentOfDesc"></textarea>
 								  </div>
 								</form>
 	                        </div> 
 	                        <div id="send">
-	                        	<input  class="button button-3d button-box button-jumbo" type="submit" value="提交" 
-	                        	>
+	                        <input type = "button" value = "保存" onclick="saveChange()">
+	                        <input type = "button" value = "删除" onclick="deleteAlbum()">
+	                        	<input  class="button button-3d button-box button-jumbo" type="submit" value="提交">
 	                        	<!-- <a href="/home" class="button button-raised button-primary button-pill">Visit Us!</a> -->
 	                        </div>
                     </div>

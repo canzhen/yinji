@@ -8,8 +8,107 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class AlbumController extends Controller
-{
-    public function testSession(){
-    	return $_SESSION['userId'] . "\r\n" . $_SESSION['userName'];
+{	
+	/**
+	 * [displayAlbum description]
+	 * @return [type] [description]
+	 */
+    public function displayAlbum(){
+    	$resSet = \DB::table('albums')->get();
+
+    	return $resSet;
+    //return $;
+    //return "fee";
+    }
+
+
+    public function addAlbum(){
+    	$uid = $_SESSION['userId'];
+    	$uname = $_SESSION['userName'];
+    	$category = $_GET['category'];
+    	$albumName = $_GET['albumName'];
+    	$authorName = $_GET['authorName'];
+    	$motto = $_GET['motto'];
+    	$description = $_GET['description'];
+
+    	$eid = \DB::table('albums')
+	        ->insertGetId(
+	            array(
+	                'user_id' => $uid,
+	                'category' => $category,
+	                'name' => $albumName,     
+	                'author_name' => $authorName, 
+	                'motto' => $motto,
+	                'description' => $description,
+	                'saving_path' => "\images\mo.jpg"       
+	            )
+	        );
+	        
+	        
+
+    	// $file = Request::file('myfile');
+    	// if($file -> isValid()){
+    	// 	return "success";
+    	// }
+
+
+
+    	return "success";
+    }
+
+    public function getAlbum(){
+    	return $_SESSION['curAlbum'];
+    }
+
+    /**
+     * 获得当前纪念册的信息
+     * @return 若当前存在纪念册编号 则返回当前纪念册的信息数组
+     *         若不存在 返回false 
+     */
+    public function getCurAlbumInfo(){
+    	if($_SESSION['curAlbum'] == 0){
+    		return "false";
+    	}else{
+    		$res = \DB::table('albums')
+    			->where('id', $_SESSION['curAlbum'])
+    			->get();
+    		return $res;
+    	}
+        //return $_SESSION['curAlbum']; 
+    }
+
+    public function updateAlbum(){
+        $sss = $_SESSION['curAlbum'];
+    	$uid = $_SESSION['userId'];
+    	$category = $_GET['category'];
+    	$albumName = $_GET['albumName'];
+    	$authorName = $_GET['authorName'];
+    	$motto = $_GET['motto'];
+    	$description = $_GET['description'];
+
+
+    	\DB::table('albums')
+    		->where('id', $sss)
+    		->update(
+                array(
+                    'category' => $category, 
+                    'name' => $albumName,
+                    'author_name' => $authorName,
+                    'motto' => $motto,
+                    'description' => $description
+                )
+            );
+    	
+        return "success";
+    }
+
+    public function deleteAlbum(){
+        $sss = $_SESSION['curAlbum'];
+        
+        \DB::table('albums')
+            ->where('id', $sss)
+            ->delete();
+
+        return "success";
     }
 }
