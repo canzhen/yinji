@@ -41,4 +41,38 @@ class UserController extends BaseController
 		}
 		else return 0;
 	}
+
+	public function checkPwd(){
+		$username=$_SESSION['userName'];
+		$inputPwd = $_GET['inputPwd'];
+
+		if (
+			\Auth::validate(
+				array(
+					'name'=>$username,
+					'password'=>$inputPwd
+				)
+			)
+		){
+			return 1;
+		}else{
+			return 0;
+		}
+	}
+
+
+	public function editPwd(){
+		$name=$_SESSION['userName'];
+		$pwd=$_GET['newPwd'];
+
+		
+		$user = User::where('name',$name)->update(array('password'=>\Hash::make($pwd)));
+		$result = false;
+		if ($user != null)
+			$result = true;
+		if ($result)
+			return 1;
+		else
+			return 0;
+	}
 }
