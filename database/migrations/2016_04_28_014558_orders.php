@@ -43,6 +43,32 @@ class Orders extends Migration
                 )
             )
         );
+            DB::table('orders')->insert(
+            array(
+                array(
+                    'user_name' => 'jp',
+                    'album_name' => '我的减肥日记',
+                    'price'=> 43,
+                    'quantity' => 1,
+                    'address' => '山西省阳泉市盂县xx镇！',
+                    'status'=> '未完成',
+                    'comment'=>'可不可以给我弄瘦一点啊！'
+                )
+            )
+        );
+        DB::table('orders')->insert(
+            array(
+                array(
+                    'user_name' => 'jp',
+                    'album_name' => '我的第二次减肥日记',
+                    'price'=> 43,
+                    'quantity' => 1,
+                    'address' => '山西省阳泉市盂县xx镇！',
+                    'status'=> '未完成',
+                    'comment'=>'完全没有瘦下来！'
+                )
+            )
+        );
     }
 
     /**
