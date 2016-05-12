@@ -10,18 +10,18 @@ use App\Http\Controllers\Controller;
 class AlbumController extends Controller
 {	
 	/**
-	 * [displayAlbum description]
-	 * @return [type] [description]
+	 * 展示纪念册
+	 * @return  数据库中所有纪念册的结果集
 	 */
     public function displayAlbum(){
     	$resSet = \DB::table('albums')->get();
 
     	return $resSet;
-    //return $;
-    //return "fee";
     }
 
-
+    /**
+     * 创建纪念册
+     */
     public function addAlbum(){
     	$uid = $_SESSION['userId'];
     	$uname = $_SESSION['userName'];
@@ -43,21 +43,7 @@ class AlbumController extends Controller
 	                'saving_path' => "\images\mo.jpg"       
 	            )
 	        );
-	        
-	        
-
-    	// $file = Request::file('myfile');
-    	// if($file -> isValid()){
-    	// 	return "success";
-    	// }
-
-
-
     	return "success";
-    }
-
-    public function getAlbum(){
-    	return $_SESSION['curAlbum'];
     }
 
     /**
@@ -74,9 +60,12 @@ class AlbumController extends Controller
     			->get();
     		return $res;
     	}
-        //return $_SESSION['curAlbum']; 
     }
 
+    /**
+     * 更新纪念册信息
+     * @return 成功信息
+     */
     public function updateAlbum(){
         $sss = $_SESSION['curAlbum'];
     	$uid = $_SESSION['userId'];
@@ -102,6 +91,10 @@ class AlbumController extends Controller
         return "success";
     }
 
+    /**
+     * 删除纪念册
+     * @return 成功信息
+     */
     public function deleteAlbum(){
         $sss = $_SESSION['curAlbum'];
         
