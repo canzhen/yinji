@@ -28,8 +28,8 @@ class CreateAlbumsTable extends Migration
         });
 
         Schema::table('albums', function (Blueprint $table) {
-            $table->foreign('user_name')->references('name')->on('users')->onDelete('cascade');
-            $table->foreign('category')->references('id')->on('albums_category')->onDelete('cascade');
+            $table->foreign('user_name')->references('name')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('category')->references('id')->on('albums_category')->onUpdate('cascade')->onDelete('cascade');
         });
 
         DB::table('albums')->insert(

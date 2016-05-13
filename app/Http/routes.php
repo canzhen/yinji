@@ -13,7 +13,8 @@
 Route::group(['middleware'=>'web'],function(){
     date_default_timezone_set('prc');//设置默认时区到中国的时区
 
-    Route::get('test',function(){
+    //在前端获取当前用户名
+    Route::get('/getUserName',function(){
         return $_SESSION['userName'];
     });
 
@@ -50,6 +51,10 @@ Route::group(['middleware'=>'web'],function(){
     Route::get('/cpy_checkEvaluation', function () {
         return view('company.cpy_checkEvaluation');
     });
+
+    Route::get('/cpy_userInformation', function () {
+        return view('company.userInformation');
+    });
     /*公司部分结束*/
 //});
 
@@ -77,24 +82,11 @@ Route::group(['middleware'=>'web'],function(){
     Route::get('/create_album', function () {
         return view('create_album');
     });
-});
 
-/*
- * 数据库方面的操作
- */
-Route::get('/auth/addUser',function(){
-    $name=$_GET['username'];
-    $password=$_GET['password'];
-    $privilege='user';
-    $id = \DB::table('users')
-        ->insertGetId(
-            array(
-                'name' => $name,
-                'password' => Hash::make($password),
-                'privilege' => $privilege
-            )
-        );
-    return $id;
+    //用户个人信息查看与修改界面
+    Route::get('/user-information',function(){
+        return view('user-information');
+    });
 });
 
 
@@ -114,7 +106,7 @@ Route::get('/cpy/getUndoneOrders','CpyController@getUndoneOrders');
 Route::get('/cpy/getEvaluations','CpyController@getEvaluations');
 Route::get('/cpy/getGoodEva','CpyController@getGoodEva');
 Route::get('/cpy/getBadEva','CpyController@getBadEva');
-//Route::get('/auth/addUser','Auth\AuthController@addUser');//添加用户
+Route::get('/auth/addUser','Auth\AuthController@addUser');//添加用户
 Route::get('/auth/checkUser','Auth\AuthController@checkUser');//查看是否有用户存在
 Route::get('/auth/checkPwd','Auth\AuthController@checkPwd');//查看用户名密码是否正确
 
@@ -133,32 +125,15 @@ Route::get('/auth/error', function() {
 });
 
 
-/*
- * 纪念册操作
+/**
+ * 用户方面的操作
  */
+Route::get('/usr/checkExistUser','UserController@checkExistUser');
+Route::get('/usr/editUsername','UserController@editUsername');
+Route::get('/usr/checkPwd','UserController@checkPwd');
+Route::get('/usr/editPwd','UserController@editPwd');
+Route::get('/usr/checkIfMobile','UserController@checkIfMobile');
 
-//创建纪念册
-Route::get('/db/addAlbum', function() {
-    $userId = $_GET['userId'];
-    $albumName = $_GET['albumName'];
-    $category = $_GET['category'];
-    $authorName = $_GET['authorName']; 
-    $motto = $_GET['motto'];
-    $description = $_GET['description'];
-
-    $id = DB::table('albums')
-        ->insertGetId(
-            array(
-                'user_id' => $userId,
-                'name' => $albumName,
-                'category' => $category,
-                'author_name' => $authorName, 
-                'motto' => $motto,
-                'description' => $description       
-            )
-        );
-    return $id;
-});
 
 Route::get('/testSession', 'Album\AlbumController@testSession');
 
@@ -178,6 +153,7 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 
+<<<<<<< HEAD
 /*
  * 控制器和路由
  */
@@ -185,3 +161,36 @@ Route::group(['middleware' => ['web']], function () {
  //绑定RecordController的增加函数和record.blade.php
  //Route::get('/record/add','RecordController@addRecord');
  Route::post('/record/add','RecordController@addRecord');
+=======
+// 记录的相关操作
+// 记录简介页面
+Route::get('/album_index', function () {
+        return view('create_records.album_index');
+    });
+
+// 记录封面页面
+Route::get('/album_cover', function () {
+        return view('create_records.album_cover');
+    });
+// 创建记录页面
+Route::get('/album_create_records', function () {
+        return view('create_records.album_create_records');
+    });
+
+// 查找记录页面
+Route::get('/album_query', function () {
+        return view('create_records.album_query');
+    });
+// 展示记录页面
+Route::get('/album_show_records', function () {
+        return view('create_records.album_show_records');
+    });
+// 记录页面
+Route::get('/album_records', function () {
+        return view('create_records.album_records');
+    });
+// 上传文件页面
+Route::get('/album_fileupload', function () {
+        return view('create_records.album_fileupload');
+    });
+>>>>>>> bd3e3223b8a3e1cada6b8372e2b6e278581b5fb5

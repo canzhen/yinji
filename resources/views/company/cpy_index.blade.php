@@ -40,9 +40,9 @@
 							</div>
 						</div>
 					</div>
-					<a href="#">
+					<a href="/cpy_checkEvaluation">
 						<div class="panel-footer">
-							<span class="pull-left"><a href="/cpy_checkEvaluation">查看详情</a></span>
+							<span class="pull-left">查看详情</span>
 							<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 							<div class="clearfix"></div>
 						</div>
@@ -84,9 +84,9 @@
 							</div>
 						</div>
 					</div>
-					<a href="#">
+					<a href="/cpy_newOrdersManage">
 						<div class="panel-footer">
-							<span class="pull-left"><a href="/cpy_newOrdersManage">查看详情</a></span>
+							<span class="pull-left">查看详情</span>
 							<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 							<div class="clearfix"></div>
 						</div>
