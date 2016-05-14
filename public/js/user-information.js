@@ -68,6 +68,8 @@ function CheckIntensity(pwd){
 yinjiApp.controller('userInfoCtrl',
     function userInfoCtrl($scope,$http,$rootScope){
 
+        $scope.userImgSrc = "/images/create_album/profile.jpg";
+        //console.log($scope.userImgSrc);
         $scope.msg = "";
         $scope.msgIndex = 0;
         $scope.identicalMsg="";

@@ -123,7 +123,6 @@ class CpyController extends Controller
                 }
             }
 
-
             return json_encode($info);
         }
     }

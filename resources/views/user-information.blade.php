@@ -1,6 +1,7 @@
 @extends('layouts.content-inner')
 
 @section('title','用户信息查看')
+@section('inner-title','账户中心')
 
 @section('header')
 	@parent
@@ -11,6 +12,13 @@
 	@parent
 	<script src="/js/user-information.js"></script>
 @stop
+
+@section('header-right')
+	<img id="img" ng-src="@{{ userImgSrc }}" class="img-circle"
+		 style="width:50px;height:50px;margin-right:20px;">
+	<a href="/">返回首页</a>
+@stop
+
 
 @section('content')
 <div ng-controller="userInfoCtrl" style="margin-top:40px;">
