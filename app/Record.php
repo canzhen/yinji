@@ -18,5 +18,5 @@ class Record extends Model
      *
      * @var array
      */
-    protected $fillable = ['id','name','description','picpath','showTime','created_at','updated_at'];
+    protected $fillable = ['id','albumId','name','description','picpath','showTime','created_at','updated_at'];
 }

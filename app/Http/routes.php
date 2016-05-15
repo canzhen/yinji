@@ -75,7 +75,7 @@ Route::group(['middleware'=>'web'],function(){
     });
 	
 	Route::get('/record', function () {
-        return view('record');
+        return view('create_records\album_create_records');
     });
 
     //用户创建纪念册
@@ -153,7 +153,6 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 
-<<<<<<< HEAD
 /*
  * 控制器和路由
  */
