@@ -22,15 +22,16 @@
     <div class="page_box page_box_bg">
     <!-- 回到主页的按钮 -->
 	    <div class="home_menu"><a href="/album_cover"></a></div>
+		<form action="/record/add" method="post" enctype="multipart/form-data">
+			<input type="hidden" name="_token" value="{{ csrf_token() }}" />
 	    <!-- 左侧页面 -->
 	    <div class="index_left page_left create_l">
 	      <div class="create_text">
 	        <h1>请在这里添加你的纪念册记录:</h1>
-             
             <div class="userTime">
 		        <!-- 自定义时间 -->
 		    	<!-- <input type="button" class="userDefineTime" value="自定义时间:" onclick="ableTime();"/> -->
-		    	<b>自定义时间：<b/>
+		    	<b>自定义时间：</b>
 				<select id="year" name="year" class="">
 					<option ></option>
 					<option >2016</option>
