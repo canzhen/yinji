@@ -2,7 +2,7 @@
 
 @section('body')
 	<!--导航栏-->
-	<div class="header">
+	<div class="headerLine">
 		<div class="header-content">
 			<div class="header-main">
 				<div class="header-left">

@@ -35,12 +35,12 @@
 								<i class="fa fa-comments fa-5x"></i>
 							</div>
 							<div class="col-xs-9 text-right">
-								<div class="huge">26</div>
+								<div class="huge" ng-bind="evaNum"></div>
 								<div>新用户评价</div>
 							</div>
 						</div>
 					</div>
-					<a href="#">
+					<a href="/cpy_checkEvaluation">
 						<div class="panel-footer">
 							<span class="pull-left">查看详情</span>
 							<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -79,12 +79,12 @@
 								<i class="fa fa-shopping-cart fa-5x"></i>
 							</div>
 							<div class="col-xs-9 text-right">
-								<div class="huge">124</div>
+								<div class="huge" ng-bind="undoneOrderNum"></div>
 								<div>新订单</div>
 							</div>
 						</div>
 					</div>
-					<a href="#">
+					<a href="/cpy_newOrdersManage">
 						<div class="panel-footer">
 							<span class="pull-left">查看详情</span>
 							<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
