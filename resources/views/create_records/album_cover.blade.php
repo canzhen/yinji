@@ -12,7 +12,7 @@
 @stop
 
 @section('content')
-  <!-- 页面上面的背景 -->
+  <!-- 页面上面的背的风格和进口量景 -->
   <div class="bg_top">
     <div class="header_bg"><!-- 右上角的图案 -->
     </div>
