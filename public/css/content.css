@@ -1,29 +1,26 @@
 body{
 	font-family: "宋体";
-	background-color:#F9FAFB;
 }
 
 .headerLine {
-	opacity:0.7;
-
+	opacity:0.8;
 	position: fixed;
 	top: 0px;
 	background-color: #fff;
 	width: 100%;
-	z-index:1000;
+	z-index:9999;
 	padding: 10px 0px;
-	
 }
 
 .header-content{
-	margin:15px 70px 15px 70px;
+	margin-left: 70px;
+	margin-right: 70px;
 }
 
 .header-main {
   padding: 0px 10px 0px 10px;
   /*border: 1px solid #000;*/
 }
-
 .logo a {
   font-size: 2em;
   font-weight: 700;
@@ -48,8 +45,8 @@ body{
 .header-right {
 	float: right;
 	width: 300px;
-	text-align: right;
-	padding: 5px 5px 0px 0px;
+	text-align: center;
+	padding: 10px 10px 0px 0px;
 	font-family: "微软雅黑";
 }
 
@@ -182,7 +179,6 @@ span.ser-img {
 	height: 29px;
 	width: 660px;
 	font-family: "微软雅黑";
-
 }
 
 .top-nav  ul {
@@ -192,7 +188,6 @@ span.ser-img {
 
 .top-nav  ul li {
 	display: inline-block;
-
 }
 
 .top-nav  ul li a {
@@ -252,12 +247,15 @@ span.ser-img {
 	border-top: 2px solid #CCC;
 }
 
+
 .res li:hover ul{
 	display:block; 
 	position:absolute; 
 	width:100px; 
 	top:46px; 	
 }
+
+
 
 .res li:hover ul li{ 
 	line-height: 28px;
