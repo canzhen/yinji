@@ -135,8 +135,20 @@ Route::get('/usr/editPwd','UserController@editPwd');
 Route::get('/usr/checkIfMobile','UserController@checkIfMobile');
 
 
-Route::get('/testSession', 'Album\AlbumController@testSession');
-
+// 展示纪念册
+Route::get('/displayAlbum', 'Album\AlbumController@displayAlbum');
+// 添加纪念册
+Route::get('/addAlbum', 'Album\AlbumController@addAlbum');
+// 获得当前纪念册的信息
+Route::get('/getCurAlbumInfo', 'Album\AlbumController@getCurAlbumInfo');
+//获得当前纪念册ID
+Route::get('/getCurAlbum', function(){
+    return $_SESSION['curAlbum'];
+});
+// 更新纪念册
+Route::get('/updateAlbum', 'Album\AlbumController@updateAlbum');
+// 删除纪念册
+Route::get('/deleteAlbum', 'Album\AlbumController@deleteAlbum');
 /*
 |--------------------------------------------------------------------------
 | Application Routes

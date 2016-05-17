@@ -1,35 +1,85 @@
 window.allImg = new Array("img1_baby","img2_health","img3_travel","img4_love","img5_live","img6_other");
 window.imgCategory = "0";
-
+window.curAlbumId = 0;
 
 yinjiApp.controller('albumController',
 	function createAlbumController($scope,$http,$rootScope){
+
+		// $http({
+		// 	method: 'GET',//注意，这里必须要用GET方法
+		// 	url:'/getCurAlbum',
+		// })
+		// .success(function(data){
+		// 	if(data != null){
+		// 		console.log(data);
+		// 		//alert("success");
+		// 		curAlbumId = data;
+		// 	}
+		// });
+
+		// $http({
+		// 	method: 'GET',//注意，这里必须要用GET方法
+		// 	url:'/getCurAlbumInfo',
+		// })
+		// .success(function(data){
+		// 	if(data != null){
+		// 		if(data == "false"){
+					
+		// 		}
+		// 		else{
+		// 			//alert("success");
+		// 			curAlbumId = data;
+		// 			nameOfAlbum = data.nameOfAlbum;
+		// 			document.getElementById("input-1").focus();
+		// 			var str = "#" + allImg[data[0].category - 1];
+		// 			//console.log(str);
+		// 			//$(str).addClass("hasBorder");
+		// 			imgCategory = data[0].category;
+		// 			$(str).removeClass('noBorder');
+		// 			$(str).addClass("hasBorder");
+		// 			$("#input-1").focus();
+		// 			$("#input-1").val(data[0].name);
+		// 			$("#input-2").focus();
+		// 			$("#input-2").val(data[0].author_name);
+		// 			$("#input-3").focus();
+		// 			$("#input-3").val(data[0].motto);
+		// 			$("#input-3").blur();
+		// 			$("#albumDesc").val(data[0].description);
+		// 			$("#test").focus();
+		// 			window.location.href = "#top";
+		// 		}
+		// 	}else{
+		// 		console.log(data);
+		// 	}
+		// });
+
+
 		//创建纪念册
 		$scope.createAlbum = function(){
 			//输入验证通过
 			if($scope.checkAlbumInput()){
 				if($scope.nameOfAuthor == null || $scope.nameOfAuthor == "")
-					$scope.nameOfAuthor = $_SESSION['userName'];
+					//$scope.nameOfAuthor = $_SESSION['userName'];
 
 				if($scope.contentOfDesc == null || $scope.contentOfDesc == "") 
 					$scope.contentOfDesc = "作者很懒，什么都没有留下";
 
 				$http({
 					method: 'GET',//注意，这里必须要用GET方法
-					url:'/testSession',
-					// params:{
-					// 	'userId': $_SESSION['userId'],
-					// 	'albumName': $scope.nameOfAlbum,
-					// 	'category': imgCategory,
-					// 	'description': $scope.contentOfDesc,
-					// 	'authorName': $scope.nameOfAuthor,
-					// 	'motto': $scope.nameOfMotto
-					// }
+					url:'/addAlbum',
+					params:{
+						'category': imgCategory,			
+						'albumName': $scope.nameOfAlbum,
+						'authorName': $scope.nameOfAuthor,
+						'motto': $scope.nameOfMotto,
+						'description': $scope.contentOfDesc
+					}
 				})
 				.success(function(data){
-					console.log(data);
 					if(data != null){
 						console.log(data);
+						alert("创建成功!");
+						window.location.href = "/home";
 					}
 				});
 			}
@@ -60,7 +110,76 @@ yinjiApp.controller('albumController',
 		}
 	});
 
+function saveChange(){
+	//alert("save");
+	var newCategory = imgCategory;
+	var newNameOfAlbum = $("#input-1").val();
+	var newNameOfAuthor = $("#input-2").val();
+	var newNameOfMotto = $("#input-3").val();
+	var newContentOfDesc = $("#albumDesc").val();
 
+	// $http({
+	// 	method: 'GET',//注意，这里必须要用GET方法
+	// 	url:'/updateAlbum',
+	// 	params:{
+	// 		'category': newCategory,			
+	// 		'albumName': newNameOfAlbum,
+	// 		'authorName': newNameOfAuthor,
+	// 		'motto': newNameOfMotto,
+	// 		'description': newContentOfDesc
+	// 	}
+	// })
+	// .success(function(data){
+	// 	if(data != null){
+	// 		console.log(data);
+	// 		//alert("修改成功!");
+	// 	}
+	// });
+
+	$.ajax({
+		type: 'get',
+		url: '/updateAlbum',
+		
+		data: {
+			'category': newCategory,			
+			'albumName': newNameOfAlbum,
+			'authorName': newNameOfAuthor,
+			'motto': newNameOfMotto,
+			'description': newContentOfDesc
+		},
+		dataType : "text",
+		success : function(data) {
+			if(data != null){
+				console.log(data);
+				//alert("修改成功!");
+				window.location.href = "/home";
+			}
+		},
+		error : function() {
+			alert("false");
+		}
+	});	
+}
+
+
+function deleteAlbum(){
+	$.ajax({
+		type: 'get',
+		url: '/deleteAlbum',
+		
+		dataType : "text",
+		success : function(data) {
+			if(data != null){
+				console.log(data);
+				//alert("修改成功!");
+				window.location.href = "/home";
+			}
+		},
+		error : function() {
+			alert("false");
+		}
+	});	
+}
 
 //点击图片边框变红
 function changecolor(obj, num){
@@ -192,16 +311,18 @@ function setImagePreview(avalue) {
 	var docObj=document.getElementById("doc");
 
 	var imgObjPreview=document.getElementById("preview");
+	//alert(imgObjPreview.src);
 	if(docObj.files &&docObj.files[0])
 	{
 		//火狐下，直接设img属性
 		imgObjPreview.style.display = 'block';
 		imgObjPreview.style.width = '200px';
-		imgObjPreview.style.height = '200px'; 
+		imgObjPreview.style.height = '200px';
 		//imgObjPreview.src = docObj.files[0].getAsDataURL();
-		 
+		
 		//火狐7以上版本不能用上面的getAsDataURL()方式获取，需要一下方式
 		imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+
 	}else{
 		//IE下，使用滤镜
 		docObj.select();
@@ -220,7 +341,10 @@ function setImagePreview(avalue) {
 		}
 		imgObjPreview.style.display = 'none';
 		document.selection.empty();
+
 	}
+	//var tmp = document.getElementById("preview").value;
+	//	alert(tmp);
 	return true;
 }
 

@@ -12,7 +12,6 @@
 	<script src="/js/index_home/index.js"></script>
 @stop
 
-
 @section('content')
 
     <!-- <div class="slider">

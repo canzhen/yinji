@@ -948,13 +948,24 @@ img
 
     background: url(../../images/create_records/t.gif) left top no-repeat;
 }
+/*用户自己选择日期查看当天内容*/
 .job_l
 {
     width: 435px;
     height: 600px;
     margin-left: 60px;
 
-    background: url(../../images/create_records/job_03.jpg) left top;
+    background: url(../../images/create_records/about_03.jpg) left top;
+}
+.user_time
+{
+    font-size: 12px;
+    line-height: 20px;
+    display: inline;
+    float: left;
+    margin: 150px auto auto 40px;
+    color: #7f543a;
+
 }
 .job_right
 {

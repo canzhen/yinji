@@ -4,24 +4,37 @@
 
 @section('header')
   @parent
-  <link rel="stylesheet" type="text/css" href="/css/create_records/style.css">   
+  <link rel="stylesheet" type="text/css" href="/css/create_records/style.css">  
+  <link rel="stylesheet" type="text/css" href="/css/create_records/bootstrap-datetimepicker.min.css"> 
+  <link rel="stylesheet" type="text/css" href="/css/create_records/bootstrap/css/bootstrap.min.css">
 @stop
 
 @section('footer')
   @parent 
+  <script src="/js/create_records/dateTimePicker/jquery-1.8.3.min.js"></script>
+  <script src="/js/create_records/dateTimePicker/bootstrap.min.js"></script>
+  <script src="/js/create_records/dateTimePicker/bootstrap-datetimepicker.js"></script>
+  <script src="/js/create_records/dateTimePicker/locales/bootstrap-datetimepicker.fr.js"></script>
+  <script src="/js/create_records/time.js"></script>
 @stop
 
 @section('content')
+<!-- 页面上面的背景 -->
 <div class="bg_top">
-  <div class="header_bg">
-  <div class="header">
-  </div>
-  </div>
+    <!-- 右上角的图案 -->
+    <div class="header_bg">
+    </div>
 </div>
 <div class="page_box page_box_bg">
 <div class="home_menu"><a href="/album_cover"></a></div>
-	
-  <div class="index_left page_left job_l">
+	<!-- 用户查看自定义日期中的内容 -->
+  <div class="index_left page_left about_l">
+    <!-- 时间选择器 -->
+    <div class="user_time">
+
+          
+
+    </div>
   </div>
   <div class="index_right page_right job_r">
 <table border="0" width="400" cellpadding="0" style="border-collapse: collapse; font-size:12px; margin-top:80px; margin-left:30px;" id="table1">
@@ -178,7 +191,7 @@ Add：郑州高新区翠竹街6号中部软件园11号楼13层<br />
 	</table>
 </div>
 
-
+  <!-- 左面菜单 -->
   <div class="page_right_menu" >
     <ul>
       <li class="menu_1"><a href="/album_index" title="关于工厂——纪念册简介"></a></li>
@@ -190,16 +203,6 @@ Add：郑州高新区翠竹街6号中部软件园11号楼13层<br />
     </ul>
   </div>
 </div>
+<!-- 书的下半部分的背景 -->
 <div class="page_bot"></div>
-<div class="footer">
-<div class="footer_left"><a href="http://www.weibo.com/cloudfactory" title="云朵工厂官方微博" target="_blank" class="sina"></a><a href="http://cloudfactory.taobao.com/" target="_blank" class="taobao" title="云朵工厂官方店铺" ></a><a href="http://site.douban.com/126699/" title="云朵工厂豆瓣主页" target="_blank" class="douban"></a>
-<div class="link">
-<a class="contact" href="contact.html" target="_blank" title="联系我们" ></a>
-<a class="linker" href="linker.html" target="_blank" title="云朵工厂友情链接" ></a>
-</div>
-</div>
-<div class="footer_right"><p>Copyright&copy;2012 Dodoo animation PTY.LTD.收集： <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a>
-</p>
-</div>
-</div>
 @stop
