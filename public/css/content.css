@@ -2,10 +2,15 @@ body{
 	font-family: "宋体";
 }
 
+<<<<<<< HEAD
 
 .headerLine {
 	opacity:0.7;
 
+=======
+.headerLine {
+	opacity:0.8;
+>>>>>>> 8c5ff984281c7541de9273155a5443eaf3a52f32
 	position: fixed;
 	top: 0px;
 	background-color: #fff;
