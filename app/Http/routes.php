@@ -161,7 +161,7 @@ Route::group(['middleware' => ['web']], function () {
  //Route::get('/record/add','RecordController@addRecord');
  Route::post('/record/add','RecordController@addRecord');
  Route::get('/record/select','RecordController@selectRecord');
-Route::get('/record/delete','RecordController@selectRecord');
+ Route::get('/record/delete','RecordController@selectRecord');
 // Route::get('/record', function () {
 //     return view('record');
 // });

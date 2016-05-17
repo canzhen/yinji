@@ -6,13 +6,17 @@ yinjiApp.controller('checkRecordCtrl',
         $scope.records = {};
         $scope.recordDetail = {};
         var tempDetail = {};
-alert(12);
+
         $http.get("/record/select")
         .success(function (response)
         {
             //console.log(response);
             alert(response);
+
             $scope.records = response;
+
+
+
         });
 
         $scope.paginationConf = {
