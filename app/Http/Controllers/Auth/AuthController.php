@@ -118,7 +118,7 @@ class AuthController extends Controller
 			->insertGetId(
 				array(
 					'name' => $name,
-					'password' => Hash::make($password),
+					'password' => \Hash::make($password),
 					'privilege' => $privilege
 				)
 			);

@@ -26,9 +26,9 @@ class Orders extends Migration
             $table->timestamps();
         });
 
-//        Schema::table('orders', function (Blueprint $table) {
-//            $table->foreign('album_name')->references('name')->on('albums')->onDelete('cascade');
-//        });
+        Schema::table('orders', function (Blueprint $table) {
+            $table->foreign('user_name')->references('name')->on('users')->onUpdate('CASCADE')->onDelete('CASCADE');
+        });
 
         DB::table('orders')->insert(
             array(
