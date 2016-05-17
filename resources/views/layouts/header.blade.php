@@ -18,7 +18,7 @@
     </head>
 	
 	
-    <body ng-app="yinjiApp">
+    <body ng-app="yinjiApp" class="body">
         @section('body')
         @show
         @section('footer')

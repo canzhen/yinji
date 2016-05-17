@@ -22,7 +22,7 @@ class Templates extends Migration
         });
 
         Schema::table('templates', function (Blueprint $table) {
-            $table->foreign('author_name')->references('name')->on('users')->onDelete('cascade');
+            $table->foreign('author_name')->references('name')->on('users')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
     }
 

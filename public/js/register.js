@@ -67,7 +67,7 @@ yinjiApp.controller('authController',
 								'remember':true
 							}
 						});
-						//window.setTimeout("window.location='intended'",1000);
+						window.setTimeout("window.location='intended'",1000);
 					} else {
 						$scope.errMsgColor = "red";//错误消息为红色
 						$scope.errMsg = 'oops，注册失败...猿猿正在努力查找错误原因中...';

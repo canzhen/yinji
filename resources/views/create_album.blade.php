@@ -6,7 +6,7 @@
 	@parent
 	<link href="/css/index.css" rel="stylesheet" type="text/css" media="all"/>
 	<link rel="stylesheet" type="text/css" href="/css/create_album.css">
-	<link rel="stylesheet" href="css/buttons.css">
+	<link rel="stylesheet" href="/css/buttons.css">
    
 @stop
 
@@ -229,8 +229,10 @@
 								</form>
 	                        </div> 
 	                        <div id="send">
+
 	                        <input type = "button" value = "保存" onclick="saveChange()">
 	                        <input type = "button" value = "删除" onclick="deleteAlbum()">
+
 	                        	<input  class="button button-3d button-box button-jumbo" type="submit" value="提交">
 	                        	<!-- <a href="/home" class="button button-raised button-primary button-pill">Visit Us!</a> -->
 	                        </div>
