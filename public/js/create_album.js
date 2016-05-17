@@ -17,41 +17,41 @@ yinjiApp.controller('albumController',
 		// 	}
 		// });
 
-		$http({
-			method: 'GET',//注意，这里必须要用GET方法
-			url:'/getCurAlbumInfo',
-		})
-		.success(function(data){
-			if(data != null){
-				if(data == "false"){
+		// $http({
+		// 	method: 'GET',//注意，这里必须要用GET方法
+		// 	url:'/getCurAlbumInfo',
+		// })
+		// .success(function(data){
+		// 	if(data != null){
+		// 		if(data == "false"){
 					
-				}
-				else{
-					//alert("success");
-					curAlbumId = data;
-					nameOfAlbum = data.nameOfAlbum;
-					document.getElementById("input-1").focus();
-					var str = "#" + allImg[data[0].category - 1];
-					//console.log(str);
-					//$(str).addClass("hasBorder");
-					imgCategory = data[0].category;
-					$(str).removeClass('noBorder');
-					$(str).addClass("hasBorder");
-					$("#input-1").focus();
-					$("#input-1").val(data[0].name);
-					$("#input-2").focus();
-					$("#input-2").val(data[0].author_name);
-					$("#input-3").focus();
-					$("#input-3").val(data[0].motto);
-					$("#input-3").blur();
-					$("#albumDesc").val(data[0].description);
-					$("#test").focus();
-					window.location.href = "#top";
-				}
-			}else{
-				console.log(data);
-			}
-		});
+		// 		}
+		// 		else{
+		// 			//alert("success");
+		// 			curAlbumId = data;
+		// 			nameOfAlbum = data.nameOfAlbum;
+		// 			document.getElementById("input-1").focus();
+		// 			var str = "#" + allImg[data[0].category - 1];
+		// 			//console.log(str);
+		// 			//$(str).addClass("hasBorder");
+		// 			imgCategory = data[0].category;
+		// 			$(str).removeClass('noBorder');
+		// 			$(str).addClass("hasBorder");
+		// 			$("#input-1").focus();
+		// 			$("#input-1").val(data[0].name);
+		// 			$("#input-2").focus();
+		// 			$("#input-2").val(data[0].author_name);
+		// 			$("#input-3").focus();
+		// 			$("#input-3").val(data[0].motto);
+		// 			$("#input-3").blur();
+		// 			$("#albumDesc").val(data[0].description);
+		// 			$("#test").focus();
+		// 			window.location.href = "#top";
+		// 		}
+		// 	}else{
+		// 		console.log(data);
+		// 	}
+		// });
 
 
 		//创建纪念册
