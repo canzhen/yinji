@@ -17,23 +17,26 @@ class RecordController extends Controller
     public function addRecord()
 	{
 		//获取表单数据
-		$record =new Record();
-		//$data['name']
+		$record = new Record();
 		//$record -> name = $_SESSION['userName'];
-		$record -> description = Request::input('description');
+		$record->description = Request::input('description');
 
-		$picPath = Request::input('imgfile');
-		$file = Request::file('imgfile');
-		if($file->isValid()){
-			$clientName = $file->getClientOriginalName();
-			$tmpName = $file->getFileName();
-			$realPath = $file->getRealPath();
-			$extension = $file->getClientOriginalExtension();
-			$mimeTye = $file->getMimeType();
-			$newName = md5(date('ymdhis').$clientName).".".$extension;
-			$path = $file->move(app_path().'\storage\uploads\record',$newName);
-			$record -> picpath = app_path().'\storage\uploads\record'.$newName;
-		}
+		$picPath = Request::input('files');
+		$file = Request::file('files');
+		$lenth = count($file);
+		for ($i = 0; $i < $lenth; $i++) {
+			if ($file[$i]->isValid()) {
+				$clientName = $file[$i]->getClientOriginalName();
+				$tmpName = $file[$i]->getFileName();
+				$realPath = $file[$i]->getRealPath();
+				$extension = $file[$i]->getClientOriginalExtension();
+				$mimeTye = $file[$i]->getMimeType();
+				$newName = md5(date('ymdhis') . $clientName) . "." . $extension;
+				$path = $file[$i]->move(app_path() . '\storage\uploads\record', $newName);
+				$record->picpath = app_path() . '\storage\uploads\record' . $newName + ';';
+				$i++;
+			}
+	}
 
 		$year = Request::input('year');
 		$month =  Request::input('month');

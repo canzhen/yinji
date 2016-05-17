@@ -4,7 +4,8 @@
 
 @section('header')
   @parent
-    <link rel="stylesheet" type="text/css" href="/css/create_records/style.css">   
+    <link rel="stylesheet" type="text/css" href="/css/create_records/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/create_records/bootstrap.min.css">
 @stop
 
 @section('footer')
@@ -70,7 +71,7 @@
 			</div>
 
 			<!-- <P>这里用来写用户对该纪念册的简介</P> -->
-	        <textarea style="width:330px;height:250px;"></textarea>
+	        <textarea name="description" style="width:330px;height:250px;"></textarea>
 	      </div>
 	    </div>
   	    
@@ -79,13 +80,15 @@
     	    <div class="create_picture">
     	    <!-- 上传文件 -->
 				<iframe width="400" height="400" class="share_self"   
-				frameborder="0" scrolling="yes" src="/album_fileupload"></iframe>
+				frameborder="0" scrolling="yes" src="/album_fileupload#hg"></iframe>
 				<!-- 上传文件结束 -->
     	    </div>
-            
 
     	</div>
-        <!-- 右边导航栏 -->
+
+		</form>
+
+		<!-- 右边导航栏 -->
         <div class="page_right_menu" >
           <ul>
             <li class="menu_1"><a href="/album_index" title="关于工厂——纪念册简介"></a></li>

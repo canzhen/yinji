@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/css/create_records/style.css">   
   <!-- 上传文件要引的CSS -->
    <link rel="stylesheet" type="text/css" href="/css/create_records/reset.css">
- <link rel="stylesheet" type="text/css" href="/css/create_records/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/create_records/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/create_records/default.css">
     <link rel="stylesheet" type="text/css" href="/css/create_records/jquery.filer.css">
     <link rel="stylesheet" type="text/css" href="/css/create_records/jquery.filer-dragdropbox-theme.css">
@@ -27,9 +27,10 @@
 @stop
 
 @section('content')
-	 <form action="" method="get" enctype="multipart/form-data" class="text-center">
+	 <form action="/record/add" method="post" enctype="multipart/form-data" class="text-center" target="_top">
+          <input type="hidden" name="_token" value="{{ csrf_token() }}">
 	      <input type="file" name="files[]" id="demo-fileInput-4" multiple="multiple">
-	      <input type="submit" class="btn-custom green" value="提交">
+          <input type="submit" class="btn-custom green" value="提交">
 	</form>
 @stop
 
