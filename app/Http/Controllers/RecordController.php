@@ -13,7 +13,12 @@ class RecordController extends Controller
 	{
 		
 	}
-	
+	public function addRecordNew(){
+		$date=$_POST['date'];
+		$content=$_POST['content'];
+
+		return $date;
+	}
     public function addRecord()
 	{
 		//获取表单数据
