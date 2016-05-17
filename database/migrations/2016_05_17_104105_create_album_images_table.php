@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRecord extends Migration
+class CreateAlbumImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,12 @@ class CreateRecord extends Migration
      */
     public function up()
     {
-        //
-		Schema::create('record', function (Blueprint $table) {
+        Schema::create('album_images', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('albumId');
-            $table->string('name');
-			$table->text('description');
-			$table->string('picpath');
-			$table->dateTime('showTime');
-			$table->timestamps();
+            $table->integer('album_id');
+            $table->string('images_url');
+            $table->string('content');
+            $table->timestamps();
         });
     }
 
@@ -31,6 +28,6 @@ class CreateRecord extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('album_images');
     }
 }
