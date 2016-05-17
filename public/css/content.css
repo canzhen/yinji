@@ -6,7 +6,7 @@ body{
 	background-color:#F9FAFB;
 }
 
-.header {
+.headerLine {
 	opacity:1;
 	position: fixed;
 	top: 0px;
@@ -14,6 +14,7 @@ body{
 	width: 100%;
 	z-index:1000;
 	padding: 10px 0px;
+	
 }
 
 .header-content{
@@ -183,6 +184,7 @@ span.ser-img {
 	height: 29px;
 	width: 660px;
 	font-family: "微软雅黑";
+
 }
 
 .top-nav  ul {
@@ -192,6 +194,7 @@ span.ser-img {
 
 .top-nav  ul li {
 	display: inline-block;
+
 }
 
 .top-nav  ul li a {
@@ -251,15 +254,12 @@ span.ser-img {
 	border-top: 2px solid #CCC;
 }
 
-
 .res li:hover ul{
 	display:block; 
 	position:absolute; 
 	width:100px; 
 	top:46px; 	
 }
-
-
 
 .res li:hover ul li{ 
 	line-height: 28px;
