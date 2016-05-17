@@ -29,11 +29,11 @@
 @stop
 
 @section('content')
-	 <form id="record_form" action="/record/add_new" method="post" enctype="multipart/form-data" class="text-center" target="_top">
+	 <form id="record_form" action="/record/add" method="post" enctype="multipart/form-data" class="text-center" target="_top">
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
 	      <input type="file" name="files[]" id="demo-fileInput-4" multiple="multiple">
-        <input type="text" id="date" name="date" value="" style="visibility:hidden">
-        <input type="text" id="content" name="content" value="" style="visibility:hidden">
+          <input type="text" id="date" name="date" value="" style="visibility:hidden">
+          <input type="text" id="content" name="content" value="" style="visibility:hidden">
           <input  type="submit" class="btn-custom green" value="提交">
 	</form>
 @stop

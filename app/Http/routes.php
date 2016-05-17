@@ -158,14 +158,10 @@ Route::group(['middleware' => ['web']], function () {
  */
  
  //绑定RecordController的增加函数和record.blade.php
- //Route::get('/record/add','RecordController@addRecord');
  Route::post('/record/add','RecordController@addRecord');
-  Route::post('/record/add_new','RecordController@addRecordNew');
+ Route::post('/record/add_new','RecordController@addRecordNew');
  Route::get('/record/select','RecordController@selectRecord');
- Route::get('/record/delete','RecordController@selectRecord');
-// Route::get('/record', function () {
-//     return view('record');
-// });
+ Route::get('/record/delete','RecordController@deleteRecord');
 
 // 记录的相关操作
 // 记录简介页面

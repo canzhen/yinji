@@ -23,8 +23,6 @@
     <div class="page_box page_box_bg">
     <!-- 回到主页的按钮 -->
 	    <div class="home_menu"><a href="/album_cover"></a></div>
-		<form action="/record/add" method="post" enctype="multipart/form-data">
-			<input type="hidden" name="_token" value="{{ csrf_token() }}" />
 	    <!-- 左侧页面 -->
 	    <div class="index_left page_left create_l">
 	      <div class="create_text">
@@ -80,13 +78,11 @@
     	    <div class="create_picture">
     	    <!-- 上传文件 -->
 				<iframe width="400" height="400" class="share_self"   
-				frameborder="0" scrolling="yes" src="/album_fileupload#hg"></iframe>
+				frameborder="0" scrolling="yes" src="/album_fileupload"></iframe>
 				<!-- 上传文件结束 -->
     	    </div>
 
     	</div>
-
-		</form>
 
 		<!-- 右边导航栏 -->
         <div class="page_right_menu" >

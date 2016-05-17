@@ -23,9 +23,11 @@ class RecordController extends Controller
 	{
 		//获取表单数据
 		$record = new Record();
-		//$record -> name = $_SESSION['userName'];
-		$record->description = Request::input('description');
+		//$record -> template_name = $_SESSION['userName'];
+		//author_name
+		$record-> description = $_POST['content'];
 
+		$tempPath="";
 		$picPath = Request::input('files');
 		$file = Request::file('files');
 		$lenth = count($file);
@@ -37,25 +39,13 @@ class RecordController extends Controller
 				$extension = $file[$i]->getClientOriginalExtension();
 				$mimeTye = $file[$i]->getMimeType();
 				$newName = md5(date('ymdhis') . $clientName) . "." . $extension;
-				$path = $file[$i]->move(app_path() . '\storage\uploads\record', $newName);
-				$record->picpath = app_path() . '\storage\uploads\record' . $newName + ';';
-				$i++;
+				$path = $file[$i]->move(app_path().'\storage\uploads\record', $newName);
+				$tempPath = $tempPath."/storage/uploads/record/" . $newName . ";";
 			}
 	}
+		$record->picPath =$tempPath;
 
-		$year = Request::input('year');
-		$month =  Request::input('month');
-		$day =  Request::input('day');
-		$hour = Request::input('hour');
-		$min = Request::input('min');
-
-		if($year==0000 || $month==00 || $day==00)
-		{
-			$record -> showTime=date('y-m-d h:i:s',time());
-		}else{
-			$record -> showTime= $year.'-'.$month.'-'.$day.' '.$hour.':'.$min.':00';
-		}
-
+		$record -> showTime = $_POST['date'];
 		//数据插入到数据库中
 		$record->save();
 		//提醒成功
@@ -76,7 +66,7 @@ class RecordController extends Controller
 
 	public function deleteRecord(){
 		$recordId = $_GET['id'];
-		if (Record::where('id',$recordId)->delete())
+		if (Template::where('id',$recordId)->delete())
 			return 1;
 		else return 0;
 	}
@@ -87,7 +77,7 @@ class RecordController extends Controller
 		$status = $_GET['status'];
 		$address = $_GET['address'];
 		$comment = $_GET['comment'];
-		if (Order::where('id',$id)->update(array(
+		if (Template::where('id',$id)->update(array(
 				'price'=>$price,
 				'status'=>$status,
 				'address'=>$address,

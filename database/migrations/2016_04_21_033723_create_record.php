@@ -16,9 +16,9 @@ class CreateRecord extends Migration
 		Schema::create('record', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('albumId');
-            $table->string('name');
+            $table->string('autherName');
 			$table->text('description');
-			$table->string('picpath');
+			$table->string('picPath');
 			$table->dateTime('showTime');
 			$table->timestamps();
         });
