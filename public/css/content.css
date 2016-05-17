@@ -2,12 +2,17 @@ body{
 	font-family: "宋体";
 }
 
+<<<<<<< HEAD
+.headerLine {
+	opacity:0.8;
+=======
 .body{
 	background-color:#F9FAFB;
 }
 
 .headerLine {
 	opacity:1;
+>>>>>>> 9666ad2ffb313cf7160e7f5212d2bf4a67473f65
 	position: fixed;
 	top: 0px;
 	background-color: #fff;
