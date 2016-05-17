@@ -51,7 +51,7 @@ class RecordController extends Controller
 		//提醒成功
 		echo "<script>alert('发送成功')</script>";
 		//页面重定向
-		return redirect('/record');
+		return redirect('/album_create_records');
 	}
 
 	private function picToServer()
