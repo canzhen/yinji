@@ -230,8 +230,8 @@
 	                        </div> 
 	                        <div id="send">
 
-	                        <input type = "button" value = "保存" onclick="saveChange()">
-	                        <input type = "button" value = "删除" onclick="deleteAlbum()">
+	                    <!--     <input type = "button" value = "保存" onclick="saveChange()">
+	                        <input type = "button" value = "删除" onclick="deleteAlbum()"> -->
 
 	                        	<input  class="button button-3d button-box button-jumbo" type="submit" value="提交">
 	                        	<!-- <a href="/home" class="button button-raised button-primary button-pill">Visit Us!</a> -->

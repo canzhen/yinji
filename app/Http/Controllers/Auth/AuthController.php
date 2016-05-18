@@ -62,7 +62,7 @@ class AuthController extends Controller
             //$_SESSION['curAlbum']
             //$_SESSION['privilege'] = $res[0]->privilege;//获得权限
             //测试
-            $_SESSION['curAlbum'] = 1;
+            $_SESSION['curAlbum'] = 0;
             $privilege = $res[0]->privilege;
             $_SESSION['ifLoggedIn'] = 'y';//set the value to yes
 

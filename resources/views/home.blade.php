@@ -48,9 +48,15 @@
 
 		<!-- 查看纪念册 -->
 	<div id = "albumContainer" ng-controller="albumController">
+		<p id = "albumTitle">我的纪念册</p>
 
+		<!-- <div class = 'no-line normal-trigger-area'>
+			<i class="fa fa-trash-o fa-lg"></i>
+			<a href = '#' id = 'circle' class = 'ec-circle' style = "background: url(images/mo.jpg);">
+				<h3>aaa</h3>
+			</a>
+			
+		</div> -->
 	</div>
-		
-	<input type = "button" value = "test" onclick="window.location.href = '/create_album'">
 </div>
 @stop

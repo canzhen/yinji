@@ -57,13 +57,14 @@ yinjiApp.controller('albumController',
 		//创建纪念册
 		$scope.createAlbum = function(){
 			//输入验证通过
+			
 			if($scope.checkAlbumInput()){
 				if($scope.nameOfAuthor == null || $scope.nameOfAuthor == "")
 					//$scope.nameOfAuthor = $_SESSION['userName'];
 
 				if($scope.contentOfDesc == null || $scope.contentOfDesc == "") 
 					$scope.contentOfDesc = "作者很懒，什么都没有留下";
-
+				
 				$http({
 					method: 'GET',//注意，这里必须要用GET方法
 					url:'/addAlbum',

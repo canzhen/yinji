@@ -149,6 +149,7 @@ Route::get('/getCurAlbum', function(){
 Route::get('/updateAlbum', 'Album\AlbumController@updateAlbum');
 // 删除纪念册
 Route::get('/deleteAlbum', 'Album\AlbumController@deleteAlbum');
+Route::get('/showAlbum', 'Album\AlbumController@showAlbum');
 /*
 |--------------------------------------------------------------------------
 | Application Routes

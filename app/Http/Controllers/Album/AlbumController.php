@@ -96,12 +96,22 @@ class AlbumController extends Controller
      * @return 成功信息
      */
     public function deleteAlbum(){
-        $sss = $_SESSION['curAlbum'];
+        $sss = $_GET['albumId'];
         
         \DB::table('albums')
             ->where('id', $sss)
             ->delete();
 
+        return "success";
+    }
+
+    /**
+     * 设置当前纪念册id以便进入纪念册获取数据
+     * @return 成功信息
+     */
+    public function showAlbum(){
+        $albumId = $_GET['albumId'];
+        $_SESSION['curAlbum'] = $albumId;
         return "success";
     }
 }
