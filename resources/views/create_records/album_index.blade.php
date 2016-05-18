@@ -34,6 +34,7 @@
         <li class="menu_2"><a href="/album_show_records" title="广播站——纪念册内容"></a></li>
         <li class="menu_5"><a href="/album_create_records" title="厂区仓库——创建记录"></a></li>
         <li class="menu_6"><a href="/album_query" title="招兵买马——查找纪念册内容"></a></li>
+        <li class="menu_4"><a href="/album_order" title="游乐园--下订单"></a></li>
       </ul>
     </div>
   </div>
