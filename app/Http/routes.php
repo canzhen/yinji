@@ -196,3 +196,7 @@ Route::get('/album_records', function () {
 Route::get('/album_fileupload', function () {
         return view('create_records.album_fileupload');
     });
+// 下订单页面
+Route::get('/album_order', function () {
+        return view('create_records.album_order');
+    });
