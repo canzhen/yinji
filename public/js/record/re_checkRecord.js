@@ -6,28 +6,42 @@ yinjiApp.controller('checkRecordCtrl',
         $scope.records = {};
         $scope.recordDetail = {};
         var tempDetail = {};
+        //分页
+        $scope.start        = 0;
+        $scope.showLimit    = 10;
+        $scope.count        = 0;
 
-        $http.get("/record/select")
+        $http.get("/album_create_records/select")
         .success(function (response)
         {
-            //console.log(response);
-            alert(response);
-
             $scope.records = response;
-
-
-
+            for(var i=0;i<$scope.records.length;i++){
+                var paths=$scope.records[i].picPath;
+                var tmparrPath=paths.split(';');
+                var arrPath=new Array(tmparrPath.length-1);
+                for(var j=0;j<(tmparrPath.length-1);j++){
+                    arrPath[j]=tmparrPath[j];
+                }
+                $scope.records[i].arr_path=arrPath;
+            }
         });
 
-        $scope.paginationConf = {
-            currentPage: 1,
-            itemsPerPage: 5
-        };
+        $scope.page = function(x){
+            $http({
+                method:'GET',
+                url:'/album_create_records/select/'+x,
+                params:{
+                    'pageNum':x.id
+                }
+            }).success(function(response){
+                $scope.records = response;
+                });
+        }
 
         $scope.deleteRecord = function(x){
             $http({
                 method:'GET',
-                url:'/record/delete',
+                url:'/album_create_records/delete',
                 params:{
                     'id':x.id
                 }
@@ -45,51 +59,36 @@ yinjiApp.controller('checkRecordCtrl',
         $scope.getRecordDetail = function(x){
             $scope.recordDetail.id = x.id;
             $scope.recordDetail.description = x.description;
-            $scope.recordDetail.picpath= x.picpath;
             $scope.recordDetail.showTime = x.showTime;
-            tempDetail = new Array(x,x.id,x.description, x.picpath,x.showTime);
+            tempDetail = new Array(x,x.id,x.description,x.showTime);
         }
 
         $scope.editRecord = function(){
-            if ($scope.recordDetail.description == tempDetail[1]&&
-                $scope.recordDetail.picpath == tempDetail[2]&&
-                $scope.recordDetail.showTime == tempDetail[3]&&
-                $scope.recordDetail.address == tempDetail[4]&&
-                $scope.recordDetail.comment == tempDetail[5])
-                alert("对不起，您没有进行任何修改！");
-            else{
-                $http({
-                    method:'GET',
-                    url:'/cpy/editOrder',
-                    params:{
-                        'id':$scope.recordDetail.id,
-                        'quantity':$scope.recordDetail.quantity,
-                        'price':$scope.recordDetail.price,
-                        'status':$scope.recordDetail.status,
-                        'address':$scope.recordDetail.address,
-                        'comment':$scope.recordDetail.comment
-                    }
-                }).success(function(response){
-                    if (response == 1){
-                        alert("修改成功！");
-                        $('#orderDetailModal').modal('hide');
-                    }
-                    else {
-                        alert("oops...修改失败...");
-                        $('#orderDetailModal').modal('hide');
-                    }
-                });
-                updateOrderData($scope.orderDetail);
-            }
+            $http({
+                method:'GET',
+                url:'/album_create_records/edit',
+                params:{
+                    'id':$scope.recordDetail.id,
+                    'description':$scope.recordDetail.description,
+                    'showTime':$scope.recordDetail.showTime
+                }
+            }).success(function(response){
+                if (response == 1){
+                    alert("修改成功！");
+                    $('#recordDetailModal').modal('hide');
+                }
+                else {
+                    alert("oops...修改失败...");
+                    $('#recordDetailModal').modal('hide');
+                }
+            });
+            updateRecordData($scope.recordDetail);
         }
 
-        function updateOrderData(detail){
+        function updateRecordData(detail){
             var index = $scope.records.indexOf(tempDetail[0])
-            $scope.records[index].quantity = detail.quantity;
-            $scope.records[index].price = detail.price;
-            $scope.records[index].status = detail.status;
-            $scope.records[index].address = detail.address;
-            $scope.records[index].comment = detail.comment;
+            $scope.records[index].description = detail.description;
+            $scope.records[index].showTime = detail.showTime;
             tempDetail = {};
         }
     }

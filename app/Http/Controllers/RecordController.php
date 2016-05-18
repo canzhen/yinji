@@ -9,16 +9,6 @@ use App\user;
 
 class RecordController extends Controller
 {
-	public function getIndex()
-	{
-		
-	}
-	public function addRecordNew(){
-		$date=$_POST['date'];
-		$content=$_POST['content'];
-
-		return $date;
-	}
     public function addRecord()
 	{
 		//获取表单数据
@@ -28,35 +18,29 @@ class RecordController extends Controller
 		$record-> description = $_POST['content'];
 
 		$tempPath="";
-		$picPath = Request::input('files');
 		$file = Request::file('files');
 		$lenth = count($file);
 		for ($i = 0; $i < $lenth; $i++) {
-			if ($file[$i]->isValid()) {
+			if ($file[$i]!= null) {
 				$clientName = $file[$i]->getClientOriginalName();
 				$tmpName = $file[$i]->getFileName();
 				$realPath = $file[$i]->getRealPath();
 				$extension = $file[$i]->getClientOriginalExtension();
 				$mimeTye = $file[$i]->getMimeType();
 				$newName = md5(date('ymdhis') . $clientName) . "." . $extension;
-				$path = $file[$i]->move(app_path().'\storage\uploads\record', $newName);
-				$tempPath = $tempPath."/storage/uploads/record/" . $newName . ";";
+				$path = $file[$i]->move(public_path() . '\uploads\record', $newName);
+				$tempPath = $tempPath . "/uploads/record/" . $newName . ";";
 			}
-	}
+		}
 		$record->picPath =$tempPath;
 
 		$record -> showTime = $_POST['date'];
 		//数据插入到数据库中
 		$record->save();
 		//提醒成功
-		echo "<script>alert('发送成功')</script>";
+		echo "alert('发送成功')";
 		//页面重定向
 		return redirect('/album_create_records');
-	}
-
-	private function picToServer()
-	{
-
 	}
 
 	public function selectRecord()
@@ -66,22 +50,18 @@ class RecordController extends Controller
 
 	public function deleteRecord(){
 		$recordId = $_GET['id'];
-		if (Template::where('id',$recordId)->delete())
+		if (Record::where('id',$recordId)->delete())
 			return 1;
 		else return 0;
 	}
 
 	public function editRecord(){
 		$id = $_GET['id'];
-		$price = $_GET['price'];
-		$status = $_GET['status'];
-		$address = $_GET['address'];
-		$comment = $_GET['comment'];
-		if (Template::where('id',$id)->update(array(
-				'price'=>$price,
-				'status'=>$status,
-				'address'=>$address,
-				'comment'=>$comment
+		$description = $_GET['description'];
+		$showTime = $_GET['showTime'];
+		if (Record::where('id',$id)->update(array(
+				'description'=>$description,
+				'showTime'=>$showTime
 		)))
 			return 1;
 		else return 0;
