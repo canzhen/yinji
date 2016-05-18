@@ -2,7 +2,7 @@
 
 @section('body')
 	<!--导航栏-->
-	<div class="header">
+	<div class="headerLine">
 		<div class="header-content">
 			<div class="header-main">
 				<div class="header-left">
@@ -23,7 +23,7 @@
 							</li>
 							<li class = "topLine"><a href="#">个人信息</a>
 								<ul>
-									<li class = "spec"><a href="#">查看个人信息</a></li>
+									<li class = "spec"><a href="/user-information">查看个人信息</a></li>
 									<li><a href="#">管理收货地址</a></li>
 								</ul> 
 							</li>

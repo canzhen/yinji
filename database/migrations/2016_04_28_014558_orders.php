@@ -28,7 +28,6 @@ class Orders extends Migration
 
         Schema::table('orders', function (Blueprint $table) {
             $table->foreign('user_name')->references('name')->on('users')->onUpdate('CASCADE')->onDelete('CASCADE');
-            $table->foreign('album_name')->references('name')->on('albums')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
 
         DB::table('orders')->insert(

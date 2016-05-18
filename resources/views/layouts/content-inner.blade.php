@@ -7,13 +7,13 @@
 			<div class="header-main">
 				<div class="header-left">
 					<div class="logo">
-						<a href="/"><h1 class="stfyt">账户中心</h1></a>
+						<a href="/"><h1 class="stfyt">@yield('inner-title')</h1></a>
 					</div>
 				</div>
 
 				<div class="header-right">
-					<img src="/images/create_album/prof	ile.jpg" class="img-circle" style="width:50px;height:50px;margin-right:20px;">
-					<a href="/">返回首页</a>
+					@section('header-right')
+					@show
 				</div>
 
 				<div class="clearfix"> </div>

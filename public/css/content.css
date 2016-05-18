@@ -2,29 +2,26 @@ body{
 	font-family: "宋体";
 }
 
-.body{
-	background-color:#F9FAFB;
-}
 
-.header {
-	opacity:1;
+.headerLine {
+	opacity:0.8;
 	position: fixed;
 	top: 0px;
 	background-color: #fff;
 	width: 100%;
-	z-index:1000;
+	z-index:9999;
 	padding: 10px 0px;
 }
 
 .header-content{
-	margin:15px 70px 15px 70px;
+	margin-left: 70px;
+	margin-right: 70px;
 }
 
 .header-main {
   padding: 0px 10px 0px 10px;
   /*border: 1px solid #000;*/
 }
-
 .logo a {
   font-size: 2em;
   font-weight: 700;
@@ -49,8 +46,8 @@ body{
 .header-right {
 	float: right;
 	width: 300px;
-	text-align: right;
-	padding: 5px 5px 0px 0px;
+	text-align: center;
+	padding: 10px 10px 0px 0px;
 	font-family: "微软雅黑";
 }
 

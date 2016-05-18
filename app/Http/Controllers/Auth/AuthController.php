@@ -54,13 +54,15 @@ class AuthController extends Controller
 		$data = array('name'=>$name,'password'=>$password);
 
 		if (\Auth::attempt($data,$remember)){
-			 $res = \DB::table('users')->where('name', '=',$name)->get();
+			$res = \DB::table('users')->where('name', '=',$name)->get();
             //$res = User::where('name',$name)->get(); 
             
             $_SESSION['userId'] = $res[0]->id;//获得用户id
             $_SESSION['userName'] = $res[0]->name;//获得用户姓名
+            //$_SESSION['curAlbum']
             //$_SESSION['privilege'] = $res[0]->privilege;//获得权限
-
+            //测试
+            $_SESSION['curAlbum'] = 0;
             $privilege = $res[0]->privilege;
             $_SESSION['ifLoggedIn'] = 'y';//set the value to yes
 

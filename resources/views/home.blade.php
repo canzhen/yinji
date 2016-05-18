@@ -17,7 +17,7 @@
 
 @section('content')
 
-<div ng-controller="testController">
+<div>
 <!-- ng-controller="testController" -->
 	<div class = "pictureSlide">
 		<div id="myCarousel" class="carousel slide">
@@ -46,23 +46,17 @@
 
 	</div>
 
-	<!-- 查看纪念册 -->
-	<div class="normal-trigger-area">
-		<a href="#" id="circle"  class="ec-circle" style = "background: url(/images/mo.jpg);">
-			<h3>Hovered</h3>
-		</a>	
-	</div>
+		<!-- 查看纪念册 -->
+	<div id = "albumContainer" ng-controller="albumController">
+		<p id = "albumTitle">我的纪念册</p>
 
-	<div class="normal-trigger-area">
-		<a href="#" id="circle"  class="ec-circle" style = "background: url(/images/mo.jpg);">
-			<h3>Hovered</h3>
-		</a>	
-	</div>
-
-	<div class="normal-trigger-area">
-		<a href="#" id="circle"  class="ec-circle" style = "background: url(/images/mo.jpg);">
-			<h3>Hovered</h3>
-		</a>	
+		<!-- <div class = 'no-line normal-trigger-area'>
+			<i class="fa fa-trash-o fa-lg"></i>
+			<a href = '#' id = 'circle' class = 'ec-circle' style = "background: url(images/mo.jpg);">
+				<h3>aaa</h3>
+			</a>
+			
+		</div> -->
 	</div>
 </div>
 @stop
