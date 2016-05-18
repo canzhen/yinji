@@ -34,7 +34,7 @@
 	      <input type="file" name="files[]" id="demo-fileInput-4" multiple="multiple">
           <input type="text" id="date" name="date" value="" style="visibility:hidden">
           <input type="text" id="content" name="content" value="" style="visibility:hidden">
-          <input  type="submit" class="btn-custom green" value="提交">
+          <input  type="button" onclick="submit_record()" class="btn-custom green" value="提交">
 	</form>
 @stop
 
