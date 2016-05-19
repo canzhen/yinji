@@ -5,62 +5,70 @@
 @section('header')
   @parent
   <link rel="stylesheet" type="text/css" href="/css/create_records/style.css">   
-  <link rel="stylesheet" type="text/css" href="/css/create_records/button.css">  
+  <link rel="stylesheet" type="text/css" href="/css/create_records/button.css">
 @stop
 
 @section('footer')
-  @parent 
+  @parent
+  <script src="js/record/re_checkRecord.js"></script>
+  <script src="js/record/tm.pagination.js"></script>
 @stop
 
 @section('content')
-	  <div class="my_records">
-	    <div class="mydiv111">
-			<p class="datep">2016年4月13日 16:30</p>
-			<p class="diary">培根土豆小饼</p>
-			<div class="divpic">
-				<img class="mypic" src="images/create_records/records/g1.jpg" />
-				<img src="images/create_records/records/g2.jpg" class="mypic"/>
-				<img src="images/create_records/records/g4.jpg" class="mypic"/>
-			</div>
-			<br/>
-			<div class="my_records_button">
-				<input  class="button button-pill button-tiny" type="submit" value="修改">
-				<input  class="button button-pill button-tiny" type="submit" value="删除">
-			</div>
-		</div>
-		<!-- <br/> -->
-		<div class="mydiv111">
-			<p class="datep">2016年4月11日 15:04</p>
-			<p class="diary">一到下午这个时候又困…又饿…怎么破？…</p>
-			<div class="divpic">
-				<img src="images/create_records/records/g3.jpg" class="mypic"/>
-			</div>
-			<br/>
-			<div class="my_records_button">
-				<input  class="button button-pill button-tiny" type="submit" value="修改">
-				<input  class="button button-pill button-tiny" type="submit" value="删除">
-			</div>
-		</div>
-		<!-- <br/> -->
-		<div class="mydiv111">
-			<p class="datep">2016年4月10日 10:30</p>
-			<p class="diary">【喷香牛肉焖饭】营养丰富又香味十足，煮出来的米饭油光发亮特别的诱惑！绵绵的土豆，微甜的胡萝卜，牛肉香深入米饭，撒一把葱花搅拌下开动啦！</p>
-			<div class="divpic">
-				<img src="/images/create_records/records/g5.jpg" class="mypic"/>
-				<img src="images/create_records/records/g6.jpg" class="mypic"/>
-				<img src="images/create_records/records/g7.jpg" class="mypic"/>
-				<img src="images/create_records/records/g8.jpg" class="mypic"/>
-				<img src="images/create_records/records/g9.jpg" class="mypic"/>
-				<img src="images/create_records/records/g10.jpg" class="mypic"/>
-				<img src="images/create_records/records/g11.jpg" class="mypic"/>
-				<img src="images/create_records/records/g12.jpg" class="mypic"/>
-				<img src="images/create_records/records/g13.jpg" class="mypic"/>
-			</div>
-			<br/>
-			<div class="my_records_button">
-				<input  class="button button-pill button-tiny" type="submit" value="修改">
-				<input  class="button button-pill button-tiny" type="submit" value="删除">
-			</div>
-		</div>    
-	  </div>
+	  <div ng-controller="checkRecordCtrl">
+		  <div class="mydiv111" ng-repeat="x in records| orderBy:'showTime':true">
+			  <p class="datep" ng-bind="x.showTime"></p>
+			  <p class="diary" ng-bind="x.description"></p>
+			  <p name="comPath"></p>
+			  <div class="divpic">
+				  <div ng-repeat="y in x.arr_path">
+				  <img class="mypic" src="@{{y}}" name="imgview"/>
+				  </div>
+			  </div>
+			  <br/><br/>
+			  <div class="my_records_button">
+				  <input  class="button button-pill button-tiny" type="submit" value="编辑" ng-click="getRecordDetail(x)" data-toggle="modal" data-target="#recordDetailModal">
+				  <input  class="button button-pill button-tiny" type="submit" value="删除" ng-click="deleteRecord(x)">
+			  </div>
+			  <br/>
+		  </div>
+
+		  <button ng-click="page(1)">下一页</button>
+
+
+		  <div class="modal fade" id="recordDetailModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+			  <div class="modal-dialog" role="document">
+				  <div class="modal-content"><!--modal的内容-->
+					  <div class="modal-header">
+						  <!--关闭modal的按钮-->
+						  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							  <span aria-hidden="true">&times;</span>
+						  </button>
+						  <h4 class="modal-title" id="modalLabel">编辑内容</h4>
+					  </div>
+					  <div class="modal-body">
+						  <div class="form-inner">
+							  <form class="myForm">
+								  <div>
+									  <p>内容：</p>
+									  <input type="text" style="width:500px;" ng-model="recordDetail.description"/>
+									  <span style="color:red" ng-show="recordDetail.description == ''"></span>
+								  </div>
+								  <div>
+									  <p>自定义时间：</p>
+									  <input type="text" ng-model="recordDetail.showTime"/>
+									  <span style="color:red" ng-show="recordDetail.showTime == ''"></span>
+								  </div>
+							  </form>
+						  </div>
+					  </div>
+					  <div class="modal-footer">
+						  <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+						  <button type="button" class="btn btn-primary" ng-click="editRecord()"
+								  ng-disabled="orderRecord.description == '' || orderRecord.showTime == ''">修改</button>
+					  </div>
+				  </div>
+			  </div>
+		  </div>
+	</div>
 @stop
