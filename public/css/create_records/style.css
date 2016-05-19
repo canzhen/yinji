@@ -1584,3 +1584,11 @@ img
     background-color:#FFF; 
 } 
 
+#text_box{
+    width:25px; 
+    text-align: center
+}
+
+textarea{
+    resize: none;
+}
