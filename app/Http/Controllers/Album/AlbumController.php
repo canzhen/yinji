@@ -102,6 +102,8 @@ class AlbumController extends Controller
             ->where('id', $sss)
             ->delete();
 
+        $_SESSION['curAlbum'] = 0;
+
         return "success";
     }
 

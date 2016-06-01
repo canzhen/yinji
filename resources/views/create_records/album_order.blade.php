@@ -15,11 +15,13 @@
 
 @section('content')
 
-  <div class="bg_top">
-    <div class="header_bg">
+    <div class="bg_top">
+        <div class="header_bg">
+        </div>
     </div>
-  </div>
-    <div class="page_box page_box_bg">
+
+    <div class="page_box page_box_bg" ng-controller = "orderController">
+    <form ng-submit="addOrder()">
         <div class="home_menu"><a href="/album_cover"></a>
         </div>
 
@@ -38,18 +40,19 @@
 
         <div class="index_right page_right geam_r">
             <div class="send_order">
+                收货人姓名：<input class="input_out" name="" type="text" onfocus="this.className='input_on';this.onmouseout=''" onblur="this.className='input_off';this.onmouseout=function(){this.className='input_out'};" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'"    ng-model = "oName" required/><br/><br/>                           
+                联系方式：&nbsp;&nbsp;<input class="input_out" name="" type="text" onfocus="this.className='input_on';this.onmouseout=''" onblur="this.className='input_off';this.onmouseout=function(){this.className='input_out'};" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'" ng-model = "oPhone" required /><br/><br/>
                 填写详细地址：
-                <textarea id = "adressDesc" class="form-control" rows="2"  ></textarea><br/>
+                <textarea id = "adressDesc" class="form-control" rows="2" ng-model = "oAddress" required></textarea><br/>
                 <!-- 收货人姓名：<input type="text"  /><br/><br/>
                 联系电话： &nbsp;<input type="text"  /><br/> -->
-                收货人姓名：<input class="input_out" name="" type="text" onfocus="this.className='input_on';this.onmouseout=''" onblur="this.className='input_off';this.onmouseout=function(){this.className='input_out'};" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'" required/><br/><br/>                           
-                联系方式：&nbsp;&nbsp;<input class="input_out" name="" type="text" onfocus="this.className='input_on';this.onmouseout=''" onblur="this.className='input_off';this.onmouseout=function(){this.className='input_out'};" onmousemove="this.className='input_move'" onmouseout="this.className='input_out'" /><br/><br/>
+                
                 
                 选择数量：
                 <input id="min" name="" type="button" value="-" />
-                <input id="text_box" name="goodnum" type="text" value="1" style="width:25px;" readonly/>
+                <input id="text_box" name="goodnum" type="text" value = "0" readonly/>
                 <input id="add" name="" type="button" value="+" /></td>
-                &nbsp;&nbsp;印刷价格：<b id="price">100.00</b>元
+                &nbsp;&nbsp;印刷价格：<span id="price">0</span>元
 
                 <br/><br/><br/><br/>选择支付方式：
                 <div class="pay_method">
@@ -60,21 +63,23 @@
                 </div>
                 <div class="send_button">
                 <input  class="button button-glow button-rounded button-highlight" type="submit" value="确认支付">
+                <input type="button" name="test" onclick="deleteOrder()" value = "测试">
                 </div>
             </div>
         </div>   
 
-
+    </form>
 
         <div class="page_right_menu" >
           <ul>
-            <li class="menu_1"><a class="on" href="/album_index" title="关于工厂——纪念册简介"></a></li>
+            <li class="menu_1"><a href="/album_index" title="关于工厂——纪念册简介"></a></li>
             <li class="menu_2"><a href="/album_show_records" title="广播站——纪念册内容"></a></li>
             <li class="menu_5"><a href="/album_create_records" title="厂区仓库——创建记录"></a></li>
             <li class="menu_6"><a href="/album_query" title="招兵买马——查找纪念册内容"></a></li>
             <li class="menu_4"><a class="on" href="/album_order" title="下订单"></a></li>
           </ul>
         </div>
+
     </div>
 
   <div class="page_bot">
