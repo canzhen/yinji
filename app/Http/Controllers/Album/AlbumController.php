@@ -34,7 +34,7 @@ class AlbumController extends Controller
     	$eid = \DB::table('albums')
 	        ->insertGetId(
 	            array(
-	                'user_id' => $uid,
+	                'user_name' => $uid,
 	                'category' => $category,
 	                'name' => $albumName,     
 	                'author_name' => $authorName, 
