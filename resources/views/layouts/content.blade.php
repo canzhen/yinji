@@ -10,29 +10,9 @@
 						<a href="/"><h1 class="stfyt">印迹</h1></a>
 					</div>
 					
-					<div class="top-nav">
-						<ul class="res" > 
-							<li class = "topLine"><a href="#">服务</a>
-								 <ul>
-									<li class = "spec"><a href="#">纪念册</a></li>
-									<li><a href="#">刊印</a></li>
-								</ul> 
-							</li>
-							<li class = "topLine"><a href="#">关于</a>
-								
-							</li>
-							<li class = "topLine"><a href="#">联系我们</a></li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="header-right">
-				    <div class="search">
-						<input type="text" value="查找" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '查找';}"/>
-						<input type="submit"  value=""/>		
-					</div>
-					<a href="login" id = "loginBtn">登录</a>
-				</div>
+					
+					@section('dif')
+					@show
 
 				<div class="clearfix"> </div>
 			</div>

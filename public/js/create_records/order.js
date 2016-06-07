@@ -47,13 +47,23 @@ function deleteOrder(){
 yinjiApp.controller('orderController',
     function createAlbumController($scope,$http,$rootScope){
         
+        // $("#text_box1").keyup(function () {
+        //     $(this).val($(this).val().replace(/\D|^0/g, ''));
+        // }).bind("paste", function () {  //CTR+V事件处理    
+        //     $(this).val($(this).val().replace(/\D|^0/g, ''));
+        // }).css("ime-mode", "disabled"); //CSS设置输入法不可用 
 
-
+        
         $scope.addOrder = function(){
-            if($("#text_box").val() == 0){
-                alert("请输入数量");
+            if($("#text_box2").val() > $("#text_box1").val()){
+                alert("页码错误");
             }
             else{
+                var commentText = $scope.oComment;
+                if(commentText ==  "" || commentText == null){
+                    commentText = "";
+                }
+                
                 $http({
                 method: 'GET',//注意，这里必须要用GET方法
                 url:'/addOrder',
@@ -61,8 +71,9 @@ yinjiApp.controller('orderController',
                     'oName': $scope.oName,
                     'oPhone': $scope.oPhone,
                     'oAddress' : $scope.oAddress,
-                    'oNum' : $("#text_box").val(),
-                    'oPrice' : $("#price").text()
+                    'oComment' : commentText,
+                    'oNum' : 0,
+                    'oPrice' : 0
 
                 }
             })
