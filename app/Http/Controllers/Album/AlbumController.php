@@ -31,10 +31,16 @@ class AlbumController extends Controller
     	$motto = $_GET['motto'];
     	$description = $_GET['description'];
 
+        $name = \DB::table('users')->where('id', $uid)->pluck('name');
+
     	$eid = \DB::table('albums')
 	        ->insertGetId(
 	            array(
+<<<<<<< HEAD
+	                'user_name' => $name[0],
+=======
 	                'user_name' => $uid,
+>>>>>>> 9b551242f73c6ed547d5c5d41f3560a62c1a7e5f
 	                'category' => $category,
 	                'name' => $albumName,     
 	                'author_name' => $authorName, 

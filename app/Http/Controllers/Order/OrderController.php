@@ -16,8 +16,10 @@ class OrderController extends Controller
     	$oName = $_GET['oName'];
     	$oPhone = $_GET['oPhone'];
     	$oAddress = $_GET['oAddress'];
+		$oComment = $_GET['oComment'];
     	$oNum = $_GET['oNum'];
     	$oPrice = $_GET['oPrice'];
+		
     	$orderTime = date('y-m-d H:i:s', time());
 
     	$userId = $_SESSION['userId'];
@@ -38,7 +40,7 @@ class OrderController extends Controller
 	                'status' => "未付款",
 	                'order_date' => $orderTime,
 	                'delivery_date' => $orderTime,
-	                'comment' => "no what"
+	                'comment' => $oComment
 	            )
 	        );
 

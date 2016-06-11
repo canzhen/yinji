@@ -1584,9 +1584,10 @@ img
     background-color:#FFF; 
 } 
 
-#text_box{
+#text_box1, #text_box2{
     width:25px; 
-    text-align: center
+    text-align: center;
+    ime-mode: disabled;
 }
 
 textarea{
