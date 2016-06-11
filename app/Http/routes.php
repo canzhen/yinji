@@ -74,8 +74,8 @@ Route::group(['middleware'=>'web'],function(){
         return view('home');
     });
 	
-	Route::get('/record', function () {
-        return view('record');
+	Route::get('/album_create_records', function () {
+        return view('create_records\album_create_records');
     });
 
     //用户创建纪念册
@@ -135,7 +135,25 @@ Route::get('/usr/editPwd','UserController@editPwd');
 Route::get('/usr/checkIfMobile','UserController@checkIfMobile');
 
 
-Route::get('/testSession', 'Album\AlbumController@testSession');
+// 展示纪念册
+Route::get('/displayAlbum', 'Album\AlbumController@displayAlbum');
+// 添加纪念册
+Route::get('/addAlbum', 'Album\AlbumController@addAlbum');
+// 获得当前纪念册的信息
+Route::get('/getCurAlbumInfo', 'Album\AlbumController@getCurAlbumInfo');
+//获得当前纪念册ID
+Route::get('/getCurAlbum', function(){
+    return $_SESSION['curAlbum'];
+});
+// 更新纪念册
+Route::get('/updateAlbum', 'Album\AlbumController@updateAlbum');
+// 删除纪念册
+Route::get('/deleteAlbum', 'Album\AlbumController@deleteAlbum');
+Route::get('/showAlbum', 'Album\AlbumController@showAlbum');
+
+Route::get('/addOrder', 'Order\OrderController@addOrder');
+
+Route::get('/deleteOrder', 'Order\OrderController@deleteOrder');
 
 /*
 |--------------------------------------------------------------------------
@@ -152,6 +170,17 @@ Route::group(['middleware' => ['web']], function () {
     //
 });
 
+
+/*
+ * 控制器和路由
+ */
+ 
+ //绑定RecordController的增加函数和record.blade.php
+ Route::post('/album_create_records/add','RecordController@addRecord');
+ //Route::post('/album_create_records/add_new','RecordController@addRecordNew');
+ Route::get('/album_create_records/select','RecordController@selectRecord');
+ Route::get('/album_create_records/delete','RecordController@deleteRecord');
+ Route::get('/album_create_records/edit','RecordController@editRecord');
 
 // 记录的相关操作
 // 记录简介页面
@@ -183,4 +212,8 @@ Route::get('/album_records', function () {
 // 上传文件页面
 Route::get('/album_fileupload', function () {
         return view('create_records.album_fileupload');
+    });
+// 下订单页面
+Route::get('/album_order', function () {
+        return view('create_records.album_order');
     });

@@ -836,6 +836,7 @@ img
 {
     background: url(../../images/create_records/about_06.jpg) 6px 15px no-repeat;
 }
+
 .about_text
 {
     font-size: 12px;
@@ -948,13 +949,28 @@ img
 
     background: url(../../images/create_records/t.gif) left top no-repeat;
 }
+/*用户自己选择日期查看当天内容*/
 .job_l
 {
     width: 435px;
     height: 600px;
     margin-left: 60px;
 
-    background: url(../../images/create_records/job_03.jpg) left top;
+    background: url(../../images/create_records/about_03.jpg) left top;
+}
+#datepicker{
+
+}
+.user_time
+{
+    font-size: 16px;
+    font-family: "楷体";
+    line-height: 20px;
+    display: inline;
+    float: left;
+    margin: 150px auto auto 40px;
+    color: #7f543a;
+
 }
 .job_right
 {
@@ -1407,7 +1423,17 @@ img
 	background-color:#FFFFFF;
 	/*border:1px solid #000000*/
 }
+.my_records2{
+    width:365px;
+    margin: 0 auto;
 
+    /*border: #000 solid 1px;*/
+}
+.mydiv1112{
+    width:36S5px;
+    background-color:#FFFFFF;
+    /*border:1px solid #000000*/
+}
 .datep{
 	color:#FFFFFF;
 	font-size : 27px;
@@ -1442,6 +1468,14 @@ img
 	/*border: #000 solid 1px;*/
 }
 
+.my_records_button2{
+    margin-left: 200px;
+    margin-bottom: 5px;
+    width:158px;
+    height:25px;
+    /*border: #000 solid 1px;*/
+}
+
 #tttt{
     border: 1px solid #000;
     padding-left: 0px;
@@ -1452,3 +1486,110 @@ img
     margin-bottom: 10px;
 }
 
+/*订单页面*/
+.order_text
+{
+    line-height: 20px;
+    display: inline;
+    float: left;
+    margin: 30px auto auto -10px;
+    color: #7f543a;
+    /*border: 1px solid #000;*/
+}
+.order_text p{
+    font-family: "楷体";
+    font-size: 20px;
+}
+#kai32{
+    margin-top:18px;
+    width:150px ;
+    height:200px;
+    cursor: pointer;
+}
+#kai16{
+    margin-top: -10px;
+    margin-left: 20px;
+    width:180px ;
+    height:230px;
+    cursor: pointer;
+}
+#album_size{
+    font-size: 15px;
+}
+.color{
+    width:170px ;
+    height:130px;
+    cursor: pointer;
+}
+.color_right{
+    margin-left: 15px;
+}
+.send_order{
+    font-family: "楷体";
+    width: 400px;
+    line-height: 20px;
+    display: inline;
+    float: left;
+    margin: 75px auto auto 70px;
+    color: #7f543a;
+    font-size: 18px;
+    /*border: 1px solid #000;*/
+}
+.send_order p{
+    font-family: "楷体";
+    font-size: 20px;
+}
+#price{
+    color:red;
+}
+.pay{
+    width:150px ;
+    height:50px;
+    cursor: pointer;
+}
+
+.pay_method{
+    margin-left: 40px;
+}
+.send_button{
+    margin-left: 130px;
+    margin-top: 30px;
+}
+
+/*联系人姓名和电话*/
+/*input*/ 
+.input_on{ 
+    padding:2px 8px 0pt 3px; 
+    height:24px;
+    border:1px solid #999; 
+    background-color:#FFFFCC; 
+} 
+.input_off{ 
+    padding:2px 8px 0pt 3px; 
+    height:24px; 
+    border:1px solid #CCC; 
+    background-color:#FFF; 
+} 
+.input_move{ 
+    padding:2px 8px 0pt 3px; 
+    height:24px; 
+    border:1px solid #999; 
+    background-color:#FFFFCC; 
+} 
+.input_out{ 
+    /*height:16px;默认高度*/ 
+    padding:2px 8px 0pt 3px; 
+    height:24px; 
+    border:1px solid #CCC; 
+    background-color:#FFF; 
+} 
+
+#text_box1, #text_box2{
+    width:25px; 
+    text-align: center;
+    ime-mode: disabled;
+}
+
+textarea{
+    resize: none;
+}

@@ -15,22 +15,37 @@ yinjiApp.controller('checkOrderCtrl',
 			$scope.deployedOrder = response;
 		});
 
+
+		$scope.addOrderDetailQuantity = function(){
+			$scope.orderDetail.quantity++;
+		}
+
+		$scope.subtractOrderDetailQuantity = function(){
+			if($scope.orderDetail.quantity!=0)
+				$scope.orderDetail.quantity--;
+		}
+
+
 		$scope.deleteOrder = function(x){
-			$http({
-				method:'GET',
-				url:'/cpy/deleteOrder',
-				params:{
-					'id':x.id
-				}
-			})
-			.success(function(response){
-				if (response==1){
-					alert('删除id为'+x.id+'的订单成功！');
-					$scope.deployedOrder.splice($scope.deployedOrder.indexOf(x),1);
-				}else if (response==0) {
-					alert("oops,删除失败！");
-				}
-			});
+
+			var result = confirm("你确定要删除吗？");
+			if (result == true){
+				$http({
+					method:'GET',
+					url:'/cpy/deleteOrder',
+					params:{
+						'id':x.id
+					}
+				})
+				.success(function(response){
+					if (response==1){
+						alert('删除id为'+x.id+'的订单成功！');
+						$scope.deployedOrder.splice($scope.deployedOrder.indexOf(x),1);
+					}else if (response==0) {
+						alert("oops,删除失败！");
+					}
+				});
+			}
 		}
 
 
