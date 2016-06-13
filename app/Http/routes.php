@@ -150,6 +150,11 @@ Route::get('/updateAlbum', 'Album\AlbumController@updateAlbum');
 // 删除纪念册
 Route::get('/deleteAlbum', 'Album\AlbumController@deleteAlbum');
 Route::get('/showAlbum', 'Album\AlbumController@showAlbum');
+
+Route::get('/addOrder', 'Order\OrderController@addOrder');
+
+Route::get('/deleteOrder', 'Order\OrderController@deleteOrder');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

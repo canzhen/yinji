@@ -78,9 +78,15 @@
 								<div>
 									<span>订单编号：&nbsp @{{ orderDetail.id }}</span>
 								</div>
-								<div>
+								<div class="row" style="padding-left:15px;">
 									<span>订单数量：</span>
-									<input type="text" ng-model="orderDetail.quantity"/>
+                                    <button class="btn btn-default" type="button" ng-click="subtractOrderDetailQuantity()">
+                                        -
+                                    </button>
+                                    <input style="width:7%;" type="text" ng-model="orderDetail.quantity"/>
+                                    <button class="btn btn-default" type="button" ng-click="addOrderDetailQuantity()">
+                                        +
+                                    </button>
 									<span style="color:red" ng-show="orderDetail.quantity == ''">*此项必填</span>
 								</div>
 								<div>
