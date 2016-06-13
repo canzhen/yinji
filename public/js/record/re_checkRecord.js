@@ -15,6 +15,7 @@ yinjiApp.controller('checkRecordCtrl',
         .success(function (response)
         {
             $scope.records = response;
+
             for(var i=0;i<$scope.records.length;i++){
                 var paths=$scope.records[i].picPath;
                 var tmparrPath=paths.split(';');

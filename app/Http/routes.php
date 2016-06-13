@@ -177,6 +177,8 @@ Route::group(['middleware' => ['web']], function () {
  Route::get('/album_create_records/delete','RecordController@deleteRecord');
  Route::get('/album_create_records/edit','RecordController@editRecord');
 
+ Route::get('/album_query/select','RecordController@selectRecord');
+
 // 记录的相关操作
 // 记录简介页面
 Route::get('/album_index', function () {

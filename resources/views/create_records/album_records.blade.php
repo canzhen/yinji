@@ -11,7 +11,6 @@
 @section('footer')
   @parent
   <script src="js/record/re_checkRecord.js"></script>
-  <script src="js/record/tm.pagination.js"></script>
 @stop
 
 @section('content')
@@ -22,7 +21,7 @@
 			  <p name="comPath"></p>
 			  <div class="divpic">
 				  <div ng-repeat="y in x.arr_path">
-				  <img class="mypic" src="@{{y}}" name="imgview"/>
+					  <img class="mypic" src="@{{y}}" name="imgview" onload="DrawImage(this);"/>
 				  </div>
 			  </div>
 			  <br/><br/>
@@ -32,8 +31,6 @@
 			  </div>
 			  <br/>
 		  </div>
-
-		  <button ng-click="page(1)">下一页</button>
 
 
 		  <div class="modal fade" id="recordDetailModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
