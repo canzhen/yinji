@@ -65,7 +65,7 @@
                                         </div>
                                         <br/>
                                         <div class="my_records_button2">
-                                            <input  class="button button-pill button-tiny" type="submit" value="修改" ng-click="getRecordDetail(x)">
+                                            <input  class="button button-pill button-tiny" type="submit" value="修改" ng-click="getRecordDetail(x)" data-toggle="modal" data-target="#oneRecordDetailModal">
                                             <input  class="button button-pill button-tiny" type="submit" value="删除" ng-click="deleteRecord(x)">
                                         </div>
                                     </div>
@@ -85,42 +85,43 @@
     			
     		</tr>
     	</table>
-	  <div class="modal fade" id="oneRecordDetailModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
-		  <div class="modal-dialog" role="document">
-			  <div class="modal-content"><!--modal的内容-->
-				  <div class="modal-header">
-					  <!--关闭modal的按钮-->
-					  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						  <span aria-hidden="true">&times;</span>
-					  </button>
-					  <h4 class="modal-title" id="modalLabel">编辑内容</h4>
-				  </div>
-				  <div class="modal-body">
-					  <div class="form-inner">
-						  <form class="myForm">
-							  <div>
-								  <p>内容：</p>
-								  <input type="text" style="width:500px;" ng-model="recordDetail.description"/>
-								  <span style="color:red" ng-show="recordDetail.description == ''"></span>
-							  </div>
-							  <div>
-								  <p>自定义时间：</p>
-								  <input type="text" ng-model="recordDetail.showTime"/>
-								  <span style="color:red" ng-show="recordDetail.showTime == ''"></span>
-							  </div>
-						  </form>
-					  </div>
-				  </div>
-				  <div class="modal-footer">
-					  <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-					  <button type="button" class="btn btn-primary" ng-click="editRecord()"
-							  ng-disabled="orderRecord.description == '' || orderRecord.showTime == ''">修改</button>
-				  </div>
-			  </div>
-		  </div>
-	  </div>
 </div>
-
+</div>
+	<div class="modal fade" id="oneRecordDetailModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content"><!--modal的内容-->
+				<div class="modal-header">
+					<!--关闭modal的按钮-->
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="modalLabel">编辑内容</h4>
+				</div>
+				<div class="modal-body">
+					<div class="form-inner">
+						<form class="myForm">
+							<div>
+								<p>内容：</p>
+								<input type="text" style="width:500px;" ng-model="recordDetail.description"/>
+								<span style="color:red" ng-show="recordDetail.description == ''"></span>
+							</div>
+							<div>
+								<p>自定义时间：</p>
+								<input type="text" ng-model="recordDetail.showTime"/>
+								<span style="color:red" ng-show="recordDetail.showTime == ''"></span>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					<button type="button" class="btn btn-primary" ng-click="editRecord()"
+							ng-disabled="orderRecord.description == '' || orderRecord.showTime == ''">修改</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
   <!-- 左面菜单 -->
   <div class="page_right_menu" >
     <ul>
@@ -133,8 +134,8 @@
     </ul>
   </div>
 
-</div>
-</div>
+
+
 <!-- 书的下半部分的背景 -->
 <div class="page_bot"></div>
 @stop
