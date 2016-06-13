@@ -24,7 +24,7 @@
     <div class="header_bg">
     </div>
 </div>
-  <div ng-controller="checkOneRecordCtrl">
+<div ng-controller="checkOneRecordCtrl">
 <div class="page_box page_box_bg">
 <div class="home_menu"><a href="/album_cover"></a></div>
 	<!-- 用户查看自定义日期中的内容 -->
@@ -59,14 +59,14 @@
                                    <div class="my_records2" >
                                     <div class="mydiv1112">
                                         <p class="datep1" ng-bind="x.showTime"></p>
-                                        <p class="diary" ></p>
-                                        <div class="divpic">
-                                            <img class="mypic" src="" />
+                                        <p class="diary" ng-bind="x.description"></p>
+                                        <div class="divpic" ng-repeat="y in x.arr_path">
+                                            <img class="mypic2" src="@{{y}}" />
                                         </div>
                                         <br/>
                                         <div class="my_records_button2">
-                                            <input  class="button button-pill button-tiny" type="submit" value="修改">
-                                            <input  class="button button-pill button-tiny" type="submit" value="删除">
+                                            <input  class="button button-pill button-tiny" type="submit" value="修改" ng-click="getRecordDetail(x)">
+                                            <input  class="button button-pill button-tiny" type="submit" value="删除" ng-click="deleteRecord(x)">
                                         </div>
                                     </div>
                                    </div>
@@ -85,6 +85,40 @@
     			
     		</tr>
     	</table>
+	  <div class="modal fade" id="oneRecordDetailModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+		  <div class="modal-dialog" role="document">
+			  <div class="modal-content"><!--modal的内容-->
+				  <div class="modal-header">
+					  <!--关闭modal的按钮-->
+					  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						  <span aria-hidden="true">&times;</span>
+					  </button>
+					  <h4 class="modal-title" id="modalLabel">编辑内容</h4>
+				  </div>
+				  <div class="modal-body">
+					  <div class="form-inner">
+						  <form class="myForm">
+							  <div>
+								  <p>内容：</p>
+								  <input type="text" style="width:500px;" ng-model="recordDetail.description"/>
+								  <span style="color:red" ng-show="recordDetail.description == ''"></span>
+							  </div>
+							  <div>
+								  <p>自定义时间：</p>
+								  <input type="text" ng-model="recordDetail.showTime"/>
+								  <span style="color:red" ng-show="recordDetail.showTime == ''"></span>
+							  </div>
+						  </form>
+					  </div>
+				  </div>
+				  <div class="modal-footer">
+					  <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					  <button type="button" class="btn btn-primary" ng-click="editRecord()"
+							  ng-disabled="orderRecord.description == '' || orderRecord.showTime == ''">修改</button>
+				  </div>
+			  </div>
+		  </div>
+	  </div>
 </div>
 
   <!-- 左面菜单 -->
