@@ -64,32 +64,36 @@ yinjiApp.controller('checkOrderCtrl',
 				$scope.orderDetail.price == tempDetail[2]&&
 				$scope.orderDetail.status == tempDetail[3]&&
 				$scope.orderDetail.address == tempDetail[4]&&
-				$scope.orderDetail.comment == tempDetail[5])
+				$scope.orderDetail.comment == tempDetail[5]) {
 				alert("对不起，您没有进行任何修改！");
-			else{
-				$http({
-					method:'GET',
-					url:'/cpy/editOrder',
-					params:{
-						'id':$scope.orderDetail.id,
-						'quantity':$scope.orderDetail.quantity,
-						'price':$scope.orderDetail.price,
-						'status':$scope.orderDetail.status,
-						'address':$scope.orderDetail.address,
-						'comment':$scope.orderDetail.comment
-					}
-				}).success(function(response){
-					if (response == 1){
-						alert("修改成功！");
-						$('#orderDetailModal').modal('hide');
-					}
-					else {
-						alert("oops...修改失败...");
-						$('#orderDetailModal').modal('hide');
-					}
-				});
-				updateOrderData($scope.orderDetail);
+				return;
 			}
+			if (!/^[0-9]*$/.test($scope.orderDetail.price)) {
+				alert("对不起，单价必须为整数！");
+				return;
+			}
+			$http({
+				method:'GET',
+				url:'/cpy/editOrder',
+				params:{
+					'id':$scope.orderDetail.id,
+					'quantity':$scope.orderDetail.quantity,
+					'price':$scope.orderDetail.price,
+					'status':$scope.orderDetail.status,
+					'address':$scope.orderDetail.address,
+					'comment':$scope.orderDetail.comment
+				}
+			}).success(function(response){
+				if (response == 1){
+					alert("修改成功！");
+					$('#orderDetailModal').modal('hide');
+				}
+				else {
+					alert("oops...修改失败...");
+					$('#orderDetailModal').modal('hide');
+				}
+			});
+			updateOrderData($scope.orderDetail);
 		}
 
 		function updateOrderData(detail){

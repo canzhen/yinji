@@ -91,12 +91,18 @@
 								</div>
 								<div>
 									<span>订单单价：</span>
-									<input type="text" ng-model="orderDetail.price"/>
+									<input type="text" ng-model="orderDetail.price" style="width:12%;"/>
 									<span style="color:red" ng-show="orderDetail.price == ''">*此项必填</span>
+                                    <span style="color:red" ng-show="orderDetail.price<0">*单价必须大于0</span>
 								</div>
 								<div>
 									<span>订单状态：</span>
-									<input type="text" ng-model="orderDetail.status"/>
+									<select >
+										<option>已发货</option>
+										<option>已送达</option>
+										<option>送货中</option>
+									</select>
+									<!--<input type="text" ng-model="orderDetail.status"/>-->
 									<span style="color:red" ng-show="orderDetail.status == ''">*此项必填</span>
 								</div>
 								<div>
@@ -115,8 +121,9 @@
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
 						<button type="button" class="btn btn-primary" ng-click="editOrder()"
-								ng-disabled="orderDetail.quantity == '' || orderDetail.price == ''
-								|| orderDetail.status == '' || orderDetail.adress == ''">修改</button>
+								ng-disabled="orderDetail.quantity == '' ||orderDetail.price<0
+								|| orderDetail.price == ''|| orderDetail.status == ''
+								|| orderDetail.adress == ''">修改</button>
 					</div>
 				</div>
 			</div>
