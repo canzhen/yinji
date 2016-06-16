@@ -143,10 +143,10 @@
 							<a href="#"><i class="fa fa-edit fa-fw"></i> 订单管理 <span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li>
-									<a href="/cpy_checkOrder">订单查看</a>
+									<a href="/cpy_checkOrder">全部订单</a>
 								</li>
 								<li>
-									<a href="#">订单回收</a>
+									<a href="/cpy_newOrdersManage">未完成订单</a>
 								</li>
 							</ul>
 							<!-- /.nav-second-level -->

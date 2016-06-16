@@ -1,6 +1,6 @@
 @extends('layouts.cpy_sidebar')
 
-@section('title','员工信息')
+@section('title','公司管理')
 @section('cpy_subtitle','员工信息')
 
 @section('footer')
@@ -12,9 +12,7 @@
 @section('sidebar-content')
 
 
-	<?php
-		if (isset($_SESSION['ifLoggedIn']) && $_SESSION['ifLoggedIn'] == "y"){
-	?>
+	@if(isset($_SESSION['ifLoggedIn'])&&$_SESSION['ifLoggedIn']=='y')
 
 	<div class="panel-body" ng-controller="staffManageCtrl">
 		<div class="dataTables_wrapper">
@@ -36,12 +34,7 @@
 			</table>
 		</div>
 	</div>
-
-	<?php
-		}else{
-	?>
+	@else
 		对不起，您尚未登录，请您<a href="/auth/login">登录</a>后访问此界面！
-	<?php
-		}
-	?>
+	@endif
 @stop

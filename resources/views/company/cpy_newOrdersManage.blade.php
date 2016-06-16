@@ -1,6 +1,6 @@
 @extends('layouts.cpy_sidebar')
 
-@section('title','未完成订单')
+@section('title','订单管理')
 @section('cpy_subtitle','未完成订单')
 
 @section('header')

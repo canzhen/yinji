@@ -1,6 +1,6 @@
 @extends('layouts.cpy_sidebar')
 
-@section('title','模板查看')
+@section('title','模板管理')
 @section('cpy_subtitle','模板查看')
 
 @section('header')
@@ -31,13 +31,10 @@
 					<div class="time">创建时间：@{{ x.created_at }}</div>
 					<div class="time">修改时间：@{{ x.updated_at }}</div>
 					<div class="author">作者：@{{ x.author_name }}</div>
-					<?php
-						if (isset($_SESSION['ifLoggedIn']) && $_SESSION['ifLoggedIn'] == "y"){
-					?>
+					@if(isset($_SESSION['ifLoggedIn'])&&$_SESSION['ifLoggedIn']=='y')
+						<div class="author"><a href="" ng-click="deleteTemplate(x)">修改信息</a></div>
 						<div class="author"><a href="" ng-click="deleteTemplate(x)">删除模板</a></div>
-					<?php
-						}
-					?>
+					@endif
 				</div>
 				<div class="lb-overlay" id="@{{ x.template_name }}">
 					<a href="#" class="lb-close">x Close</a>

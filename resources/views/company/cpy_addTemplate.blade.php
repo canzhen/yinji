@@ -1,6 +1,6 @@
 @extends('layouts.cpy_sidebar')
 
-@section('title','模板上传')
+@section('title','模板管理')
 @section('cpy_subtitle','模板上传')
 
 @section('header')
@@ -18,9 +18,7 @@
 
 
 @section('sidebar-content')
-	<?php
-		if (isset($_SESSION['ifLoggedIn']) && $_SESSION['ifLoggedIn'] == "y"){
-	?>
+	@if(isset($_SESSION['ifLoggedIn'])&&$_SESSION['ifLoggedIn']=='y')
 		<div class="upload-form">
 			<form enctype="multipart/form-data"
 				  onsubmit="return iframeCallback(this, pageAjaxDone)"><!--确保匿名上载文件的正确编码-->
@@ -30,12 +28,8 @@
 				</div>
 			</form>
 		</div>
-	<?php
-		}else{
-	?>
+	@else
 		对不起，您尚未登录，请您<a href="/auth/login">登录</a>后访问此界面！
-	<?php
-		}
-	?>
+	@endif
 
 @stop

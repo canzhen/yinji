@@ -2083,7 +2083,7 @@
 		uploadAsync: true,
 		uploadExtraData: {},
 		maxFileSize: 0,
-		minFileCount: 0,
+		minFileCount: 1,
 		maxFileCount: 0,
 		msgValidationErrorClass: 'text-danger',
 		msgValidationErrorIcon: '<i class="fa fa-info-sign fa-fw"></i> ',
@@ -2152,7 +2152,7 @@
 		uploadLabel: '上传',
 		uploadTitle: '上传选择文件',
 		msgSizeTooLarge: '文件 "{name}" (<b>{size} KB</b>) 超出最大限制大小<b>{maxSize} KB</b>. 请重新选择文件上传！',
-		msgFilesTooLess: '必须选择至少<b>{n}</b>{files}上传. 请重新上传！',
+		msgFilesTooLess: '必须选择至少<b>{n}</b>个文件上传. 请重新上传！',
 		msgFilesTooMany: '上传的文件数<b>({n})</b> 超过最大文件限制<b>{m}</b>，请重新选择文件上传！',
 		msgFileNotFound: '找不到文件 "{name}"！',
 		msgFileSecured: '无法访问文件"{name}"。',
@@ -2201,11 +2201,12 @@
 
 $("#file-1").fileinput({
 	uploadUrl: '/cpy/uploadTemplate', // you must set a valid URL here else you will get an error
-	allowedFileExtensions : ['jpg', 'png','jpeg'],
+	allowedFileExtensions : ['jpg', 'png','jpeg','bmp','gif'],
 	overwriteInitial: false,
-	maxFileSize: 7000,
+	maxFileSize: 10000,
+	minFileCount:1,
 	maxFilesNum: 10,
-	//allowedFileTypes: ['image', 'video', 'flash'],
+	allowedFileTypes: ['image'],
 	slugCallback: function(filename) {
 		return filename.replace('(', '_').replace(']', '_');
 	}
