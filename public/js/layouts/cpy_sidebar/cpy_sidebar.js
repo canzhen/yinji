@@ -67,7 +67,6 @@ yinjiApp.controller('cpyNavController',
                 if ($scope.evaMinute < 1)
                     $scope.evaSecond = currentSecond - latestEvaTime[2];
             }
-            console.log($scope.evaHour+"\n"+$scope.evaMinute+"\n"+$scope.evaSecond);
         });
 
 
@@ -82,7 +81,6 @@ yinjiApp.controller('cpyNavController',
                 if ($scope.odMinute < 1)
                     $scope.odSecond = currentSecond - latestOrderTime[2];
             }
-            console.log($scope.odHour+"\n"+$scope.odMinute+"\n"+$scope.odSecond);
         });
 
 

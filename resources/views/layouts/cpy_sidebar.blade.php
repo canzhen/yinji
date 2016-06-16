@@ -173,26 +173,19 @@
 									<a href="/cpy_info">公司信息</a>
 								</li>
 								<li>
-									<a href="#">销售报表</a>
+									<a href="cpy_salesReport">销量报表</a>
 								</li>
+								<?php
+									if (isset($_SESSION['ifLoggedIn']) &&
+											$_SESSION['ifLoggedIn']=='y'&&
+											$_SESSION['privilege']=='admin'){
+								?>
 								<li>
-									<a href="#">业绩信息 <span class="fa arrow"></span></a>
-									<ul class="nav nav-third-level">
-										<li>
-											<a href="#">业绩信息1</a>
-										</li>
-										<li>
-											<a href="#">业绩信息2</a>
-										</li>
-										<li>
-											<a href="#">业绩信息3</a>
-										</li>
-									</ul>
-									<!-- /.nav-third-level -->
+									<a href="/cpy_staffManagement">员工信息</a>
 								</li>
-								<li>
-									<a href="#">员工信息</a>
-								</li>
+								<?php
+									}
+								?>
 							</ul>
 							<!-- /.nav-second-level -->
 						</li>

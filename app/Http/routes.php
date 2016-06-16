@@ -18,6 +18,11 @@ Route::group(['middleware'=>'web'],function(){
         return $_SESSION['userName'];
     });
 
+    //在前端获取当前用户权限
+    Route::get('/getUserPrivilege',function(){
+        return $_SESSION['privilege'];
+    });
+
     Route::get('/', function () {
         return view('index');
     });
@@ -52,8 +57,12 @@ Route::group(['middleware'=>'web'],function(){
         return view('company.cpy_checkEvaluation');
     });
 
-    Route::get('cpy_salesReport',function(){
+    Route::get('/cpy_salesReport',function(){
         return view('company.cpy_salesReport');
+    });
+
+    Route::get('/cpy_staffManagement',function(){
+        return view('company.cpy_staffManagement');
     });
 
     Route::get('/cpy_userInformation', function () {
@@ -137,6 +146,7 @@ Route::get('/usr/editUsername','UserController@editUsername');
 Route::get('/usr/checkPwd','UserController@checkPwd');
 Route::get('/usr/editPwd','UserController@editPwd');
 Route::get('/usr/checkIfMobile','UserController@checkIfMobile');
+Route::get('/usr/getCpyUsers','UserController@getCpyUsers');
 
 
 // 展示纪念册
