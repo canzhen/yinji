@@ -7,7 +7,7 @@
 			<div class="header-main">
 				<div class="header-left">
 					<div class="logo">
-						<a href="/"><h1 class="stfyt">@yield('inner-title')</h1></a>
+						<a href="/home"><h1 class="stfyt">@yield('inner-title')</h1></a>
 					</div>
 				</div>
 

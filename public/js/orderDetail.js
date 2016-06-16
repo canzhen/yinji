@@ -51,6 +51,7 @@ yinjiApp.controller('albumController',
 			url:'/displayOrder',
 		})
 		.success(function(data) {
+			data = data.reverse();
 			if(data != null){
 				console.log(data);
 				for(var i = 0; i < data.length; i++){
