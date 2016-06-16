@@ -18,7 +18,6 @@
 	<!-- Morris Charts JavaScript -->
 	<script src="/js/company/cpy_sidebar/raphael.min.js"></script>
 	<script src="/js/company/cpy_sidebar/morris.min.js"></script>
-	<script src="/js/company/cpy_sidebar/morris-data.js"></script>
 	<script src="/js/company/cpy_sidebar/metisMenu.min.js"></script>
 @stop
 
@@ -178,7 +177,9 @@
 				<!--任务完成情况结束-->
 
 
-
+				<?php
+				if (isset($_SESSION['ifLoggedIn']) && $_SESSION['ifLoggedIn'] == "y"){
+				?>
 				<!--新消息提醒-->
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -186,16 +187,16 @@
 					</a>
 					<ul class="dropdown-menu dropdown-alerts">
 						<li>
-							<a href="#">
+							<a href="/cpy_checkEvaluation">
 								<div>
-									<i class="fa fa-comment fa-fw"></i> 新评论
+									<i class="fa fa-comment fa-fw"></i> 新评价
 									<span class="pull-right text-muted small">4 minutes ago</span>
 								</div>
 							</a>
 						</li>
 						<li class="divider"></li>
 						<li>
-							<a href="#">
+							<a href="/cpy_checkOrder">
 								<div>
 									<i class="fa fa-edit fa-fw"></i> 新订单
 									<span class="pull-right text-muted small">12 minutes ago</span>
@@ -207,24 +208,31 @@
 				<!--新消息提醒结束-->
 
 
+				<!--用户设置开始-->
+
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
 						<i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-user">
-						<li><a href="#"><i class="fa fa-user fa-fw"></i> 个人信息</a>
-						</li>
-						<li><a href="#"><i class="fa fa-gear fa-fw"></i> 设置</a>
-						</li>
+						<li><a href="/cpy_userInformation"><i class="fa fa-user fa-fw"></i> 个人信息</a></li>
+						<li><a href="#"><i class="fa fa-gear fa-fw"></i> 设置</a></li>
 						<li class="divider"></li>
-						<li><a href="/auth/logout"><i class="fa fa-sign-out fa-fw"></i> 退出登录</a>
-						</li>
+						<li><a href="/auth/logout"><i class="fa fa-sign-out fa-fw"></i> 退出登录</a></li>
 					</ul>
-					<!-- /.dropdown-user -->
 				</li>
-				<!-- /.dropdown -->
+				<?php
+					}else{
+				?>
+				<li class="dropdown">
+					<a href="/auth/login"><i class="fa fa-sign-in fa-fw"></i> 登录</a>
+				</li>
+				<?php
+					}
+				?>
+				<!--用户设置结束-->
 			</ul>
-			<!-- /.navbar-top-links -->
+
 
 
 			<div class="navbar-default sidebar" role="navigation">
@@ -260,7 +268,7 @@
 							<a href="#"><i class="fa fa-edit fa-fw"></i> 订单管理 <span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li>
-									<a href="/cpy_checkOrder">查看订单</a>
+									<a href="/cpy_checkOrder">订单查看</a>
 								</li>
 								<li>
 									<a href="#">订单回收</a>
@@ -275,7 +283,7 @@
 									<a href="#">查看用户</a>
 								</li>
 								<li>
-									<a href="#">用户评价</a>
+									<a href="/cpy_checkEvaluation">用户评价</a>
 								</li>
 								<li>
 									<a href="#">修改用户信息</a>

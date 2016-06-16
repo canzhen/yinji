@@ -54,41 +54,29 @@ class AuthController extends Controller
 		$data = array('name'=>$name,'password'=>$password);
 
 		if (\Auth::attempt($data,$remember)){
-			 $res = \DB::table('users')->where('name', '=',$name)->get();
+			$res = \DB::table('users')->where('name', '=',$name)->get();
             //$res = User::where('name',$name)->get(); 
             
             $_SESSION['userId'] = $res[0]->id;//获得用户id
             $_SESSION['userName'] = $res[0]->name;//获得用户姓名
+            //$_SESSION['curAlbum']
             //$_SESSION['privilege'] = $res[0]->privilege;//获得权限
-
+            //测试
+            $_SESSION['curAlbum'] = 0;
             $privilege = $res[0]->privilege;
             $_SESSION['ifLoggedIn'] = 'y';//set the value to yes
 
             if (strcmp($privilege,'superadmin')==0){
 				$_SESSION['privilege']='superadmin';
 				return 3;
-			}else if (strcmp($privilege,'company')==0){
+			}else if (strcmp($privilege,'staff')==0 ||
+						strcmp($privilege,'admin')==0){
 				$_SESSION['privilege']='company';
 				return 2;
 			}else{
 				$_SESSION['privilege']='admin';
 				return 1;
 			}
-			$privilege = \DB::table('users')
-						->where('name', '=',$name)
-						->pluck('privilege');
-			\Session::put('ifLoggedIn','y');//set the value to yes
-			if (strcmp($privilege[0],'superadmin')==0){
-				\Session::put('privilege','superadmin');
-				return 3;//管理员
-			}else if (strcmp($privilege[0],'staff')==0){
-				\Session::put('privilege','staff');
-				return 2;//公司用户，普通职工
-			}else{
-				\Session::put('privilege','admin');
-				return 2;//公司用户，经理之类的人
-			}
-
 		}else{
 			\Session::put('ifLoggedIn','n');//set the value to no
 			return 0;//密码错误
@@ -102,11 +90,9 @@ class AuthController extends Controller
 	 * Created by Zhou Canzhen on 2016/04/21
 	 */
 	public function getLogout() {
-		if(\Auth::check())
-		{
-			\Auth::logout();
-			$_SESSION['ifLoggedIn']='n';
-		}
+		\Auth::logout();
+		$_SESSION['ifLoggedIn']='n';
+		$_SESSION['userName']="";
 		return \Redirect::intended('/');
 	}
 
@@ -131,7 +117,7 @@ class AuthController extends Controller
 			->insertGetId(
 				array(
 					'name' => $name,
-					'password' => Hash::make($password),
+					'password' => \Hash::make($password),
 					'privilege' => $privilege
 				)
 			);

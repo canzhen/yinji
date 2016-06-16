@@ -183,16 +183,16 @@
 			'       {previewFileIcon}\n' +
 			'   </div>',
 		defaultFileActionSettings = {
-			removeIcon: '<i class="glyphicon glyphicon-trash text-danger"></i>',
+			removeIcon: '<i class="fa fa-trash text-danger"></i>',
 			removeClass: 'btn btn-xs btn-default',
 			removeTitle: 'Remove file',
-			uploadIcon: '<i class="glyphicon glyphicon-upload text-info"></i>',
+			uploadIcon: '<i class="fa fa-upload text-info"></i>',
 			uploadClass: 'btn btn-xs btn-default',
 			uploadTitle: 'Upload file',
-			indicatorNew: '<i class="glyphicon glyphicon-hand-down text-warning"></i>',
-			indicatorSuccess: '<i class="glyphicon glyphicon-ok-sign file-icon-large text-success"></i>',
-			indicatorError: '<i class="glyphicon glyphicon-exclamation-sign text-danger"></i>',
-			indicatorLoading: '<i class="glyphicon glyphicon-hand-up text-muted"></i>',
+			indicatorNew: '<i class="fa fa-circle-arrow-down text-warning"></i>',
+			indicatorSuccess: '<i class="fa fa-ok-sign file-icon-large text-success"></i>',
+			indicatorError: '<i class="fa fa-exclamation-sign text-danger"></i>',
+			indicatorLoading: '<i class="fa fa-hand-up text-muted"></i>',
 			indicatorNewTitle: 'Not uploaded yet',
 			indicatorSuccessTitle: 'Uploaded',
 			indicatorErrorTitle: 'Upload Error',
@@ -532,6 +532,8 @@
 				case 'filebatchuploadcomplete':
 				case 'filebatchuploadsuccess':
 				case 'fileuploaded':
+					alert('上传成功！');
+					break;
 				case 'fileclear':
 				case 'filecleared':
 				case 'filereset':
@@ -1588,7 +1590,7 @@
 				frameClass = '';
 			if (isDisabled === true) {
 				frameClass = ' btn disabled';
-				footer += '<div class="file-other-error text-danger"><i class="glyphicon glyphicon-exclamation-sign"></i></div>';
+				footer += '<div class="file-other-error text-danger"><i class="fa fa-exclamation-sign"></i></div>';
 			}
 			self.$preview.append("\n" + previewOtherTemplate
 					.repl('{previewId}', previewId)
@@ -2068,14 +2070,14 @@
 		customPreviewTags: {},
 		previewSettings: defaultPreviewSettings,
 		fileTypeSettings: defaultFileTypeSettings,
-		previewFileIcon: '<i class="glyphicon glyphicon-file"></i>',
-		browseIcon: '<i class="glyphicon glyphicon-folder-open"></i> &nbsp;',
+		previewFileIcon: '<i class="fa fa-file"></i>',
+		browseIcon: '<i class="fa fa-folder-open fa-fw"></i> &nbsp;',
 		browseClass: 'btn btn-primary',
-		removeIcon: '<i class="glyphicon glyphicon-trash"></i> ',
+		removeIcon: '<i class="fa fa-trash fa-fw"></i> ',
 		removeClass: 'btn btn-default',
-		cancelIcon: '<i class="glyphicon glyphicon-ban-circle"></i> ',
+		cancelIcon: '<i class="fa fa-remove fa-fw"></i> ',
 		cancelClass: 'btn btn-default',
-		uploadIcon: '<i class="glyphicon glyphicon-upload"></i> ',
+		uploadIcon: '<i class="fa fa-upload fa-fw"></i> ',
 		uploadClass: 'btn btn-default',
 		uploadUrl: 'getRequest',
 		uploadAsync: true,
@@ -2084,7 +2086,7 @@
 		minFileCount: 0,
 		maxFileCount: 0,
 		msgValidationErrorClass: 'text-danger',
-		msgValidationErrorIcon: '<i class="glyphicon glyphicon-exclamation-sign"></i> ',
+		msgValidationErrorIcon: '<i class="fa fa-info-sign fa-fw"></i> ',
 		msgErrorClass: 'file-error-message',
 		progressClass: "progress-bar progress-bar-success progress-bar-striped active",
 		progressCompleteClass: "progress-bar progress-bar-success",
@@ -2141,7 +2143,7 @@
 
 	$.fn.fileinput.locales.cn = {
 		fileSingle: '文件',
-		filePlural: '多个文件',
+		filePlural: '个文件',
 		browseLabel: '选择 &hellip;',
 		removeLabel: '移除',
 		removeTitle: '移除选择文件',
@@ -2150,8 +2152,8 @@
 		uploadLabel: '上传',
 		uploadTitle: '上传选择文件',
 		msgSizeTooLarge: '文件 "{name}" (<b>{size} KB</b>) 超出最大限制大小<b>{maxSize} KB</b>. 请重新选择文件上传！',
-		msgFilesTooLess: '必须选择至少<b>{n}</b> {files}上传. 请重新上传！',
-		msgFilesTooMany: 'Number of files selected for upload <b>({n})</b> exceeds maximum allowed limit of <b>{m}</b>. Please retry your upload!',
+		msgFilesTooLess: '必须选择至少<b>{n}</b>{files}上传. 请重新上传！',
+		msgFilesTooMany: '上传的文件数<b>({n})</b> 超过最大文件限制<b>{m}</b>，请重新选择文件上传！',
 		msgFileNotFound: '找不到文件 "{name}"！',
 		msgFileSecured: '无法访问文件"{name}"。',
 		msgFileNotReadable: '文件"{name}"不可读.',
@@ -2182,33 +2184,29 @@
 			$input.fileinput();
 		}
 	});
+
+
+	$("#file-1").on("fileuploaded",
+		function(event, data, previewId, index) {
+			console.log(data.response.response);
+			if(data.response.response == 1)
+				alert("上传成功！");
+			else if(data.response.response == 0)
+				alert("对不起，模板名已存在，请修改模板名再上传！");
+			else{
+				alert(data.response.response);
+			}
+		});
 })(window.jQuery);
 
-
-
-
-
-
 $("#file-1").fileinput({
-	uploadUrl: '#', // you must set a valid URL here else you will get an error
-	allowedFileExtensions : ['jpg', 'png','gif'],
+	uploadUrl: '/cpy/uploadTemplate', // you must set a valid URL here else you will get an error
+	allowedFileExtensions : ['jpg', 'png','jpeg'],
 	overwriteInitial: false,
-	maxFileSize: 1000,
+	maxFileSize: 7000,
 	maxFilesNum: 10,
 	//allowedFileTypes: ['image', 'video', 'flash'],
 	slugCallback: function(filename) {
 		return filename.replace('(', '_').replace(']', '_');
 	}
-});
-$(document).ready(function() {
-	$("#test-upload").fileinput({
-		'showPreview' : false,
-		'allowedFileExtensions' : ['jpg', 'png','gif'],
-		'elErrorContainer': '#errorBlock'
-	});
-	/*
-	 $("#test-upload").on('fileloaded', function(event, file, previewId, index) {
-	 alert('i = ' + index + ', id = ' + previewId + ', file = ' + file.name);
-	 });
-	 */
 });

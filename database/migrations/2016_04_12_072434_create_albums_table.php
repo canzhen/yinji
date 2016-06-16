@@ -24,11 +24,12 @@ class CreateAlbumsTable extends Migration
             $table->string('description')->nullable();
             $table->string('motto')->nullable();
             $table->string('author_name')->nullable();
+            $table->timestamps();
         });
 
         Schema::table('albums', function (Blueprint $table) {
-            $table->foreign('user_name')->references('name')->on('users')->onDelete('cascade');
-            $table->foreign('category')->references('id')->on('albums_category')->onDelete('cascade');
+            $table->foreign('user_name')->references('name')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('category')->references('id')->on('albums_category')->onUpdate('cascade')->onDelete('cascade');
         });
 
         DB::table('albums')->insert(

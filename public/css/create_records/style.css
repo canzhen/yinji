@@ -1,0 +1,1612 @@
+@charset "utf-8";
+/* CSS Document */
+
+body
+{
+    margin: 0;
+    padding: 0;
+    background: url(../../images/create_records/main_bg.gif) left top;
+}
+ul,
+li
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img
+{
+    border: 0;
+}
+
+.cloud_intro img
+{
+    width: 284px;
+    height: 115px;
+}
+
+.no1_line img
+{
+    width: 203px;
+    height: 30px;
+    margin-top: 36px;
+}
+
+.no2_line img
+{
+    width: 306px;
+    height: 30px;
+    margin-top: 36px;
+}
+
+.no2_seed img
+{
+    width: 306px;
+    height: 30px;
+    margin-top: 120px;
+    margin-left: 10px;
+}
+
+.next_ice img
+{
+    float: right;
+
+    width: 79px;
+    height: 50px;
+    margin-top: -35px;
+    margin-right: 20px;
+}
+.next_ice3 img
+{
+    float: right;
+
+    width: 79px;
+    height: 50px;
+    margin-top: -20px;
+    margin-right: 20px;
+}
+.next_ice102 img
+{
+    float: right;
+
+    width: 79px;
+    height: 50px;
+    margin-top: -10px;
+    margin-right: 20px;
+}
+.next_ice5 img
+{
+    float: right;
+
+    width: 79px;
+    height: 50px;
+    margin-top: 0;
+    margin-right: 20px;
+}
+
+.no1_seed img
+{
+    width: 203px;
+    height: 30px;
+    margin-top: 60px;
+    margin-left: 10px;
+}
+
+.bg_top
+{
+    width: 100%;
+    height: 600px;
+
+    background: url(../../images/create_records/top_bg.jpg) right top;
+}
+.header_bg
+{
+    width: 100%;
+    height: 151px;
+    margin: auto;
+
+    background: url(../../images/create_records/cloud_02.jpg) right top no-repeat;
+}
+.header
+{
+    width: 1000px;
+    margin: auto;
+}
+/*简介页面的logo*/
+.header .logo
+{
+    position: relative;
+    z-index: 100;
+
+    display: block;
+    display: inline;
+    float: left;
+
+    width: 184px;
+    height: 63px;
+    margin: 20px auto auto 50px;
+
+    /*background: url(../../images/create_records/logo.jpg) left top;*/
+}
+.page_box
+{
+    position: relative;
+    z-index: 5;
+
+    width: 1000px;
+    height: 700px;
+    margin: auto;
+    margin-top: -450px;
+}
+.header .en
+{
+    margin-top: 25px;
+
+    background-position: right bottom;
+}
+.header .en:hover
+{
+    background-position: right top;
+}
+.index_left
+{
+    float: left;
+    width: 443px;
+    height: 646px;
+    background: url(../../images/create_records/cloud_17.jpg) left bottom no-repeat;
+}
+/*纪念册封面*/
+.index_right
+{
+    float: left;
+    width: 488px;
+    height: 646px;
+}
+.index_menu
+{
+    position: absolute;
+    right: -3px;
+
+    float: right;
+
+    width: 74px;
+}
+.index_menu li
+{
+    width: 100%;
+}
+.index_menu .menu_1
+{
+    float: left;
+
+    width: 46px;
+    height: 107px;
+    margin-top: 60px;
+}
+.index_menu .menu_1 a
+{
+    display: block;
+    float: left;
+
+    width: 46px;
+    height: 107px;
+
+    background: url(../../images/create_records/cloud_07.png) left top;
+}
+.index_menu .menu_1 a:hover
+{
+    display: block;
+    float: left;
+
+    width: 46px;
+    height: 107px;
+
+    background: url(../../images/create_records/fact_sele.png) left top;
+}
+.index_menu .menu_2
+{
+    float: left;
+
+    width: 46px;
+    height: 108px;
+    margin-top: 10px;
+}
+.index_menu .menu_2 a
+{
+    display: block;
+    float: left;
+
+    width: 46px;
+    height: 108px;
+
+    background: url(../../images/create_records/cloud_10.png) left top;
+}
+.index_menu .menu_2 a:hover
+{
+    display: block;
+    float: left;
+
+    width: 46px;
+    height: 108px;
+
+    background: url(../../images/create_records/airing_sele.png) left top;
+}
+.index_menu .menu_3
+{
+    float: left;
+
+    width: 74px;
+    height: 106px;
+    margin-top: 10px;
+}
+.index_menu .menu_3 a
+{
+    display: block;
+    float: left;
+
+    width: 74px;
+    height: 106px;
+
+    background: url(../../images/create_records/cloud_12.jpg) left top;
+}
+.index_menu .menu_4
+{
+    float: left;
+
+    width: 66px;
+    height: 90px;
+    margin-top: 10px;
+}
+.index_menu .menu_4 a
+{
+    display: block;
+    float: left;
+
+    width: 66px;
+    height: 90px;
+
+    background: url(../../images/create_records/cloud_15.png) left top;
+}
+.index_menu .menu_4 a:hover
+{
+    display: block;
+    float: left;
+
+    width: 66px;
+    height: 90px;
+
+    background: url(../../images/create_records/cloud_play.png) left top;
+}
+.index_menu .menu_5
+{
+    float: left;
+
+    width: 74px;
+    height: 85px;
+    margin-top: 10px;
+
+}
+.index_menu .menu_5 a
+{
+    display: block;
+    float: left;
+
+    width: 74px;
+    height: 85px;
+
+    background: url(../../images/create_records/cloud_20.png) left top;
+}
+.index_menu .menu_5 a:hover
+{
+    display: block;
+    float: left;
+
+    width: 74px;
+    height: 85px;
+
+    background: url(../../images/create_records/factstore_sel.png) left top;
+}
+.index_menu .menu_6
+{
+    float: left;
+
+    width: 74px;
+    height: 100px;
+    margin-top: 10px;
+}
+.index_menu .menu_6 a
+{
+    display: block;
+    float: left;
+
+    width: 74px;
+    height: 100px;
+
+    background: url(../../images/create_records/cloud_21.png) left top;
+}
+.index_menu .menu_6 a:hover
+{
+    display: block;
+    float: left;
+
+    width: 74px;
+    height: 100px;
+
+    background: url(../../images/create_records/army_sele.png) left top;
+}
+.page_right
+{
+    background: none;
+}
+.page_box_bg
+{
+    margin-top: -505px;
+
+    background: url(../../images/create_records/page_06.jpg) center top no-repeat;
+}
+.page_bot
+{
+    position: absolute;
+    z-index: 1;
+    top: 601px;
+    left: 0;
+
+    width: 100%;
+    height: 200px;
+
+    background: url(../../images/create_records/page_09.jpg) center top no-repeat;
+}
+.page_left_menu,
+.broadcast,
+.fract_set,
+.games_set
+{
+    position: absolute;
+    top: 195px;
+    left: 0;
+    left: -17px;
+    width: 81px;
+    height: 202px;
+}
+.page_left_menu li,
+.broadcast li,
+.fract_set li,
+.games_set li
+{
+    width: 81px;
+    height: 67px;
+}
+
+/*厂区（许愿云系列，自由行走的梦想系列）*/
+.fract_set li
+{
+    width: 55px;
+    height: 135px;
+}
+.fract_set li a
+{
+    display: block;
+
+    width: 55px;
+    height: 135px;
+    margin-left: 25px;
+
+    background: url(../../images/create_records/cloud_drean.png) left top no-repeat;
+}
+.fract_set li a.on
+{
+    display: block;
+
+    width: 55px;
+    height: 130px;
+
+    background: url(../../images/create_records/cloud_drean_select.png) left top no-repeat;
+}
+.fract_set li a:hover
+{
+    display: block;
+
+    width: 55px;
+    height: 130px;
+
+    background: url(../../images/create_records/cloud_drean_select.png) left top no-repeat;
+}
+.fract_set .menu1_clud_set a
+{
+    background-position: left 0;
+}
+.fract_set .menu1_clud_set a.on
+{
+    background-position: left 0;
+}
+.fract_set .menu1_clud_set a:hover
+{
+    background-position: left 0;
+}
+.fract_set .menu2_dream_set a
+{
+    margin-top: 30px;
+
+    background-position: left -170px;
+}
+.fract_set .menu2_dream_set a.on
+{
+    background-position: left -170px;
+}
+.fract_set .menu2_dream_set a:hover
+{
+    background-position: left -170px;
+}
+/*end*/
+
+/*游乐园（小游戏大集合，表情下载）*/
+
+.games_set li a
+{
+    display: block;
+
+    width: 69px;
+    height: 100px;
+    margin-left: 13px;
+
+    background: url(../../images/create_records/Radio_classification.png) left top no-repeat;
+}
+.games_set li a:hover
+{
+    display: block;
+
+    width: 69px;
+    height: 100px;
+
+    background: url(../../images/create_records/Radio_classification_sele.png) left top no-repeat;
+}
+.games_set .menu1_blog a
+{
+    background-position: left -20px;
+}
+.games_set .menu1_blog a:hover
+{
+    background-position: left -20px;
+}
+.games_set .menu2_news a
+{
+    margin-top: 30px;
+
+    background-position: left -135px;
+}
+.games_set .menu2_news a:hover
+{
+    background-position: left -135px;
+}
+
+/*end*/
+
+/*厂区仓库*/
+.pro7_l
+{
+    display: block;
+
+    width: 882px;
+    height: 636px;
+
+    background: url(../../images/create_records/original_T.png) no-repeat;
+}
+
+/**/
+
+.page_left_menu li a
+{
+    display: block;
+
+    width: 81px;
+    height: 67px;
+
+    background: url(../../images/create_records/about_11.jpg) left top no-repeat;
+}
+.page_left_menu li a.on
+{
+    display: block;
+
+    width: 81px;
+    height: 67px;
+
+    background: url(../../images/create_records/about_11_sele.png) left top no-repeat;
+}
+.page_left_menu li a:hover
+{
+    display: block;
+
+    width: 81px;
+    height: 67px;
+
+    background: url(../../images/create_records/about_11_sele.png) left top no-repeat;
+}
+.page_left_menu .menu2 a
+{
+    background-position: left -67px;
+}
+.page_left_menu .menu2 a.on
+{
+    background-position: left -67px;
+}
+.page_left_menu .menu2 a:hover
+{
+    background-position: left -67px;
+}
+.page_left_menu .menu3 a
+{
+    background-position: left -134px;
+}
+.page_left_menu .menu3 a.on
+{
+    background-position: left -134px;
+}
+.page_left_menu .menu3 a:hover
+{
+    background-position: left -134px;
+}
+.page_left_menu .g_menu1
+{
+    height: 54px;
+    margin-top: 60px;
+}
+.page_left_menu .g_menu1 a
+{
+    height: 54px;
+
+    background: url(../../images/create_records/game_menu.JPG) -3px top;
+}
+.page_left_menu .g_menu1 a.on
+{
+    height: 54px;
+
+    background: url(../../images/create_records/game_menu_select.png) -3px top;
+}
+.page_left_menu .g_menu1 a:hover
+{
+    height: 54px;
+
+    background: url(../../images/create_records/game_menu_select.png) -3px top;
+}
+.page_left_menu .g_menu2
+{
+    height: 45px;
+    margin-top: 10px;
+}
+.page_left_menu .g_menu2 a
+{
+    height: 45px;
+
+    background: url(../../images/create_records/game_menu.JPG) -3px -60px;
+}
+.page_left_menu .g_menu2 a.on
+{
+    height: 45px;
+
+    background: url(../../images/create_records/game_menu_select.png) -3px -60px;
+}
+.page_left_menu .g_menu2 a:hover
+{
+    height: 45px;
+
+    background: url(../../images/create_records/game_menu_select.png) -3px -60px;
+}
+
+.page_right_menu
+{
+    position: absolute;
+    top: 115px;
+    right: -23px;
+
+    width: 79px;
+    height: 202px;
+}
+.page_right_menu li
+{
+    width: 79px;
+    height: 115px;
+}
+.page_right_menu li a
+{
+    display: block;
+
+    width: 79px;
+    height: 100%;
+
+    background: url(../../images/create_records/about_08.png) left top no-repeat;
+}
+.page_right_menu li a.on
+{
+    display: block;
+
+    width: 79px;
+    height: 100%;
+
+    background: url(../../images/create_records/about_08_sele.png) left top no-repeat;
+}
+.page_right_menu li a:hover
+{
+    display: block;
+
+    width: 79px;
+    height: 100%;
+
+    background: url(../../images/create_records/about_08_sele.png) left top no-repeat;
+}
+.page_right_menu .menu_2
+{
+    width: 79px;
+    height: 113px;
+}
+.page_right_menu .menu_2 a
+{
+    background-position: left -115px;
+}
+.page_right_menu .menu_2 a.on
+{
+    background-position: left -115px;
+}
+.page_right_menu .menu_2 a:hover
+{
+    background-position: left -115px;
+}
+.page_right_menu .menu_3
+{
+    width: 74px;
+    height: 85px;
+}
+.page_right_menu .menu_3 a
+{
+    background-position: left -228px;
+}
+.page_right_menu .menu_3 a.on
+{
+    background-position: left -228px;
+}
+.page_right_menu .menu_3 a:hover
+{
+    background-position: left -228px;
+}
+.page_right_menu .menu_4
+{
+    width: 66px;
+    height: 90px;
+    margin-top: 10px;
+}
+.page_right_menu .menu_4 a
+{
+    background-position: left -418px;
+}
+.page_right_menu .menu_4 a.on
+{
+    background-position: left -418px;
+}
+.page_right_menu .menu_4 a:hover
+{
+    background-position: left -418px;
+}
+.page_right_menu .menu_5
+{
+    width: 74px;
+    height: 85px;
+}
+.page_right_menu .menu_5 a
+{
+    background-position: left -228px;
+}
+.page_right_menu .menu_5 a.on
+{
+    background-position: left -228px;
+}
+.page_right_menu .menu_5 a:hover
+{
+    background-position: left -228px;
+}
+.page_right_menu .menu_6
+{
+    width: 74px;
+    height: 100px;
+}
+.page_right_menu .menu_6 a
+{
+    background-position: left -310px;
+}
+.page_right_menu .menu_6 a.on
+{
+    background-position: left -310px;
+}
+.page_right_menu .menu_6 a:hover
+{
+    background-position: left -310px;
+}
+.p_menu
+{
+    top: 187px;
+    left: -12px;
+}
+.p_menu li a
+{
+    height: 100%;
+
+    background: url(../../images/create_records/pro_side.jpg) left top no-repeat;
+}
+.p_menu .menu1
+{
+    width: 77px;
+    height: 68px;
+}
+.p_menu .menu2
+{
+    width: 77px;
+    height: 74px;
+}
+.p_menu .menu2 a
+{
+    background-position: left -68px;
+}
+.p_menu .menu3
+{
+    width: 77px;
+    height: 66px;
+}
+.p_menu .menu3 a
+{
+    background-position: left -142px;
+}
+.p_menu .menu4
+{
+    width: 77px;
+    height: 101px;
+}
+.p_menu .menu4 a
+{
+    background-position: left -208px;
+}
+.p_menu .menu5
+{
+    width: 77px;
+    height: 61px;
+}
+.p_menu .menu5 a
+{
+    background-position: left -309px;
+}
+.page_left
+{
+    display: inline;
+    width: 420px;
+    height: 607px;
+    margin: 59px auto auto 70px;
+}
+.page_right
+{
+    display: inline;
+    width: 450px;
+    height: 607px;
+    margin: 59px auto auto auto;
+}
+/*创建记录*/
+.create_l
+{
+    background: url(../../images/create_records/about_03.jpg) 40px top no-repeat;
+}
+.create_picture
+{
+    font-size: 12px;
+    line-height: 20px;
+    display: inline;
+    float: left;
+    margin: 130px auto auto 40px;
+    border: 1px soild #000;
+    color: #7f543a;
+}
+.create_text
+{
+    font-size: 12px;
+    line-height: 20px;
+    display: inline;
+    float: left;
+    margin: 150px auto auto 40px;
+    color: #7f543a;
+}
+.create_text h1
+{
+    color: #7f543a;
+    font-weight: bold;
+    font-family: '楷体';
+    font-size: 22px;
+    line-height: 22px;
+}
+.create_text textarea
+{
+    font-style: '楷体';
+    font-size: 15px;
+	background:transparent;
+	border:1px solid #7C5037;
+    margin-left: 3px;
+}
+
+/*简介页面*/
+.about_l
+{
+    background: url(../../images/create_records/about_03.jpg) 40px top no-repeat;
+}
+.about_r
+{
+    background: url(../../images/create_records/about_06.jpg) 6px 15px no-repeat;
+}
+
+.about_text
+{
+    font-size: 12px;
+    line-height: 20px;
+
+    display: inline;
+    float: left;
+
+    margin: 150px auto auto 40px;
+
+    color: #7f543a;
+}
+.about_text h1
+{
+    font-family: '楷体';
+    font-size: 32px;
+    line-height: 32px;
+}
+.about_text p
+{
+    margin-left: 3px;
+}
+.home_menu
+{
+    position: absolute;
+    right: 100px;
+
+    width: 100px;
+    height: 51px;
+}
+.home_menu a
+{
+    display: block;
+
+    width: 100%;
+    height: 51px;
+}
+.gk_l
+{
+    width: 429px;
+    height: 626px;
+    margin: 50px auto auto 68px;
+
+    background: url(../../images/create_records/gk_03.jpg) left top;
+}
+.gk_r
+{
+    width: 447px;
+    height: 627px;
+    margin: 50px auto auto auto;
+
+    background: url(../../images/create_records/gk_04.jpg) left top;
+}
+.cp_l
+{
+    background: none;
+}
+.cp_r
+{
+    background: url(../../images/create_records/cp_bg.jpg) center 80px no-repeat;
+}
+.team_l
+{
+    width: 415px;
+    margin: 60px auto auto 78px;
+
+    background: url(../../images/create_records/team_03.jpg) left top no-repeat;
+}
+.team_r
+{
+    float: left;
+
+    margin: 60px auto auto auto;
+
+    background: url(../../images/create_records/team_04.jpg) left top no-repeat;
+}
+.team_but
+{
+    position: relative;
+
+    display: block;
+
+    width: 50px;
+    height: 50px;
+    margin: 505px auto auto 360px;
+}
+.team1_l
+{
+    width: 427px;
+    margin: 60px auto auto 66px;
+
+    background: url(../../images/create_records/team_1_03.jpg) left top no-repeat;
+}
+.team1_r
+{
+    float: left;
+
+    margin: 60px auto auto auto;
+
+    background: url(../../images/create_records/team_1_04.jpg) left top no-repeat;
+}
+.t_box
+{
+    display: inline;
+    float: left;
+
+    width: 769px;
+    height: 682px;
+    margin: 24px auto auto 103px;
+
+    background: url(../../images/create_records/t.gif) left top no-repeat;
+}
+/*用户自己选择日期查看当天内容*/
+.job_l
+{
+    width: 435px;
+    height: 600px;
+    margin-left: 60px;
+
+    background: url(../../images/create_records/about_03.jpg) left top;
+}
+#datepicker{
+
+}
+.user_time
+{
+    font-size: 16px;
+    font-family: "楷体";
+    line-height: 20px;
+    display: inline;
+    float: left;
+    margin: 150px auto auto 40px;
+    color: #7f543a;
+
+}
+.job_right
+{
+    text-align: left;
+}
+.job_right h2
+{
+    font-size: 18px;
+}
+.blog_left
+{
+    width: 455px;
+    margin: 59px auto auto 59px;
+
+    background: url(../../images/create_records/blog_03.jpg) left top no-repeat;
+}
+.blog_right
+{
+    float: left;
+
+    width: 360px;
+    margin-top: 120px;
+    margin-left: 25px;
+}
+.product_l
+{
+    background: url(../../images/create_records/product_06.jpg) 80px 30px no-repeat;
+}
+/*.product_r{ width:455px; height:638px; background:url(../../images/create_records/product_03.jpg) left top; margin-top:52px;}*/
+.cloud_intro
+{
+    margin-top: 100px;
+    margin-left: 70px;
+}
+
+.no1_line
+{
+    width: 295px;
+    height: 88px;
+    margin-top: 50px;
+    margin-left: 70px;
+
+    background: url(../../images/create_records/no1_line.png) no-repeat;
+}
+
+.no2_line
+{
+    width: 344px;
+    height: 88px;
+    margin-top: 50px;
+    margin-left: 70px; 
+
+    background: url(../../images/create_records/no2_line.png) no-repeat;
+}
+
+/*.no1_cloud{display:block; background:url(../../images/create_records/no1_cloud_text.png) no-repeat; width:203px; height:30px;}
+.no2_dream{display:block; background:url(../../images/create_records/no2_dream_text.png) no-repeat; width:306px; height:30px;}*/
+
+.pro_cat
+{
+    font-size: 16px;
+    line-height: 30px;
+
+    width: 80px;
+    margin: 100px 180px;
+}
+.pro_cat a
+{
+    font-weight: bold;
+
+    text-decoration: none;
+
+    color: #865d44;
+}
+.pro_cat a:hover
+{
+    color: #000;
+}
+/*.footer{ width:1000px; margin:auto;position:relative; z-index:2; }
+.footer_left{ float:left;margin:30px auto auto auto; }
+.footer_left a{ width:45px; height:39px; background:url(../../images/create_records/foot_bg.JPG) left top; float:left; display:block; margin-right:5px;}
+.footer_left .sina{ float:left; background-position:-5px -20px;}
+.footer_left .taobao{ float:left; background-position:-55px -20px;}
+.footer_left .douban{ float:left; background-position:-105px -20px;}
+.footer_right{ float:right; height:73px; background:url(../../images/create_records/foot_bg.JPG) no-repeat right top; width:444px;}
+.footer_right p{ font-size:12px; float:right; margin-top:40px; margin-right:15px; color:#8a6249; display:inline;font-family:Verdana, Geneva, sans-serif;}
+.footer_right a{ color:#8a6249;}
+.footer_left .link{ float:left; width:65px; height:40px;}
+.footer_left .link a{ height:20px; width:100%; display:block;}
+.footer_left .link .contact{ background:url(../../images/create_records/foot_bg.JPG) no-repeat -160px -20px;}
+.footer_left .link .linker{ background:url(../../images/create_records/foot_bg.JPG) no-repeat -160px -38px;}*/
+.geam_l,
+.game_list
+{
+    font-size: 12px;
+
+    width: 350px;
+    height: 500px;
+    margin: 100px auto auto 100px;
+
+    color: #8a6249;
+    background: none;
+}
+.geam_l .title,
+.game_list .title
+{
+    font-size: 16px;
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+.geam_l .yx
+{
+    line-height: 25px;
+}
+.geam_l .yx td
+{
+    border-bottom: 1px dashed #d1bfb4;
+}
+.geam_l .scorelist
+{
+    line-height: 25px;
+}
+.geam_l .scorelist li
+{
+    border-bottom: 1px dashed #d1bfb4;
+}
+.game_list
+{
+    font-size: 12px;
+
+    margin: 50px auto auto 100px;
+}
+.game_list h2
+{
+    font-size: 12px;
+}
+.game_list .game_li
+{
+    float: left;
+
+    width: 130px;
+
+    text-align: left;
+}
+.game_list .game_li a
+{
+    text-decoration: none;
+
+    color: #8a6249;
+}
+.game_list .game_li .down_right
+{
+    margin-left: 10px;
+}
+.game_box
+{
+    position: relative;
+
+    float: left;
+
+    width: 816px;
+    height: 664px;
+    margin: 50px auto auto 103px;
+
+    background: url(../../images/create_records/game_03.jpg) left top no-repeat;
+}
+.game_box .game_back
+{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+
+    display: block;
+
+    width: 35px;
+    height: 35px;
+}
+.contact_l
+{
+    width: 470px;
+    margin: 59px auto auto 60px;
+
+    background: url(../../images/create_records/contact_03.jpg) left top;
+}
+.contact_r
+{
+    font-size: 12px;
+    line-height: 25px;
+
+    float: left;
+
+    width: 380px;
+    margin-top: 80px;
+
+    text-align: right;
+
+    color: #7b4e33;
+}
+.contact_r span
+{
+    color: #c7672c;
+}
+.contact_r h1
+{
+    font-size: 18px;
+
+    margin-bottom: 0;
+    padding: 0;
+}
+.ads
+{
+    float: left;
+
+    width: 100%;
+    margin-top: 50px;
+
+    text-align: left;
+
+    color: #c7672c;
+}
+.linker_l
+{
+    width: 437px;
+    margin: 59px auto auto 58px;
+
+    background: url(../../images/create_records/linker_03.jpg) left top;
+}
+.text_linker
+{
+    margin: 50px auto auto 20px;
+}
+.text_linker a
+{
+    display: block;
+    float: left;
+
+    width: 103px;
+    height: 82px;
+
+    background: url(../../images/create_records/linker_06.jpg) no-repeat left top;
+}
+.pro1_l
+{
+    width: 377px;
+    height: 541px;
+    margin: 95px auto auto 110px;
+
+    background: url(../../images/create_records/no1_seed.png) left top no-repeat;
+}
+.pro1_l02
+{
+    width: 377px;
+    height: 541px;
+    margin: 95px auto auto 110px;
+
+    background: url(../../images/create_records/no2_seed.png) left top no-repeat;
+}
+
+.pro1_r
+{
+    width: 366px;
+    height: 541px;
+    margin: 85px auto auto 70px;
+
+    background: url(../../images/create_records/about_dreanm_text.png) left top no-repeat;
+}
+.pro1_102r
+{
+    width: 366px;
+    height: 541px;
+    margin: 85px auto auto 70px;
+
+    background: url(../../images/create_records/pro_r_02.png) left top no-repeat;
+}
+
+.next_ice9
+{
+    float: right;
+
+    width: 79px;
+    height: 50px;
+    margin-top: 20px;
+    margin-right: 40px;
+
+    background: url(../../images/create_records/next9_ice.jpg) left top no-repeat;
+}
+
+.pro1_l a,
+.pro1_r a,
+.pro2_l a,
+.pro2_r a,
+.pro3_l a,
+.pro3_r a,
+.pro5_l a,
+.pro5_r a
+{
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+.pro2_l
+{
+    width: 384px;
+    height: 506px;
+    margin: 100px auto auto 90px;
+
+    background: url(../../images/create_records/hang_decorations.jpg) left top no-repeat;
+}
+.pro2_l a
+{
+    float: left;
+
+    width: 120px;
+    height: 150px;
+    margin-top: 355px;
+    margin-left: 5px;
+}
+.pro2_r
+{
+    width: 413px;
+    height: 506px;
+    margin: 100px auto auto 40px;
+
+    background: url(../../images/create_records/pro_2_05.jpg) left top no-repeat;
+}
+.pro7_l
+{
+    width: 426px;
+    height: 585px;
+    margin: 60px auto auto 65px;
+
+    background: url(../../images/create_records/hang_things.png) left top no-repeat;
+}
+.pro7_r
+{
+    width: 416px;
+    height: 520px;
+    margin: 110px auto auto 20px;
+
+    background: url(../../images/create_records/pro7_r.png) left top no-repeat;
+}
+.pro8_l
+{
+    width: 356px;
+    height: 489px;
+    margin: 103px auto auto 110px;
+
+    background: url(../../images/create_records/packer.jpg) left top no-repeat;
+}
+.pro8_r
+{
+    width: 422px;
+    height: 534px;
+    margin: 103px auto auto 40px;
+
+    background: url(../../images/create_records/pro8_r.jpg) left top no-repeat;
+}
+.pro9_l
+{
+    width: 428px;
+    height: 604px;
+    margin: 60px auto auto 70px;
+
+    background: url(../../images/create_records/pro9_l.png) left top no-repeat;
+}
+.pro9_r
+{
+    width: 454px;
+    height: 636px;
+    margin: 45px auto auto 0;
+
+    background: url(../../images/create_records/pro9_r.png) left top no-repeat;
+}
+
+.pro3_l
+{
+    width: 402px;
+    height: 490px;
+    margin: 105px auto auto 85px;
+
+    background: url(../../images/create_records/pro3_01.jpg) left top no-repeat;
+}
+.pro3_r
+{
+    width: 395px;
+    height: 490px;
+    margin: 103px auto auto 40px;
+
+    background: url(../../images/create_records/pro3_2.jpg) left top no-repeat;
+}
+.pro4_l
+{
+    width: 437px;
+    height: 586px;
+    margin: 83px auto auto 60px;
+
+    background: url(../../images/create_records/yf_03.gif) left top no-repeat;
+}
+.pro6_l
+{
+    width: 437px;
+    height: 586px;
+    margin: 78px auto auto 60px;
+
+    background: url(../../images/create_records/pro_l8.png) left top no-repeat;
+}
+.pro4_r
+{
+    width: 425px;
+    height: 586px;
+    margin: 95px auto auto 0;
+
+    background: url(../../images/create_records/yf_04.gif) left top no-repeat;
+}
+.pro6_r
+{
+    width: 446px;
+    height: 590px;
+    margin: 93px auto auto 0;
+
+    background: url(../../images/create_records/pro_r6.png) left top no-repeat;
+}
+.pro5_l
+{
+    width: 431px;
+    height: 602px;
+    margin: 65px auto auto 70px;
+
+    background: url(../../images/create_records/pro5_1.jpg) left top no-repeat;
+}
+.pro5_r
+{
+    width: 433px;
+    height: 602px;
+    margin: 65px auto auto 0;
+
+    background: url(../../images/create_records/pro5_2.jpg) left top no-repeat;
+}
+
+/*记录内容*/
+.my_records{
+	width:545px;
+	margin: 0 auto;
+	/*border: #000 solid 1px;*/
+}
+.mydiv111{
+	width:545px;
+	background-color:#FFFFFF;
+	/*border:1px solid #000000*/
+}
+.my_records2{
+    width:365px;
+    margin: 0 auto;
+
+    /*border: #000 solid 1px;*/
+}
+.mydiv1112{
+    width:365px;
+    background-color:#FFFFFF;
+    /*border:1px solid #000000*/
+}
+.datep{
+	color:#FFFFFF;
+	font-size : 27px;
+	font-family : 楷体;
+	background-color:#7C5037;
+	font-weight:bold;
+	padding-left:10px;
+}
+
+.datep1{
+    color:#FFFFFF;
+    font-size : 27px;
+    font-family : 楷体;
+    background-color:#7C5037;
+    font-weight:bold;
+    padding-left:10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.divpic{
+	padding-left:35px;
+}
+
+.diary{
+	color:black;
+	font-size : 20px;
+	font-family : 楷体;
+	padding-left:10px;
+}
+
+/*记录图片*/
+.mypic{
+    max-width:450px;
+    padding: 10px;
+}
+
+.mypicDiv{
+    overflow:hidden;
+}
+
+.mypic2{
+    max-width:300px;
+}
+/*记录的删除修改按钮*/
+.my_records_button{
+	margin-left: 350px;
+	width:158px;
+	height:25px;
+	/*border: #000 solid 1px;*/
+}
+
+.my_records_button2{
+    margin-left: 200px;
+    margin-bottom: 5px;
+    width:158px;
+    height:25px;
+    /*border: #000 solid 1px;*/
+}
+
+#tttt{
+    border: 1px solid #000;
+    padding-left: 0px;
+    padding-top: 0px;
+}
+
+.userTime{
+    margin-bottom: 10px;
+}
+
+/*订单页面*/
+.order_text
+{
+    line-height: 20px;
+    display: inline;
+    float: left;
+    margin: 30px auto auto -10px;
+    color: #7f543a;
+    /*border: 1px solid #000;*/
+}
+.order_text p{
+    font-family: "楷体";
+    font-size: 20px;
+}
+#kai32{
+    margin-top:18px;
+    width:150px ;
+    height:200px;
+    cursor: pointer;
+}
+#kai16{
+    margin-top: -10px;
+    margin-left: 20px;
+    width:180px ;
+    height:230px;
+    cursor: pointer;
+}
+#album_size{
+    font-size: 15px;
+}
+.color{
+    width:170px ;
+    height:130px;
+    cursor: pointer;
+}
+.color_right{
+    margin-left: 15px;
+}
+.send_order{
+    font-family: "楷体";
+    width: 400px;
+    line-height: 20px;
+    display: inline;
+    float: left;
+    margin: 75px auto auto 70px;
+    color: #7f543a;
+    font-size: 18px;
+    /*border: 1px solid #000;*/
+}
+.send_order p{
+    font-family: "楷体";
+    font-size: 20px;
+}
+#price{
+    color:red;
+}
+.pay{
+    width:150px ;
+    height:50px;
+    cursor: pointer;
+}
+
+.pay_method{
+    margin-left: 40px;
+}
+.send_button{
+    margin-left: 130px;
+    margin-top: 30px;
+}
+
+/*联系人姓名和电话*/
+/*input*/ 
+.input_on{ 
+    padding:2px 8px 0pt 3px; 
+    height:24px;
+    border:1px solid #999; 
+    background-color:#FFFFCC; 
+} 
+.input_off{ 
+    padding:2px 8px 0pt 3px; 
+    height:24px; 
+    border:1px solid #CCC; 
+    background-color:#FFF; 
+} 
+.input_move{ 
+    padding:2px 8px 0pt 3px; 
+    height:24px; 
+    border:1px solid #999; 
+    background-color:#FFFFCC; 
+} 
+.input_out{ 
+    /*height:16px;默认高度*/ 
+    padding:2px 8px 0pt 3px; 
+    height:24px; 
+    border:1px solid #CCC; 
+    background-color:#FFF; 
+} 
+
+#text_box1, #text_box2{
+    width:25px; 
+    text-align: center;
+    ime-mode: disabled;
+}
+
+textarea{
+    resize: none;
+}

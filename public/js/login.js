@@ -23,6 +23,9 @@ function loginController($scope,$http,$rootScope){
 				}
 			})
 			.success(function(data) {
+
+				
+
 				console.log(data);
 				if (data==0) {
 					$scope.errMsgColor = "red";//登录失败，错误消息为红色
@@ -33,9 +36,8 @@ function loginController($scope,$http,$rootScope){
 					if (data==2){//公司用户
 						window.setTimeout("window.location='/cpy_index'",1000);
 					}else{
-						window.setTimeout("window.location='/home'",1000);
+						window.setTimeout("window.location='/intended'",1000);
 					}
-
 				}
 			});
 		}

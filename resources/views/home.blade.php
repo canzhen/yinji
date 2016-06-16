@@ -1,4 +1,4 @@
-@extends('layouts.content_logged')
+@extends('layouts.content')
 
 @section('title','首页')
 
@@ -17,7 +17,9 @@
 
 @section('content')
 
-<div >
+	
+
+<div>
 <!-- ng-controller="testController" -->
 	<div class = "pictureSlide">
 		<div id="myCarousel" class="carousel slide">
@@ -46,25 +48,77 @@
 
 	</div>
 
-	
+		<!-- 查看纪念册 -->
+	<div id = "albumContainer" ng-controller="albumController">
+		<p id = "albumTitle">我的纪念册</p>
 
-
-	<div class="normal-trigger-area">
-		<a href="#" id="circle"  class="ec-circle" style = "background: url(/images/mo.jpg);">
-			<h3>Hovered</h3>
-		</a>	
-	</div>
-
-	<div class="normal-trigger-area">
-		<a href="#" id="circle"  class="ec-circle" style = "background: url(/images/mo.jpg);">
-			<h3>Hovered</h3>
-		</a>	
-	</div>
-
-	<div class="normal-trigger-area">
-		<a href="#" id="circle"  class="ec-circle" style = "background: url(/images/mo.jpg);">
-			<h3>Hovered</h3>
-		</a>	
+		<!-- <div class = 'no-line normal-trigger-area'>
+			<i class="fa fa-trash-o fa-lg"></i>
+			<a href = '#' id = 'circle' class = 'ec-circle' style = "background: url(images/mo.jpg);">
+				<h3>aaa</h3>
+			</a>
+			
+		</div> -->
 	</div>
 </div>
 @stop
+
+@section('dif')
+	<!--$_SESSION['ifLoggedIn'] == 'y'-->
+		@if(isset($_SESSION['ifLoggedIn']))
+		
+			<div class="top-nav">
+						<ul class="res" > 
+							<li class = "topLine"><a href="#">纪念册</a>
+								 <ul>
+									<li class = "spec"><a href="#">查看纪念册</a></li>
+									<li><a href="#">创建纪念册</a></li>
+								</ul> 
+							</li>
+							<li class = "topLine"><a href="#">刊印</a>
+								
+							</li>
+							<li class = "topLine"><a href="#">个人信息</a>
+								<ul>
+									<li class = "spec"><a href="/user-information">查看个人信息</a></li>
+									<li><a href="#">管理收货地址</a></li>
+								</ul> 
+							</li>
+							<li class = "topLine"><a href="#">联系我们</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="header-right">
+				    <div class="search">
+						<input  type="text" value="查找" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '查找';}"/>
+						<input type="submit"  value=""/>		
+					</div>
+					<a href="/auth/logout" id = "logoffBtn">注销</a>
+				</div>
+		@else
+			<div class="top-nav">
+						<ul class="res" > 
+							<li class = "topLine"><a href="#">服务</a>
+								 <ul>
+									<li class = "spec"><a href="#">纪念册</a></li>
+									<li><a href="#">刊印</a></li>
+								</ul> 
+							</li>
+							<li class = "topLine"><a href="#">关于</a>
+								
+							</li>
+							<li class = "topLine"><a href="#">联系我们</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="header-right">
+				    <div class="search">
+						<input type="text" value="查找" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '查找';}"/>
+						<input type="submit"  value=""/>		
+					</div>
+					<a href="login" id = "loginBtn">登录</a>
+				</div>
+			@endif
+	@stop

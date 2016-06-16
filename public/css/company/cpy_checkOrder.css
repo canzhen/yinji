@@ -1,0 +1,18 @@
+.myForm{
+    line-height:2.2;
+}
+
+.myForm input{
+    font-size:14px;
+    width:65%;
+    height:25px;
+    padding:1px;
+    line-height:24px;
+    border:1px solid;
+    border-color:#CCCCCC;
+    padding-left:5px;
+}
+
+.myForm button{
+    line-height:12px;
+}

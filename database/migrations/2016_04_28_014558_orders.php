@@ -23,13 +23,52 @@ class Orders extends Migration
             $table->timestamp('order_date');//下单日期
             $table->timestamp('delivery_date');//发货日期
             $table->string('comment')->nullable();//备注
-            //$table->timestamps();
+            $table->timestamps();
         });
 
         Schema::table('orders', function (Blueprint $table) {
-            $table->foreign('album_name')->references('name')->on('albums')->onDelete('cascade');
+            $table->foreign('user_name')->references('name')->on('users')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
 
+        DB::table('orders')->insert(
+            array(
+                array(
+                    'user_name' => 'jp',
+                    'album_name' => '我的减肥日记',
+                    'price'=> 43,
+                    'quantity' => 1,
+                    'address' => '山西省阳泉市盂县xx镇！',
+                    'status'=> '已付款',
+                    'comment'=>'可不可以给我弄瘦一点啊！'
+                )
+            )
+        );
+            DB::table('orders')->insert(
+            array(
+                array(
+                    'user_name' => 'jp',
+                    'album_name' => '我的减肥日记',
+                    'price'=> 43,
+                    'quantity' => 1,
+                    'address' => '山西省阳泉市盂县xx镇！',
+                    'status'=> '未完成',
+                    'comment'=>'可不可以给我弄瘦一点啊！'
+                )
+            )
+        );
+        DB::table('orders')->insert(
+            array(
+                array(
+                    'user_name' => 'jp',
+                    'album_name' => '我的第二次减肥日记',
+                    'price'=> 43,
+                    'quantity' => 1,
+                    'address' => '山西省阳泉市盂县xx镇！',
+                    'status'=> '未完成',
+                    'comment'=>'完全没有瘦下来！'
+                )
+            )
+        );
     }
 
     /**
@@ -39,6 +78,6 @@ class Orders extends Migration
      */
     public function down()
     {
-
+        Schema::drop('orders');
     }
 }

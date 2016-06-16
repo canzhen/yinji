@@ -18,13 +18,24 @@
 
 
 @section('sidebar-content')
+	<?php
+		if (isset($_SESSION['ifLoggedIn']) && $_SESSION['ifLoggedIn'] == "y"){
+	?>
+		<div class="upload-form">
+			<form enctype="multipart/form-data"
+				  onsubmit="return iframeCallback(this, pageAjaxDone)"><!--确保匿名上载文件的正确编码-->
+				<div class="form-group">
+					<input id="file-1" type="file" multiple class="file" name="myfile"
+						   data-overwrite-initial="false" data-min-file-count="2" >
+				</div>
+			</form>
+		</div>
+	<?php
+		}else{
+	?>
+		对不起，您尚未登录，请您<a href="/auth/login">登录</a>后访问此界面！
+	<?php
+		}
+	?>
 
-	<div class="upload-form">
-		<form enctype="multipart/form-data"><!--确保匿名上载文件的正确编码-->
-			<div class="form-group">
-				<input id="file-1" type="file" multiple class="file"
-					   data-overwrite-initial="false" data-min-file-count="2">
-			</div>
-		</form>
-	</div>
 @stop

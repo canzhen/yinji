@@ -3,3 +3,4 @@
  */
 
 var yinjiApp = angular.module('yinjiApp', ['ngAnimate']);
+

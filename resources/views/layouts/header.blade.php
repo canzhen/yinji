@@ -13,11 +13,12 @@
 			<link rel='stylesheet' href="/css/lib/myfont.css"/>
             <link rel="stylesheet" href="/css/content.css"  type="text/css" media="all"/>
             <link rel="stylesheet" href="/css/lib/bootstrap/bootstrap.min.css">
+
         @show
     </head>
 	
 	
-    <body ng-app="yinjiApp">
+    <body ng-app="yinjiApp" class="body">
         @section('body')
         @show
         @section('footer')
