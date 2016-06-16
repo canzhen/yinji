@@ -13,7 +13,10 @@ class RecordController extends Controller
 	{
 		//获取表单数据
 		$record = new Record();
+		//$temp=$_SESSION['userName'];
 		$record -> autherName = $_SESSION['userName'];
+
+		//$record -> albumId = $_SESSION['curAlbum'];
 		//author_name
 		$record-> description = $_POST['content'];
 
@@ -45,8 +48,10 @@ class RecordController extends Controller
 
 	public function selectRecord()
 	{
-		$name="gyf";
-		//$name=$_SESSION['userName'];
+		//$name="gyf";
+		$name=$_SESSION['userName'];
+		//$albumID=$_SESSION['curAlbum']
+		//return Record::where('autherName',$name)->where('albumId',$albumID)->get();
 		return Record::where('autherName',$name)->get();
 	}
 
