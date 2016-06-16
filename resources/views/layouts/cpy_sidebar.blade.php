@@ -18,7 +18,6 @@
 	<!-- Morris Charts JavaScript -->
 	<script src="/js/company/cpy_sidebar/raphael.min.js"></script>
 	<script src="/js/company/cpy_sidebar/morris.min.js"></script>
-	<script src="/js/company/cpy_sidebar/morris-data.js"></script>
 	<script src="/js/company/cpy_sidebar/metisMenu.min.js"></script>
 @stop
 
@@ -178,7 +177,9 @@
 				<!--任务完成情况结束-->
 
 
-
+				<?php
+				if (isset($_SESSION['ifLoggedIn']) && $_SESSION['ifLoggedIn'] == "y"){
+				?>
 				<!--新消息提醒-->
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -186,16 +187,16 @@
 					</a>
 					<ul class="dropdown-menu dropdown-alerts">
 						<li>
-							<a href="#">
+							<a href="/cpy_checkEvaluation">
 								<div>
-									<i class="fa fa-comment fa-fw"></i> 新评论
+									<i class="fa fa-comment fa-fw"></i> 新评价
 									<span class="pull-right text-muted small">4 minutes ago</span>
 								</div>
 							</a>
 						</li>
 						<li class="divider"></li>
 						<li>
-							<a href="#">
+							<a href="/cpy_checkOrder">
 								<div>
 									<i class="fa fa-edit fa-fw"></i> 新订单
 									<span class="pull-right text-muted small">12 minutes ago</span>
@@ -208,9 +209,7 @@
 
 
 				<!--用户设置开始-->
-				<?php
-				if (isset($_SESSION['ifLoggedIn']) && $_SESSION['ifLoggedIn'] == "y"){
-				?>
+
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
 						<i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
@@ -225,7 +224,9 @@
 				<?php
 					}else{
 				?>
-					<a href="/auth/login" style="margin-right:5%;"><i class="fa fa-sign-in fa-fw"></i> 登录</a>
+				<li class="dropdown">
+					<a href="/auth/login"><i class="fa fa-sign-in fa-fw"></i> 登录</a>
+				</li>
 				<?php
 					}
 				?>
