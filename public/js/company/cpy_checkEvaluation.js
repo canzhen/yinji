@@ -5,6 +5,7 @@ yinjiApp.controller('checkEvaluationCtrl',
 		.success(function (response)
 		{
 			//console.log(response);
+			
 			$scope.evaluations = response;
 		});
 

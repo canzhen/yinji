@@ -33,7 +33,13 @@
 							<th>用户账号</th>
 							<th>发货地址</th>
 							<th>备注信息</th>
-							<th>操作</th>
+							<?php
+								if (isset($_SESSION['ifLoggedIn']) && $_SESSION['ifLoggedIn'] == "y"){
+							?>
+								<th>操作</th>
+							<?php
+								}
+							?>
 						</tr>
 						</thead>
 						<tbody>
@@ -46,10 +52,16 @@
 							<td ng-bind="x.user_name"></td>
 							<td ng-bind="x.address"></td>
 							<td ng-bind="x.comment"></td>
-							<td>
-								<a href="" ng-click="deleteOrder(x)">删除</a>　
-								<a href="" ng-click="getOrderDetail(x)" data-toggle="modal" data-target="#orderDetailModal">修改</a>
-							</td>
+							<?php
+								if (isset($_SESSION['ifLoggedIn']) && $_SESSION['ifLoggedIn'] == "y"){
+							?>
+								<td>
+									<a href="" ng-click="deleteOrder(x)">删除</a>　
+									<a href="" ng-click="getOrderDetail(x)" data-toggle="modal" data-target="#orderDetailModal">修改</a>
+								</td>
+							<?php
+								}
+							?>
 						</tr>
 						</tbody>
 					</table>
@@ -97,7 +109,7 @@
 								</div>
 								<div>
 									<span>订单状态：</span>
-									<select >
+									<select ng-model="orderDetail.status">
 										<option>已发货</option>
 										<option>已送达</option>
 										<option>送货中</option>
