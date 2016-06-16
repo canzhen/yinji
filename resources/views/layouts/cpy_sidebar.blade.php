@@ -41,7 +41,9 @@
 			<ul class="nav navbar-top-links navbar-right" ng-controller="cpyNavController">
 
 				<?php
-				if (isset($_SESSION['ifLoggedIn']) && $_SESSION['ifLoggedIn'] == "y"){
+					if (isset($_SESSION['ifLoggedIn']) && $_SESSION['ifLoggedIn'] == "y"){
+						echo "欢迎您，";
+						echo $_SESSION['userName'];
 				?>
 				<!--新消息提醒-->
 				<li class="dropdown">
@@ -188,16 +190,9 @@
 									</ul>
 									<!-- /.nav-third-level -->
 								</li>
-								<?php
-									echo \Session::get('privilege','default');
-									if (\Session::get('privilege','default')=='admin'){
-								?>
 								<li>
 									<a href="#">员工信息</a>
 								</li>
-								<?php
-									}
-								?>
 							</ul>
 							<!-- /.nav-second-level -->
 						</li>

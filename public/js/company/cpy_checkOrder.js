@@ -11,7 +11,7 @@ yinjiApp.controller('checkOrderCtrl',
 		$http.get("/cpy/getOrders")
 		.success(function (response)
 		{
-			//console.log(response);
+			response.reverse();
 			$scope.deployedOrder = response;
 		});
 

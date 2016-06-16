@@ -113,6 +113,8 @@
 										<option>已发货</option>
 										<option>已送达</option>
 										<option>送货中</option>
+										<option>已付款</option>
+										<option>未付款</option>
 									</select>
 									<!--<input type="text" ng-model="orderDetail.status"/>-->
 									<span style="color:red" ng-show="orderDetail.status == ''">*此项必填</span>
