@@ -24,13 +24,15 @@
     <div class="header_bg">
     </div>
 </div>
+<div ng-controller="checkOneRecordCtrl">
 <div class="page_box page_box_bg">
 <div class="home_menu"><a href="/album_cover"></a></div>
 	<!-- 用户查看自定义日期中的内容 -->
   <div class="index_left page_left about_l">
     <!-- 时间选择器 -->
     <div class="user_time">
-          <br/>选择一个日期查看那天的记录：<br/><br/><div id="datepicker"></div>
+          <br/>选择一个日期查看那天的记录：<br/><br/>
+        <div id="datepicker"></div>
     </div>
   </div>
   <div class="index_right page_right job_r">
@@ -51,59 +53,24 @@
     					<table border="0" width="100%" cellpadding="0" style="border-collapse: collapse" id="table31">
     						<tr>
     						   <td>
-                                <div class="page_right_2">
+                                <div class="page_right_2" >
                                 <div class="job_top"></div>
-                                   <div class="my_records2">
+                                    <div ng-repeat="x in records| orderBy:'showTime':true">
+                                   <div class="my_records2" >
                                     <div class="mydiv1112">
-                                        <p class="datep">2016年4月13日 16:30</p>
-                                        <p class="diary">培根土豆小饼</p>
-                                        <div class="divpic">
-                                            <img class="mypic" src="images/create_records/records/g1.jpg" />
-                                            <img src="images/create_records/records/g2.jpg" class="mypic"/>
-                                            <img src="images/create_records/records/g4.jpg" class="mypic"/>
+                                        <p class="datep1" ng-bind="x.showTime"></p>
+                                        <p class="diary" ng-bind="x.description"></p>
+                                        <div class="divpic" ng-repeat="y in x.arr_path">
+                                            <img class="mypic2" src="@{{y}}" />
                                         </div>
                                         <br/>
                                         <div class="my_records_button2">
-                                            <input  class="button button-pill button-tiny" type="submit" value="修改">
-                                            <input  class="button button-pill button-tiny" type="submit" value="删除">
+                                            <input  class="button button-pill button-tiny" type="submit" value="修改" ng-click="getRecordDetail(x)" data-toggle="modal" data-target="#oneRecordDetailModal">
+                                            <input  class="button button-pill button-tiny" type="submit" value="删除" ng-click="deleteRecord(x)">
                                         </div>
                                     </div>
-                                    <!-- <br/> -->
-                                    <div class="mydiv1112">
-                                        <p class="datep">2016年4月11日 15:04</p>
-                                        <p class="diary">一到下午这个时候又困…又饿…怎么破？…</p>
-                                        <div class="divpic">
-                                            <img src="images/create_records/records/g3.jpg" class="mypic"/>
-                                        </div>
-                                        <br/>
-                                        <div class="my_records_button2">
-                                            <input  class="button button-pill button-tiny" type="submit" value="修改">
-                                            <input  class="button button-pill button-tiny" type="submit" value="删除">
-                                        </div>
-                                    </div>
-                                    <!-- <br/> -->
-                                    <div class="mydiv1112">
-                                        <p class="datep">2016年4月10日 10:30</p>
-                                        <p class="diary">【喷香牛肉焖饭】营养丰富又香味十足，煮出来的米饭油光发亮特别的诱惑！绵绵的土豆，微甜的胡萝卜，牛肉香深入米饭，撒一把葱花搅拌下开动啦！</p>
-                                        <div class="divpic">
-                                            <img src="/images/create_records/records/g5.jpg" class="mypic"/>
-                                            <img src="images/create_records/records/g6.jpg" class="mypic"/>
-                                            <img src="images/create_records/records/g7.jpg" class="mypic"/>
-                                            <img src="images/create_records/records/g8.jpg" class="mypic"/>
-                                            <img src="images/create_records/records/g9.jpg" class="mypic"/>
-                                            <img src="images/create_records/records/g10.jpg" class="mypic"/>
-                                            <img src="images/create_records/records/g11.jpg" class="mypic"/>
-                                            <img src="images/create_records/records/g12.jpg" class="mypic"/>
-                                            <img src="images/create_records/records/g13.jpg" class="mypic"/>
-                                        </div>
-                                        <br/>
-                                        <div class="my_records_button2">
-                                            <input  class="button button-pill button-tiny" type="submit" value="修改">
-                                            <input  class="button button-pill button-tiny" type="submit" value="删除">
-                                        </div>
-                                    </div>    
-                                  </div>
-
+                                   </div>
+                                </div>
                                 </div>
                               </td>
     						</tr>
@@ -119,7 +86,42 @@
     		</tr>
     	</table>
 </div>
-
+</div>
+	<div class="modal fade" id="oneRecordDetailModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content"><!--modal的内容-->
+				<div class="modal-header">
+					<!--关闭modal的按钮-->
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="modalLabel">编辑内容</h4>
+				</div>
+				<div class="modal-body">
+					<div class="form-inner">
+						<form class="myForm">
+							<div>
+								<p>内容：</p>
+								<input type="text" style="width:500px;" ng-model="recordDetail.description"/>
+								<span style="color:red" ng-show="recordDetail.description == ''"></span>
+							</div>
+							<div>
+								<p>自定义时间：</p>
+								<input type="text" ng-model="recordDetail.showTime"/>
+								<span style="color:red" ng-show="recordDetail.showTime == ''"></span>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					<button type="button" class="btn btn-primary" ng-click="editRecord()"
+							ng-disabled="orderRecord.description == '' || orderRecord.showTime == ''">修改</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
   <!-- 左面菜单 -->
   <div class="page_right_menu" >
     <ul>
@@ -131,7 +133,9 @@
       <li class="menu_4"><a href="/album_order" title="游乐园--下订单"></a></li>
     </ul>
   </div>
-</div>
+
+
+
 <!-- 书的下半部分的背景 -->
 <div class="page_bot"></div>
 @stop

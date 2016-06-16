@@ -77,7 +77,6 @@ class AuthController extends Controller
 				$_SESSION['privilege']='admin';
 				return 1;
 			}
-
 		}else{
 			\Session::put('ifLoggedIn','n');//set the value to no
 			return 0;//密码错误
@@ -91,11 +90,9 @@ class AuthController extends Controller
 	 * Created by Zhou Canzhen on 2016/04/21
 	 */
 	public function getLogout() {
-		if(\Auth::check())
-		{
-			\Auth::logout();
-			$_SESSION['ifLoggedIn']='n';
-		}
+		\Auth::logout();
+		$_SESSION['ifLoggedIn']='n';
+		$_SESSION['userName']="";
 		return \Redirect::intended('/');
 	}
 

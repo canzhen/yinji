@@ -2,7 +2,7 @@
 
 @section('title','公司首页')
 @section('cpy_subtitle','主页')
-@section('cpy_subtitle_small','zhuye')
+@section('cpy_subtitle_small','homepage')
 
 @section('header')
 	@parent
@@ -20,7 +20,7 @@
 			<div class="col-lg-12">
 				<div class="alert alert-info alert-dismissable">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-					<i class="fa fa-info-circle"></i>  <strong>号外号外！</strong> 这里有个帅哥！
+					<i class="fa fa-info-circle"></i>  <strong>号外号外！</strong> 公司食堂新推出一款，在二餐厅，欢迎品尝！
 				</div>
 			</div>
 		</div>
@@ -122,7 +122,7 @@
 			<div class="col-lg-12">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i>每日报表</h3>
+						<h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i>销量报表</h3>
 					</div>
 					<div class="panel-body">
 						<div id="morris-area-chart"></div>
