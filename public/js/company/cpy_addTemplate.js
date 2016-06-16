@@ -2191,8 +2191,11 @@
 			console.log(data.response.response);
 			if(data.response.response == 1)
 				alert("上传成功！");
-			else if (data.response.response == 0)
+			else if(data.response.response == 0)
 				alert("对不起，模板名已存在，请修改模板名再上传！");
+			else{
+				alert(data.response.response);
+			}
 		});
 })(window.jQuery);
 

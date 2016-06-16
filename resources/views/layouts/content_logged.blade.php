@@ -10,7 +10,10 @@
 						<a href="/"><h1 class="stfyt">印迹</h1></a>
 					</div>
 					
-					<div class="top-nav">
+					@section('dif')
+					@show
+					
+					<!--<div class="top-nav">
 						<ul class="res" > 
 							<li class = "topLine"><a href="#">纪念册</a>
 								 <ul>
@@ -38,7 +41,7 @@
 						<input type="submit"  value=""/>		
 					</div>
 					<a href="/auth/logout" id = "logoffBtn">注销</a>
-				</div>
+				</div>-->
 
 				<div class="clearfix"> </div>
 			</div>

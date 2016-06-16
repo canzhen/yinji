@@ -103,10 +103,10 @@ class CpyController extends Controller
         $path = app_path()."\\..\\public\\company\\template\\".$_SESSION['userName'].'\\';
         if (!empty($_FILES)){
             //得到上传文件的临时流
-            $tempFile = $_FILES['file_data']['tmp_name'];
+            $tempFile = $_FILES['myfile']['tmp_name'];
             //得到文件原名
-            $fileName = iconv("UTF-8","GB2312",$_FILES['file_data']['name']);
-            $fileParts = pathinfo($_FILES['file_data']['name']);
+            $fileName = iconv("UTF-8","GB2312",$_FILES['myfile']['name']);
+            //$fileParts = pathinfo($_FILES['myfile']['name']);
             //保存服务器地址，若不存在该文件夹，则新建
             if (!is_dir($path))
                 mkdir($path,0777,true);
@@ -114,16 +114,35 @@ class CpyController extends Controller
             //往templates表中新增数据
             $author_name = $_SESSION['userName'];
             $saving_path = "company\\template\\".$_SESSION['userName'].'\\'.$fileName;
-            $info = array('response'=>0);
+            $response = 0;//初始化默认回复为0
             if ($this->addTemplate($fileName,$author_name,$saving_path,"没有描述")){
                 //成功往数据库添加数据之后才把图片保存到硬盘，这样可以防止重名
-                $info = array('response'=>$author_name);
+                $info = array('response'=>$fileName);
+                if($tempFile == null)
+                    $response = 'tempFile是null啊！！！';
                 if (move_uploaded_file($tempFile,$path.$fileName)){
-                    $info = array('response'=>1);
+                    $response = 1;
+                }else{
+                    switch($_FILES['myfile']['error']){
+                        case 1:
+                        case 2:
+                            $response = "对不起，您上传的图片超过限制大小，请压缩后上传！";
+                            break;
+                        case 3:
+                            $reponse = "上传失败，只有部分图片被上传，请重新上传！";
+                            break;
+                        case 5:
+                            $reponse = "上传失败，上传图片大小为0！";
+                            break;
+                        default:
+                            $reponse = "对不起，上传失败！";
+                            break;
+                    }
                 }
             }
 
-            return json_encode($info);
+            //$info = array('response'=>$_FILES['myfile']['error']);
+            return json_encode(array('response'=>$response));
         }
     }
 

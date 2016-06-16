@@ -15,22 +15,37 @@ yinjiApp.controller('checkOrderCtrl',
 			$scope.deployedOrder = response;
 		});
 
+
+		$scope.addOrderDetailQuantity = function(){
+			$scope.orderDetail.quantity++;
+		}
+
+		$scope.subtractOrderDetailQuantity = function(){
+			if($scope.orderDetail.quantity!=0)
+				$scope.orderDetail.quantity--;
+		}
+
+
 		$scope.deleteOrder = function(x){
-			$http({
-				method:'GET',
-				url:'/cpy/deleteOrder',
-				params:{
-					'id':x.id
-				}
-			})
-			.success(function(response){
-				if (response==1){
-					alert('删除id为'+x.id+'的订单成功！');
-					$scope.deployedOrder.splice($scope.deployedOrder.indexOf(x),1);
-				}else if (response==0) {
-					alert("oops,删除失败！");
-				}
-			});
+
+			var result = confirm("你确定要删除吗？");
+			if (result == true){
+				$http({
+					method:'GET',
+					url:'/cpy/deleteOrder',
+					params:{
+						'id':x.id
+					}
+				})
+				.success(function(response){
+					if (response==1){
+						alert('删除id为'+x.id+'的订单成功！');
+						$scope.deployedOrder.splice($scope.deployedOrder.indexOf(x),1);
+					}else if (response==0) {
+						alert("oops,删除失败！");
+					}
+				});
+			}
 		}
 
 
@@ -49,32 +64,36 @@ yinjiApp.controller('checkOrderCtrl',
 				$scope.orderDetail.price == tempDetail[2]&&
 				$scope.orderDetail.status == tempDetail[3]&&
 				$scope.orderDetail.address == tempDetail[4]&&
-				$scope.orderDetail.comment == tempDetail[5])
+				$scope.orderDetail.comment == tempDetail[5]) {
 				alert("对不起，您没有进行任何修改！");
-			else{
-				$http({
-					method:'GET',
-					url:'/cpy/editOrder',
-					params:{
-						'id':$scope.orderDetail.id,
-						'quantity':$scope.orderDetail.quantity,
-						'price':$scope.orderDetail.price,
-						'status':$scope.orderDetail.status,
-						'address':$scope.orderDetail.address,
-						'comment':$scope.orderDetail.comment
-					}
-				}).success(function(response){
-					if (response == 1){
-						alert("修改成功！");
-						$('#orderDetailModal').modal('hide');
-					}
-					else {
-						alert("oops...修改失败...");
-						$('#orderDetailModal').modal('hide');
-					}
-				});
-				updateOrderData($scope.orderDetail);
+				return;
 			}
+			if (!/^[0-9]*$/.test($scope.orderDetail.price)) {
+				alert("对不起，单价必须为整数！");
+				return;
+			}
+			$http({
+				method:'GET',
+				url:'/cpy/editOrder',
+				params:{
+					'id':$scope.orderDetail.id,
+					'quantity':$scope.orderDetail.quantity,
+					'price':$scope.orderDetail.price,
+					'status':$scope.orderDetail.status,
+					'address':$scope.orderDetail.address,
+					'comment':$scope.orderDetail.comment
+				}
+			}).success(function(response){
+				if (response == 1){
+					alert("修改成功！");
+					$('#orderDetailModal').modal('hide');
+				}
+				else {
+					alert("oops...修改失败...");
+					$('#orderDetailModal').modal('hide');
+				}
+			});
+			updateOrderData($scope.orderDetail);
 		}
 
 		function updateOrderData(detail){

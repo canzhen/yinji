@@ -91,11 +91,9 @@ class AuthController extends Controller
 	 * Created by Zhou Canzhen on 2016/04/21
 	 */
 	public function getLogout() {
-		if(\Auth::check())
-		{
-			\Auth::logout();
-			$_SESSION['ifLoggedIn']='n';
-		}
+		\Auth::logout();
+		$_SESSION['ifLoggedIn']='n';
+		$_SESSION['userName']="";
 		return \Redirect::intended('/');
 	}
 
