@@ -6,6 +6,9 @@
 	@parent
 
 	<link rel="stylesheet" type="text/css" href="/css/home.css">
+	<link rel="stylesheet" type="text/css" href="/css/home/reset.css" />
+	<link rel="stylesheet" type="text/css" href="/css/home/htmleaf-demo.css">
+	<link rel="stylesheet" href="/css/home/style.css">
 @stop
 
 @section('footer')
@@ -49,17 +52,65 @@
 	</div>
 
 		<!-- 查看纪念册 -->
-	<div id = "albumContainer" ng-controller="albumController">
-		<p id = "albumTitle">我的纪念册</p>
-
-		<!-- <div class = 'no-line normal-trigger-area'>
-			<i class="fa fa-trash-o fa-lg"></i>
-			<a href = '#' id = 'circle' class = 'ec-circle' style = "background: url(images/mo.jpg);">
-				<h3>aaa</h3>
-			</a>
+	<div ng-controller="albumController">
+		<div id = "albumContainer" >
 			
-		</div> -->
+				<p id = "albumTitle">我的纪念册</p>
+
+			<!-- <div class = 'no-line normal-trigger-area'>
+				<i class="fa fa-trash-o fa-lg"></i>
+				<a href = '#' id = 'circle' class = 'ec-circle' style = "background: url(images/mo.jpg);">
+					<h3>aaa</h3>
+				</a>
+				
+			</div> -->
+			
+		</div>
+
+		<div class="htmleaf-container">
+			<p id = "albumOrder">我的订单</p>
+			<table class="blue" id = "orderTable">
+				<thead>
+					<tr>
+						<th id = "firstCol">纪念册名</th>
+						<th id = "secondCol">订阅日期</th>
+						<th id = "thirdCol">操作</th>
+					</tr>
+				</thead>
+				<tbody id = "tableBody">
+
+				</tbody>
+			</table>
+		</div>
+
+		<div class="modal fade" id="orderDetailModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content" id = "orderModal"><!--modal的内容-->
+					<div class="modal-header">
+						<!--关闭modal的按钮-->
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="modalLabel">评价订单</h4>
+					</div>
+					<div class="modal-body" >
+						<div class="form-inner">
+							<textarea ng-model="detail" placeholder = "评价一下吧。。。"></textarea>
+							
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+						<button type="button" class="btn btn-primary" ng-click="editOrder()">评价</button>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
+
+
+	
+
 </div>
 @stop
 

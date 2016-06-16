@@ -154,6 +154,9 @@ Route::get('/showAlbum', 'Album\AlbumController@showAlbum');
 Route::get('/addOrder', 'Order\OrderController@addOrder');
 
 Route::get('/deleteOrder', 'Order\OrderController@deleteOrder');
+Route::get('/displayOrder', 'Order\OrderController@displayOrder');
+Route::get('/assessOrder', 'Order\OrderController@assessOrder');
+
 
 /*
 |--------------------------------------------------------------------------
@@ -217,3 +220,8 @@ Route::get('/album_fileupload', function () {
 Route::get('/album_order', function () {
         return view('create_records.album_order');
     });
+
+Route::get('/getTemplates','Order\OrderController@getTemplates');
+// Route::get('/getTemplates', function () {
+//         return "succ";
+//     });

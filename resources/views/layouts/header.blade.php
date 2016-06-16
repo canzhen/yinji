@@ -15,6 +15,12 @@
             <link rel="stylesheet" href="/css/lib/bootstrap/bootstrap.min.css">
 
         @show
+        <style>
+            a:link {text-decoration:none;}
+            a:visited {text-decoration:none;}
+            a:hover {text-decoration:none;}
+            a:active {text-decoration:none;}
+        </style>
     </head>
 	
 	

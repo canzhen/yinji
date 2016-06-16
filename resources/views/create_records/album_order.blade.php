@@ -26,15 +26,20 @@
         </div>
 
         <div class="index_left page_left geam_l">
+            选择一个模版吧~
             <div class="order_text">
-                <P>选择书本尺寸：</P>
+                <!--<img src = "/company/template/yinji/1.jpg" title = "1">
+                <img src = "/company/template/yinji/2.jpg">
+                <img src = "/company/template/yinji/3.jpg">
+                <img src = "/company/template/yinji/5.jpg">-->
+                <!--<P>选择书本尺寸：</P>
                 <img id="kai32" src="images/create_records/32kai.jpg" alt="正32开" />
                 <img id="kai16" src="images/create_records/16kai.jpg" alt="正32开" />
                 <br/>
                 <p id="album_size">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;正32开&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;正16开<p/>
                 <br/><P>选择内页印刷颜色：</P>
                 <img class="color" src="images/create_records/colorful.jpg" alt="彩色" />
-                <img class="color color_right" src="images/create_records/heibai.jpg" alt="黑白" />
+                <img class="color color_right" src="images/create_records/heibai.jpg" alt="黑白" />-->
             </div>
         </div>
 
@@ -66,7 +71,7 @@
                     <img class="pay" src="images/create_records/applepay.jpg" alt="中国工商银行" />
                 </div>-->
                 <div class="send_button">
-                <input  class="button button-glow button-rounded button-highlight" type="submit" value="确认支付">
+                <input  class="button button-glow button-rounded button-highlight" type="submit" value="确认">
                 <input type="button" name="test" onclick="deleteOrder()" value = "测试">
                 </div>
             </div>
