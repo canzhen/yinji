@@ -21,9 +21,7 @@ class Templates extends Migration
             $table->timestamps();
         });
 
-        Schema::table('templates', function (Blueprint $table) {
-            $table->foreign('author_name')->references('name')->on('users')->onUpdate('CASCADE')->onDelete('CASCADE');
-        });
+
     }
 
     /**

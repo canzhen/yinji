@@ -13,7 +13,7 @@ class RecordController extends Controller
 	{
 		//获取表单数据
 		$record = new Record();
-		//$record -> template_name = $_SESSION['userName'];
+		$record -> autherName = $_SESSION['userName'];
 		//author_name
 		$record-> description = $_POST['content'];
 
@@ -45,7 +45,9 @@ class RecordController extends Controller
 
 	public function selectRecord()
 	{
-		return Record::all();
+		$name="gyf";
+		//$name=$_SESSION['userName'];
+		return Record::where('autherName',$name)->get();
 	}
 
 	public function deleteRecord(){
