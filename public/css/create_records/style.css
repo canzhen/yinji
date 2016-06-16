@@ -1610,3 +1610,33 @@ img
 textarea{
     resize: none;
 }
+<<<<<<< HEAD
+
+.order_text{
+    border: 2px solid #CCC;
+    border-radius: 10px;
+    height: 450px;
+    width: 370px;
+    overflow: auto;
+    padding-left: 30px;
+}
+
+img{   
+    width:300px;
+    height: 200px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+
+.hasBorder{
+    border: 3px indigo solid;
+    
+}
+
+.noBorder{
+    border: none;
+}
+=======
+>>>>>>> 7b00aeca3edc1eddcbc5aa9cd8f3378aefbc89ac

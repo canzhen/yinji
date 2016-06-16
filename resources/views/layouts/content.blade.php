@@ -13,7 +13,7 @@
 					
 					@section('dif')
 					@show
-
+ 
 				<div class="clearfix"> </div>
 			</div>
 		</div>

@@ -2,6 +2,10 @@ body{
 	font-family: "宋体";
 }
 
+a:link {text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover {text-decoration:none;}
+a:active {text-decoration:none;}
 
 .headerLine {
 	opacity:0.8;
@@ -269,8 +273,5 @@ span.ser-img {
 	padding-top: 30px;
 }
 
-a:link {text-decoration:none;}
-a:visited {text-decoration:none;}
-a:hover {text-decoration:none;}
-a:active {text-decoration:none;}
+
 

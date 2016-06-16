@@ -1,28 +1,5 @@
-// 实现点加号减号时数量的变化
-$(function() {
-    var text = $("#text_box");
-
-    $("#add").click(function() {
-        text.val(parseInt(text.val()) + 1)
-        setPrice();
-    })
-
-    $("#min").click(function() {
-        text.val(parseInt(text.val()) - 1)
-
-        var tValue = $("#text_box").val();
-        if (tValue <= 0) {
-            //alert('不能为负！');
-            text.val(parseInt(text.val()) + 1)
-        }
-        setPrice();
-    })
-
-    function setPrice(){
-        var tValue = $("#text_box").val();
-        $("#price").text(tValue * 10);
-    }
-})
+window.imgList = "";
+window.temId = 0;
 
 function deleteOrder(){
     $.ajax({
@@ -44,6 +21,17 @@ function deleteOrder(){
     
 }
 
+function selectTemplate(objId){
+    for (var i = 0; i < imgList.length; i++) {
+        var tmp = "img" + imgList[i].id;
+		document.getElementById(tmp).className = 'noBorder';
+	}
+	document.getElementById(objId).className = 'hasBorder';
+    temId = objId;
+    
+    //console.log(oTem);
+}
+
 yinjiApp.controller('orderController',
     function createAlbumController($scope,$http,$rootScope){
         
@@ -53,43 +41,71 @@ yinjiApp.controller('orderController',
         //     $(this).val($(this).val().replace(/\D|^0/g, ''));
         // }).css("ime-mode", "disabled"); //CSS设置输入法不可用 
 
+        // for(var i = 0; i < 9; i++){
+        //     var ele = "<>";
+		// 	$("div#albumContainer").after(ele);
+        // }
+
+        $http({
+            method: 'GET',//注意，这里必须要用GET方法
+            url:'/getTemplates',
+            
+        })
+        .success(function(data) {
+            if(data != null){
+                console.log(data);
+                imgList = data;
+                for(var i = 0; i < data.length; i++){
+                    var ele = "<img src = '" + data[i].saving_path + "' id = 'img" + data[i].id + "' title = '" + data[i].description + "' onclick = 'selectTemplate(this.id)' class = 'noBorder'>";
+                    $("div.order_text").append(ele);
+                }
+                //var tt = "img" + data[0].id;
+                //console.log(tt);
+                temId = "img" + data[0].id;
+                document.getElementById(temId).className = "hasBorder";
+            }
+            else{
+                console.log("false");
+            }
+        });
+
         
         $scope.addOrder = function(){
-            if($("#text_box2").val() > $("#text_box1").val()){
+            if($("#text_box2").val() < $("#text_box1").val()){
                 alert("页码错误");
             }
             else{
+                var pageRange = $("#text_box1").val() + "-" + $("#text_box2").val();
+                var pagePrice = ($("#text_box2").val() - $("#text_box1").val()) * 10;//单价10块一张。。。
+                
                 var commentText = $scope.oComment;
                 if(commentText ==  "" || commentText == null){
-                    commentText = "";
+                    commentText = "无";
                 }
+
+                var oTem = temId.substring(3,4);
                 
                 $http({
-                method: 'GET',//注意，这里必须要用GET方法
-                url:'/addOrder',
-                params:{
-                    'oName': $scope.oName,
-                    'oPhone': $scope.oPhone,
-                    'oAddress' : $scope.oAddress,
-                    'oComment' : commentText,
-                    'oNum' : 0,
-                    'oPrice' : 0
-
-                }
-            })
-            .success(function(data) {
-                if(data != null){
-                    console.log(data);
-                }
-                else{
-                    console.log("false");
-                }
-            });
+                    method: 'GET',//注意，这里必须要用GET方法
+                    url:'/addOrder',
+                    params:{
+                        'oName': $scope.oName,
+                        'oPhone': $scope.oPhone,
+                        'oAddress' : $scope.oAddress,
+                        'oComment' : commentText,
+                        'oNum' : pageRange,
+                        'oPrice' : pagePrice,
+                        'oTemplate' : oTem
+                    }
+                })
+                .success(function(data) {
+                    if(data != null){
+                        console.log(data);
+                    }
+                    else{
+                        console.log("false");
+                    }
+                });
             }
-            //alert("safasd");
-            
-            
         }
-
-
     });

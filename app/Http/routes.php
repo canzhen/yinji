@@ -18,6 +18,11 @@ Route::group(['middleware'=>'web'],function(){
         return $_SESSION['userName'];
     });
 
+    //在前端获取当前用户权限
+    Route::get('/getUserPrivilege',function(){
+        return $_SESSION['privilege'];
+    });
+
     Route::get('/', function () {
         return view('index');
     });
@@ -50,6 +55,14 @@ Route::group(['middleware'=>'web'],function(){
 
     Route::get('/cpy_checkEvaluation', function () {
         return view('company.cpy_checkEvaluation');
+    });
+
+    Route::get('/cpy_salesReport',function(){
+        return view('company.cpy_salesReport');
+    });
+
+    Route::get('/cpy_staffManagement',function(){
+        return view('company.cpy_staffManagement');
     });
 
     Route::get('/cpy_userInformation', function () {
@@ -87,6 +100,11 @@ Route::group(['middleware'=>'web'],function(){
     Route::get('/user-information',function(){
         return view('user-information');
     });
+
+    Route::get('/orderInfo',function(){
+        return view('orderInfo');
+    });
+    
 });
 
 
@@ -133,6 +151,7 @@ Route::get('/usr/editUsername','UserController@editUsername');
 Route::get('/usr/checkPwd','UserController@checkPwd');
 Route::get('/usr/editPwd','UserController@editPwd');
 Route::get('/usr/checkIfMobile','UserController@checkIfMobile');
+Route::get('/usr/getCpyUsers','UserController@getCpyUsers');
 
 
 // 展示纪念册
@@ -154,6 +173,9 @@ Route::get('/showAlbum', 'Album\AlbumController@showAlbum');
 Route::get('/addOrder', 'Order\OrderController@addOrder');
 
 Route::get('/deleteOrder', 'Order\OrderController@deleteOrder');
+Route::get('/displayOrder', 'Order\OrderController@displayOrder');
+Route::get('/assessOrder', 'Order\OrderController@assessOrder');
+
 
 /*
 |--------------------------------------------------------------------------
@@ -219,3 +241,8 @@ Route::get('/album_fileupload', function () {
 Route::get('/album_order', function () {
         return view('create_records.album_order');
     });
+
+Route::get('/getTemplates','Order\OrderController@getTemplates');
+// Route::get('/getTemplates', function () {
+//         return "succ";
+//     });

@@ -66,20 +66,19 @@ class AuthController extends Controller
             $privilege = $res[0]->privilege;
             $_SESSION['ifLoggedIn'] = 'y';//set the value to yes
 
-            if (strcmp($privilege,'superadmin')==0){
-				$_SESSION['privilege']='superadmin';
-				return 3;
-			}else if (strcmp($privilege,'staff')==0 ||
-						strcmp($privilege,'admin')==0){
-				$_SESSION['privilege']='company';
+			//返回2代表公司用户，1代表普通用户，0代表错误
+            if (strcmp($privilege,'admin')==0){
+				$_SESSION['privilege']='admin';//公司管理人员
+				return 2;
+			}else if (strcmp($privilege,'staff')==0){
+				$_SESSION['privilege']='staff';//公司普通员工
 				return 2;
 			}else{
-				$_SESSION['privilege']='admin';
+				$_SESSION['privilege']='user';//普通用户
 				return 1;
 			}
-
 		}else{
-			\Session::put('ifLoggedIn','n');//set the value to no
+			$_SESSION['ifLoggedIn']='n';//set the value to no
 			return 0;//密码错误
 		}
 	}
@@ -91,11 +90,9 @@ class AuthController extends Controller
 	 * Created by Zhou Canzhen on 2016/04/21
 	 */
 	public function getLogout() {
-		if(\Auth::check())
-		{
-			\Auth::logout();
-			$_SESSION['ifLoggedIn']='n';
-		}
+		\Auth::logout();
+		$_SESSION['ifLoggedIn']='n';
+		$_SESSION['userName']="";
 		return \Redirect::intended('/');
 	}
 

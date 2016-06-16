@@ -196,7 +196,7 @@ i{
 
 }
 
-#albumTitle{
+#albumTitle, #albumOrder{
  /*   border: 1px solid #000;*/
     margin-top: 40px;
     margin-left: 150px;
@@ -209,4 +209,43 @@ i{
     background-color: #DDD;
     font-family: "宋体";
     letter-spacing: 10px;
+}
+
+#albumContainer{
+    /*height: 630px;
+    overflow: auto;
+    background-color: #CCC;*/
+}
+
+#albumOrder{
+    margin-bottom: 20px;
+}
+
+#orderTable{
+    margin-bottom: 50px;
+    width:1000px;
+    margin-left: 180px;
+}
+
+#firstCol, #secondCol, #thirdCol, #forthCol{
+    width: 300px;
+}
+
+#orderTable a{
+    cursor: pointer;
+}
+
+#orderModal{
+    top: 200px;
+}
+
+textarea{
+    resize: none;
+    width: 560px;
+    height: 100px;
+}
+
+#topDiv{
+
+    margin-top: 100px;
 }

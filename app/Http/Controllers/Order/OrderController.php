@@ -9,7 +9,6 @@ use App\Http\Controllers\Controller;
 
 class OrderController extends Controller
 {
-    //
     public function addOrder(){
     	$curAlbum = $_SESSION['curAlbum'];
 
@@ -23,6 +22,11 @@ class OrderController extends Controller
     	$orderTime = date('y-m-d H:i:s', time());
 
     	$userId = $_SESSION['userId'];
+		$curUserName = \DB::table('users')
+    					->where('id', $userId)
+    					->pluck('name');
+
+		$oTem = $_GET['oTemplate'];
 
     	//获得当前纪念册名
     	$curAlbumName = \DB::table('albums')
@@ -32,7 +36,7 @@ class OrderController extends Controller
     	$eid = \DB::table('orders')
 	        ->insertGetId(
 	            array(
-	                'user_name' => $oName,
+	                'user_name' => $curUserName[0],
 	                'album_name' =>$curAlbumName[0],
 	                'price' => $oPrice,
 	                'quantity' => $oNum,
@@ -40,24 +44,41 @@ class OrderController extends Controller
 	                'status' => "未付款",
 	                'order_date' => $orderTime,
 	                'delivery_date' => $orderTime,
-	                'comment' => $oComment
+	                'comment' => $oComment,
+					'template' => $oTem
 	            )
 	        );
 
-	    return $eid;
-    	
+		//模版使用次数自增
+		\DB::table('templates')->where('id', $oTem)->increment('count');
 
-    	// return $curAlbum.$curAlbumName[0];	
+	    return $eid;
     }
+
 
     public function deleteOrder(){
-    	//alert("Adfasf");
-    	
+		$oId = $_GET['orderId'];
+
     	$tt = \DB::table('orders')
-    			->where('id', 7)
+    			->where('id', $oId)
     			->delete();
-
-
     	return $tt ;
     }
+
+	public function getTemplates(){
+		$resSet = \DB::table('templates')->get();
+    	return $resSet;
+	}
+
+	public function displayOrder(){
+		$resSet = \DB::table('orders')->get();
+    	return $resSet;
+	}
+
+	public function assessOrder(){
+		$detail = $_GET['assessDetail'];
+		$orderId = $_GET['orderId'];
+
+		\DB::table('orders')->where('id', $orderId)->update(['assess' => $detail]);
+	}
 }
