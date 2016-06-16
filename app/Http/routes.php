@@ -91,6 +91,11 @@ Route::group(['middleware'=>'web'],function(){
     Route::get('/user-information',function(){
         return view('user-information');
     });
+
+    Route::get('/orderInfo',function(){
+        return view('orderInfo');
+    });
+    
 });
 
 

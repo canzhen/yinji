@@ -212,9 +212,9 @@ i{
 }
 
 #albumContainer{
-    height: 630px;
+    /*height: 630px;
     overflow: auto;
-    /*background-color: #CCC;*/
+    background-color: #CCC;*/
 }
 
 #albumOrder{
@@ -227,7 +227,7 @@ i{
     margin-left: 180px;
 }
 
-#firstCol, #secondCol, #thirdCol{
+#firstCol, #secondCol, #thirdCol, #forthCol{
     width: 300px;
 }
 
@@ -243,4 +243,9 @@ textarea{
     resize: none;
     width: 560px;
     height: 100px;
+}
+
+#topDiv{
+
+    margin-top: 100px;
 }
