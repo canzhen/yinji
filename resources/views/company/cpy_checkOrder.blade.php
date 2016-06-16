@@ -66,7 +66,7 @@
 
 
 		<!--查看订单详情的弹出框-->
-			<div class="modal fade" id="orderDetailModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+		<div class="modal fade" id="orderDetailModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content"><!--modal的内容-->
 					<div class="modal-header">
@@ -134,6 +134,6 @@
 				</div>
 			</div>
 		</div>
-
+		<!--查看订单详情的弹出框结束-->
 	</div>
 @stop
