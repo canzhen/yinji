@@ -52,6 +52,10 @@ Route::group(['middleware'=>'web'],function(){
         return view('company.cpy_checkEvaluation');
     });
 
+    Route::get('cpy_salesReport',function(){
+        return view('company.cpy_salesReport');
+    });
+
     Route::get('/cpy_userInformation', function () {
         return view('company.userInformation');
     });
