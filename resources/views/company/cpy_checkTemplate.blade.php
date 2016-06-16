@@ -18,7 +18,7 @@
 @section('sidebar-content')
 	<div ng-controller="checkTemplateCtrl" class="container-fluid">
 		<div class="row" id="mainbody">
-			<div class="thumbnail" ng-repeat="x in deployedImgs" on-finish-render-filters>
+			<div class="thumbnail" ng-repeat="x in deployedTemplates" on-finish-render-filters>
 				<a href="#@{{ x.template_name }}">
 					<div class="imgs">
 						<img id="img" ng-src="@{{ x.saving_path }}">
@@ -31,7 +31,9 @@
 					<div class="time">修改时间：@{{ x.updated_at }}</div>
 					<div class="author">作者：@{{ x.author_name }}</div>
 					@if(isset($_SESSION['ifLoggedIn'])&&$_SESSION['ifLoggedIn']=='y')
-						<div class="author"><a href="" data-toggle="modal" data-target="#templateDetailModal">修改信息</a></div>
+						<div class="author">
+							<a href="" ng-click="getTemplateDetail(x)" data-toggle="modal" data-target="#templateDetailModal">修改信息</a>
+						</div>
 						<div class="author"><a href="" ng-click="deleteTemplate(x)">删除模板</a></div>
 					@endif
 				</div>
@@ -63,56 +65,24 @@
 						<div class="form-inner">
 							<form class="myForm">
 								<div>
-									<span>订单编号：&nbsp @{{ orderDetail.id }}</span>
-								</div>
-								<div class="row" style="padding-left:15px;">
-									<span>订单数量：</span>
-									<button class="btn btn-default" type="button" ng-click="subtractOrderDetailQuantity()">
-										-
-									</button>
-									<input style="width:7%;" type="text" ng-model="orderDetail.quantity"/>
-									<button class="btn btn-default" type="button" ng-click="addOrderDetailQuantity()">
-										+
-									</button>
-									<span style="color:red" ng-show="orderDetail.quantity == ''">*此项必填</span>
+									<span>模板 ID　：</span>@{{ templateDetail.id }}
 								</div>
 								<div>
-									<span>订单单价：</span>
-									<input type="text" ng-model="orderDetail.price" style="width:12%;"/>
-									<span style="color:red" ng-show="orderDetail.price == ''">*此项必填</span>
-									<span style="color:red" ng-show="orderDetail.price<0">*单价必须大于0</span>
-								</div>
-								<div>
-									<span>订单状态：</span>
-									<select ng-model="orderDetail.status">
-										<option>已发货</option>
-										<option>已送达</option>
-										<option>送货中</option>
-										<option>已付款</option>
-										<option>未付款</option>
-									</select>
-									<!--<input type="text" ng-model="orderDetail.status"/>-->
-									<span style="color:red" ng-show="orderDetail.status == ''">*此项必填</span>
-								</div>
-								<div>
-									<span>发货地址：</span>
-									<input type="text" ng-model="orderDetail.address"/>
-									<span style="color:red" ng-show="orderDetail.address == ''">*此项必填</span>
+									<span>模板名字：</span>
+									<input type="text" ng-model="templateDetail.templateName" style="width:20%;"/>.@{{ templateDetail.nameSuffix }}
+									<span style="color:red" ng-show="templateDetail.templateName == ''">*模板名字不能为空</span>
 								</div>
 								<div>
 									<span>备注信息：</span>
-									<input type="text" ng-model="orderDetail.comment"/>
-									<span style="color:red" ng-show="orderDetail.comment == ''">*此项必填</span>
+									<input type="text" ng-model="templateDetail.description"/>
 								</div>
 							</form>
 						</div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-						<button type="button" class="btn btn-primary" ng-click="editOrder()"
-								ng-disabled="orderDetail.quantity == '' ||orderDetail.price<0
-								|| orderDetail.price == ''|| orderDetail.status == ''
-								|| orderDetail.adress == ''">修改</button>
+						<button type="button" class="btn btn-primary" ng-click="editTemplate()"
+								ng-disabled="templateDetail.templateName == '' ">修改</button>
 					</div>
 				</div>
 			</div>

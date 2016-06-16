@@ -116,6 +116,7 @@ Route::get('/cpy/deleteOrder','CpyController@deleteOrder');
 Route::get('/cpy/editOrder','CpyController@editOrder');
 Route::post('/cpy/uploadTemplate','CpyController@uploadTemplate');
 Route::get('/cpy/getTemplates','CpyController@getTemplates');
+Route::get('/cpy/editTemplate','CpyController@editTemplate');
 Route::get('/cpy/deleteTemplate','CpyController@deleteTemplate');
 
 Route::get('/cpy/getIndexMsg','CpyController@getIndexMsg');
