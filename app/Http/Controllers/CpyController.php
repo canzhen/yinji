@@ -30,7 +30,7 @@ class CpyController extends Controller
         return Order::where('status','未付款')->get();
     }
 
-    public function paiedOrders(){
+    public function paiOrders(){
         return Order::where('status','已付款')->get();
     }
 

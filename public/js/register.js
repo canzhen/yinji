@@ -42,7 +42,7 @@ yinjiApp.controller('authController',
 			}else if ($scope.pwd != $scope.repwd ) {
 				$scope.errMsgColor = "red";//错误消息为红色
 				$scope.errMsg = "对不起，两次密码输入不一致，请重新输入";
-			}else if ($scope.privilege == ""){
+			}else if ($scope.privilege == null){
 				$scope.errMsgColor = "red";//错误消息为红色
 				$scope.errMsg="对不起，必须选择用户类型！";
 			}else if($userChecked == true){

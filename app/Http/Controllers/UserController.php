@@ -102,4 +102,8 @@ class UserController extends BaseController
 	public function getCpyUsers(){
 		return User::where('privilege','=','staff')->get();//只能看到员工信息，不能看到admin管理层的信息
 	}
+
+	public function getCommonUsers(){
+		return User::where('privilege','=','user')->get();//只能看到员工信息，不能看到admin管理层的信息
+	}
 }

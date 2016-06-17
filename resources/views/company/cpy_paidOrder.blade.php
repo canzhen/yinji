@@ -10,12 +10,12 @@
 
 @section('footer')
 	@parent
-	<script src="/js/company/cpy_paiedOrder.js"></script>
+	<script src="/js/company/cpy_paidOrder.js"></script>
 @stop
 
 
 @section('sidebar-content')
-	<div ng-controller="paiedOrderCtrl" class="col-lg-12">
+	<div ng-controller="paidOrderCtrl" class="col-lg-12">
 		<?php
 		if(!isset($_SESSION)){
 			session_start();

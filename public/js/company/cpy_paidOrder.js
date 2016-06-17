@@ -2,13 +2,13 @@
  * Created by Zhou Canzhen
  * 2016/04/28
  */
-yinjiApp.controller('paiedOrderCtrl',
+yinjiApp.controller('paidOrderCtrl',
 	function($scope,$http){
 		$scope.deployedOrder = {};
 		$scope.orderDetail = {};
 		var tempDetail = {};
 
-		$http.get("/cpy/paiedOrders")
+		$http.get("/cpy/paidOrders")
 		.success(function (response)
 		{
 			response.reverse();

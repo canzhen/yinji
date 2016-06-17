@@ -59,6 +59,22 @@ Route::group(['middleware'=>'web'],function(){
         return view('company.cpy_newOrdersManage');
     });
 
+    Route::get('/cpy_paidOrders', function () {
+        return view('company.cpy_paidOrder');
+    });
+
+    Route::get('/cpy_deliverOrders', function () {
+        return view('company.cpy_deliverOrder');
+    });
+
+    Route::get('/cpy_publishOrders', function () {
+        return view('company.cpy_publishOrder');
+    });
+
+    Route::get('/cpy_receivedOrders', function () {
+        return view('company.cpy_receivedOrder');
+    });
+
     Route::get('/cpy_checkEvaluation', function () {
         return view('company.cpy_checkEvaluation');
     });
@@ -67,8 +83,12 @@ Route::group(['middleware'=>'web'],function(){
         return view('company.cpy_salesReport');
     });
 
-    Route::get('/cpy_staffManagement',function(){
-        return view('company.cpy_staffManagement');
+    Route::get('/cpy_checkStaff',function(){
+        return view('company.cpy_checkStaff');
+    });
+
+    Route::get('/cpy_checkUser',function(){
+        return view('company.cpy_checkUser');
     });
 
     Route::get('/cpy_userInformation', function () {
@@ -159,6 +179,7 @@ Route::get('/usr/checkPwd','UserController@checkPwd');
 Route::get('/usr/editPwd','UserController@editPwd');
 Route::get('/usr/checkIfMobile','UserController@checkIfMobile');
 Route::get('/usr/getCpyUsers','UserController@getCpyUsers');
+Route::get('/usr/getCommonUsers','UserController@getCommonUsers');
 
 
 // 展示纪念册

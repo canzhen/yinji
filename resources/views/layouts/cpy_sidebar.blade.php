@@ -151,7 +151,7 @@
 								</li>
 								<li>
 									<a href="/cpy_newOrdersManage">未付款订单</a>
-									<a href="/cpy_paiedOrders">已付款订单</a>
+									<a href="/cpy_paidOrders">已付款订单</a>
 									<a href="/cpy_deliverOrders">送货中订单</a>
 									<a href="/cpy_publishOrders">已发货订单</a>
 									<a href="/cpy_receivedOrders">已送达订单</a>
@@ -163,13 +163,10 @@
 							<a href="#"><i class="fa fa-user fa-fw"></i> 用户管理 <span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li>
-									<a href="#">查看用户</a>
+									<a href="/cpy_checkUser">查看用户</a>
 								</li>
 								<li>
 									<a href="/cpy_checkEvaluation">用户评价</a>
-								</li>
-								<li>
-									<a href="#">修改用户信息</a>
 								</li>
 							</ul>
 							<!-- /.nav-second-level -->
@@ -189,7 +186,7 @@
 											$_SESSION['privilege']=='admin'){
 								?>
 								<li>
-									<a href="/cpy_staffManagement">员工信息</a>
+									<a href="/cpy_checkStaff">员工信息</a>
 								</li>
 								<?php
 									}
