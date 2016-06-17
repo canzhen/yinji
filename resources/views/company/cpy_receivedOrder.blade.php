@@ -17,7 +17,11 @@
 @section('sidebar-content')
 	<div ng-controller="receivedOrderCtrl" class="col-lg-12">
 		<?php
-		session_start();
+		if(!isset($_SESSION)){
+			if(!isset($_SESSION)){
+				session_start();
+			}
+		}
 		?>
 		<div class="panel panel-default">
 			<div class="panel-heading">

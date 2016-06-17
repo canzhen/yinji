@@ -75,7 +75,9 @@
 @section('dif')
 	<!--$_SESSION['ifLoggedIn'] == 'y'-->
 	<?php
+	if(!isset($_SESSION)){
 		session_start();
+	}
 	?>
 	@if(isset($_SESSION['ifLoggedIn'])&&$_SESSION['ifLoggedIn']=='y')
 			<div class="top-nav">

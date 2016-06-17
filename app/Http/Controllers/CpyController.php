@@ -114,7 +114,9 @@ class CpyController extends Controller
      * @return mixed
      */
     public function uploadTemplate(){
-        session_start();
+        if(!isset($_SESSION)){
+            session_start();
+        }
         $path = app_path()."\\..\\public\\company\\template\\".$_SESSION['userName'].'\\';
         if (!empty($_FILES)){
             //得到上传文件的临时流

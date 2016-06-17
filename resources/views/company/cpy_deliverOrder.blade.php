@@ -17,7 +17,9 @@
 @section('sidebar-content')
 	<div ng-controller="deliverOrderCtrl" class="col-lg-12">
 		<?php
-		session_start();
+		if(!isset($_SESSION)){
+			session_start();
+		}
 		?>
 		<div class="panel panel-default">
 			<div class="panel-heading">

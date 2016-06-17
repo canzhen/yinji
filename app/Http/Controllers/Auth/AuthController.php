@@ -56,7 +56,9 @@ class AuthController extends Controller
 		if (\Auth::attempt($data,$remember)){
 			$res = \DB::table('users')->where('name', '=',$name)->get();
             //$res = User::where('name',$name)->get(); 
-            session_start();
+			if(!isset($_SESSION)){
+				session_start();
+			}
             $_SESSION['userId'] = $res[0]->id;//获得用户id
             $_SESSION['userName'] = $res[0]->name;//获得用户姓名
             //$_SESSION['curAlbum']
@@ -90,7 +92,9 @@ class AuthController extends Controller
 	 * Created by Zhou Canzhen on 2016/04/21
 	 */
 	public function getLogout() {
-		session_start();
+		if(!isset($_SESSION)){
+			session_start();
+		}
 		\Auth::logout();
 		$_SESSION['ifLoggedIn']='n';
 		$_SESSION['userId']=0;
@@ -150,7 +154,9 @@ class AuthController extends Controller
 	 * Created by Zhou Canzhen on 2016/04/21
 	 */
 	public function checkPwd(){
-		session_start();
+		if(!isset($_SESSION)){
+			session_start();
+		}
 		$name=$_SESSION['editPwdUserName'];
 		$inputPwd = $_GET['inputPwd'];
 

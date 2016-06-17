@@ -17,7 +17,9 @@
 @section('sidebar-content')
 	<div ng-controller="checkOrderCtrl" class="col-lg-12">
 		<?php
+		if(!isset($_SESSION)){
 			session_start();
+		}
 		?>
 		<div class="panel panel-default">
 			<div class="panel-heading">

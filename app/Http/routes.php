@@ -15,13 +15,17 @@ Route::group(['middleware'=>'web'],function(){
 
     //在前端获取当前用户名
     Route::get('/getUserName',function(){
-        session_start();
+        if(!isset($_SESSION)){
+            session_start();
+        }
         return $_SESSION['userName'];
     });
 
     //在前端获取当前用户权限
     Route::get('/getUserPrivilege',function(){
-        session_start();
+        if(!isset($_SESSION)){
+            session_start();
+        }
         return $_SESSION['privilege'];
     });
 
@@ -165,7 +169,9 @@ Route::get('/addAlbum', 'Album\AlbumController@addAlbum');
 Route::get('/getCurAlbumInfo', 'Album\AlbumController@getCurAlbumInfo');
 //获得当前纪念册ID
 Route::get('/getCurAlbum', function(){
-    session_start();
+    if(!isset($_SESSION)){
+        session_start();
+    }
     return $_SESSION['curAlbum'];
 });
 // 更新纪念册
