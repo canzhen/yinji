@@ -15,7 +15,11 @@ Route::group(['middleware'=>'web'],function(){
 
     //在前端获取当前用户名
     Route::get('/getUserName',function(){
-        return $_SESSION['userName'];
+        if (!session()->has('userName'))
+            return "没有username";
+        else
+            return session()->get('userName');
+        //return $_SESSION['userName'];
     });
 
     //在前端获取当前用户权限

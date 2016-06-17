@@ -56,15 +56,16 @@ class AuthController extends Controller
 		if (\Auth::attempt($data,$remember)){
 			$res = \DB::table('users')->where('name', '=',$name)->get();
             //$res = User::where('name',$name)->get(); 
-            
-            $_SESSION['userId'] = $res[0]->id;//获得用户id
-            $_SESSION['userName'] = $res[0]->name;//获得用户姓名
-            //$_SESSION['curAlbum']
-            //$_SESSION['privilege'] = $res[0]->privilege;//获得权限
+
+			session()->put('userId',$res[0]->id);
+			session()->put('userName',$res[0]->name);
+            //$_SESSION['userId'] = $res[0]->id;//获得用户id
+            //$_SESSION['userName'] = $res[0]->name;//获得用户姓名
             //测试
             $_SESSION['curAlbum'] = 0;
             $privilege = $res[0]->privilege;
-            $_SESSION['ifLoggedIn'] = 'y';//set the value to yes
+			session()->put('ifLoggedIn','y');
+            //$_SESSION['ifLoggedIn'] = 'y';//set the value to yes
 
 			//返回2代表公司用户，1代表普通用户，0代表错误
             if (strcmp($privilege,'admin')==0){
