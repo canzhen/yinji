@@ -32,6 +32,9 @@ yinjiApp.controller('checkOneRecordCtrl',
                         });
 
                     $scope.deleteRecord = function (x) {
+                        if(!window.confirm('删除是不可恢复的，你确认要删除吗？')){
+                            return false;
+                        }
                         $http({
                             method: 'GET',
                             url: '/album_create_records/delete',
@@ -41,7 +44,7 @@ yinjiApp.controller('checkOneRecordCtrl',
                         })
                             .success(function (response) {
                                 if (response == 1) {
-                                    alert('删除id为' + x.id + '的记录成功！');
+                                    alert('删除记录成功！');
                                     $scope.records.splice($scope.records.indexOf(x), 1);
                                 } else if (response == 0) {
                                     alert("oops,删除失败！");

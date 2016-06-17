@@ -17,7 +17,7 @@ class RecordController extends Controller
 		//$temp=$_SESSION['userName'];
 		$record -> autherName = $_SESSION['userName'];
 
-		//$record -> albumId = $_SESSION['curAlbum'];
+		$record -> albumId = $_SESSION['curAlbum'];
 		//author_name
 		$record-> description = $_POST['content'];
 
@@ -52,9 +52,9 @@ class RecordController extends Controller
 		session_start();
 		//$name="gyf";
 		$name=$_SESSION['userName'];
-		//$albumID=$_SESSION['curAlbum']
-		//return Record::where('autherName',$name)->where('albumId',$albumID)->get();
-		return Record::where('autherName',$name)->get();
+		$albumID=$_SESSION['curAlbum'];
+		return Record::where('autherName',$name)->where('albumId',$albumID)->get();
+		//return Record::where('autherName',$name)->get();
 	}
 
 	public function deleteRecord(){
