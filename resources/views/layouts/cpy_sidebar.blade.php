@@ -41,6 +41,7 @@
 			<ul class="nav navbar-top-links navbar-right" ng-controller="cpyNavController">
 
 				<?php
+					if (!session_id()) session_start();
 					if (isset($_SESSION['ifLoggedIn']) && $_SESSION['ifLoggedIn'] == "y"){
 						echo "欢迎您，";
 						echo $_SESSION['userName'];

@@ -11,6 +11,7 @@ class RecordController extends Controller
 {
     public function addRecord()
 	{
+		session_start();
 		//获取表单数据
 		$record = new Record();
 		//$temp=$_SESSION['userName'];
@@ -48,6 +49,7 @@ class RecordController extends Controller
 
 	public function selectRecord()
 	{
+		session_start();
 		//$name="gyf";
 		$name=$_SESSION['userName'];
 		//$albumID=$_SESSION['curAlbum']

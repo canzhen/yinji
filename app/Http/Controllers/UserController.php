@@ -30,6 +30,7 @@ class UserController extends BaseController
 	}
 
 	public function editUsername(){
+		session_start();
 		$username = $_SESSION['userName'];
 		$newUsername = $_GET['newUsername'];
 		//$currentUser = User::where('name','=',$username)->first();
@@ -43,6 +44,7 @@ class UserController extends BaseController
 	}
 
 	public function checkPwd(){
+		session_start();
 		$username=$_SESSION['userName'];
 		$inputPwd = $_GET['inputPwd'];
 
@@ -62,6 +64,7 @@ class UserController extends BaseController
 
 
 	public function editPwd(){
+		session_start();
 		$name=$_SESSION['userName'];
 		$pwd=$_GET['newPwd'];
 
@@ -78,6 +81,7 @@ class UserController extends BaseController
 
 
 	public function checkIfMobile(){
+		session_start();
 		$name = $_SESSION['userName'];
 
 		$user = User::where('name','=',$name)->first();
