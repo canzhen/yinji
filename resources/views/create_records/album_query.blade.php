@@ -35,6 +35,18 @@
         <div id="datepicker"></div>
     </div>
   </div>
+
+  <div class="page_right_menu" >
+    <ul>
+      <li class="menu_1"><a href="/album_index" title="关于工厂——纪念册简介"></a></li>
+      <li class="menu_2"><a href="/album_show_records" title="广播站——纪念册内容"></a></li>
+     <!-- <li class="menu_3"><a href="blog/" title="团队博客"></a></li>-->
+      <li class="menu_5"><a href="/album_create_records" title="厂区仓库——创建记录"></a></li>
+      <li class="menu_6"><a class="on" href="/album_query" title="招兵买马——查找纪念册内容"></a></li>
+      <li class="menu_4"><a href="/album_order" title="游乐园--下订单"></a></li>
+    </ul>
+  </div>
+  
   <div class="index_right page_right job_r">
     <table border="0" width="400" cellpadding="0" style="border-collapse: collapse; font-size:12px; margin-top:80px; margin-left:30px;" id="table1">
     		<tr>
@@ -123,16 +135,7 @@
 	</div>
 </div>
   <!-- 左面菜单 -->
-  <div class="page_right_menu" >
-    <ul>
-      <li class="menu_1"><a href="/album_index" title="关于工厂——纪念册简介"></a></li>
-      <li class="menu_2"><a href="/album_show_records" title="广播站——纪念册内容"></a></li>
-     <!-- <li class="menu_3"><a href="blog/" title="团队博客"></a></li>-->
-      <li class="menu_5"><a href="/album_create_records" title="厂区仓库——创建记录"></a></li>
-      <li class="menu_6"><a class="on" href="/album_query" title="招兵买马——查找纪念册内容"></a></li>
-      <li class="menu_4"><a href="/album_order" title="游乐园--下订单"></a></li>
-    </ul>
-  </div>
+  
 
 
 
