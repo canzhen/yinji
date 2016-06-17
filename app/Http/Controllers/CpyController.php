@@ -34,7 +34,7 @@ class CpyController extends Controller
      * @return 所有评价
      */
     public function getEvaluations(){
-        return Evaluation::all();
+        return Evaluation::where([])->orderBy('created_at', 'desc')->get();
     }
     /**
      * 获取所有好评
@@ -42,14 +42,14 @@ class CpyController extends Controller
      */
     public function getGoodEva(){
         return Evaluation::where('content','like','%漂亮%')->orWhere('content','like','%精致%')
-            ->orWhere('content','like','%棒%')->orWhere('content','like','%很好看%')->get();
+            ->orWhere('content','like','%棒%')->orWhere('content','like','%很好看%')->orderBy('created_at', 'desc')->get();
     }
     /**
      * 获取所有差评
      * @return 所有差评
      */
     public function getBadEva(){
-        return Evaluation::where('content','like','%不好%')->orWhere('content','like','%丑%')->get();
+        return Evaluation::where('content','like','%不好%')->orWhere('content','like','%丑%')->orderBy('created_at', 'desc')->get();
     }
     /**
      * 获取所有订单

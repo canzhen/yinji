@@ -10,6 +10,30 @@
 
 @section('footer')
   @parent 
+  <script src="/js/create_records/jquery.form.js"></script>
+  <script type="text/javascript">
+  	window.onload=function(){
+  		var myDate = new Date();
+
+  		var year=myDate.getFullYear();   //获取完整的年份(4位,1970-????)
+  		var month=myDate.getMonth()+1;      //获取当前月份(0-11,0代表1月)
+  		var day=myDate.getDate();       //获取当前日(1-31)
+  		var hour=myDate.getHours();      //获取当前小时数(0-23)
+  		var minute=myDate.getMinutes();    //获取当前分钟数(0-59)
+
+  		if(month<10){
+  			month='0'+month;
+  		}
+  		for(;minute%5!=0;){
+  			minute--;
+  		}
+  		$("#year").val(year);
+  		$("#month").val(month);
+  		$("#day").val(day);
+  		$("#hour").val(hour);
+  		$("#min").val(minute);
+  	}
+  </script>
 @stop
 
 @section('content')
