@@ -66,7 +66,8 @@ class OrderController extends Controller
     }
 
 	public function getTemplates(){
-		$resSet = \DB::table('templates')->get();
+		$curName = $_SESSION['userName'];
+		$resSet = \DB::table('templates')->where('author_name', $curName)->get();
     	return $resSet;
 	}
 

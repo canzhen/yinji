@@ -24,6 +24,8 @@ class Orders extends Migration
             $table->timestamp('delivery_date');//发货日期
             $table->string('comment')->nullable();//备注
             $table->timestamps();
+            $table->string('assess')->nullable();//评价
+            $table->integer('<te></te>mplate')->default(0);//模版ID
         });
 
         Schema::table('orders', function (Blueprint $table) {
