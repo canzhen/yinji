@@ -146,7 +146,11 @@
 									<a href="/cpy_checkOrder">全部订单</a>
 								</li>
 								<li>
-									<a href="/cpy_newOrdersManage">未完成订单</a>
+									<a href="/cpy_newOrdersManage">未付款订单</a>
+									<a href="/cpy_paiedOrders">已付款订单</a>
+									<a href="/cpy_deliverOrders">送货中订单</a>
+									<a href="/cpy_publishOrders">已发货订单</a>
+									<a href="/cpy_receivedOrders">已送达订单</a>
 								</li>
 							</ul>
 							<!-- /.nav-second-level -->
