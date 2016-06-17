@@ -54,7 +54,6 @@ class AuthController extends Controller
 		$data = array('name'=>$name,'password'=>$password);
 
 		if (\Auth::attempt($data,$remember)){
-			session_start();
 			$res = \DB::table('users')->where('name', '=',$name)->get();
             //$res = User::where('name',$name)->get(); 
             session_start();
