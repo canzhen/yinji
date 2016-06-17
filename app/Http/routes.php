@@ -15,11 +15,7 @@ Route::group(['middleware'=>'web'],function(){
 
     //在前端获取当前用户名
     Route::get('/getUserName',function(){
-        if (!session()->has('userName'))
-            return "没有username";
-        else
-            return session()->get('userName');
-        //return $_SESSION['userName'];
+        return $_SESSION['userName'];
     });
 
     //在前端获取当前用户权限
@@ -57,22 +53,6 @@ Route::group(['middleware'=>'web'],function(){
         return view('company.cpy_newOrdersManage');
     });
 
-    Route::get('/cpy_paiedOrders', function () {
-        return view('company.cpy_paiedOrder');
-    });
-
-    Route::get('/cpy_deliverOrders', function () {
-        return view('company.cpy_deliverOrder');
-    });
-
-    Route::get('/cpy_publishOrders', function () {
-        return view('company.cpy_publishOrder');
-    });
-
-    Route::get('/cpy_receivedOrders', function () {
-        return view('company.cpy_receivedOrder');
-    });
-
     Route::get('/cpy_checkEvaluation', function () {
         return view('company.cpy_checkEvaluation');
     });
@@ -106,7 +86,7 @@ Route::group(['middleware'=>'web'],function(){
     Route::get('/home', function () {
         return view('home');
     });
-	
+
 	Route::get('/album_create_records', function () {
         return view('create_records\album_create_records');
     });
@@ -124,7 +104,7 @@ Route::group(['middleware'=>'web'],function(){
     Route::get('/orderInfo',function(){
         return view('orderInfo');
     });
-    
+
 });
 
 
@@ -138,12 +118,6 @@ Route::post('/cpy/uploadTemplate','CpyController@uploadTemplate');
 Route::get('/cpy/getTemplates','CpyController@getTemplates');
 Route::get('/cpy/editTemplate','CpyController@editTemplate');
 Route::get('/cpy/deleteTemplate','CpyController@deleteTemplate');
-
-
-Route::get('/cpy/paiedOrders','CpyController@paiedOrders');
-Route::get('/cpy/deliverOrders','CpyController@deliverOrders');
-Route::get('/cpy/publishOrders','CpyController@publishOrders');
-Route::get('/cpy/receivedOrders','CpyController@receiveOrders');
 
 Route::get('/cpy/getIndexMsg','CpyController@getIndexMsg');
 Route::get('/cpy/getUndoneOrders','CpyController@getUndoneOrders');
@@ -225,7 +199,7 @@ Route::group(['middleware' => ['web']], function () {
 /*
  * 控制器和路由
  */
- 
+
  //绑定RecordController的增加函数和record.blade.php
  Route::post('/album_create_records/add','RecordController@addRecord');
  //Route::post('/album_create_records/add_new','RecordController@addRecordNew');
