@@ -50,6 +50,9 @@ yinjiApp.controller('cpyNavController',
         $scope.odSecond = "";
 
         var date = new Date(),
+            currentYear = date.getFullYear(),
+            currentMonth = date.getMonth(),
+            currentDay = date.getDay(),
             currentHour = date.getHours(),
             currentMinute = date.getMinutes(),
             currentSecond = date.getSeconds(),
@@ -60,12 +63,18 @@ yinjiApp.controller('cpyNavController',
         $http.get("/cpy/getEvaluations")
         .success(function (response)
         {
-            latestEvaTime = response[response.length-1].created_at.split(" ")[1].split(":");
-            $scope.evaHour = currentHour - latestEvaTime[0];
-            if ($scope.evaHour < 1){
-                $scope.evaMinute = currentMinute - latestEvaTime[1];
-                if ($scope.evaMinute < 1)
-                    $scope.evaSecond = currentSecond - latestEvaTime[2];
+            var fullDateInfo = response[response.length-1].created_at.split(" ");
+            var date = fullDateInfo[0].split("-");
+            if (date[0]==currentYear &&
+                date[1]==currentMonth &&
+                date[1]==currentDay){
+                latestEvaTime = fullDateInfo[1].split(":");
+                $scope.evaHour = currentHour - latestEvaTime[0];
+                if ($scope.evaHour < 1){
+                    $scope.evaMinute = currentMinute - latestEvaTime[1];
+                    if ($scope.evaMinute < 1)
+                        $scope.evaSecond = currentSecond - latestEvaTime[2];
+                }
             }
         });
 
@@ -74,12 +83,18 @@ yinjiApp.controller('cpyNavController',
         $http.get("/cpy/getOrders")
         .success(function (response)
         {
-            latestOrderTime = response[response.length-1].order_date.split(" ")[1].split(":");
-            $scope.odHour = currentHour - latestOrderTime[0];
-            if ($scope.odHour < 1){
-                $scope.odMinute = currentMinute - latestOrderTime[1];
-                if ($scope.odMinute < 1)
-                    $scope.odSecond = currentSecond - latestOrderTime[2];
+            var fullDateInfo = response[response.length-1].created_at.split(" ");
+            var date = fullDateInfo[0].split("-");
+            if (date[0]==currentYear &&
+                date[1]==currentMonth &&
+                date[1]==currentDay) {
+                latestOrderTime = fullDateInfo[1].split(":");
+                $scope.odHour = currentHour - latestOrderTime[0];
+                if ($scope.odHour < 1) {
+                    $scope.odMinute = currentMinute - latestOrderTime[1];
+                    if ($scope.odMinute < 1)
+                        $scope.odSecond = currentSecond - latestOrderTime[2];
+                }
             }
         });
 
