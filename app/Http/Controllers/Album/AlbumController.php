@@ -14,8 +14,8 @@ class AlbumController extends Controller
 	 * @return  数据库中所有纪念册的结果集
 	 */
     public function displayAlbum(){
-    	$resSet = \DB::table('albums')->get();
-
+        $curName = $_SESSION['userName'];
+    	$resSet = \DB::table('albums')->where('user_name', $curName)->get();
     	return $resSet;
     }
 
