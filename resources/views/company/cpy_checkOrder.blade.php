@@ -33,6 +33,9 @@
 							<th>用户账号</th>
 							<th>发货地址</th>
 							<th>备注信息</th>
+							<?php
+								if (!session_id()) session_start();
+							?>
 							@if(isset($_SESSION['ifLoggedIn'])&&$_SESSION['ifLoggedIn']=='y')
 								<th>操作</th>
 							@endif
@@ -48,6 +51,9 @@
 							<td ng-bind="x.user_name"></td>
 							<td ng-bind="x.address"></td>
 							<td ng-bind="x.comment"></td>
+							<?php
+							if (!session_id()) session_start();
+							?>
 							@if(isset($_SESSION['ifLoggedIn'])&&$_SESSION['ifLoggedIn']=='y')
 								<td>
 									<a href="" ng-click="deleteOrder(x)">删除</a>　

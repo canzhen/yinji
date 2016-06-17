@@ -30,6 +30,9 @@
 					<div class="time">创建时间：@{{ x.created_at }}</div>
 					<div class="time">修改时间：@{{ x.updated_at }}</div>
 					<div class="author">作者：@{{ x.author_name }}</div>
+					<?php
+					if (!session_id()) session_start();
+					?>
 					@if(isset($_SESSION['ifLoggedIn'])&&$_SESSION['ifLoggedIn']=='y')
 						<div class="author">
 							<a href="" ng-click="getTemplateDetail(x)" data-toggle="modal" data-target="#templateDetailModal">修改信息</a>
