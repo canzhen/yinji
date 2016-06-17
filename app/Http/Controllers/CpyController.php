@@ -146,13 +146,13 @@ class CpyController extends Controller
                             $response = "对不起，您上传的图片超过限制大小，请压缩后上传！";
                             break;
                         case 3:
-                            $reponse = "上传失败，只有部分图片被上传，请重新上传！";
+                            $response = "上传失败，只有部分图片被上传，请重新上传！";
                             break;
                         case 5:
-                            $reponse = "上传失败，上传图片大小为0！";
+                            $response = "上传失败，上传图片大小为0！";
                             break;
                         default:
-                            $reponse = "对不起，上传失败！";
+                            $response = "对不起，上传失败！";
                             break;
                     }
                 }
