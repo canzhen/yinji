@@ -12,6 +12,9 @@
 @section('sidebar-content')
 
 
+	<?php
+	if (!session_id()) session_start();
+	?>
 	@if(isset($_SESSION['ifLoggedIn'])&&$_SESSION['ifLoggedIn']=='y')
 
 	<div class="panel-body" ng-controller="staffManageCtrl">
