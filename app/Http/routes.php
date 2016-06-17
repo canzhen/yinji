@@ -57,6 +57,22 @@ Route::group(['middleware'=>'web'],function(){
         return view('company.cpy_newOrdersManage');
     });
 
+    Route::get('/cpy_paiedOrders', function () {
+        return view('company.cpy_paiedOrder');
+    });
+
+    Route::get('/cpy_deliverOrders', function () {
+        return view('company.cpy_deliverOrder');
+    });
+
+    Route::get('/cpy_publishOrders', function () {
+        return view('company.cpy_publishOrder');
+    });
+
+    Route::get('/cpy_receivedOrders', function () {
+        return view('company.cpy_receivedOrder');
+    });
+
     Route::get('/cpy_checkEvaluation', function () {
         return view('company.cpy_checkEvaluation');
     });
@@ -122,6 +138,12 @@ Route::post('/cpy/uploadTemplate','CpyController@uploadTemplate');
 Route::get('/cpy/getTemplates','CpyController@getTemplates');
 Route::get('/cpy/editTemplate','CpyController@editTemplate');
 Route::get('/cpy/deleteTemplate','CpyController@deleteTemplate');
+
+
+Route::get('/cpy/paiedOrders','CpyController@paiedOrders');
+Route::get('/cpy/deliverOrders','CpyController@deliverOrders');
+Route::get('/cpy/publishOrders','CpyController@publishOrders');
+Route::get('/cpy/receivedOrders','CpyController@receiveOrders');
 
 Route::get('/cpy/getIndexMsg','CpyController@getIndexMsg');
 Route::get('/cpy/getUndoneOrders','CpyController@getUndoneOrders');

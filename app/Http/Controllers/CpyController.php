@@ -18,7 +18,7 @@ class CpyController extends Controller
      * @return 未完成订单的数量、总评论数
      */
     public function getIndexMsg(){
-        $undoneOrderNum=Order::where('status','未完成')->count();
+        $undoneOrderNum=Order::where('status','未付款')->count();
         $evaNum=Evaluation::all()->count();
         return array('undoneOrderNum' => $undoneOrderNum, 'evaNum' => $evaNum);
     }
@@ -27,7 +27,23 @@ class CpyController extends Controller
      * @return 未完成订单信息数组
      */
     public function getUndoneOrders(){
-        return Order::where('status','未完成')->get();
+        return Order::where('status','未付款')->get();
+    }
+
+    public function paiedOrders(){
+        return Order::where('status','已付款')->get();
+    }
+
+    public function deliverOrders(){
+        return Order::where('status','送货中')->get();
+    }
+
+    public function publishOrders(){
+        return Order::where('status','已发货')->get();
+    }
+    
+    public function receiveOrders(){
+        return Order::where('status','已送达')->get();
     }
     /**
      * 获取所有评价
