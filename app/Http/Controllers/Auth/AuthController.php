@@ -118,7 +118,7 @@ class AuthController extends Controller
 	public function addUser(){
 		$name=$_GET['username'];
 		$password=$_GET['password'];
-		$privilege='user';
+		$privilege = $_GET['privilege'];
 		$id = \DB::table('users')
 			->insertGetId(
 				array(

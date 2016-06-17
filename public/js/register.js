@@ -30,8 +30,6 @@ yinjiApp.controller('authController',
 
 		//验证用户名密码
 		$scope.register = function(){
-			console.log('pwd:',$scope.pwd);
-			console.log('repwd',$scope.repwd);
 			if ($scope.username == null){
 				$scope.errMsgColor = "red";//错误消息为红色
 				$scope.errMsg = "请输入用户名";
@@ -44,13 +42,21 @@ yinjiApp.controller('authController',
 			}else if ($scope.pwd != $scope.repwd ) {
 				$scope.errMsgColor = "red";//错误消息为红色
 				$scope.errMsg = "对不起，两次密码输入不一致，请重新输入";
+			}else if ($scope.privilege == ""){
+				$scope.errMsgColor = "red";//错误消息为红色
+				$scope.errMsg="对不起，必须选择用户类型！";
 			}else if($userChecked == true){
+				if ($scope.privilege == "公司职员")
+					$scope.privilege = "staff";
+				else if ($scope.privilege == "普通用户")
+					$scope.privilege = "user";
 				$http({
 					method: 'GET',//注意，这里必须要用GET方法
 					url:'/auth/addUser',
 					params:{
 						'username':$scope.username,
-						'password':$scope.pwd
+						'password':$scope.pwd,
+						'privilege':$scope.privilege,
 					}
 				})
 				.success(function(data) {//返回新增用户的id
