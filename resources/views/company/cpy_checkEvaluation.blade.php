@@ -31,7 +31,8 @@
 							<th>订单信息</th>
 							<th>用户名</th>
 							<th>评价内容</th>
-							<th>操作</th>
+							<th>时间</th>
+							<!--<th>操作</th>-->
 						</tr>
 						</thead>
 						<tbody>
@@ -40,9 +41,10 @@
 							<td ng-bind="x.order_id"></td>
 							<td ng-bind="x.user_name"></td>
 							<td ng-bind="x.content"></td>
-							<td>
+							<td ng-bind="x.created_at"></td>
+							<!--<td>
 								<a href="" ng-click="" data-toggle="modal" data-target="#orderDetailModal">操作</a>
-							</td>
+							</td>-->
 						</tr>
 						</tbody>
 					</table>

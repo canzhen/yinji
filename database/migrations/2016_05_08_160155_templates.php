@@ -19,6 +19,7 @@ class Templates extends Migration
             $table->string('saving_path');//模板存储的路径
             $table->string('description')->nullable();//模板介绍
             $table->timestamps();
+            $table->integer('count')->default(0);//使用次数
         });
 
 

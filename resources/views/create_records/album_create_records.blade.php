@@ -10,6 +10,30 @@
 
 @section('footer')
   @parent 
+  <script src="/js/create_records/jquery.form.js"></script>
+  <script type="text/javascript">
+  	window.onload=function(){
+  		var myDate = new Date();
+
+  		var year=myDate.getFullYear();   //获取完整的年份(4位,1970-????)
+  		var month=myDate.getMonth()+1;      //获取当前月份(0-11,0代表1月)
+  		var day=myDate.getDate();       //获取当前日(1-31)
+  		var hour=myDate.getHours();      //获取当前小时数(0-23)
+  		var minute=myDate.getMinutes();    //获取当前分钟数(0-59)
+
+  		if(month<10){
+  			month='0'+month;
+  		}
+  		for(;minute%5!=0;){
+  			minute--;
+  		}
+  		$("#year").val(year);
+  		$("#month").val(month);
+  		$("#day").val(day);
+  		$("#hour").val(hour);
+  		$("#min").val(minute);
+  	}
+  </script>
 @stop
 
 @section('content')
@@ -101,18 +125,19 @@
 
 @section('dif')
 	<!--$_SESSION['ifLoggedIn'] == 'y'-->
-		@if(isset($_SESSION['ifLoggedIn']))
-			@if($_SESSION['ifLoggedIn'] == 'y')
-					<div class="top-nav">
+		@if(isset($_SESSION['ifLoggedIn'])&&$_SESSION['ifLoggedIn']=='y')	
+			<div class="top-nav">
 						<ul class="res" > 
 							<li class = "topLine"><a href="#">纪念册</a>
-								 <ul>
-									<li class = "spec"><a href="#">查看纪念册</a></li>
-									<li><a href="#">创建纪念册</a></li>
+								<ul>
+									<li class = "spec"><a href="/showAlbums">查看纪念册</a></li>
+									<li><a href="/create_album">创建纪念册</a></li>
 								</ul> 
 							</li>
 							<li class = "topLine"><a href="#">刊印</a>
-								
+								<ul>
+									<li class = "spec"><a href="/orderInfo">查看订单</a></li>
+								</ul> 
 							</li>
 							<li class = "topLine"><a href="#">个人信息</a>
 								<ul>
@@ -132,7 +157,8 @@
 					</div>
 					<a href="/auth/logout" id = "logoffBtn">注销</a>
 				</div>
-			@endif
+
+			
 		@else
 			<div class="top-nav">
 						<ul class="res" > 

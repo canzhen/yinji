@@ -9,7 +9,7 @@
 					<div class="logo">
 						<a href="/"><h1 class="stfyt">印迹</h1></a>
 					</div>
-					
+
 					
 					@section('dif')
 					@show
