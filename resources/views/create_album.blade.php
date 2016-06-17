@@ -248,7 +248,6 @@
 @stop
 
 @section('dif')
-		<!--$_SESSION['ifLoggedIn'] == 'y'-->
 @if(isset($_SESSION['ifLoggedIn'])&&$_SESSION['ifLoggedIn']=='y')
 
 	<div class="top-nav">

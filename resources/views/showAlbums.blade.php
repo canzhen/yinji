@@ -38,15 +38,13 @@
 
 @section('dif')
 	<!--$_SESSION['ifLoggedIn'] == 'y'-->
-		@if(isset($_SESSION['ifLoggedIn'])&&$_SESSION['ifLoggedIn']=='y')
-			
-		
+		@if(isset($_SESSION['ifLoggedIn'])&&$_SESSION['ifLoggedIn']=='y')	
 			<div class="top-nav">
 						<ul class="res" > 
 							<li class = "topLine"><a href="#">纪念册</a>
 								<ul>
-									<li class = "spec"><a href="#">查看纪念册</a></li>
-									<li><a href="#">创建纪念册</a></li>
+									<li class = "spec"><a href="/showAlbums">查看纪念册</a></li>
+									<li><a href="/create_album">创建纪念册</a></li>
 								</ul> 
 							</li>
 							<li class = "topLine"><a href="#">刊印</a>
