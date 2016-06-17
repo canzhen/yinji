@@ -26,7 +26,7 @@
 	    <!-- 左侧页面 -->
 	    <div class="index_left page_left create_l">
 	      <div class="create_text">
-	        <h1>请在这里添加你的纪念册记录:</h1>
+	        <h1>请在这里添加文字:</h1>
             <div class="userTime">
 		        <!-- 自定义时间 -->
 		    	<!-- <input type="button" class="userDefineTime" value="自定义时间:" onclick="ableTime();"/> -->
