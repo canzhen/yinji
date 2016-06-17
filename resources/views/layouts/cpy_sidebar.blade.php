@@ -51,7 +51,7 @@
 						<i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-alerts">
-						<li>
+						<li ng-show="evaHour!='' ||evaMinute!=''||evaSecond!=''">
 							<a href="/cpy_checkEvaluation">
 								<div>
 									<i class="fa fa-comment fa-fw"></i> 新评价
@@ -59,13 +59,13 @@
 										<span ng-show="evaHour != ''">@{{ evaHour }} 小时</span>
 										<span ng-show="evaMinute != ''">@{{ evaMinute }} 分钟</span>
 										<span ng-show="evaSecond != ''">@{{ evaSecond }} 秒</span>
-										前
+										<span>前</span>
 									</span>
 								</div>
 							</a>
 						</li>
-						<li class="divider"></li>
-						<li>
+						<li class="divider" ng-show="evaHour!='' ||evaMinute!=''||evaSecond!=''"></li>
+						<li  ng-show="odHour!='' ||odMinute!=''||odSecond!=''">
 							<a href="/cpy_checkOrder">
 								<div>
 									<i class="fa fa-edit fa-fw"></i> 新订单
@@ -73,7 +73,7 @@
 										<span ng-show="odHour != ''">@{{ odHour }} 小时</span>
 										<span ng-show="odMinute != ''">@{{ odMinute }} 分钟</span>
 										<span ng-show="odSecond != ''">@{{ odSecond }} 秒</span>
-										前
+										<span ng-show="odHour!='' ||odMinute!=''||odSecond!=''">前</span>
 									</span>
 								</div>
 							</a>
