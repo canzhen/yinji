@@ -86,7 +86,7 @@ Route::group(['middleware'=>'web'],function(){
     Route::get('/home', function () {
         return view('home');
     });
-	
+
 	Route::get('/album_create_records', function () {
         return view('create_records\album_create_records');
     });
@@ -104,7 +104,7 @@ Route::group(['middleware'=>'web'],function(){
     Route::get('/orderInfo',function(){
         return view('orderInfo');
     });
-    
+
 });
 
 
@@ -199,7 +199,7 @@ Route::group(['middleware' => ['web']], function () {
 /*
  * 控制器和路由
  */
- 
+
  //绑定RecordController的增加函数和record.blade.php
  Route::post('/album_create_records/add','RecordController@addRecord');
  //Route::post('/album_create_records/add_new','RecordController@addRecordNew');
