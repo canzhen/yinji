@@ -37,38 +37,48 @@ class Orders extends Migration
                 array(
                     'user_name' => 'jp',
                     'album_name' => '我的减肥日记',
-                    'price'=> 43,
-                    'quantity' => 1,
-                    'address' => '山西省阳泉市盂县xx镇！',
+                    'price'=> 38,
+                    'quantity' => 23,
+                    'address' => '山西省阳泉市盂县xx镇',
                     'status'=> '已付款',
                     'comment'=>'可不可以给我弄瘦一点啊！'
-                )
-            )
-        );
-            DB::table('orders')->insert(
-            array(
+                ),
+                array(
+                    'user_name' => 'zcz',
+                    'album_name' => '我的减肥日记',
+                    'price'=> 48,
+                    'quantity' => 32,
+                    'address' => '福建省厦门市思明区厦大海滨7-602',
+                    'status'=> '已付款',
+                    'comment'=>''
+                ),
+                array(
+                    'user_name' => 'yhc',
+                    'album_name' => '我当主席的日子',
+                    'price'=> 55,
+                    'quantity' => 11,
+                    'address' => '辽宁省沈阳市和平区',
+                    'status'=> '送货中',
+                    'comment'=>'我要帅帅哒'
+                ),
                 array(
                     'user_name' => 'jp',
                     'album_name' => '我的减肥日记',
-                    'price'=> 43,
-                    'quantity' => 1,
-                    'address' => '山西省阳泉市盂县xx镇！',
-                    'status'=> '未完成',
-                    'comment'=>'可不可以给我弄瘦一点啊！'
-                )
-            )
-        );
-        DB::table('orders')->insert(
-            array(
+                    'price'=> 33,
+                    'quantity' => 25,
+                    'address' => '山西省阳泉市盂县xx镇',
+                    'status'=> '已送达',
+                    'comment'=>''
+                ),
                 array(
-                    'user_name' => 'jp',
-                    'album_name' => '我的第二次减肥日记',
-                    'price'=> 43,
-                    'quantity' => 1,
-                    'address' => '山西省阳泉市盂县xx镇！',
-                    'status'=> '未完成',
-                    'comment'=>'完全没有瘦下来！'
-                )
+                    'user_name' => 'yhc',
+                    'album_name' => '我当主席的日子',
+                    'price'=> 22,
+                    'quantity' => 12,
+                    'address' => '辽宁省沈阳市和平区',
+                    'status'=> '送货中',
+                    'comment'=>'我要帅帅哒'
+                ),
             )
         );
     }

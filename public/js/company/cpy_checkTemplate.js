@@ -5,12 +5,62 @@
 
 yinjiApp.controller('checkTemplateCtrl',
 	function($scope,$http){
-		$scope.deployedImgs = {};
+		$scope.deployedTemplates = {};
+		$scope.templateDetail={};
+		var tempDetail = {};
 
 		$http.get("/cpy/getTemplates")
 		.success(function(response){
-			$scope.deployedImgs = response;
+			$scope.deployedTemplates = response;
 		});
+
+		$scope.getTemplateDetail = function(x){
+			var templateName =  x.template_name.split(".");
+			$scope.templateDetail.id = x.id;
+			$scope.templateDetail.templateName = templateName[0];
+			$scope.templateDetail.nameSuffix = templateName[1];
+			$scope.templateDetail.description = x.description;
+			tempDetail =  new Array(x,templateName[0],x.description);
+		}
+
+		$scope.editTemplate = function(){
+			if ($scope.templateDetail.templateName==tempDetail[1]&&
+				$scope.templateDetail.description==tempDetail[2]){
+				alert("对不起，您没有进行任何修改！");
+				return;
+			}
+
+
+			$http({
+				method:'GET',
+				url:'/cpy/editTemplate',
+				params:{
+					'id':$scope.templateDetail.id,
+					'template_name':$scope.templateDetail.templateName+"."+$scope.templateDetail.nameSuffix,
+					'description':$scope.templateDetail.description
+				}
+			}).success(function(response){
+				if (response !=0 ){
+					$scope.templateDetail.updated_at = response.toString();
+					updateTemplateData($scope.templateDetail);
+					alert("修改成功！");
+				}else {
+					alert("oops...修改失败...");
+				}
+				$('#templateDetailModal').modal('hide');
+			});
+		}
+
+
+		function updateTemplateData(detail){
+			console.log(detail);
+			var date = new Date();
+			var index = $scope.deployedTemplates.indexOf(tempDetail[0])
+			$scope.deployedTemplates[index].template_name = detail.template_name;
+			$scope.deployedTemplates[index].description = detail.description;
+			$scope.deployedTemplates[index].updated_at = detail.updated_at;
+			tempDetail = {};
+		}
 
 		$scope.$on('ngRepeatFinished', function (ngRepeatFinishedEvent) {
 			//选项卡滑动切换通用
@@ -100,7 +150,7 @@ yinjiApp.controller('checkTemplateCtrl',
 			.success(function(response){
 				if (response==1) {
 					alert("删除成功！");
-					$scope.deployedImgs.splice($scope.deployedImgs.indexOf(x),1);
+					$scope.deployedTemplates.splice($scope.deployedTemplates.indexOf(x),1);
 				}else if (response==0)
 					alert("oops，删除失败...");
 			});

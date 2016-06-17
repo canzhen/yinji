@@ -51,7 +51,7 @@
 						<i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-alerts">
-						<li>
+						<li ng-show="evaHour!='' ||evaMinute!=''||evaSecond!=''">
 							<a href="/cpy_checkEvaluation">
 								<div>
 									<i class="fa fa-comment fa-fw"></i> 新评价
@@ -59,13 +59,13 @@
 										<span ng-show="evaHour != ''">@{{ evaHour }} 小时</span>
 										<span ng-show="evaMinute != ''">@{{ evaMinute }} 分钟</span>
 										<span ng-show="evaSecond != ''">@{{ evaSecond }} 秒</span>
-										前
+										<span>前</span>
 									</span>
 								</div>
 							</a>
 						</li>
-						<li class="divider"></li>
-						<li>
+						<li class="divider" ng-show="evaHour!='' ||evaMinute!=''||evaSecond!=''"></li>
+						<li  ng-show="odHour!='' ||odMinute!=''||odSecond!=''">
 							<a href="/cpy_checkOrder">
 								<div>
 									<i class="fa fa-edit fa-fw"></i> 新订单
@@ -73,7 +73,7 @@
 										<span ng-show="odHour != ''">@{{ odHour }} 小时</span>
 										<span ng-show="odMinute != ''">@{{ odMinute }} 分钟</span>
 										<span ng-show="odSecond != ''">@{{ odSecond }} 秒</span>
-										前
+										<span ng-show="odHour!='' ||odMinute!=''||odSecond!=''">前</span>
 									</span>
 								</div>
 							</a>
@@ -143,10 +143,10 @@
 							<a href="#"><i class="fa fa-edit fa-fw"></i> 订单管理 <span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li>
-									<a href="/cpy_checkOrder">订单查看</a>
+									<a href="/cpy_checkOrder">全部订单</a>
 								</li>
 								<li>
-									<a href="#">订单回收</a>
+									<a href="/cpy_newOrdersManage">未完成订单</a>
 								</li>
 							</ul>
 							<!-- /.nav-second-level -->
@@ -173,26 +173,19 @@
 									<a href="/cpy_info">公司信息</a>
 								</li>
 								<li>
-									<a href="#">销售报表</a>
+									<a href="cpy_salesReport">销量报表</a>
 								</li>
+								<?php
+									if (isset($_SESSION['ifLoggedIn']) &&
+											$_SESSION['ifLoggedIn']=='y'&&
+											$_SESSION['privilege']=='admin'){
+								?>
 								<li>
-									<a href="#">业绩信息 <span class="fa arrow"></span></a>
-									<ul class="nav nav-third-level">
-										<li>
-											<a href="#">业绩信息1</a>
-										</li>
-										<li>
-											<a href="#">业绩信息2</a>
-										</li>
-										<li>
-											<a href="#">业绩信息3</a>
-										</li>
-									</ul>
-									<!-- /.nav-third-level -->
+									<a href="/cpy_staffManagement">员工信息</a>
 								</li>
-								<li>
-									<a href="#">员工信息</a>
-								</li>
+								<?php
+									}
+								?>
 							</ul>
 							<!-- /.nav-second-level -->
 						</li>

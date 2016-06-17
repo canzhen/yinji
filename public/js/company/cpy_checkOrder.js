@@ -72,6 +72,7 @@ yinjiApp.controller('checkOrderCtrl',
 				alert("对不起，单价必须为整数！");
 				return;
 			}
+
 			$http({
 				method:'GET',
 				url:'/cpy/editOrder',
@@ -86,14 +87,12 @@ yinjiApp.controller('checkOrderCtrl',
 			}).success(function(response){
 				if (response == 1){
 					alert("修改成功！");
-					$('#orderDetailModal').modal('hide');
-				}
-				else {
+					updateOrderData($scope.orderDetail);
+				}else {
 					alert("oops...修改失败...");
-					$('#orderDetailModal').modal('hide');
 				}
+				$('#orderDetailModal').modal('hide');
 			});
-			updateOrderData($scope.orderDetail);
 		}
 
 		function updateOrderData(detail){

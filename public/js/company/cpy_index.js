@@ -37,14 +37,17 @@ yinjiApp.controller('cpyIndexController',
 					$scope.deployedOrder[i] = response[i];
 			}
 			//获取首页报表数据
-			var date,orderDate,data=new Object();
+			var date,quantity,orderDate,data=new Object();
 			for (i=0; i<response.length; i++){
 				date = (response[i].order_date.split(" "))[0];
+				quantity = response[i].quantity;
 				if (data[date] == null)
-					data[date] = 1;
-				else
-					data[date]++;
+					data[date] = quantity;
+				else{
+					data[date]+=quantity;
+				}
 			}
+			console.log(data);
 			setMorrisChart(data);
 		});
 

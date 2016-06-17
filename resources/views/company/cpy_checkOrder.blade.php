@@ -1,7 +1,7 @@
 @extends('layouts.cpy_sidebar')
 
 @section('title','查看订单')
-@section('cpy_subtitle','查看订单')
+@section('cpy_subtitle','全部订单')
 
 @section('header')
 	@parent
@@ -33,13 +33,9 @@
 							<th>用户账号</th>
 							<th>发货地址</th>
 							<th>备注信息</th>
-							<?php
-								if (isset($_SESSION['ifLoggedIn']) && $_SESSION['ifLoggedIn'] == "y"){
-							?>
+							@if(isset($_SESSION['ifLoggedIn'])&&$_SESSION['ifLoggedIn']=='y')
 								<th>操作</th>
-							<?php
-								}
-							?>
+							@endif
 						</tr>
 						</thead>
 						<tbody>
@@ -52,16 +48,12 @@
 							<td ng-bind="x.user_name"></td>
 							<td ng-bind="x.address"></td>
 							<td ng-bind="x.comment"></td>
-							<?php
-								if (isset($_SESSION['ifLoggedIn']) && $_SESSION['ifLoggedIn'] == "y"){
-							?>
+							@if(isset($_SESSION['ifLoggedIn'])&&$_SESSION['ifLoggedIn']=='y')
 								<td>
 									<a href="" ng-click="deleteOrder(x)">删除</a>　
 									<a href="" ng-click="getOrderDetail(x)" data-toggle="modal" data-target="#orderDetailModal">修改</a>
 								</td>
-							<?php
-								}
-							?>
+							@endif
 						</tr>
 						</tbody>
 					</table>
@@ -74,7 +66,7 @@
 
 
 		<!--查看订单详情的弹出框-->
-			<div class="modal fade" id="orderDetailModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+		<div class="modal fade" id="orderDetailModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content"><!--modal的内容-->
 					<div class="modal-header">
@@ -142,6 +134,6 @@
 				</div>
 			</div>
 		</div>
-
+		<!--查看订单详情的弹出框结束-->
 	</div>
 @stop

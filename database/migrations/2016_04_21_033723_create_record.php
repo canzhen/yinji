@@ -31,6 +31,6 @@ class CreateRecord extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('record');
     }
 }

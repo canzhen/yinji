@@ -17,9 +17,7 @@
 @section('sidebar-content')
 <div ng-controller="userInfoCtrl" style="padding-left:2%;">
 
-	<?php
-		if (isset($_SESSION['ifLoggedIn']) && $_SESSION['ifLoggedIn'] == "y"){
-	?>
+	@if(isset($_SESSION['ifLoggedIn'])&&$_SESSION['ifLoggedIn']=='y')
 	<form class="form-inline">
 		<span>用户名：@{{ username }}</span>
 		<button class="btn btn-sm" data-toggle="modal" data-target="#editUserNameModal">修改</button>
@@ -122,12 +120,8 @@
 		</div>
 	</div>
 
-	<?php
-		}else{
-	?>
+	@else
 		对不起，您尚未登录，请您<a href="/auth/login">登录</a>后访问此界面！
-	<?php
-		}
-	?>
+	@endif
 </div>
 @stop

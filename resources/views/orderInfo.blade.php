@@ -1,6 +1,6 @@
 @extends('layouts.content')
 
-@section('title','首页')
+@section('title','我的订单')
 
 @section('header')
 	@parent
@@ -20,9 +20,17 @@
 
 <div>
     <div ng-controller="albumController" id = "topDiv">
-        <div class="htmleaf-container">
-            <p id = "albumOrder">我的订单</p>
-            <table class="blue" id = "orderTable">
+
+
+		<div class="htmleaf-container">
+			<div class="row" style="padding-left: 12%;">
+				<div class="col-lg-12">
+					<h3 class="page-header" style="font-size:20px;">
+						我的订单
+					</h3>
+				</div>
+			</div>
+            <table class="gray" id = "orderTable">
                 <thead>
                     <tr>
                         <th id = "firstCol">纪念册名</th>
@@ -67,7 +75,7 @@
 @section('dif')
 	<!--$_SESSION['ifLoggedIn'] == 'y'-->
 		@if(isset($_SESSION['ifLoggedIn']))
-		
+
 			<div class="top-nav">
 						<ul class="res" > 
 							<li class = "topLine"><a href="#">纪念册</a>

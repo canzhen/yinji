@@ -174,6 +174,18 @@ class CpyController extends Controller
     }
 
 
+    public function editTemplate(){
+        $id = $_GET['id'];
+        $template_name = $_GET['template_name'];
+        $description = $_GET['description'];
+        if (Template::where('id',$id)->update(array(
+            'template_name'=>$template_name,
+            'description'=>$description
+        )))
+            return Template::where('id',$id)->pluck('updated_at');
+        else return 0;
+    }
+
     /**
      * 获取所有模板
      * @return 返回所有的模板

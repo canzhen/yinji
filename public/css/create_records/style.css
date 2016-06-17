@@ -1610,7 +1610,6 @@ img
 textarea{
     resize: none;
 }
-<<<<<<< HEAD
 
 .order_text{
     border: 2px solid #CCC;
@@ -1621,7 +1620,7 @@ textarea{
     padding-left: 30px;
 }
 
-img{   
+.order_text img{   
     width:300px;
     height: 200px;
     margin-bottom: 20px;
@@ -1638,5 +1637,3 @@ img{
 .noBorder{
     border: none;
 }
-=======
->>>>>>> 7b00aeca3edc1eddcbc5aa9cd8f3378aefbc89ac

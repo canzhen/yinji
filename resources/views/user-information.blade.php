@@ -16,7 +16,7 @@
 @section('header-right')
 	<img id="img" ng-src="@{{ userImgSrc }}" class="img-circle"
 		 style="width:50px;height:50px;margin-right:20px;">
-	<a href="/">返回首页</a>
+	<a href="/home">返回首页</a>
 @stop
 
 
@@ -33,16 +33,6 @@
 			<a href="#safetyInfo" data-toggle="tab">
 				账户安全
 			</a>
-		</li>
-		<li class="dropdown">
-			<a href="#" id="myTabDrop1" class="dropdown-toggle"
-			   data-toggle="dropdown">Java
-				<b class="caret"></b>
-			</a>
-			<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
-				<li><a href="#jmeter" tabindex="-1" data-toggle="tab">jmeter</a></li>
-				<li><a href="#ejb" tabindex="-1" data-toggle="tab">ejb</a></li>
-			</ul>
 		</li>
 	</ul>
 
