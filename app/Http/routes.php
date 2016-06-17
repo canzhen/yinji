@@ -24,7 +24,7 @@ Route::group(['middleware'=>'web'],function(){
     });
 
     Route::get('/', function () {
-        return view('index');
+        return view('home');
     });
 
 //Route::group(['middleware'=>'auth'], function() {//中间件，拦截，用于身份验证
@@ -176,7 +176,9 @@ Route::get('/addOrder', 'Order\OrderController@addOrder');
 Route::get('/deleteOrder', 'Order\OrderController@deleteOrder');
 Route::get('/displayOrder', 'Order\OrderController@displayOrder');
 Route::get('/assessOrder', 'Order\OrderController@assessOrder');
-
+Route::get('/showAlbums', function() {
+    return view('/showAlbums');
+});
 
 /*
 |--------------------------------------------------------------------------
