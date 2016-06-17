@@ -54,10 +54,10 @@
 @stop
 
 @section('dif')
-	<!--$_SESSION['ifLoggedIn'] == 'y'-->
-		@if(isset($_SESSION['ifLoggedIn'])&&$_SESSION['ifLoggedIn']=='y')
-			
-		
+	<?php
+		if (!session_id()) session_start();
+	?>
+	@if(isset($_SESSION['ifLoggedIn'])&&$_SESSION['ifLoggedIn']=='y')
 			<div class="top-nav">
 						<ul class="res" > 
 							<li class = "topLine"><a href="#">纪念册</a>

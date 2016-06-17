@@ -22,7 +22,7 @@ function deleteAlbum(obj){
 		url: '/deleteAlbum',
 		
 		data: {
-			'albumId': Iid	
+			'albumId': Iid
 		},
 		dataType : "text",
 		success : function(data) {
@@ -90,10 +90,11 @@ yinjiApp.controller('albumController',
 		})
 		.success(function(data) {
 			if(data != null){
-				
+				console.log(data);
 				for(var i = 0; i < data.length; i++){
-					var reg = new RegExp(/\\/,"g"); 
-					var newstr = data[i].saving_path.replace(reg,"/"); 
+					//var reg = new RegExp(/\\/,"g");
+					//var newstr = data[i].saving_path.replace(reg,"/");
+					var newstr = "/images/mo.jpg";
 					var ele = "<div class = 'no-line normal-trigger-area'><i id = 'del" + data[i].id + "' class='fa fa-trash-o fa-lg' onclick = 'deleteAlbum(this.id)'></i><a href = 'javascript:void(0)' id = 'circle" + data[i].id + "' class = 'ec-circle' style = 'background: url(" + newstr + ");'><h3>" + data[i].name + "</h3></a></div>";
 					$("div#albumContainer").append(ele);
 				}
@@ -102,16 +103,17 @@ yinjiApp.controller('albumController',
 					onMouseEnter	: function( el ) {
 						el.addClass('ec-circle-hover');
 					},
-					onMouseLeave	: function( el ) {	
-						el.removeClass('ec-circle-hover');	
+					onMouseLeave	: function( el ) {
+						el.removeClass('ec-circle-hover');
 					},
-					onClick			: function( el ) {	
+					onClick			: function( el ) {
 						var clickId = el[0].id;
 						//获得点击纪念册的id
 						clickId = clickId.substring(6);
 						$scope.gotoAlbum(clickId);
 					}
 				});
+
 			}
 			else{
 				console.log("false");

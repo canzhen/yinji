@@ -17,6 +17,7 @@ class AlbumController extends Controller
         $curName = $_SESSION['userName'];
     	$resSet = \DB::table('albums')->where('user_name', $curName)->get();
     	return $resSet;
+
     }
 
     /**
