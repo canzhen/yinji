@@ -15,7 +15,7 @@
 		session_start();
 	}
 	?>
-	@if(isset($_SESSION['ifLoggedIn'])&&$_SESSION['ifLoggedIn']=='y')
+	@if(isset($_SESSION['ifLoggedIn'])&&$_SESSION['ifLoggedIn']=='y'&&$_SESSION['privilege']=='admin')
 
 	<div class="panel-body" ng-controller="staffManageCtrl">
 		<div class="dataTables_wrapper">
@@ -38,6 +38,10 @@
 		</div>
 	</div>
 	@else
-		对不起，您尚未登录，请您<a href="/auth/login">登录</a>后访问此界面！
+		@if($_SESSION['privilege']!='admin')
+			对不起，您不是公司管理层，无法查看员工信息！
+			@else
+			对不起，您尚未登录，请您<a href="/auth/login">登录</a>后访问此界面！
+			@endif
 	@endif
 @stop

@@ -24,7 +24,8 @@
 				<div class="dataTables_wrapper">
 					<a href="" ng-click="getGoodEva()">好评</a>
 					<a href="" ng-click="getBadEva()">差评</a>
-					<table class="table table-bordered table-hover table-striped" id="dataTable">
+					<table class="table table-bordered table-hover table-striped" id="dataTable"
+						   style="margin-top:10px;">
 						<thead>
 						<tr>
 							<th>评价编码</th>
