@@ -10,10 +10,8 @@
 
 
 @section('sidebar-content')
-
-
 	<?php
-	if (!session_id()) session_start();
+		session_start();
 	?>
 	@if(isset($_SESSION['ifLoggedIn'])&&$_SESSION['ifLoggedIn']=='y')
 
