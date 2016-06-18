@@ -66,24 +66,24 @@
 	@if(isset($_SESSION['ifLoggedIn'])&&$_SESSION['ifLoggedIn']=='y')
 			<div class="top-nav">
 						<ul class="res" > 
-							<li class = "topLine"><a href="#">纪念册</a>
+							<li class = "topLine"><a href="">纪念册</a>
 								<ul>
 									<li class = "spec"><a href="/showAlbums">查看纪念册</a></li>
 									<li><a href="/create_album">创建纪念册</a></li>
 								</ul> 
 							</li>
-							<li class = "topLine"><a href="#">刊印</a>
+							<li class = "topLine"><a href="">刊印</a>
 								<ul>
 									<li class = "spec"><a href="/orderInfo">查看订单</a></li>
 								</ul> 
 							</li>
-							<li class = "topLine"><a href="#">个人信息</a>
+							<li class = "topLine"><a href="">个人信息</a>
 								<ul>
 									<li class = "spec"><a href="/user-information">查看个人信息</a></li>
-									<li><a href="#">管理收货地址</a></li>
+									<li><a href="">管理收货地址</a></li>
 								</ul> 
 							</li>
-							<li class = "topLine"><a href="#">联系我们</a></li>
+							<li class = "topLine"><a href="">联系我们</a></li>
 						</ul>
 					</div>
 				</div>
@@ -100,16 +100,16 @@
 		@else
 			<div class="top-nav">
 						<ul class="res" > 
-							<li class = "topLine"><a href="#">服务</a>
+							<li class = "topLine"><a href="">服务</a>
 								 <ul>
-									<li class = "spec"><a href="#">纪念册</a></li>
-									<li><a href="#">刊印</a></li>
+									<li class = "spec"><a href="">纪念册</a></li>
+									<li><a href="">刊印</a></li>
 								</ul> 
 							</li>
-							<li class = "topLine"><a href="#">关于</a>
+							<li class = "topLine"><a href="">关于</a>
 								
 							</li>
-							<li class = "topLine"><a href="#">联系我们</a></li>
+							<li class = "topLine"><a href="">联系我们</a></li>
 						</ul>
 					</div>
 				</div>
