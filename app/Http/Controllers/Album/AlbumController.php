@@ -42,42 +42,42 @@ class AlbumController extends Controller
         $file = Request::file('fileUpload');
         $lenth = count($file);
 
-        // for ($i = 0; $i < $lenth; $i++) {
-        //     if ($file[$i]!= null) {
-        //         $clientName = $file[$i]->getClientOriginalName();
-        //         $tmpName = $file[$i]->getFileName();
-        //         $realPath = $file[$i]->getRealPath();
-        //         //$extension = $file[$i]->getClientOriginalExtension();
-        //         //$mimeTye = $file[$i]->getMimeType();
-        //         // //$newName = md5(date('ymdhis') . $clientName) . "." . $extension;
-        //         $newName = $clientName;
-        //         $path = $file[$i]->move(public_path() . '\uploads\album', $newName);
-        //         $tempPath = $tempPath . "/uploads/album/" . $newName . ";";
-        //     }
-        // }
+        for ($i = 0; $i < $lenth; $i++) {
+            if ($file[$i]!= null) {
+                $clientName = $file[$i]->getClientOriginalName();
+                $tmpName = $file[$i]->getFileName();
+                $realPath = $file[$i]->getRealPath();
+                //$extension = $file[$i]->getClientOriginalExtension();
+                //$mimeTye = $file[$i]->getMimeType();
+                // //$newName = md5(date('ymdhis') . $clientName) . "." . $extension;
+                $newName = $clientName;
+                $path = $file[$i]->move(public_path() . '\uploads\album', $newName);
+                $tempPath = $tempPath . "/uploads/album/" . $newName . ";";
+            }
+        }
 
-        // //var_dump($file);
-
-        
-
-        // $name = \DB::table('users')->where('id', $uid)->pluck('name');
-
-    	// $eid = \DB::table('albums')
-	    //     ->insertGetId(
-	    //         array(
-	    //             'user_name' => $name[0],
-	    //             'category' => $catNum,
-	    //             'name' => $albumName,     
-	    //             'author_name' => $authorName, 
-	    //             'motto' => $motto,
-	    //             'description' => $description,
-	    //             'saving_path' => $tempPath       
-	    //         )
-	    //     );
+        //var_dump($file);
 
         
-        return "asdfasf";
-    	// return \Redirect::intended('/showAlbums');
+
+        $name = \DB::table('users')->where('id', $uid)->pluck('name');
+
+    	$eid = \DB::table('albums')
+	        ->insertGetId(
+	            array(
+	                'user_name' => $name[0],
+	                'category' => $catNum,
+	                'name' => $albumName,     
+	                'author_name' => $authorName, 
+	                'motto' => $motto,
+	                'description' => $description,
+	                'saving_path' => $tempPath       
+	            )
+	        );
+
+        
+        //return "asdfasf";
+    	return \Redirect::intended('/showAlbums');
 
         //return $file123;
     }
