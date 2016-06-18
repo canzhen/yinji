@@ -58,6 +58,8 @@ img
             box-shadow: 0 0 0 1px rgba(255,255,255,.5);
 
 }
+
+
 /* The circle */
 .ec-circle
 {
@@ -124,7 +126,8 @@ img
 
 }
 .ec-circle-hover h3
-{
+{   
+    color: #000;
     text-shadow: 0 0 1px #fff;
 
 }
