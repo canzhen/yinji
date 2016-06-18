@@ -26,6 +26,10 @@ Route::group(['middleware'=>'web'],function(){
         return view('shb');
     });
 
+    Route::get('/about_us', function () {
+        return view('about_us');
+    });
+
     //在前端获取当前用户名
     Route::get('/getUserName',function(){
         if(!isset($_SESSION)){
@@ -129,10 +133,6 @@ Route::group(['middleware'=>'checkCpyUsers'], function() {//中间件，拦截�
 
     Route::get('/cpy_checkOrder', function () {
         return view('company.cpy_checkOrder');
-    });
-
-    Route::get('/cpy_info', function () {
-        return view('company.cpy_info');
     });
 
     Route::get('/cpy_newOrdersManage', function () {
