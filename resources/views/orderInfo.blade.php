@@ -21,7 +21,6 @@
 <div>
     <div ng-controller="albumController" id = "topDiv">
 
-
 		<div class="htmleaf-container">
 			<div class="row" style="padding-left: 12%;">
 				<div class="col-lg-12">
@@ -30,7 +29,7 @@
 					</h3>
 				</div>
 			</div>
-            <table class="gray" id = "orderTable">
+            <table class="gray" id = "orderTable" ng-show="ifShow">
                 <thead>
                     <tr>
                         <th id = "firstCol">纪念册名</th>
@@ -40,9 +39,10 @@
                     </tr>
                 </thead>
                 <tbody id = "tableBody">
-
                 </tbody>
             </table>
+
+            <p ng-show="!ifShow" style="padding-left: 15%;padding-top:3%;">对不起，您目前尚未有任何订单哦~点击<a href='/create_album'>添加</a>，添加您的第一本纪念册吧！</p>
         </div>
 
         <div class="modal fade" id="orderDetailModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
@@ -57,7 +57,7 @@
                     </div>
                     <div class="modal-body" >
                         <div class="form-inner">
-                            <textarea ng-model="detail" placeholder = "评价一下吧。。。"></textarea>
+                            <textarea ng-model="detail" placeholder = "请评价我们的服务"></textarea>
                             
                         </div>
                     </div>

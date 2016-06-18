@@ -24,7 +24,6 @@ function deleteAlbum(obj){
 
 yinjiApp.controller('albumController',
 	function test($scope,$http,$rootScope){
-		$scope.msg ="";
 		$scope.ifShow = false;
 
 		//展示纪念册
@@ -33,7 +32,7 @@ yinjiApp.controller('albumController',
 			url:'/displayAlbum',
 		})
 		.success(function(data) {
-			if(data != null && data.length != 0){
+			if(data != null && data.length > 0){
 				$scope.ifShow = true;
 				console.log(data);
 				for(var i = 0; i < data.length; i++){
@@ -61,11 +60,8 @@ yinjiApp.controller('albumController',
 
 			}else{
 				console.log("false");
-				$scope.msg =
-					"";
 			}
 		});
-		console.log($scope.ifShow);
 
 		$scope.gotoAlbum = function(num){
 			console.log(num);

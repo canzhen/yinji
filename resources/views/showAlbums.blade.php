@@ -22,8 +22,9 @@
 
 <div>
 	<!-- 查看纪念册 -->
-
 	<div ng-controller="albumController">
+
+
 		<div id = "albumContainer">
 			<p id="albumTitle" ng-show="ifShow">我的纪念册</p>
 		</div>

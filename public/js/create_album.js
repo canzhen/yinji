@@ -98,7 +98,7 @@ yinjiApp.controller('albumController',
 							//$('#imgForm').submit();
 							
 							alert("创建成功!");
-							window.location.href = "/home";
+							window.location.href = "/showAlbums";
 						}
 					});
 			}

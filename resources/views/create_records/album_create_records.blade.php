@@ -1,6 +1,6 @@
 @extends('layouts.content')
 
-@section('title','生成相簿')
+@section('title','添加记录')
 
 @section('header')
   @parent
