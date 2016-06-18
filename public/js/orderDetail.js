@@ -44,6 +44,7 @@ function selectOrderId(objId){
 
 yinjiApp.controller('albumController',
 	function test($scope,$http,$rootScope){
+		$scope.ifShow = false;
 
 		//显示订单
 		$http({
@@ -52,7 +53,8 @@ yinjiApp.controller('albumController',
 		})
 		.success(function(data) {
 			data = data.reverse();
-			if(data != null){
+			if(data != null && data.length > 0){
+				$scope.ifShow = true;
 				console.log(data);
 				for(var i = 0; i < data.length; i++){
 					var ele = "<tr><td>" + data[i].album_name + "</td><td>" + data[i].order_date + "</td><td>" + data[i].status + "</td><td><a onclick = 'deleteOrder(" + data[i].id + ", this)'>删除订单</a>&nbsp;&nbsp;&nbsp;<a data-toggle='modal' data-target='#orderDetailModal' onclick = 'selectOrderId(" + data[i].id + ")'>评价订单</a></td></tr>"

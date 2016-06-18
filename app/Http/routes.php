@@ -13,6 +13,11 @@
 Route::group(['middleware'=>'web'],function(){
     date_default_timezone_set('PRC');//设置默认时区到中国的时区
 
+
+    Route::get('/', function () {
+        return view('home');
+    });
+
     //在前端获取当前用户名
     Route::get('/getUserName',function(){
         if(!isset($_SESSION)){
@@ -29,11 +34,73 @@ Route::group(['middleware'=>'web'],function(){
         return $_SESSION['privilege'];
     });
 
-    Route::get('/', function () {
-        return view('home');
+Route::group(['middleware'=>'auth'], function() {//中间件，拦截，用于登录验证
+
+
+    Route::get('/album_create_records', function () {
+        return view('create_records\album_create_records');
     });
 
-//Route::group(['middleware'=>'auth'], function() {//中间件，拦截，用于身份验证
+    //用户创建纪念册
+    Route::get('/create_album', function () {
+        return view('create_album');
+    });
+
+    //用户个人信息查看与修改界面
+    Route::get('/user-information',function(){
+        return view('user-information');
+    });
+
+    Route::get('/orderInfo',function(){
+        return view('orderInfo');
+    });
+
+
+    /*记录部分的界面*/
+    // 记录简介页面
+    Route::get('/album_index', function () {
+        return view('create_records.album_index');
+    });
+
+    // 记录封面页面
+    Route::get('/album_cover', function () {
+        return view('create_records.album_cover');
+    });
+
+    // 创建记录页面
+    Route::get('/album_create_records', function () {
+        return view('create_records.album_create_records');
+    });
+
+    // 查找记录页面
+    Route::get('/album_query', function () {
+        return view('create_records.album_query');
+    });
+    // 展示记录页面
+    Route::get('/album_show_records', function () {
+        return view('create_records.album_show_records');
+    });
+    // 记录页面
+    Route::get('/album_records', function () {
+        return view('create_records.album_records');
+    });
+
+    /*记录部分的界面结束*/
+
+
+    // 上传文件页面
+    Route::get('/album_fileupload', function () {
+        return view('create_records.album_fileupload');
+    });
+    // 下订单页面
+    Route::get('/album_order', function () {
+        return view('create_records.album_order');
+    });
+
+});
+
+
+Route::group(['middleware'=>'checkCpyUsers'], function() {//中间件，拦截，用于公司身份验证
     /*公司部分*/
     Route::get('/cpy_index', function () {
         return view('company.cpy_index');
@@ -94,8 +161,12 @@ Route::group(['middleware'=>'web'],function(){
     Route::get('/cpy_userInformation', function () {
         return view('company.userInformation');
     });
-    /*公司部分结束*/
-//});
+});
+/*公司部分结束*/
+
+    Route::get('/cpyUserError',function(){
+       return view('errors.cpyUserError');
+    });
 
     Route::get('/getRequest', function () {
         //var files = Request.Files;
@@ -112,25 +183,6 @@ Route::group(['middleware'=>'web'],function(){
     Route::get('/home', function () {
         return view('home');
     });
-
-	Route::get('/album_create_records', function () {
-        return view('create_records\album_create_records');
-    });
-
-    //用户创建纪念册
-    Route::get('/create_album', function () {
-        return view('create_album');
-    });
-
-    //用户个人信息查看与修改界面
-    Route::get('/user-information',function(){
-        return view('user-information');
-    });
-
-    Route::get('/orderInfo',function(){
-        return view('orderInfo');
-    });
-
 });
 
 
@@ -217,7 +269,7 @@ Route::get('/showAlbums', function() {
 
 Route::get('/create_album/uploadImg', 'Album\AlbumController@test');
 
-
+Route::get('/albumInfo', 'Album\AlbumController@albumInfo');
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -247,43 +299,5 @@ Route::group(['middleware' => ['web']], function () {
 
  Route::get('/album_query/select','RecordController@selectRecord');
 
-// 记录的相关操作
-// 记录简介页面
-Route::get('/album_index', function () {
-        return view('create_records.album_index');
-    });
-
-// 记录封面页面
-Route::get('/album_cover', function () {
-        return view('create_records.album_cover');
-    });
-// 创建记录页面
-Route::get('/album_create_records', function () {
-        return view('create_records.album_create_records');
-    });
-
-// 查找记录页面
-Route::get('/album_query', function () {
-        return view('create_records.album_query');
-    });
-// 展示记录页面
-Route::get('/album_show_records', function () {
-        return view('create_records.album_show_records');
-    });
-// 记录页面
-Route::get('/album_records', function () {
-        return view('create_records.album_records');
-    });
-// 上传文件页面
-Route::get('/album_fileupload', function () {
-        return view('create_records.album_fileupload');
-    });
-// 下订单页面
-Route::get('/album_order', function () {
-        return view('create_records.album_order');
-    });
 
 Route::get('/getTemplates','Order\OrderController@getTemplates');
-// Route::get('/getTemplates', function () {
-//         return "succ";
-//     });

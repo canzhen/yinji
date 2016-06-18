@@ -62,6 +62,13 @@ yinjiApp.controller('albumController',
 		//创建纪念册
 		$scope.createAlbum = function () {
 			//输入验证通过
+			// var fff = $("form");
+			// console.log(fff);
+			//var ff = document.getElementById("doc1").files;
+			//console.log(ff);
+			//document.getElementById("subBtn").submit();
+			//$("imgForm").submit();
+			
 			
 			if ($scope.checkAlbumInput()) {
 				if ($scope.nameOfAuthor == null || $scope.nameOfAuthor == "")
@@ -72,7 +79,7 @@ yinjiApp.controller('albumController',
 
 				//document.getElementById("imgForm").submit();
 				//$('#imgForm').submit();
-				$('#imgForm').submit();
+				//$('#imgForm').submit();
 
 				$http({
 					method: 'GET',//注意，这里必须要用GET方法
@@ -90,8 +97,8 @@ yinjiApp.controller('albumController',
 							console.log(data);
 							//$('#imgForm').submit();
 							
-							//alert("创建成功!");
-							//window.location.href = "/home";
+							alert("创建成功!");
+							window.location.href = "/showAlbums";
 						}
 					});
 			}
@@ -362,6 +369,7 @@ function setImagePreview(avalue) {
 
 //下面用于图片上传预览功能
 function setImagePreview1(avalue) {
+	
 	var docObj = document.getElementById("doc1");
 
 	var imgObjPreview = document.getElementById("preview1");
@@ -396,3 +404,7 @@ function setImagePreview1(avalue) {
 	return true;
 }
 
+function change2event(obj){
+	setImagePreview1();
+	getvl(obj);
+}

@@ -14,7 +14,6 @@ function deleteAlbum(obj){
 			if(data != null){
 				console.log(data);
 				alert("删除成功!");
-				window.location.href = "/home";
 			}
 		},
 		error : function() {
@@ -25,6 +24,7 @@ function deleteAlbum(obj){
 
 yinjiApp.controller('albumController',
 	function test($scope,$http,$rootScope){
+		$scope.ifShow = false;
 
 		//展示纪念册
 		$http({
@@ -32,7 +32,8 @@ yinjiApp.controller('albumController',
 			url:'/displayAlbum',
 		})
 		.success(function(data) {
-			if(data != null){
+			if(data != null && data.length > 0){
+				$scope.ifShow = true;
 				console.log(data);
 				for(var i = 0; i < data.length; i++){
 					var reg = new RegExp(/\\/,"g");
@@ -57,10 +58,8 @@ yinjiApp.controller('albumController',
 					}
 				});
 
-			}
-			else{
+			}else{
 				console.log("false");
-				
 			}
 		});
 
@@ -75,7 +74,7 @@ yinjiApp.controller('albumController',
 			})
 			.success(function(data){
 				if(data != null){
-					window.location.href = '/album_cover';
+					window.location.href = '/album_index';
 				}
 			});
 		};

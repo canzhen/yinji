@@ -8,10 +8,14 @@ yinjiApp.controller('checkTemplateCtrl',
 		$scope.deployedTemplates = {};
 		$scope.templateDetail={};
 		var tempDetail = {};
+		$scope.ifShow = false;
 
 		$http.get("/cpy/getTemplates")
 		.success(function(response){
-			$scope.deployedTemplates = response;
+			if (response != null && response.length > 0){
+				$scope.ifShow = true;
+				$scope.deployedTemplates = response;
+			}
 		});
 
 		$scope.getTemplateDetail = function(x){
@@ -36,7 +40,8 @@ yinjiApp.controller('checkTemplateCtrl',
 				url:'/cpy/editTemplate',
 				params:{
 					'id':$scope.templateDetail.id,
-					'template_name':$scope.templateDetail.templateName+"."+$scope.templateDetail.nameSuffix,
+					'template_name':$scope.templateDetail.templateName+"."
+									+$scope.templateDetail.nameSuffix,
 					'description':$scope.templateDetail.description
 				}
 			}).success(function(response){

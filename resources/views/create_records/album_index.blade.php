@@ -1,6 +1,6 @@
 @extends('layouts.content')
 
-@section('title','生成相簿')
+@section('title','我的纪念册')
 
 @section('header')
   @parent
@@ -9,9 +9,11 @@
 
 @section('footer')
   @parent 
+	<script src="/js/create_records/showInfo.js"></script>
 @stop
 
 @section('content')
+<div ng-controller="albumController">
 <!-- 页面上面的背景 -->
   <div class="bg_top">   
     <!-- 右上角的图案 -->
@@ -22,8 +24,8 @@
   <div class="home_menu"><a href="/album_cover"></a></div>
     <div class="index_left page_left about_l">
       <div class="about_text">
-        <h1>纪念册的名字</h1>
-        <P>这里用来写用户对该纪念册的简介</P>
+        <h1 id = "albumName"></h1>
+        <P id = "albumDes"></P>
       </div>
     </div>
     <!-- 纪念册简介右面图片 -->
@@ -38,74 +40,8 @@
       </ul>
     </div>
   </div>
+	</div>
   <!-- 书的下半部分的背景 -->
   <div class="page_bot"></div>
 @stop
 
-@section('dif')
-
-	<?php
-	if(!isset($_SESSION)){
-		session_start();
-	}
-	?>
-	@if(isset($_SESSION['ifLoggedIn'])&&$_SESSION['ifLoggedIn']=='y')
-			<div class="top-nav">
-						<ul class="res" > 
-							<li class = "topLine"><a href="#">纪念册</a>
-								<ul>
-									<li class = "spec"><a href="/showAlbums">查看纪念册</a></li>
-									<li><a href="/create_album">创建纪念册</a></li>
-								</ul> 
-							</li>
-							<li class = "topLine"><a href="#">刊印</a>
-								<ul>
-									<li class = "spec"><a href="/orderInfo">查看订单</a></li>
-								</ul> 
-							</li>
-							<li class = "topLine"><a href="#">个人信息</a>
-								<ul>
-									<li class = "spec"><a href="/user-information">查看个人信息</a></li>
-									<li><a href="#">管理收货地址</a></li>
-								</ul> 
-							</li>
-							<li class = "topLine"><a href="#">联系我们</a></li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="header-right">
-				    <div class="search">
-						<input  type="text" value="查找" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '查找';}"/>
-						<input type="submit"  value=""/>		
-					</div>
-					<a href="/auth/logout" id = "logoffBtn">注销</a>
-				</div>
-
-			
-		@else
-			<div class="top-nav">
-						<ul class="res" > 
-							<li class = "topLine"><a href="#">服务</a>
-								 <ul>
-									<li class = "spec"><a href="#">纪念册</a></li>
-									<li><a href="#">刊印</a></li>
-								</ul> 
-							</li>
-							<li class = "topLine"><a href="#">关于</a>
-								
-							</li>
-							<li class = "topLine"><a href="#">联系我们</a></li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="header-right">
-				    <div class="search">
-						<input type="text" value="查找" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '查找';}"/>
-						<input type="submit"  value=""/>		
-					</div>
-					<a href="login" id = "loginBtn">登录</a>
-				</div>
-			@endif
-	@stop
