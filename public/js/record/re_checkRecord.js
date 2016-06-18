@@ -5,7 +5,9 @@ yinjiApp.controller('checkRecordCtrl',
     function($scope,$http){
         $scope.records = {};
         $scope.recordDetail = {};
+        $scope.ifShow = false;
         var tempDetail = {};
+
         //分页
         $scope.start        = 0;
         $scope.showLimit    = 10;
@@ -14,16 +16,18 @@ yinjiApp.controller('checkRecordCtrl',
         $http.get("/album_create_records/select")
         .success(function (response)
         {
-            $scope.records = response;
-
-            for(var i=0;i<$scope.records.length;i++){
-                var paths=$scope.records[i].picPath;
-                var tmparrPath=paths.split(';');
-                var arrPath=new Array(tmparrPath.length-1);
-                for(var j=0;j<(tmparrPath.length-1);j++){
-                    arrPath[j]=tmparrPath[j];
+            if (response !=null && response.length > 0){
+                $scope.ifShow = true;
+                $scope.records = response
+                for(var i=0;i<$scope.records.length;i++){
+                    var paths=$scope.records[i].picPath;
+                    var tmparrPath=paths.split(';');
+                    var arrPath=new Array(tmparrPath.length-1);
+                    for(var j=0;j<(tmparrPath.length-1);j++){
+                        arrPath[j]=tmparrPath[j];
+                    }
+                    $scope.records[i].arr_path=arrPath;
                 }
-                $scope.records[i].arr_path=arrPath;
             }
         });
 
