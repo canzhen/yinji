@@ -32,7 +32,7 @@ class Authenticate
         if (isset($_SESSION['ifLoggedIn']) && $_SESSION['ifLoggedIn']=='y'){
             return $next($request);
         }else{
-            return response('对不起，请先<a href="/login">登录</a>以后再操作。', 401);
+            return response('对不起，请先<a href="/login">登录</a>以后再访问该页面。', 401);
         }
 
     }
