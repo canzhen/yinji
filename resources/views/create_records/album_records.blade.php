@@ -19,6 +19,9 @@
 			  <p class="datep" ng-bind="x.showTime"></p>
 			  <p class="diary" ng-bind="x.description"></p>
 			  <p name="comPath"></p>
+			  <p ng-show="!ifShow" style="padding-left: 15%;padding-top:3%;">
+				  您目前还没有任何记录哦，单击<a href="/album_create_records">添加</a>，添加您的第一条记录吧~
+			  </p>
 			  <div class="divpic">
 				  <div ng-repeat="y in x.arr_path">
 					  <img class="mypic" src="@{{y}}" name="imgview" onload="DrawImage(this);"/>
@@ -30,7 +33,9 @@
 				  <input  class="button button-pill button-tiny" type="submit" value="删除" ng-click="deleteRecord(x)">
 			  </div>
 			  <br/>
+
 		  </div>
+
 
 
 		  <div class="modal fade" id="recordDetailModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
