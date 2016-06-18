@@ -148,6 +148,11 @@ Route::get('/cpy/deleteTemplate','CpyController@deleteTemplate');
 Route::get('/cpy/getIndexMsg','CpyController@getIndexMsg');
 Route::get('/cpy/getUndoneOrders','CpyController@getUndoneOrders');
 
+Route::get('/cpy/receivedOrders','CpyController@receiveOrders');
+Route::get('/cpy/publishOrders','CpyController@publishOrders');
+Route::get('/cpy/paidOrders','CpyController@paiOrders');
+Route::get('/cpy/deliverOrders','CpyController@deliverOrders');
+
 Route::get('/cpy/getEvaluations','CpyController@getEvaluations');
 Route::get('/cpy/getGoodEva','CpyController@getGoodEva');
 Route::get('/cpy/getBadEva','CpyController@getBadEva');
