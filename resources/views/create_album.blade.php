@@ -195,11 +195,9 @@
                     	<p>快来为你的纪念册写简介吧：</p>
                     </div>
                     <div class="book-introduction-photo">
-                    	<P>
-                    		编辑本书的简介照片：
-                    	</P>
+                    	
 
-                    	<!-- 上传简介照片 -->
+                    	<!-- 上传简介照片 
 						<table width="100%" border="0" cellspacing="0" cellpadding="0">
 								<tbody>
 									<tr>
@@ -217,7 +215,7 @@
 					                </td>
 									</tr>
 								</tbody>
-						</table>
+						</table>-->
 						<!-- 填写简介 -->
 	                        <div id="book-introduction_description">
 	                            <p>填写纪念册内容简介:</p>

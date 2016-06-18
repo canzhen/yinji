@@ -39,7 +39,7 @@ a:active {text-decoration:none;}
     color: #000;
     margin: 0em;
 }
-
+ 
 .logo a:hover {
 	text-decoration:none;
 }
@@ -183,8 +183,9 @@ span.ser-img {
 .top-nav {
 	display: inline-block;
 	height: 29px;
-	width: 660px;
+	width: 650px;
 	font-family: "微软雅黑";
+
 }
 
 .top-nav  ul {
@@ -208,9 +209,10 @@ span.ser-img {
 }
 
 .res {
-	width:620px; 
+	width:660px; 
 	height:36px; 
 	margin:0 20px;
+
 }
 
 .res li{

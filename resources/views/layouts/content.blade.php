@@ -10,7 +10,7 @@
 						<a href="/"><h1 class="stfyt">印迹</h1></a>
 					</div>
 
-					
+					 
 					@section('dif')
 					<?php
 						if(!isset($_SESSION)){
