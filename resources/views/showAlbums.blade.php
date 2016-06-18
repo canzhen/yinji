@@ -37,7 +37,6 @@
 
 
 @section('dif')
-	<!--$_SESSION['ifLoggedIn'] == 'y'-->
 	<?php
 	if(!isset($_SESSION)){
 		session_start();
@@ -73,6 +72,15 @@
 						<input  type="text" value="查找" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '查找';}"/>
 						<input type="submit"  value=""/>		
 					</div>
+					
+					<label>欢迎您					
+						<?php 
+							if(!isset($_SESSION)){
+								session_start();
+							}
+							echo $_SESSION['userName'];
+						?>
+					~</label>&nbsp;&nbsp;&nbsp;
 					<a href="/auth/logout" id = "logoffBtn">注销</a>
 				</div>
 

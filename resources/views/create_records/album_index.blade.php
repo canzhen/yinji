@@ -9,9 +9,11 @@
 
 @section('footer')
   @parent 
+	<script src="/js/create_records/showInfo.js"></script>
 @stop
 
 @section('content')
+<div ng-controller="albumController">
 <!-- 页面上面的背景 -->
   <div class="bg_top">   
     <!-- 右上角的图案 -->
@@ -22,8 +24,8 @@
   <div class="home_menu"><a href="/album_cover"></a></div>
     <div class="index_left page_left about_l">
       <div class="about_text">
-        <h1>纪念册的名字</h1>
-        <P>这里用来写用户对该纪念册的简介</P>
+        <h1 id = "albumName"></h1>
+        <P id = "albumDes"></P>
       </div>
     </div>
     <!-- 纪念册简介右面图片 -->
@@ -38,12 +40,12 @@
       </ul>
     </div>
   </div>
+	</div>
   <!-- 书的下半部分的背景 -->
   <div class="page_bot"></div>
 @stop
 
 @section('dif')
-
 	<?php
 	if(!isset($_SESSION)){
 		session_start();
@@ -79,6 +81,15 @@
 						<input  type="text" value="查找" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '查找';}"/>
 						<input type="submit"  value=""/>		
 					</div>
+					
+					<label>欢迎您					
+						<?php 
+							if(!isset($_SESSION)){
+								session_start();
+							}
+							echo $_SESSION['userName'];
+						?>
+					~</label>&nbsp;&nbsp;&nbsp;
 					<a href="/auth/logout" id = "logoffBtn">注销</a>
 				</div>
 

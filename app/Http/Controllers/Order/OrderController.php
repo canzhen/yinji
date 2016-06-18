@@ -78,7 +78,11 @@ class OrderController extends Controller
 	}
 
 	public function displayOrder(){
-		$resSet = \DB::table('orders')->get();
+		if(!isset($_SESSION)){
+			session_start();
+		}
+		$curName = $_SESSION['userName'];
+		$resSet = \DB::table('orders')->where('user_name', $curName)->get();
     	return $resSet;
 	}
 

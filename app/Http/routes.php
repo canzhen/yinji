@@ -212,7 +212,7 @@ Route::get('/showAlbums', function() {
 
 Route::get('/create_album/uploadImg', 'Album\AlbumController@test');
 
-
+Route::get('/albumInfo', 'Album\AlbumController@albumInfo');
 /*
 |--------------------------------------------------------------------------
 | Application Routes
