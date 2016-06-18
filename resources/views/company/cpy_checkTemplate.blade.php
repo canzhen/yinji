@@ -43,7 +43,7 @@
 					@endif
 				</div>
 				<div class="lb-overlay" id="@{{ x.template_name }}">
-					<a href="#" class="lb-close">x Close</a>
+					<a href="" class="lb-close">x Close</a>
 					<img src="@{{ x.saving_path }}" alt="image01" />
 					<div>
 						<h3>@{{ x.template_name }} <span>/@{{ x.author_name }}/</h3>
