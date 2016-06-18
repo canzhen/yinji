@@ -10,6 +10,11 @@ function checkSubmit(){
 yinjiApp.controller('albumController',
 	function createAlbumController($scope, $http, $rootScope) {
 
+		$scope.success = function(){
+			alert("提交成功！");
+		}
+		console.log("测试");
+
 		// $http({
 		// 	method: 'GET',//注意，这里必须要用GET方法
 		// 	url:'/getCurAlbum',
