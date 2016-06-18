@@ -14,6 +14,7 @@ function deleteAlbum(obj){
 			if(data != null){
 				console.log(data);
 				alert("删除成功!");
+				window.location.href = '/';
 			}
 		},
 		error : function() {
@@ -39,8 +40,12 @@ yinjiApp.controller('albumController',
 					var reg = new RegExp(/\\/,"g");
 					var newstr = data[i].saving_path.replace(reg,"/");
 					//var newstr = "/images/mo.jpg";
+					//console.log(newstr.length-1);
+					
+					newstr = newstr.substring(0,newstr.length-1);
 					var ele = "<div class = 'no-line normal-trigger-area'><i id = 'del" + data[i].id + "' class='fa fa-trash-o fa-lg' onclick = 'deleteAlbum(this.id)'></i><a href = 'javascript:void(0)' id = 'circle" + data[i].id + "' class = 'ec-circle' style = 'background: url(" + newstr + ");'><h3>" + data[i].name + "</h3></a></div>";
 					$("div#albumContainer").append(ele);
+					//console.log(newstr);
 				}
 
 				$('.ec-circle').circlemouse({

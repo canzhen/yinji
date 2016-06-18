@@ -16,6 +16,8 @@ yinjiApp.controller('albumController',
 		// })
 		// .success(function(data){
 		// 	if(data != null){
+		// 	
+		// 	
 		// 		console.log(data);
 		// 		//alert("success");
 		// 		curAlbumId = data;
@@ -207,6 +209,7 @@ function changecolor(obj, num) {
 	}
 	document.getElementById(obj).className = 'hasBorder';
 	imgCategory = num;
+	document.getElementById("hiddenText").value = imgCategory;
 }
 
 

@@ -14,7 +14,8 @@
 	@parent
 	<script src="/js/index_home/modernizr.custom.72835.js"></script>
 	<script src="/js/index_home/jquery.circlemouse.js"></script>
-	<script src = "/js/index_home/home.js"></script>
+	<script src = "/js/album.js"></script>
+	
 @stop
 
 @section('content')

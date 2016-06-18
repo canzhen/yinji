@@ -120,6 +120,7 @@
             	<img class = "noBorder" id = "img6_other" src="/images/create_album/other.jpg" alt="其他" 
             		onclick="changecolor(this.id,6)">
             </div>
+            <input type = "text" name = "catNum" id = "hiddenText" hidden>
         </div>       
     </div><!-- 纪念册风格结束 -->
 

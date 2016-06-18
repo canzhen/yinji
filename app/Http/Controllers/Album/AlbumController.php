@@ -20,7 +20,6 @@ class AlbumController extends Controller
         $curName = $_SESSION['userName'];
     	$resSet = \DB::table('albums')->where('user_name', $curName)->get();
     	return $resSet;
-
     }
 
     /**
@@ -44,36 +43,51 @@ class AlbumController extends Controller
 
         $uname = $_SESSION['userName'];
 
-        $category = $_POST['aName'];
+        ///$category = $_POST['aName'];
         $albumName = $_POST['aName'];
         $authorName = $_POST['aAuthor'];
         $motto = $_POST['aCover'];
         $description = $_POST['aDesc'];
+        $catNum = $_POST['catNum'];
 
-        $fff = Request::file('fileUpload');
-        $lenth = count($fff);
+        $tempPath="";
+        $file = Request::file('fileUpload');
+        $lenth = count($file);
 
+        for ($i = 0; $i < $lenth; $i++) {
+            if ($file[$i]!= null) {
+                $clientName = $file[$i]->getClientOriginalName();
+                $tmpName = $file[$i]->getFileName();
+                $realPath = $file[$i]->getRealPath();
+                $extension = $file[$i]->getClientOriginalExtension();
+                $mimeTye = $file[$i]->getMimeType();
+                //$newName = md5(date('ymdhis') . $clientName) . "." . $extension;
+                $newName = $clientName;
+                $path = $file[$i]->move(public_path() . '\uploads\album', $newName);
+                $tempPath = $tempPath . "/uploads/album/" . $newName . ";";
+            }
+        }
 
-        print $albumName . "#" . $authorName . "#" .$motto . "#" . $description.$lenth;
-        var_dump($fff) ;
+        //var_dump($catNum);
 
         
 
-        //$name = \DB::table('users')->where('id', $uid)->pluck('name');
+        $name = \DB::table('users')->where('id', $uid)->pluck('name');
 
-    	// $eid = \DB::table('albums')
-	    //     ->insertGetId(
-	    //         array(
-	    //             'user_name' => $name[0],
-	    //             'category' => $category,
-	    //             'name' => $albumName,     
-	    //             'author_name' => $authorName, 
-	    //             'motto' => $motto,
-	    //             'description' => $description,
-	    //             'saving_path' => "\images\mo.jpg"       
-	    //         )
-	    //     );
-    	// return $eid;
+    	$eid = \DB::table('albums')
+	        ->insertGetId(
+	            array(
+	                'user_name' => $name[0],
+	                'category' => $catNum,
+	                'name' => $albumName,     
+	                'author_name' => $authorName, 
+	                'motto' => $motto,
+	                'description' => $description,
+	                'saving_path' => $tempPath       
+	            )
+	        );
+    	return \Redirect::intended('/');
+
         //return $file123;
     }
 
