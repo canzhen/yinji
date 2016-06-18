@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Be right back.</title>
+        <title>无权访问</title>
 
         
 
@@ -40,7 +40,9 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Be right back.</div>
+                <div class="title">
+                    对不起，您非企业用户，<br/>无权访问此网页
+                </div>
             </div>
         </div>
     </body>
