@@ -38,7 +38,6 @@ Route::group(['middleware'=>'web'],function(){
 
 Route::group(['middleware'=>'auth'], function() {//中间件，拦截，用于登录验证
 
-
     Route::get('/album_create_records', function () {
         return view('create_records\album_create_records');
     });

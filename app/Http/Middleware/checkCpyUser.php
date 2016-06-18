@@ -19,7 +19,8 @@ class checkCpyUser
         if(!isset($_SESSION)){
             session_start();
         }
-        if ($_SESSION['privilege'] != "staff" && $_SESSION['privilege'] != "admin"){
+        if (isset($_SESSION['privilege']) && $_SESSION['privilege'] != "staff"
+            && $_SESSION['privilege'] != "admin"){
             return response('对不起，请您不是公司用户，无法访问公司页面。', 401);
         }
         else
