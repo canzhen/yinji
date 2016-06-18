@@ -48,7 +48,8 @@ a:active {text-decoration:none;}
 	padding: 5px 0px 5px 0px;
 }
 .header-right {
-
+	
+	margin-top: 4px;
 	float: right;
 	width: 380px;
 	text-align: center;
@@ -66,6 +67,9 @@ span.menu{
 	display: inline-block;
 	margin-right: 20px;
 }
+
+
+
 .search input[type="text"] {
 	border: none;
 	background: none;
@@ -186,7 +190,7 @@ span.ser-img {
 	height: 29px;
 	width: 650px;
 	font-family: "微软雅黑";
-
+	
 }
 
 .top-nav  ul {

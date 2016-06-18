@@ -72,7 +72,7 @@
 
 				<div class="header-right">
 				    <div class="search">
-						<input type="text" value="查找" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '查找';}"/>
+						<input id = "searchFor" type="text" value="查找" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '查找';}"/>
 						<input type="submit"  value=""/>		
 					</div>
 					<a href="login" id = "loginBtn">登录</a>
