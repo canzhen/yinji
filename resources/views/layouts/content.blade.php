@@ -37,7 +37,7 @@
 									<li class = "spec"><a href="/user-information">查看个人信息</a></li>
 								</ul>
 							</li>
-							<li class = "topLine"><a href="/cpy_info">关于</a></li>
+							<li class = "topLine"><a href="/about_us">关于</a></li>
 							<li class = "topLine"><a href="/contact_us">联系我们</a></li>
 						</ul>
 					</div>
@@ -70,7 +70,7 @@
 									<li><a href="">刊印</a></li>
 								</ul> 
 							</li>
-							<li class = "topLine"><a href="/cpy_info">关于</a></li>
+							<li class = "topLine"><a href="/about_us">关于</a></li>
 							<li class = "topLine"><a href="/contact_us">联系我们</a></li>
 						</ul>
 					</div>

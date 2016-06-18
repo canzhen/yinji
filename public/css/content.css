@@ -166,7 +166,7 @@ span.ser-img {
 /*--footer start here--*/
 .footer {
 	position: fixed;
-	bottom: 0px;
+	bottom: 2%;
 	width: 100%;
 	z-index: 1000;
 	background-color: #fff;
