@@ -1753,10 +1753,11 @@ p.profile-description
     /*border: 1px solid #000;*/
     width: 600px;
     height: 350px;
-    margin-top: -320px;
-    margin-left: 400px;
+    margin-top: 0px;
+    margin-left: 200px;
     padding-top: 8%;
     padding-left: 8%;
+ 
     /*  left: 400px;
   right: 400px;*/
 }
@@ -1785,7 +1786,7 @@ p.profile-description
     /*border: 1px solid #000;*/
     /*margin-left: 890px;*/
     margin-top: 20px;
-    margin-left: 315%;
+    margin-left: 255%;
 }
 
 /*
