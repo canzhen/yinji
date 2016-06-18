@@ -72,7 +72,7 @@
 							<li class = "topLine"><a href="">关于</a>
 								
 							</li>
-							<li class = "topLine"><a href="">联系我们</a></li>
+							<li class = "topLine"><a href="/contact_us">联系我们</a></li>
 						</ul>
 					</div>
 				</div>
