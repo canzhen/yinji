@@ -11,8 +11,13 @@ yinjiApp.controller('deliverOrderCtrl',
 		$http.get("/cpy/deliverOrders")
 		.success(function (response)
 		{
-			response.reverse();
-			$scope.deployedOrder = response;
+			if(response==""){
+				document.getElementById('table_content').innerHTML='对不起当前没有送货中订单。';
+			}
+			else{
+				response.reverse();
+				$scope.deployedOrder = response;
+			}
 		});
 
 

@@ -27,23 +27,23 @@ class CpyController extends Controller
      * @return 未完成订单信息数组
      */
     public function getUndoneOrders(){
-        return Order::where('status','未付款')->get();
+        return Order::where('status','未付款')->orderBy('order_date', 'asc')->get();
     }
 
     public function paiOrders(){
-        return Order::where('status','已付款')->get();
+        return Order::where('status','已付款')->orderBy('order_date', 'asc')->get();
     }
 
     public function deliverOrders(){
-        return Order::where('status','送货中')->get();
+        return Order::where('status','送货中')->orderBy('order_date', 'asc')->get();
     }
 
     public function publishOrders(){
-        return Order::where('status','已发货')->get();
+        return Order::where('status','已发货')->orderBy('order_date', 'asc')->get();
     }
     
     public function receiveOrders(){
-        return Order::where('status','已送达')->get();
+        return Order::where('status','已送达')->orderBy('order_date', 'asc')->get();
     }
     /**
      * 获取所有评价

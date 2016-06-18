@@ -1,7 +1,7 @@
 @extends('layouts.cpy_sidebar')
 
 @section('title','查看订单')
-@section('cpy_subtitle','全部订单')
+@section('cpy_subtitle','已发货订单')
 
 @section('header')
 	@parent
@@ -24,11 +24,11 @@
 		}
 		?>
 		<div class="panel panel-default">
-			<div class="panel-heading">
+			<div class="panel-heading" >
 				<h3 class="panel-title"><i class="fa fa-money fa-fw"></i>订单列表</h3>
 			</div>
 			<div class="panel-body">
-				<div class="dataTables_wrapper">
+				<div class="dataTables_wrapper" id="table_content">
 					<table class="table table-bordered table-hover table-striped" id="dataTable">
 						<thead>
 						<tr>
