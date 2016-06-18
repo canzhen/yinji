@@ -18,6 +18,14 @@ Route::group(['middleware'=>'web'],function(){
         return view('home');
     });
 
+    Route::get('/hfl', function () {
+        return "洪凡凌你在干嘛呢？";
+    });
+
+    Route::get('/shb', function () {
+        return view('shb');
+    });
+
     //在前端获取当前用户名
     Route::get('/getUserName',function(){
         if(!isset($_SESSION)){
