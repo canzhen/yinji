@@ -19,11 +19,13 @@ class checkCpyUser
         if(!isset($_SESSION)){
             session_start();
         }
-        if (isset($_SESSION['privilege']) && $_SESSION['privilege'] != "staff"
-            && $_SESSION['privilege'] != "admin"){
+        if (!isset($_SESSION['privilege'])){
+            return response('对不起，请先<a href="/login">登录</a>再访问本网页。', 401);
+        }
+        if (!($_SESSION['privilege'] == "staff" ||  $_SESSION['privilege'] == "admin")){
             return response('对不起，请您不是公司用户，无法访问公司页面。', 401);
         }
-        else
-            return $next($request);
+        
+        return $next($request);
     }
 }
