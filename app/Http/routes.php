@@ -244,7 +244,7 @@ Route::get('/usr/getCommonUsers','UserController@getCommonUsers');
 // 展示纪念册
 Route::get('/displayAlbum', 'Album\AlbumController@displayAlbum');
 // 添加纪念册
-Route::get('/addAlbum', 'Album\AlbumController@addAlbum');
+Route::post('/addAlbum', 'Album\AlbumController@addAlbum');
 // 获得当前纪念册的信息
 Route::get('/getCurAlbumInfo', 'Album\AlbumController@getCurAlbumInfo');
 //获得当前纪念册ID

@@ -44,19 +44,18 @@ class AlbumController extends Controller
 
         $uname = $_SESSION['userName'];
 
-        $category = $_GET['aName'];
-        $albumName = $_GET['aName'];
-        $authorName = $_GET['aAuthor'];
-        $motto = $_GET['aCover'];
-        $description = $_GET['aDesc'];
-        $file1 = $_GET['fileUpload'];
+        $category = $_POST['aName'];
+        $albumName = $_POST['aName'];
+        $authorName = $_POST['aAuthor'];
+        $motto = $_POST['aCover'];
+        $description = $_POST['aDesc'];
 
         $fff = Request::file('fileUpload');
         $lenth = count($fff);
 
 
-        print $albumName . "#" . $authorName . "#" .$motto . "#" . $description;
-        print $fff;
+        print $albumName . "#" . $authorName . "#" .$motto . "#" . $description.$lenth;
+        var_dump($fff) ;
 
         
 
