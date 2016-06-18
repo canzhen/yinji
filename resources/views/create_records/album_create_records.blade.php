@@ -35,7 +35,7 @@
   	}
   </script>
 @stop
-
+ 
 @section('content')
   <!-- 页面上面的背景 -->
     <div class="bg_top">

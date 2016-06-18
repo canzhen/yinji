@@ -79,7 +79,7 @@ a
 /*轮播插件*/
 .pictureSlide
 {
-    overflow: hidden;
+    
 
     width: 100%;
     height: 540px;
@@ -249,4 +249,8 @@ textarea{
 #topDiv{
 
     margin-top: 100px;
+}
+
+.carousel-inner img{
+    
 }

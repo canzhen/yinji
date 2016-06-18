@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class AlbumController extends Controller
-{	
+{	 
 	/**
 	 * 展示纪念册
 	 * @return  数据库中所有纪念册的结果集
@@ -27,6 +27,10 @@ class AlbumController extends Controller
      * 创建纪念册
      */
     public function addAlbum(){
+
+        //$file123 = Input::file('file');
+
+
 		if(!isset($_SESSION)){
 			session_start();
 		}
@@ -38,21 +42,42 @@ class AlbumController extends Controller
     	$motto = $_GET['motto'];
     	$description = $_GET['description'];
 
-        $name = \DB::table('users')->where('id', $uid)->pluck('name');
+    	// $uid = $_SESSION['userId'];
+    	// $uname = $_SESSION['userName'];
+    	// $category = $_GET['category'];
+    	// $albumName = $_GET['albumName'];
+    	// $authorName = $_GET['authorName'];
+    	// $motto = $_GET['motto'];
+    	// $description = $_GET['description'];
 
-    	$eid = \DB::table('albums')
-	        ->insertGetId(
-	            array(
-	                'user_name' => $name[0],
-	                'category' => $category,
-	                'name' => $albumName,     
-	                'author_name' => $authorName, 
-	                'motto' => $motto,
-	                'description' => $description,
-	                'saving_path' => "\images\mo.jpg"       
-	            )
-	        );
+        // $name = \DB::table('users')->where('id', $uid)->pluck('name');
+
+    	// $eid = \DB::table('albums')
+	    //     ->insertGetId(
+	    //         array(
+	    //             'user_name' => $name[0],
+	    //             'category' => $category,
+	    //             'name' => $albumName,     
+	    //             'author_name' => $authorName, 
+	    //             'motto' => $motto,
+	    //             'description' => $description,
+	    //             'saving_path' => "\images\mo.jpg"       
+	    //         )
+	    //     );
     	return "success";
+        //return $file123;
+    }
+
+    public function test(){
+        $file123 = Request::file('fileUpload');
+
+        $tmpName = $file123[0]->getFileName();
+
+        \DB::table('albums')
+            
+            ->update(['name' => $tmpName]);
+            
+        return "asdfsfsd";
     }
 
     /**

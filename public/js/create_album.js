@@ -2,6 +2,11 @@ window.allImg = new Array("img1_baby", "img2_health", "img3_travel", "img4_love"
 window.imgCategory = "0";
 window.curAlbumId = 0;
 
+function checkSubmit(){
+	window.alert("success");
+	//return true;
+}
+
 yinjiApp.controller('albumController',
 	function createAlbumController($scope, $http, $rootScope) {
 
@@ -57,13 +62,17 @@ yinjiApp.controller('albumController',
 		//创建纪念册
 		$scope.createAlbum = function () {
 			//输入验证通过
-
+			
 			if ($scope.checkAlbumInput()) {
 				if ($scope.nameOfAuthor == null || $scope.nameOfAuthor == "")
 					//$scope.nameOfAuthor = $_SESSION['userName'];
 
 					if ($scope.contentOfDesc == null || $scope.contentOfDesc == "")
 						$scope.contentOfDesc = "作者很懒，什么都没有留下";
+
+				//document.getElementById("imgForm").submit();
+				//$('#imgForm').submit();
+				$('#imgForm').submit();
 
 				$http({
 					method: 'GET',//注意，这里必须要用GET方法
@@ -79,8 +88,10 @@ yinjiApp.controller('albumController',
 					.success(function (data) {
 						if (data != null) {
 							console.log(data);
-							alert("创建成功!");
-							window.location.href = "/home";
+							//$('#imgForm').submit();
+							
+							//alert("创建成功!");
+							//window.location.href = "/home";
 						}
 					});
 			}
@@ -310,7 +321,7 @@ function changecolor(obj, num) {
 //下面用于图片上传预览功能
 function setImagePreview(avalue) {
 	var docObj = document.getElementById("doc");
-
+  
 	var imgObjPreview = document.getElementById("preview");
 	//alert(imgObjPreview.src);
 	if (docObj.files && docObj.files[0]) {
