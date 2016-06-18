@@ -180,6 +180,9 @@ Route::get('/showAlbums', function() {
     return view('/showAlbums');
 });
 
+Route::get('/create_album/uploadImg', 'Album\AlbumController@test');
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
