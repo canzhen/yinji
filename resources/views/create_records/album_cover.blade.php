@@ -27,7 +27,7 @@
       
     </div>
     <!-- 纪念册封面 -->
-    <div class="index_right"> <a href="#"><img src="images/create_records/cloud_05.jpg" alt="纪念册封面" /></a></div>
+    <div class="index_right"> <a href=""><img src="images/create_records/cloud_05.jpg" alt="纪念册封面" /></a></div>
     <div class="index_menu">  
       <ul>
         <li class="menu_1"><a href="/album_index" title="关于工厂——纪念册简介"></a></li>

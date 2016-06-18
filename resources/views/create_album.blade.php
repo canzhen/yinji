@@ -42,7 +42,7 @@
 	                        </div>
 	                    </div>
 	                </div>
-	                <a href="#" class="toggle-menu"><i class="fa fa-bars"></i></a>
+	                <a href="" class="toggle-menu"><i class="fa fa-bars"></i></a>
 	                <div class="main-navigation responsive-menu">
 	                    <ul class="navigation">
 	                        <li ><a href="#top" ><i class="fa fa fa-heart"></i>纪念册风格</a></li>
