@@ -34,7 +34,31 @@ Route::group(['middleware'=>'web'],function(){
         return $_SESSION['privilege'];
     });
 
-Route::group(['middleware'=>'checkCpyUsers'], function() {//中间件，拦截，用于身份验证
+Route::group(['middleware'=>'auth'], function() {//中间件，拦截，用于登录验证
+
+
+    Route::get('/album_create_records', function () {
+        return view('create_records\album_create_records');
+    });
+
+    //用户创建纪念册
+    Route::get('/create_album', function () {
+        return view('create_album');
+    });
+
+    //用户个人信息查看与修改界面
+    Route::get('/user-information',function(){
+        return view('user-information');
+    });
+
+    Route::get('/orderInfo',function(){
+        return view('orderInfo');
+    });
+
+});
+
+
+Route::group(['middleware'=>'checkCpyUsers'], function() {//中间件，拦截，用于公司身份验证
     /*公司部分*/
     Route::get('/cpy_index', function () {
         return view('company.cpy_index');
@@ -117,25 +141,6 @@ Route::group(['middleware'=>'checkCpyUsers'], function() {//中间件，拦截�
     Route::get('/home', function () {
         return view('home');
     });
-
-	Route::get('/album_create_records', function () {
-        return view('create_records\album_create_records');
-    });
-
-    //用户创建纪念册
-    Route::get('/create_album', function () {
-        return view('create_album');
-    });
-
-    //用户个人信息查看与修改界面
-    Route::get('/user-information',function(){
-        return view('user-information');
-    });
-
-    Route::get('/orderInfo',function(){
-        return view('orderInfo');
-    });
-
 });
 
 
