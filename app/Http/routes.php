@@ -11,15 +11,21 @@
 |
 */
 Route::group(['middleware'=>'web'],function(){
-    date_default_timezone_set('prc');//设置默认时区到中国的时区
+    date_default_timezone_set('PRC');//设置默认时区到中国的时区
 
     //在前端获取当前用户名
     Route::get('/getUserName',function(){
+        if(!isset($_SESSION)){
+            session_start();
+        }
         return $_SESSION['userName'];
     });
 
     //在前端获取当前用户权限
     Route::get('/getUserPrivilege',function(){
+        if(!isset($_SESSION)){
+            session_start();
+        }
         return $_SESSION['privilege'];
     });
 
@@ -53,6 +59,22 @@ Route::group(['middleware'=>'web'],function(){
         return view('company.cpy_newOrdersManage');
     });
 
+    Route::get('/cpy_paidOrders', function () {
+        return view('company.cpy_paidOrder');
+    });
+
+    Route::get('/cpy_deliverOrders', function () {
+        return view('company.cpy_deliverOrder');
+    });
+
+    Route::get('/cpy_publishOrders', function () {
+        return view('company.cpy_publishOrder');
+    });
+
+    Route::get('/cpy_receivedOrders', function () {
+        return view('company.cpy_receivedOrder');
+    });
+
     Route::get('/cpy_checkEvaluation', function () {
         return view('company.cpy_checkEvaluation');
     });
@@ -61,8 +83,12 @@ Route::group(['middleware'=>'web'],function(){
         return view('company.cpy_salesReport');
     });
 
-    Route::get('/cpy_staffManagement',function(){
-        return view('company.cpy_staffManagement');
+    Route::get('/cpy_checkStaff',function(){
+        return view('company.cpy_checkStaff');
+    });
+
+    Route::get('/cpy_checkUser',function(){
+        return view('company.cpy_checkUser');
     });
 
     Route::get('/cpy_userInformation', function () {
@@ -86,7 +112,7 @@ Route::group(['middleware'=>'web'],function(){
     Route::get('/home', function () {
         return view('home');
     });
-	
+
 	Route::get('/album_create_records', function () {
         return view('create_records\album_create_records');
     });
@@ -104,7 +130,7 @@ Route::group(['middleware'=>'web'],function(){
     Route::get('/orderInfo',function(){
         return view('orderInfo');
     });
-    
+
 });
 
 
@@ -153,6 +179,7 @@ Route::get('/usr/checkPwd','UserController@checkPwd');
 Route::get('/usr/editPwd','UserController@editPwd');
 Route::get('/usr/checkIfMobile','UserController@checkIfMobile');
 Route::get('/usr/getCpyUsers','UserController@getCpyUsers');
+Route::get('/usr/getCommonUsers','UserController@getCommonUsers');
 
 
 // 展示纪念册
@@ -163,6 +190,9 @@ Route::get('/addAlbum', 'Album\AlbumController@addAlbum');
 Route::get('/getCurAlbumInfo', 'Album\AlbumController@getCurAlbumInfo');
 //获得当前纪念册ID
 Route::get('/getCurAlbum', function(){
+    if(!isset($_SESSION)){
+        session_start();
+    }
     return $_SESSION['curAlbum'];
 });
 // 更新纪念册
@@ -202,7 +232,7 @@ Route::group(['middleware' => ['web']], function () {
 /*
  * 控制器和路由
  */
- 
+
  //绑定RecordController的增加函数和record.blade.php
  Route::post('/album_create_records/add','RecordController@addRecord');
  //Route::post('/album_create_records/add_new','RecordController@addRecordNew');

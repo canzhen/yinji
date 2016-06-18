@@ -1,20 +1,23 @@
 @extends('layouts.cpy_sidebar')
 
-@section('title','公司管理')
-@section('cpy_subtitle','员工信息')
+@section('title','用户管理')
+@section('cpy_subtitle','查看用户')
 
 @section('footer')
 	@parent
-	<script src="/js/company/cpy_staffManagement.js"></script>
+	<script src="/js/company/cpy_checkUser.js"></script>
 @stop
 
 
 @section('sidebar-content')
-
-
+	<?php
+		if(!isset($_SESSION)){
+			session_start();
+		}
+	?>
 	@if(isset($_SESSION['ifLoggedIn'])&&$_SESSION['ifLoggedIn']=='y')
 
-	<div class="panel-body" ng-controller="staffManageCtrl">
+	<div class="panel-body" ng-controller="checkUserCtrl">
 		<div class="dataTables_wrapper">
 			<table class="table table-bordered table-hover table-striped" id="dataTable">
 				<thead>

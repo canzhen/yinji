@@ -10,15 +10,17 @@
 
 @section('footer')
 	@parent
-	<script src="/js/company/cpy_checkOrder.js"></script>
+	<script src="/js/company/cpy_publishOrder.js"></script>
 @stop
 
 
 @section('sidebar-content')
-	<div ng-controller="checkOrderCtrl" class="col-lg-12">
+	<div ng-controller="publishOrderCtrl" class="col-lg-12">
 		<?php
 		if(!isset($_SESSION)){
-			session_start();
+			if(!isset($_SESSION)){
+				session_start();
+			}
 		}
 		?>
 		<div class="panel panel-default">
@@ -62,6 +64,9 @@
 						</tr>
 						</tbody>
 					</table>
+				</div>
+				<div class="text-right">
+					<a href="#">查看所有订单 <i class="fa fa-arrow-circle-right"></i></a>
 				</div>
 			</div>
 		</div>

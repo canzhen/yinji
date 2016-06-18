@@ -18,7 +18,7 @@ class CpyController extends Controller
      * @return 未完成订单的数量、总评论数
      */
     public function getIndexMsg(){
-        $undoneOrderNum=Order::where('status','未完成')->count();
+        $undoneOrderNum=Order::where('status','未付款')->count();
         $evaNum=Evaluation::all()->count();
         return array('undoneOrderNum' => $undoneOrderNum, 'evaNum' => $evaNum);
     }
@@ -27,7 +27,23 @@ class CpyController extends Controller
      * @return 未完成订单信息数组
      */
     public function getUndoneOrders(){
-        return Order::where('status','未完成')->get();
+        return Order::where('status','未付款')->get();
+    }
+
+    public function paiOrders(){
+        return Order::where('status','已付款')->get();
+    }
+
+    public function deliverOrders(){
+        return Order::where('status','送货中')->get();
+    }
+
+    public function publishOrders(){
+        return Order::where('status','已发货')->get();
+    }
+    
+    public function receiveOrders(){
+        return Order::where('status','已送达')->get();
     }
     /**
      * 获取所有评价
@@ -98,8 +114,9 @@ class CpyController extends Controller
      * @return mixed
      */
     public function uploadTemplate(){
-
-
+        if(!isset($_SESSION)){
+            session_start();
+        }
         $path = app_path()."\\..\\public\\company\\template\\".$_SESSION['userName'].'\\';
         if (!empty($_FILES)){
             //得到上传文件的临时流
@@ -129,13 +146,13 @@ class CpyController extends Controller
                             $response = "对不起，您上传的图片超过限制大小，请压缩后上传！";
                             break;
                         case 3:
-                            $reponse = "上传失败，只有部分图片被上传，请重新上传！";
+                            $response = "上传失败，只有部分图片被上传，请重新上传！";
                             break;
                         case 5:
-                            $reponse = "上传失败，上传图片大小为0！";
+                            $response = "上传失败，上传图片大小为0！";
                             break;
                         default:
-                            $reponse = "对不起，上传失败！";
+                            $response = "对不起，上传失败！";
                             break;
                     }
                 }

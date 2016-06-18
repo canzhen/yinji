@@ -17,6 +17,11 @@
 
 @section('sidebar-content')
 	<div ng-controller="checkTemplateCtrl" class="container-fluid">
+		<?php
+		if(!isset($_SESSION)){
+			session_start();
+		}
+		?>
 		<div class="row" id="mainbody">
 			<div class="thumbnail" ng-repeat="x in deployedTemplates" on-finish-render-filters>
 				<a href="#@{{ x.template_name }}">

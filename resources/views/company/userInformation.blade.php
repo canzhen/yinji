@@ -17,6 +17,11 @@
 @section('sidebar-content')
 <div ng-controller="userInfoCtrl" style="padding-left:2%;">
 
+	<?php
+	if(!isset($_SESSION)){
+		session_start();
+	}
+	?>
 	@if(isset($_SESSION['ifLoggedIn'])&&$_SESSION['ifLoggedIn']=='y')
 	<form class="form-inline">
 		<span>用户名：@{{ username }}</span>

@@ -14,17 +14,33 @@ class AlbumController extends Controller
 	 * @return  数据库中所有纪念册的结果集
 	 */
     public function displayAlbum(){
+		if(!isset($_SESSION)){
+			session_start();
+		}
         $curName = $_SESSION['userName'];
     	$resSet = \DB::table('albums')->where('user_name', $curName)->get();
     	return $resSet;
+
     }
 
     /**
      * 创建纪念册
      */
     public function addAlbum(){
+
         //$file123 = Input::file('file');
 
+
+		if(!isset($_SESSION)){
+			session_start();
+		}
+    	$uid = $_SESSION['userId'];
+    	$uname = $_SESSION['userName'];
+    	$category = $_GET['category'];
+    	$albumName = $_GET['albumName'];
+    	$authorName = $_GET['authorName'];
+    	$motto = $_GET['motto'];
+    	$description = $_GET['description'];
 
     	// $uid = $_SESSION['userId'];
     	// $uname = $_SESSION['userName'];
@@ -70,6 +86,9 @@ class AlbumController extends Controller
      *         若不存在 返回false 
      */
     public function getCurAlbumInfo(){
+		if(!isset($_SESSION)){
+			session_start();
+		}
     	if($_SESSION['curAlbum'] == 0){
     		return "false";
     	}else{
@@ -85,6 +104,9 @@ class AlbumController extends Controller
      * @return 成功信息
      */
     public function updateAlbum(){
+		if(!isset($_SESSION)){
+			session_start();
+		}
         $sss = $_SESSION['curAlbum'];
     	$uid = $_SESSION['userId'];
     	$category = $_GET['category'];
@@ -114,6 +136,9 @@ class AlbumController extends Controller
      * @return 成功信息
      */
     public function deleteAlbum(){
+		if(!isset($_SESSION)){
+			session_start();
+		}
         $sss = $_GET['albumId'];
         
         \DB::table('albums')
@@ -130,6 +155,9 @@ class AlbumController extends Controller
      * @return 成功信息
      */
     public function showAlbum(){
+		if(!isset($_SESSION)){
+			session_start();
+		}
         $albumId = $_GET['albumId'];
         $_SESSION['curAlbum'] = $albumId;
         return "success";
