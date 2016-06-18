@@ -55,6 +55,48 @@ Route::group(['middleware'=>'auth'], function() {//中间件，拦截，用于�
         return view('orderInfo');
     });
 
+
+    /*记录部分的界面*/
+    // 记录简介页面
+    Route::get('/album_index', function () {
+        return view('create_records.album_index');
+    });
+
+    // 记录封面页面
+    Route::get('/album_cover', function () {
+        return view('create_records.album_cover');
+    });
+
+    // 创建记录页面
+    Route::get('/album_create_records', function () {
+        return view('create_records.album_create_records');
+    });
+
+    // 查找记录页面
+    Route::get('/album_query', function () {
+        return view('create_records.album_query');
+    });
+    // 展示记录页面
+    Route::get('/album_show_records', function () {
+        return view('create_records.album_show_records');
+    });
+    // 记录页面
+    Route::get('/album_records', function () {
+        return view('create_records.album_records');
+    });
+
+    /*记录部分的界面结束*/
+
+
+    // 上传文件页面
+    Route::get('/album_fileupload', function () {
+        return view('create_records.album_fileupload');
+    });
+    // 下订单页面
+    Route::get('/album_order', function () {
+        return view('create_records.album_order');
+    });
+
 });
 
 
@@ -257,40 +299,5 @@ Route::group(['middleware' => ['web']], function () {
 
  Route::get('/album_query/select','RecordController@selectRecord');
 
-// 记录的相关操作
-// 记录简介页面
-Route::get('/album_index', function () {
-        return view('create_records.album_index');
-    });
-
-// 记录封面页面
-Route::get('/album_cover', function () {
-        return view('create_records.album_cover');
-    });
-// 创建记录页面
-Route::get('/album_create_records', function () {
-        return view('create_records.album_create_records');
-    });
-
-// 查找记录页面
-Route::get('/album_query', function () {
-        return view('create_records.album_query');
-    });
-// 展示记录页面
-Route::get('/album_show_records', function () {
-        return view('create_records.album_show_records');
-    });
-// 记录页面
-Route::get('/album_records', function () {
-        return view('create_records.album_records');
-    });
-// 上传文件页面
-Route::get('/album_fileupload', function () {
-        return view('create_records.album_fileupload');
-    });
-// 下订单页面
-Route::get('/album_order', function () {
-        return view('create_records.album_order');
-    });
 
 Route::get('/getTemplates','Order\OrderController@getTemplates');
