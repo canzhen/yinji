@@ -21,7 +21,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<img src="/images/shb.jpg">
+			<img src="/images/shb.JPG">
 		</div>
 
 
