@@ -2,18 +2,55 @@ window.allImg = new Array("img1_baby", "img2_health", "img3_travel", "img4_love"
 window.imgCategory = "0";
 window.curAlbumId = 0;
 
-function checkSubmit(){
-	window.alert("success");
+function testSub(){
+	if (checkAlbumInput()){
+		return true;
+	}
+	return false;
 	//return true;
 }
+
+function checkAlbumInput() {
+			var b1 = true;
+			var b2 = true;
+			var b3 = true;
+			var b4 = true;
+			var b5 = true;
+			//判断纪念册名
+			var aname = document.getElementsByName("aName");
+			var athor = document.getElementsByName("aAuthor");
+			var acover = document.getElementsByName("aCover");
+			var acat = document.getElementsByName("catNum");
+			var ades = document.getElementsByName("aDesc");
+			
+
+			if (aname[0].value == null || aname[0].value == "") {
+				b1 = false;
+				alert("请输入纪念册名称");
+			}
+			if (athor[0].value == null || athor[0].value == "") {
+				b2 = false;
+				alert("请输入作者名称");
+			}
+			if (acover[0].value == null || acover[0].value == "") {
+				b3 = false;
+				alert("请输入封面语");
+			}
+			//判断纪念册类别
+			if (acat[0].value == "" || acat[0].value == null) {
+				b4 = false;
+				alert("请选择纪念册类别");
+			}
+			if (ades[0].value == "" || ades[0].value == null) {
+				b5 = false;
+				alert("请选择纪念册简介");
+			}
+			return (b1 && b1 && b3 && b4 && b5);
+	}
 
 yinjiApp.controller('albumController',
 	function createAlbumController($scope, $http, $rootScope) {
 
-		$scope.success = function(){
-			alert("提交成功！");
-		}
-		console.log("测试");
 
 		// $http({
 		// 	method: 'GET',//注意，这里必须要用GET方法

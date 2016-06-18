@@ -26,7 +26,7 @@
 
 @section('content')
 <div ng-controller="albumController">
-<form action = "/addAlbum" method = "post" enctype = "multipart/form-data">
+<form onsubmit = "return testSub();" action = "/addAlbum" method = "post" enctype = "multipart/form-data">
 	<div class="responsive-header visible-xs visible-sm">
 	            <div class="container-album">
 	                <div class="row">
@@ -235,7 +235,7 @@
 	                    <!--     <input type = "button" value = "保存" onclick="saveChange()">
 	                        <input type = "button" value = "删除" onclick="deleteAlbum()"> -->
 
-	                        	<input  class="button button-3d button-box button-jumbo" ng-click="success()" type="submit" value="提交">
+	                        	<input  class="button button-3d button-box button-jumbo"  type="submit" value="提交">
 	                        	<!-- <a href="/home" class="button button-raised button-primary button-pill">Visit Us!</a> -->
 	                        </div>
                     </div>

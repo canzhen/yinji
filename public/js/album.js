@@ -14,6 +14,7 @@ function deleteAlbum(obj){
 			if(data != null){
 				console.log(data);
 				alert("删除成功!");
+				window.location.reload();
 			}
 		},
 		error : function() {
