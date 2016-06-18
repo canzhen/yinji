@@ -50,34 +50,33 @@ class AlbumController extends Controller
     	// $motto = $_GET['motto'];
     	// $description = $_GET['description'];
 
-        // $name = \DB::table('users')->where('id', $uid)->pluck('name');
+        $name = \DB::table('users')->where('id', $uid)->pluck('name');
 
-    	// $eid = \DB::table('albums')
-	    //     ->insertGetId(
-	    //         array(
-	    //             'user_name' => $name[0],
-	    //             'category' => $category,
-	    //             'name' => $albumName,     
-	    //             'author_name' => $authorName, 
-	    //             'motto' => $motto,
-	    //             'description' => $description,
-	    //             'saving_path' => "\images\mo.jpg"       
-	    //         )
-	    //     );
-    	return "success";
+    	$eid = \DB::table('albums')
+	        ->insertGetId(
+	            array(
+	                'user_name' => $name[0],
+	                'category' => $category,
+	                'name' => $albumName,     
+	                'author_name' => $authorName, 
+	                'motto' => $motto,
+	                'description' => $description,
+	                'saving_path' => "\images\mo.jpg"       
+	            )
+	        );
+    	return $eid;
         //return $file123;
     }
 
     public function test(){
         $file123 = Request::file('fileUpload');
-
-        $tmpName = $file123[0]->getFileName();
-
+		$lenth = count($file123);
+        // $tmpName = $file123[0]->getFileName();
+		echo "asfsaf";
         \DB::table('albums')
+            ->update(['description' => $lenth]);
             
-            ->update(['name' => $tmpName]);
-            
-        return "asdfsfsd";
+        return $lenth;
     }
 
     /**
@@ -162,4 +161,17 @@ class AlbumController extends Controller
         $_SESSION['curAlbum'] = $albumId;
         return "success";
     }
+
+
+	public function albumInfo(){
+		if(!isset($_SESSION)){
+			session_start();
+		}
+		$albumId = $_SESSION['curAlbum'];
+		$resset = \DB::table('albums')
+            ->where('id', $albumId)
+            ->get();
+		return $resset;
+		//  return $albumId;
+	}
 }

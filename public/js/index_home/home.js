@@ -75,7 +75,7 @@ yinjiApp.controller('albumController',
 			})
 			.success(function(data){
 				if(data != null){
-					window.location.href = '/album_cover';
+					window.location.href = '/album_index';
 				}
 			});
 		};

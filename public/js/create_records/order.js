@@ -101,6 +101,8 @@ yinjiApp.controller('orderController',
                 .success(function(data) {
                     if(data != null){
                         console.log(data);
+                        alert("成功！");
+                        window.location.href = "/";
                     }
                     else{
                         console.log("false");
