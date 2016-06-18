@@ -36,6 +36,10 @@ Route::group(['middleware'=>'web'],function(){
         return $_SESSION['privilege'];
     });
 
+    Route::get('/contact_us',function(){
+        return view('contact_us');
+    });
+
 Route::group(['middleware'=>'auth'], function() {//中间件，拦截，用于登录验证
 
     Route::get('/album_create_records', function () {

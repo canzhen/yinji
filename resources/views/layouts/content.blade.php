@@ -31,13 +31,13 @@
 									<li class = "spec"><a href="/orderInfo">查看订单</a></li>
 								</ul> 
 							</li>
+							</li>
 							<li class = "topLine"><a href="">个人信息</a>
 								<ul>
 									<li class = "spec"><a href="/user-information">查看个人信息</a></li>
-									<li><a href="">管理收货地址</a></li>
-								</ul> 
+								</ul>
 							</li>
-							<li class = "topLine"><a href="">联系我们</a></li>
+							<li class = "topLine"><a href="/contact_us">联系我们</a></li>
 						</ul>
 					</div>
 				</div>
