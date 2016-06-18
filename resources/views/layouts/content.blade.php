@@ -63,13 +63,7 @@
 			
 		@else
 			<div class="top-nav">
-						<ul class="res" > 
-							<li class = "topLine"><a href="">服务</a>
-								 <ul>
-									<li class = "spec"><a href="">纪念册</a></li>
-									<li><a href="">刊印</a></li>
-								</ul> 
-							</li>
+						<ul class="res" >
 							<li class = "topLine"><a href="/about_us">关于</a></li>
 							<li class = "topLine"><a href="/contact_us">联系我们</a></li>
 						</ul>
