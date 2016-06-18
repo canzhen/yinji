@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Album;
 
-use Illuminate\Http\Request;
-
+//use Illuminate\Http\Request;
+use Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -35,14 +35,6 @@ class AlbumController extends Controller
 			session_start();
 		}
     	$uid = $_SESSION['userId'];
-    	$uname = $_SESSION['userName'];
-    	$category = $_GET['category'];
-    	$albumName = $_GET['albumName'];
-    	$authorName = $_GET['authorName'];
-    	$motto = $_GET['motto'];
-    	$description = $_GET['description'];
-
-    	// $uid = $_SESSION['userId'];
     	// $uname = $_SESSION['userName'];
     	// $category = $_GET['category'];
     	// $albumName = $_GET['albumName'];
@@ -50,21 +42,39 @@ class AlbumController extends Controller
     	// $motto = $_GET['motto'];
     	// $description = $_GET['description'];
 
-        $name = \DB::table('users')->where('id', $uid)->pluck('name');
+        $uname = $_SESSION['userName'];
 
-    	$eid = \DB::table('albums')
-	        ->insertGetId(
-	            array(
-	                'user_name' => $name[0],
-	                'category' => $category,
-	                'name' => $albumName,     
-	                'author_name' => $authorName, 
-	                'motto' => $motto,
-	                'description' => $description,
-	                'saving_path' => "\images\mo.jpg"       
-	            )
-	        );
-    	return $eid;
+        $category = $_GET['aName'];
+        $albumName = $_GET['aName'];
+        $authorName = $_GET['aAuthor'];
+        $motto = $_GET['aCover'];
+        $description = $_GET['aDesc'];
+        $file1 = $_GET['fileUpload'];
+
+        $fff = Request::file('fileUpload');
+        $lenth = count($fff);
+
+
+        print $albumName . "#" . $authorName . "#" .$motto . "#" . $description;
+        print $fff;
+
+        
+
+        //$name = \DB::table('users')->where('id', $uid)->pluck('name');
+
+    	// $eid = \DB::table('albums')
+	    //     ->insertGetId(
+	    //         array(
+	    //             'user_name' => $name[0],
+	    //             'category' => $category,
+	    //             'name' => $albumName,     
+	    //             'author_name' => $authorName, 
+	    //             'motto' => $motto,
+	    //             'description' => $description,
+	    //             'saving_path' => "\images\mo.jpg"       
+	    //         )
+	    //     );
+    	// return $eid;
         //return $file123;
     }
 

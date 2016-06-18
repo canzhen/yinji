@@ -26,7 +26,7 @@
 
 @section('content')
 <div ng-controller="albumController">
-<form ng-submit="createAlbum()" >
+<form action = "/addAlbum" method = "get" enctype = "multipart/form-data">
 	<div class="responsive-header visible-xs visible-sm">
 	            <div class="container-album">
 	                <div class="row">
@@ -141,19 +141,19 @@
 	                        <div class="container-album">
 								<section class="content bgcolor-1">
 									<span class="input input--haruki">
-										<input class="input__field input__field--haruki" type="text" id="input-1" maxlength="10" ng-model = "nameOfAlbum"/>
+										<input name = "aName" class="input__field input__field--haruki" type="text" id="input-1" maxlength="10" ng-model = "nameOfAlbum"/>
 										<label class="input__label input__label--haruki" for="input-1">
 											<span class="input__label-content input__label-content--haruki">纪念册名字（10字以内）：</span>
 										</label>
 									</span>
 									<span class="input input--haruki">
-										<input class="input__field input__field--haruki" type="text" id="input-2" maxlength="10" ng-model = "nameOfAuthor"/>
+										<input name = "aAuthor" class="input__field input__field--haruki" type="text" id="input-2" maxlength="10" ng-model = "nameOfAuthor"/>
 										<label class="input__label input__label--haruki" for="input-2">
 											<span class="input__label-content input__label-content--haruki">作者名字（10字以内）：</span>
 										</label>
 									</span>
 									<span class="input input--haruki">
-										<input class="input__field input__field--haruki" type="text" id="input-3" maxlength="20" ng-model = "nameOfMotto"/>
+										<input name = "aCover" class="input__field input__field--haruki" type="text" id="input-3" maxlength="20" ng-model = "nameOfMotto"/>
 										<label class="input__label input__label--haruki" for="input-3">
 											<span class="input__label-content input__label-content--haruki">想加在封面的话（20字以内）：</span>
 										</label>
@@ -173,13 +173,9 @@
 										</td>
 										</tr>
 										<tr>
-										<td align="center" style="padding-top:10px;"> <!--method="POST" action="/create_album/uploadImg"-->
-											<form role="form" onsubmit = "alert('Hello!')"   id = "imgForm" enctype = "multipart/form-data">
+										<td align="center" style="padding-top:10px;">
 												<input type = "submit" id = "subBtn" hidden>
 												<input type="file" name="fileUpload" id="doc1" style="width:500px;" class="inputfile inputfile-1" onchange="javascript:setImagePreview1();" data-multiple-caption="{count} files selected" multiple />
-												
-											</form>
-											
 
 						                    <label for="doc1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>选择本地图片&hellip;</span></label>
 						                </td>
@@ -214,7 +210,7 @@
 									</tr>
 									<tr>
 									<td align="center" style="padding-top:10px;">
-										<input type="file" name="myfile" id="doc" style="width:200px;" class="inputfile inputfile-1" onchange="javascript:setImagePreview();" data-multiple-caption="{count} files selected" multiple />
+										<input type="file" name="myfile[]" id="doc" style="width:200px;" class="inputfile inputfile-1" onchange="javascript:setImagePreview();" data-multiple-caption="{count} files selected" multiple />
 
 					                <label for="doc"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>选择本地图片&hellip;</span></label>
 					                </td>
@@ -225,13 +221,13 @@
 	                        <div id="book-introduction_description">
 	                            <p>填写纪念册内容简介:</p>
 	                        	<!-- <textarea name="description" id="description" rows="10" cols="50" wrap="hard"></textarea> -->
-	                        	<form role="form">
+	                        	<!-- <form role="form"> -->
 								  <div class="form-group">
 								    <!-- <label for="name">文本框</label> -->
-								    <textarea id = "albumDesc" class="form-control" rows="9" 
+								    <textarea name = "aDesc" id = "albumDesc" class="form-control" rows="9" 
 								    	ng-model = "contentOfDesc"></textarea>
 								  </div>
-								</form>
+								<!-- </form> -->
 	                        </div> 
 	                        <div id="send">
 
