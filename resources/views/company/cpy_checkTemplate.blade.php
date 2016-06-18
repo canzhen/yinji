@@ -51,6 +51,7 @@
 					</div>
 				</div>
 			</div>
+			<p ng-show="!ifShow">对不起，目前公司没有任何模板哦~点击<a href='/cpy_addTemplate'>添加</a>，为公司添加第一份模板吧！</p>
 		</div>
 
 
