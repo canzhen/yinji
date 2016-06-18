@@ -48,14 +48,14 @@
 						<input type="submit"  value=""/>		
 					</div>
 					
-					<label>欢迎您					
+					<label>欢迎您，
 						<?php 
 							if(!isset($_SESSION)){
 								session_start();
 							}
 							echo $_SESSION['userName'];
 						?>
-					~</label>&nbsp;&nbsp;&nbsp;
+					</label>&nbsp;&nbsp;&nbsp;
 					<a href="/auth/logout" id = "logoffBtn">注销</a>
 				</div>
 
@@ -84,14 +84,15 @@
 					</div>
 					<a href="login" id = "loginBtn">登录</a>
 				</div>
-			@endif
-					@show
- 
+				@endif
+				@show
+
 				<div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
 	<!--导航栏结束-->
+
 
 	@section('content')
 	@show

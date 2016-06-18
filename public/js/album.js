@@ -79,18 +79,3 @@ yinjiApp.controller('albumController',
 			});
 		};
 	});
-
-
-
-yinjiApp.controller('homeController',
-	function test($scope,$http,$rootScope){
-		$scope.startYinji = function(){
-			$http.get('/getUserName')
-			.success(function(response){
-				if (response=="")
-					window.location.href = '/login';
-				else
-					window.location.href = '/create_album';
-			});
-		}
-	});

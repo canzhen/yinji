@@ -23,7 +23,9 @@ Route::group(['middleware'=>'web'],function(){
         if(!isset($_SESSION)){
             session_start();
         }
-        return $_SESSION['userName'];
+        if (isset($_SESSION['userName']) && $_SESSION['userName'] != "")
+            return $_SESSION['userName'];
+        else return "";
     });
 
     //在前端获取当前用户权限

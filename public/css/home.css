@@ -3,84 +3,26 @@ a
     text-decoration: none;
 }
 
-/*左侧导航栏*/
-#contentLeft
-{
-    position: fixed;
-    z-index: 10;
-    top: 85px;
 
-    width: 250px;
-    height: 87.3%;
-    padding-top: 200px;
-
-    background-color: rgb(241,241,241);
+.startBtn{
+    position:fixed;
+    top:80%;
+    left:43%;
+    z-index:999;
+    background-color:transparent;
+    border:3px solid #000000;
+    height:50px;
+    width:200px;
+    font-size:24px;
+    font-weight:bold;
+    color:#000000;
 }
-
-#leftNavigation
-{
-    margin: 2rem 0;
-    padding: 0;
-
-    list-style: none;
-}
-
-#leftNavigation li
-{
-    height: 50px;
-    padding-top: 10px;
-}
-
-#leftNavigation li a
-{
-    font-size: .875rem;
-    line-height: 50px;
-
-    position: relative;
-
-    display: block;
-    overflow: hidden;
-
-    padding: .8rem 1rem .8rem 3rem;
-
-    -webkit-transition: color .2s ease;
-            transition: color .2s ease;
-    text-decoration: none;
-    text-overflow: ellipsis;
-
-    color: #000;
-}
-
-#leftNavigation li a,
-#leftNavigation li a .leftNavIcon
-{
-    line-height: 120%;
-}
-
-#leftNavigation li a .leftNavIcon
-{
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 3rem;
-    padding: .8rem 0;
-
-    text-align: center;
-}
-
-#leftNavigation li:hover
-{
-    background-color: #ccc;
-}
-
 
 
 /*轮播插件*/
 .pictureSlide
 {
-    
-
+    z-index:-999;
     width: 100%;
     height: 540px;
     margin-top: 76px;

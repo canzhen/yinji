@@ -42,7 +42,7 @@
                 </tbody>
             </table>
 
-            <p ng-show="!ifShow" style="padding-left: 15%;padding-top:3%;">对不起，您目前尚未有任何订单哦~点击<a href='/create_album'>添加</a>，添加您的第一本纪念册吧！</p>
+            <p ng-show="!ifShow" style="padding-left: 15%;padding-top:3%;">对不起，您目前尚未有任何订单哦~</p>
         </div>
 
         <div class="modal fade" id="orderDetailModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
