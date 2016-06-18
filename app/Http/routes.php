@@ -13,6 +13,11 @@
 Route::group(['middleware'=>'web'],function(){
     date_default_timezone_set('PRC');//设置默认时区到中国的时区
 
+
+    Route::get('/', function () {
+        return view('home');
+    });
+
     //在前端获取当前用户名
     Route::get('/getUserName',function(){
         if(!isset($_SESSION)){
@@ -29,11 +34,7 @@ Route::group(['middleware'=>'web'],function(){
         return $_SESSION['privilege'];
     });
 
-    Route::get('/', function () {
-        return view('home');
-    });
-
-//Route::group(['middleware'=>'auth'], function() {//中间件，拦截，用于身份验证
+Route::group(['middleware'=>'checkCpyUsers'], function() {//中间件，拦截，用于身份验证
     /*公司部分*/
     Route::get('/cpy_index', function () {
         return view('company.cpy_index');
@@ -94,8 +95,12 @@ Route::group(['middleware'=>'web'],function(){
     Route::get('/cpy_userInformation', function () {
         return view('company.userInformation');
     });
-    /*公司部分结束*/
-//});
+});
+/*公司部分结束*/
+
+    Route::get('/cpyUserError',function(){
+       return view('errors.cpyUserError');
+    });
 
     Route::get('/getRequest', function () {
         //var files = Request.Files;
@@ -284,6 +289,3 @@ Route::get('/album_order', function () {
     });
 
 Route::get('/getTemplates','Order\OrderController@getTemplates');
-// Route::get('/getTemplates', function () {
-//         return "succ";
-//     });
