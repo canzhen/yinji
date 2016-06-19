@@ -26,7 +26,7 @@
         </div>
 
         <div class="index_left page_left geam_l">
-            选择一个模版吧~
+            选择一个模版吧
             <div class="order_text">
                 <!--<img src = "/company/template/yinji/1.jpg" title = "1">
                 <img src = "/company/template/yinji/2.jpg">
@@ -71,7 +71,7 @@
                     <img class="pay" src="images/create_records/applepay.jpg" alt="中国工商银行" />
                 </div>-->
                 <div class="send_button">
-                <input  class="button button-glow button-rounded button-highlight" type="submit" value="确认">
+                <input class="btn btn-lg" type="submit" style="float:right;" value="确认">
                 </div>
             </div>
         </div>   
