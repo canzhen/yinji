@@ -175,7 +175,7 @@
 							<a href="#"><i class="fa fa-sitemap fa-fw"></i> 公司管理<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li>
-									<a href="/about_us">公司信息</a>
+									<a href="/cpy_info">公司信息</a>
 								</li>
 								<li>
 									<a href="cpy_salesReport">销量报表</a>
