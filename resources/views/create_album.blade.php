@@ -72,12 +72,12 @@
     </div> <!-- 创建纪念册右边导航栏结束 -->
 
     <!-- 纪念册风格 -->
-    <div class="banner-bg" id="top">
+    <div class="banner-bg" id="top" style="padding-top:20px;">
         <div class="book-style-picture">
             <div class="book-style">
                 <p class="book-name"><strong>亲亲宝贝</strong></p>
                 <p class="book-description">记录宝贝成长的点滴</p>
-            	<img class = "noBorder" id = "img1_baby" src="/images/create_album/baby.jpg" alt="亲子记录" 
+            	<img class = "noBorder" id="img1_baby" src="/images/create_album/baby.jpg" alt="亲子记录"
             		onclick="changecolor(this.id,1)">
             </div>
 
@@ -126,7 +126,7 @@
             <div class="content-wrapper">
 
                 <!-- 封面设计 -->
-                <div class="page-section" id="about">
+                <div class="page-section" id="about" style="padding-top:20px;">
 	                <div class="row">
 	                    <div class="cover-design">
 	                        <!-- 输入框模板模板 -->
@@ -181,7 +181,7 @@
                 </div>
 
                 <!-- 填写简介 -->
-                <div class="page-section" id="projects">
+                <div class="page-section" id="projects" style="padding-top:50px;">
                     <div class="book-introduction-photo">
 
 
@@ -221,7 +221,7 @@
 	                    <!--     <input type = "button" value = "保存" onclick="saveChange()">
 	                        <input type = "button" value = "删除" onclick="deleteAlbum()"> -->
 
-	                        	<input  class="button button-3d button-box button-jumbo"  type="submit" value="提交">
+	                        	<input  class="btn btn-lg"  type="submit" style="font-family:'微软雅黑';font-size:15px;" value="提交">
 	                        	<!-- <a href="/home" class="button button-raised button-primary button-pill">Visit Us!</a> -->
 	                        </div>
                     </div>
