@@ -39,7 +39,7 @@ yinjiApp.controller('albumController',
 				for(var i = 0; i < data.length; i++){
 					var reg = new RegExp(/\\/,"g");
 					var newstr = data[i].saving_path.replace(reg,"/");
-					//var newstr = "/images/mo.jpg";
+					//var newstr = "/images/mo.jpg;";
 					//console.log(newstr.length-1);
 					
 					newstr = newstr.substring(0,newstr.length-1);

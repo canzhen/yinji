@@ -68,7 +68,7 @@ yinjiApp.controller('albumController',
 		});
 
 		$scope.editOrder = function(){
-			console.log($scope.detail);
+			//console.log($scope.detail);
 			$('#orderDetailModal').modal('hide');
 
 			$http({
@@ -83,7 +83,8 @@ yinjiApp.controller('albumController',
 			.success(function(data){
 				if(data != null){
 					// window.location.href = '/album_cover';
-					console.log("评价成功");
+					console.log(data);
+					alert("评价成功");
 				}else{
 					console.log("false");
 				}

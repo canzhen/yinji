@@ -93,7 +93,25 @@ class OrderController extends Controller
 	public function assessOrder(){
 		$detail = $_GET['assessDetail'];
 		$orderId = $_GET['orderId'];
+		if(!isset($_SESSION)){
+			session_start();
+		}
+		$curName = $_SESSION['userName'];
+		//\DB::table('orders')->where('id', $orderId)->update(['assess' => $detail]);
+		
 
-		\DB::table('orders')->where('id', $orderId)->update(['assess' => $detail]);
+		$eid = \DB::table('evaluation')
+	        ->insertGetId(
+	            array(
+	                'order_id' => $orderId,
+	                'parent_eva_id' => "-1",
+	                'user_name' => $curName,
+	                'reply_user_name' => "",
+	                'content' => $detail
+	            )
+	        );
+
+		//return $detail. "#".$orderId."#".$curName;
+		return $eid;
 	}
 }
