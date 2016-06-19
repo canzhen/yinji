@@ -53,16 +53,17 @@ yinjiApp.controller('orderController',
         })
         .success(function(data) {
             if(data != null){
-                console.log(data);
+                console.log(data.length);
                 imgList = data;
                 for(var i = 0; i < data.length; i++){
-                    var ele = "<img src = '" + data[i].saving_path + "' id = 'img" + data[i].id + "' title = '" + data[i].description + "' onclick = 'selectTemplate(this.id)' class = 'noBorder'>";
-                    $("div.order_text").append(ele);
+                     var ele = "<img src = '" + data[i].saving_path + "' id = 'img" + data[i].id + "' title = '" + data[i].description + "' onclick = 'selectTemplate(this.id)' class = 'noBorder'>";
+                     $("div.order_text").append(ele);
                 }
-                //var tt = "img" + data[0].id;
-                //console.log(tt);
-                temId = "img" + data[0].id;
-                document.getElementById(temId).className = "hasBorder";
+                if(data.length != 0){
+                    temId = "img" + data[0].id;
+                	document.getElementById(temId).className = "hasBorder";
+                }
+                 
             }
             else{
                 console.log("false");
@@ -83,7 +84,13 @@ yinjiApp.controller('orderController',
                     commentText = "无";
                 }
 
-                var oTem = temId.substring(3,4);
+                if(temId == 0){
+                    console.log("00000");
+                    var oTem = 0;
+                }else{
+                    var oTem = temId.substring(3,4);
+
+                }
                 
                 $http({
                     method: 'GET',//注意，这里必须要用GET方法

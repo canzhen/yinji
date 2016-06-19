@@ -71,10 +71,11 @@ class OrderController extends Controller
 	public function getTemplates(){
 		if(!isset($_SESSION)){
 			session_start();
-		}
+		} 
 		$curName = $_SESSION['userName'];
 		$resSet = \DB::table('templates')->where('author_name', $curName)->get();
     	return $resSet;
+		//return $curName;
 	}
 
 	public function displayOrder(){
