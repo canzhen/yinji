@@ -68,7 +68,7 @@ class Orders extends Migration
                     'quantity' => 25,
                     'address' => '山西省阳泉市盂县xx镇',
                     'status'=> '已送达',
-                    'comment'=>''
+                    'comment'=>'减肥日记哈哈哈哈哈'
                 ),
                 array(
                     'user_name' => 'yhc',
