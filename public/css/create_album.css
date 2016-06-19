@@ -1097,7 +1097,7 @@ hr
     background-size: cover;
 }
 
-/*------ 
+/*------
  us ------ */
 .about-image
 {
@@ -1231,7 +1231,7 @@ hr
   top: -44px; // 偏移值
   display: block;
   height: 0;
-  overflow: hidden; 
+  overflow: hidden;
 }*/
 
 .main-navigation
@@ -1639,7 +1639,7 @@ p.profile-description
 }
 .book-introduction p
 {
-    font-family: '楷体';
+    font-family: '微软雅黑';
     font-size: 30px;
 
     text-align: center;
@@ -1755,17 +1755,17 @@ p.profile-description
     width: 600px;
     height: 350px;
     margin-top: 0px;
-    margin-left: 200px;
+    margin-left: 20%;
     padding-top: 8%;
     padding-left: 8%;
- 
+
     /*  left: 400px;
   right: 400px;*/
 }
 #book-introduction_description p
 {
-    font-family: '楷体'；;
-    font-size: 20px;
+    font-family: '微软雅黑';
+    font-size: 15px;
     font-weight: bold;
 
     color: #666;
@@ -1773,8 +1773,8 @@ p.profile-description
 
 #book-introduction_description textarea
 {
-    font-family: '楷体';
-    font-size: 20px;
+    font-family: '微软雅黑';
+    font-size: 15px;
     font-weight: bold;
 
     margin-top: 10px;
@@ -1931,12 +1931,12 @@ a:focus
 }/*light grey*/
 .bgcolor-4
 {
-    color: #fff; 
+    color: #fff;
     background: #2f3238;
 }/*Dark grey*/
 .bgcolor-5
 {
-    color: #521e18; 
+    color: #521e18;
     background: #df6659;
 }/*pink1*/
 .bgcolor-6
@@ -1949,7 +1949,7 @@ a:focus
 }/*White tea*/
 .bgcolor-8
 {
-    color: #fff; 
+    color: #fff;
     background: #3d4444;
 }/*Dark grey2*/
 .bgcolor-9
@@ -2067,7 +2067,7 @@ a:focus
 }
 .htmleaf-demo a.current
 {
-    color: #fff; 
+    color: #fff;
     background: #1d7db1;
 }
 /* Top Navigation Style */
@@ -2268,15 +2268,14 @@ a:focus
 .book-introduction p,
 .book-introduction-photo
 {
-    font-family: '楷体';
+    font-family: '微软雅黑';
 }
 /*书风格的描述，书的风格，主导航栏的字体*/
 .book-description,
 .book-name,
 .main-navigation
 {
-    font-size: 20px;
-
+    font-size: 15px;
     color: #333;
 }
 /*书名，作者，想说的话*/
@@ -2287,7 +2286,7 @@ a:focus
 /*封面照片*/
 .book-cover-picture-p
 {
-    font-size: 30px;
+    font-size: 17px;
     font-weight: bold;
 
     color: #333;
@@ -2307,7 +2306,7 @@ a:focus
 /*编辑本书的简介照片*/
 .book-introduction-photo p
 {
-    font-size: 20px;
+    font-size: 15px;
 
     margin-top: 10px;
     margin-left: 50px;
