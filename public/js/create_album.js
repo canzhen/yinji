@@ -258,6 +258,7 @@ function changecolor(obj, num) {
 	document.getElementById(obj).className = 'hasBorder';
 	imgCategory = num;
 	document.getElementById("hiddenText").value = imgCategory;
+	console.log(imgCategory);
 }
 
 

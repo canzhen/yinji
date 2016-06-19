@@ -32,6 +32,8 @@ class AlbumsCategory extends Migration
                     'name' => '亲子'
                 ),array(
                     'name' => '一家人'
+                ),array(
+                    'name' => '其它'
                 ),
             )
         );

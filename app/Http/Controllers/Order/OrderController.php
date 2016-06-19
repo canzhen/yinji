@@ -86,7 +86,7 @@ class OrderController extends Controller
 			session_start();
 		}
 		$curName = $_SESSION['userName'];
-		$resSet = \DB::table('orders')->where('user_name', $curName)->get();
+		$resSet = \DB::table('orders')->get();
     	return $resSet;
 	}
 
