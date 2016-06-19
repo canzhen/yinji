@@ -51,7 +51,7 @@ class AlbumController extends Controller
                 //$mimeTye = $file[$i]->getMimeType();
                 // //$newName = md5(date('ymdhis') . $clientName) . "." . $extension;
                 $newName = $clientName;
-                $path = $file[$i]->move(public_path() . '\uploads\album', $newName);
+                $path = $file[$i]->move(public_path() . '/uploads/album', $newName);
                 $tempPath = $tempPath . "/uploads/album/" . $newName . ";";
                 
             }
