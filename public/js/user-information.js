@@ -67,7 +67,6 @@ function CheckIntensity(pwd){
 
 yinjiApp.controller('userInfoCtrl',
     function userInfoCtrl($scope,$http,$rootScope){
-
         $scope.userImgSrc = "/images/create_album/profile.jpg";
         //console.log($scope.userImgSrc);
         $scope.msg = "";
@@ -75,12 +74,14 @@ yinjiApp.controller('userInfoCtrl',
         $scope.identicalMsg="";
         $scope.errMsgColor = "red";
 
+
         //获取用户名并显示在首页上
         $http.get("/getUserName")
         .success(function (response)
         {
             $scope.username = response;
         });
+
 
         //查看该用户是否设置了手机
         $http.get("/usr/checkIfMobile")
@@ -113,6 +114,28 @@ yinjiApp.controller('userInfoCtrl',
                     $scope.errMsgColor = "green";
                     $scope.msg = "该用户名尚未被使用";
                     $scope.msgIndex = 0;
+                }
+            });
+        };
+
+        //更改用户信息（邮箱）
+        $scope.editInfo = function(){
+            console.log($scope.emailName);
+            var email = $scope.emailName+"@"+$scope.emailSuffix+".com";
+            $http({
+                method:'GET',
+                url:"/usr/editInfo",
+                params:{
+                    'username':$scope.username,
+                    'email':email
+                }
+            })
+            .success(function (response)
+            {
+                if (response == 1){
+                    alert("修改成功！");
+                }else if (response == 0){
+                    alert("oops...修改失败...");
                 }
             });
         };

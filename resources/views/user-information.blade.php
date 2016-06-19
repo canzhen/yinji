@@ -39,12 +39,12 @@
 					<input type="text" readonly="readonly" class="form-control" ng-model="username">
 					<h4>邮箱：</h4>
 					<div class="input-group">
-						<input type="text" class="form-control">
+						<input type="text" class="form-control" ng-model="emailName">
 						<span class="input-group-addon">@</span>
-						<input type="text" class="form-control">
+						<input type="text" class="form-control" ng-model="emailSuffix">
 						<span class="input-group-addon">.com</span>
 					</div>
-					<button class="btn btn-default" style="margin-top:20px;">确认修改</button>
+					<button class="btn btn-default" style="margin-top:20px;" ng-click="editInfo()">确认修改</button>
 				</div>
 			</div>
 		</div>

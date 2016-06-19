@@ -247,6 +247,7 @@ Route::get('/usr/checkExistUser','UserController@checkExistUser');
 Route::get('/usr/editUsername','UserController@editUsername');
 Route::get('/usr/checkPwd','UserController@checkPwd');
 Route::get('/usr/editPwd','UserController@editPwd');
+Route::get('/usr/editInfo','UserController@editInfo');
 Route::get('/usr/checkIfMobile','UserController@checkIfMobile');
 Route::get('/usr/getCpyUsers','UserController@getCpyUsers');
 Route::get('/usr/getCommonUsers','UserController@getCommonUsers');
