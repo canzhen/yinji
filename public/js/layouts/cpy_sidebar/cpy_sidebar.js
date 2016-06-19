@@ -89,7 +89,7 @@ yinjiApp.controller('cpyNavController',
         .success(function (response)
         {
             if (response != null && response.length > 0) {
-                var fullDateInfo = response[response.length - 1].created_at.split(" ");
+                var fullDateInfo = response[response.length - 1].order_date.split(" ");
                 var date = fullDateInfo[0].split("-");
                 date[0]=parseInt(date[0]);
                 date[1]=parseInt(date[1]);
