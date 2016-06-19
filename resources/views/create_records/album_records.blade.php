@@ -15,13 +15,14 @@
 
 @section('content')
 	  <div ng-controller="checkRecordCtrl">
+		  <p ng-show="!ifShow" style="padding-left: 15%;padding-top:3%;font-family: 黑体;font-size:15px;">
+			  您目前还没有任何记录哦，单击<a href="/album_create_records">添加</a>，添加您的第一条记录吧~
+		  </p>
 		  <div class="mydiv111" ng-repeat="x in records| orderBy:'showTime':true">
 			  <p class="datep" ng-bind="x.showTime"></p>
 			  <p class="diary" ng-bind="x.description"></p>
 			  <p name="comPath"></p>
-			  <p ng-show="!ifShow" style="padding-left: 15%;padding-top:3%;">
-				  您目前还没有任何记录哦，单击<a href="/album_create_records">添加</a>，添加您的第一条记录吧~
-			  </p>
+
 			  <div class="divpic">
 				  <div ng-repeat="y in x.arr_path">
 					  <img class="mypic" src="@{{y}}" name="imgview" onload="DrawImage(this);"/>

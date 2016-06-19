@@ -103,6 +103,13 @@ yinjiApp.controller('albumController',
 		// });
 
 
+		$scope.userName = "尊敬的";
+
+		$http.get('/getUserName')
+		.success(function(response){
+			$scope.userName += (response + "，您好");
+		});
+
 		//创建纪念册
 		$scope.createAlbum = function () {
 			//输入验证通过
@@ -112,8 +119,7 @@ yinjiApp.controller('albumController',
 			//console.log(ff);
 			//document.getElementById("subBtn").submit();
 			//$("imgForm").submit();
-			
-			
+
 			if ($scope.checkAlbumInput()) {
 				if ($scope.nameOfAuthor == null || $scope.nameOfAuthor == "")
 					//$scope.nameOfAuthor = $_SESSION['userName'];

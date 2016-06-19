@@ -1,6 +1,6 @@
 @extends('layouts.content')
 
-@section('title','生成相簿')
+@section('title','生成纪念册')
 
 @section('header')
 	@parent
@@ -36,8 +36,7 @@
 	                                <img src="/images/create_album/profile.jpg" alt="用户头像">
 	                            </div>
 	                            <div class="profile-content">
-	                                <h3 class="profile-title">用户名字</h3>
-	                                <p class="profile-description">创建一本时光书</p>
+	                                <h3 class="profile-title">　@{{ userName }}</h3>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -60,8 +59,7 @@
             <div class="profile-image">
                 <img src="/images/create_album/profile.jpg" alt="用户头像">
             </div>
-            <h3 class="profile-title">&nbsp;&nbsp;用户名字</h3>
-            <p class="profile-description">&nbsp;创建一本时光书</p>
+            <h3 class="profile-title">@{{ userName }}</h3>
         </div> <!-- 用户头像及用户昵称结束 -->
         <!-- 导航栏 -->
         <div class="main-navigation">
@@ -74,15 +72,12 @@
     </div> <!-- 创建纪念册右边导航栏结束 -->
 
     <!-- 纪念册风格 -->
-    <div class="banner-bg" id="top">
-        <div class="book-style-text">
-        	<p>快为你的纪念册选一个风格吧：</p>
-        </div>
+    <div class="banner-bg" id="top" style="padding-top:20px;">
         <div class="book-style-picture">
             <div class="book-style">
                 <p class="book-name"><strong>亲亲宝贝</strong></p>
                 <p class="book-description">记录宝贝成长的点滴</p>
-            	<img class = "noBorder" id = "img1_baby" src="/images/create_album/baby.jpg" alt="亲子记录" 
+            	<img class = "noBorder" id="img1_baby" src="/images/create_album/baby.jpg" alt="亲子记录"
             		onclick="changecolor(this.id,1)">
             </div>
 
@@ -131,13 +126,9 @@
             <div class="content-wrapper">
 
                 <!-- 封面设计 -->
-                <div class="page-section" id="about">
+                <div class="page-section" id="about" style="padding-top:20px;">
 	                <div class="row">
 	                    <div class="cover-design">
-		                    <div class="design-title-text">
-		                    	<p class="design-title">快来设计你的封面吧：</p>
-		                    </div>
-
 	                        <!-- 输入框模板模板 -->
 	                        <div class="container-album">
 								<section class="content bgcolor-1">
@@ -178,7 +169,7 @@
 												<input type = "submit" id = "subBtn" hidden>
 												<input type="file" name="fileUpload[]" id="doc1" style="width:500px;" class="inputfile inputfile-1" onchange="javascript:setImagePreview1();" data-multiple-caption="{count} files selected" multiple="multiple" />
 
-						                    <label for="doc1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>选择本地图片&hellip;</span></label>
+						                    <label for="doc1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span style="font-size:16px;">选择本地图片&hellip;</span></label>
 						                </td>
 										</tr>
 									</tbody>
@@ -190,14 +181,11 @@
                 </div>
 
                 <!-- 填写简介 -->
-                <div class="page-section" id="projects">
-                    <div class="book-introduction">
-                    	<p>快来为你的纪念册写简介吧：</p>
-                    </div>
+                <div class="page-section" id="projects" style="padding-top:50px;">
                     <div class="book-introduction-photo">
-                    	
 
-                    	<!-- 上传简介照片 
+
+                    	<!-- 上传简介照片
 						<table width="100%" border="0" cellspacing="0" cellpadding="0">
 								<tbody>
 									<tr>
@@ -218,7 +206,7 @@
 						</table>-->
 						<!-- 填写简介 -->
 	                        <div id="book-introduction_description">
-	                            <p>填写纪念册内容简介:</p>
+	                            <p>纪念册简介:</p>
 	                        	<!-- <textarea name="description" id="description" rows="10" cols="50" wrap="hard"></textarea> -->
 	                        	<!-- <form role="form"> -->
 								  <div class="form-group">
@@ -233,7 +221,7 @@
 	                    <!--     <input type = "button" value = "保存" onclick="saveChange()">
 	                        <input type = "button" value = "删除" onclick="deleteAlbum()"> -->
 
-	                        	<input  class="button button-3d button-box button-jumbo"  type="submit" value="提交">
+	                        	<input  class="btn btn-lg"  type="submit" style="font-family:'微软雅黑';font-size:15px;" value="提交">
 	                        	<!-- <a href="/home" class="button button-raised button-primary button-pill">Visit Us!</a> -->
 	                        </div>
                     </div>
