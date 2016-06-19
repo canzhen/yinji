@@ -1,6 +1,6 @@
 @extends('layouts.content')
 
-@section('title','生成相簿')
+@section('title','生成纪念册')
 
 @section('header')
 	@parent
@@ -36,8 +36,7 @@
 	                                <img src="/images/create_album/profile.jpg" alt="用户头像">
 	                            </div>
 	                            <div class="profile-content">
-	                                <h3 class="profile-title">用户名字</h3>
-	                                <p class="profile-description">创建一本时光书</p>
+	                                <h3 class="profile-title">　@{{ userName }}</h3>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -60,8 +59,7 @@
             <div class="profile-image">
                 <img src="/images/create_album/profile.jpg" alt="用户头像">
             </div>
-            <h3 class="profile-title">&nbsp;&nbsp;用户名字</h3>
-            <p class="profile-description">&nbsp;创建一本时光书</p>
+            <h3 class="profile-title">@{{ userName }}</h3>
         </div> <!-- 用户头像及用户昵称结束 -->
         <!-- 导航栏 -->
         <div class="main-navigation">

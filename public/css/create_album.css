@@ -614,7 +614,7 @@ Volton Template
 }
 @font-face
 {
-    font-family: 'robotobold';
+    font-family: '微软雅黑';
     font-weight: normal;
     font-style: normal;
 
@@ -1283,9 +1283,8 @@ hr
 
 h3.profile-title
 {
-    font-family: 'robotobold';
-    font-size: 18px;
-
+    font-family: '微软雅黑';
+    font-size: 15px;
     margin-bottom: 5px;
     /*color: white;*/
 
@@ -1293,7 +1292,7 @@ h3.profile-title
 }
 p.profile-description
 {
-    font-family: 'robotobold';
+    font-family: '微软雅黑';
     font-size: 18px;
 
     margin-bottom: 5px;
