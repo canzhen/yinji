@@ -34,7 +34,7 @@ class RecordController extends Controller
 				$extension = $file[$i]->getClientOriginalExtension();
 				$mimeTye = $file[$i]->getMimeType();
 				$newName = md5(date('ymdhis') . $clientName) . "." . $extension;
-				$path = $file[$i]->move(public_path() . '\uploads\record', $newName);
+				$path = $file[$i]->move(public_path() . '/uploads/record', $newName);
 				$tempPath = $tempPath . "/uploads/record/" . $newName . ";";
 			}
 		}
