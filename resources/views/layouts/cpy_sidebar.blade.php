@@ -55,7 +55,8 @@
 						<i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-alerts">
-						<li ng-show="!(evaHour!='' ||evaMinute!=''||evaSecond!='')"
+						<li ng-show="!(evaHour!='' ||evaMinute!=''||evaSecond!='')
+									&& !(odHour!='' ||odMinute!=''||odSecond!='')"
 							style="padding-left:5%;">
 							oops..暂无新消息哟
 						</li>
@@ -99,7 +100,6 @@
 					</a>
 					<ul class="dropdown-menu dropdown-user">
 						<li><a href="/cpy_userInformation"><i class="fa fa-user fa-fw"></i> 个人信息</a></li>
-						<li><a href="#"><i class="fa fa-gear fa-fw"></i> 设置</a></li>
 						<li class="divider"></li>
 						<li><a href="/auth/logout"><i class="fa fa-sign-out fa-fw"></i> 退出登录</a></li>
 					</ul>

@@ -120,7 +120,6 @@ yinjiApp.controller('userInfoCtrl',
 
         //更改用户信息（邮箱）
         $scope.editInfo = function(){
-            console.log($scope.emailName);
             var email = $scope.emailName+"@"+$scope.emailSuffix+".com";
             $http({
                 method:'GET',

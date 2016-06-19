@@ -26,19 +26,21 @@
 									<li><a href="/create_album">创建纪念册</a></li>
 								</ul> 
 							</li>
-							<li class = "topLine"><a href="">刊印</a>
+
+							<li class = "topLine"><a href="">我的</a>
 								<ul>
-									<li class = "spec"><a href="/orderInfo">查看订单</a></li>
-								</ul> 
-							</li>
-							</li>
-							<li class = "topLine"><a href="">个人信息</a>
-								<ul>
-									<li class = "spec"><a href="/user-information">查看个人信息</a></li>
+									<li class = "spec"><a href="/orderInfo">我的订单</a></li>
+									<li><a href="/user-information">个人信息</a></li>
 								</ul>
 							</li>
-							<li class = "topLine"><a href="/about_us">关于</a></li>
-							<li class = "topLine"><a href="/contact_us">联系我们</a></li>
+
+							<li class = "topLine"><a href="">关于</a>
+								<ul>
+									<li class = "spec"><a href="/about_us">关于我们</a></li>
+									<li><a href="/contact_us">联系我们</a></li>
+								</ul>
+							</li>
+
 						</ul>
 					</div>
 				</div>

@@ -71,7 +71,7 @@ class UserController extends BaseController
 		if(!isset($_SESSION)){
 			session_start();
 		}
-		$name=$_SESSION['username'];
+		$name=$_GET['username'];
 		$email=$_GET['email'];
 
 

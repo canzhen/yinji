@@ -814,14 +814,14 @@ img
 {
     color: #7f543a;
     font-weight: bold;
-    font-family: '楷体';
-    font-size: 22px;
+    font-family: '微软雅黑';
+    font-size: 16px;
     line-height: 22px;
 }
 .create_text textarea
 {
-    font-style: '楷体';
-    font-size: 15px;
+    font-family: '微软雅黑';
+    font-size: 16px;
 	background:transparent;
 	border:1px solid #7C5037;
     margin-left: 3px;
@@ -839,9 +839,8 @@ img
 
 .about_text
 {
-    font-size: 12px;
+    font-size: 15px;
     line-height: 20px;
-
     display: inline;
     float: left;
 
@@ -851,8 +850,8 @@ img
 }
 .about_text h1
 {
-    font-family: '楷体';
-    font-size: 32px;
+    font-family:'微软雅黑';
+    font-size: 16px;
     line-height: 32px;
 }
 .about_text p
@@ -964,7 +963,7 @@ img
 .user_time
 {
     font-size: 16px;
-    font-family: "楷体";
+    font-family: "微软雅黑";
     line-height: 20px;
     display: inline;
     float: left;
@@ -1065,8 +1064,8 @@ img
 .geam_l,
 .game_list
 {
-    font-size: 12px;
-
+    font-size: 15px;
+    font-family:'微软雅黑';
     width: 350px;
     height: 500px;
     margin: 100px auto auto 100px;
@@ -1514,7 +1513,7 @@ img
     /*border: 1px solid #000;*/
 }
 .order_text p{
-    font-family: "楷体";
+    font-family: "微软雅黑";
     font-size: 20px;
 }
 #kai32{
@@ -1542,19 +1541,19 @@ img
     margin-left: 15px;
 }
 .send_order{
-    font-family: "楷体";
+    font-family: "微软雅黑";
     width: 400px;
     line-height: 20px;
     display: inline;
     float: left;
     margin: 75px auto auto 70px;
     color: #7f543a;
-    font-size: 18px;
+    font-size: 15px;
     /*border: 1px solid #000;*/
 }
 .send_order p{
-    font-family: "楷体";
-    font-size: 20px;
+    font-family: "微软雅黑";
+    font-size: 16px;
 }
 #price{
     color:red;
