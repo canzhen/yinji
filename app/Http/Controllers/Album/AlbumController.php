@@ -62,7 +62,7 @@ class AlbumController extends Controller
         // echo "#".$tempPath."#";
 
         if($tempPath == "" || $tempPath == null){
-            $tempPath = "/images/mo.jpg;";
+            $tempPath = "/images/defaultBack.jpg;";
         }
         
 

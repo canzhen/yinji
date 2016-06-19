@@ -72,49 +72,54 @@ yinjiApp.controller('orderController',
 
         
         $scope.addOrder = function(){
-            if($("#text_box2").val() < $("#text_box1").val()){
+            if($("#text_box2").val() == 0 || $("#text_box1").val() == 0){
                 alert("页码错误");
-            }
-            else{
-                var pageRange = $("#text_box1").val() + "-" + $("#text_box2").val();
-                var pagePrice = ($("#text_box2").val() - $("#text_box1").val()) * 10;//单价10块一张。。。
+            }else{
+                if($("#text_box2").val() < $("#text_box1").val()){
                 
-                var commentText = $scope.oComment;
-                if(commentText ==  "" || commentText == null){
-                    commentText = "无";
                 }
+                else{
+                    var pageRange = $("#text_box1").val() + "-" + $("#text_box2").val();
+                    var pagePrice = ($("#text_box2").val() - $("#text_box1").val()) * 10;//单价10块一张。。。
+                    
+                    var commentText = $scope.oComment;
+                    if(commentText ==  "" || commentText == null){
+                        commentText = "无";
+                    }
 
-                if(temId == 0){
-                    console.log("00000");
-                    var oTem = 0;
-                }else{
-                    var oTem = temId.substring(3,4);
+                    if(temId == 0){
+                        var oTem = 0;
+                    }else{
+                        var oTem = temId.substring(3,4);
 
+                    }
+                    
+                    $http({
+                        method: 'GET',//注意，这里必须要用GET方法
+                        url:'/addOrder',
+                        params:{
+                            'oName': $scope.oName,
+                            'oPhone': $scope.oPhone,
+                            'oAddress' : $scope.oAddress,
+                            'oComment' : commentText,
+                            'oNum' : 1,
+                            'oPrice' : pagePrice,
+                            'oTemplate' : oTem
+                        }
+                    })
+                    .success(function(data) {
+                        if(data != null){
+                            console.log(data);
+                            alert("成功！");
+                            window.location.href = "/";
+                        }
+                        else{
+                            console.log("false");
+                        }
+                    });
                 }
-                
-                $http({
-                    method: 'GET',//注意，这里必须要用GET方法
-                    url:'/addOrder',
-                    params:{
-                        'oName': $scope.oName,
-                        'oPhone': $scope.oPhone,
-                        'oAddress' : $scope.oAddress,
-                        'oComment' : commentText,
-                        'oNum' : pageRange,
-                        'oPrice' : pagePrice,
-                        'oTemplate' : oTem
-                    }
-                })
-                .success(function(data) {
-                    if(data != null){
-                        console.log(data);
-                        alert("成功！");
-                        window.location.href = "/";
-                    }
-                    else{
-                        console.log("false");
-                    }
-                });
             }
+
+            
         }
     });
