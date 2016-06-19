@@ -1276,7 +1276,6 @@ hr
     .sidebar-menu
     {
         overflow-y: scroll;
-
         width: 30%;
     }
 }
@@ -1434,10 +1433,8 @@ p.profile-description
 {
     position: relative;
     z-index: 1;
-
     display: inline-block;
-
-    width: calc(100% - 2em);
+    width: calc(100% - 5em);
     max-width: 400px;
     margin: 1em;
 
@@ -1446,22 +1443,15 @@ p.profile-description
 
 .input__field
 {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: bold;
-
+    font-family: '微软雅黑';
     position: relative;
-
     display: block;
     float: right;
-
     width: 60%;
     padding: .8em;
-
-    color: #aaa;
     border: none;
     border-radius: 0;
     background: #f0f0f0;
-
     -webkit-appearance: none; /* for box shadows to show on iOS */
 }
 
@@ -1523,26 +1513,22 @@ p.profile-description
 
 .input--haruki
 {
-    margin: 4em 1em 1em;
+    margin: 7em 1em 1em;
 }
 
 .input__field--haruki
 {
-    font-size: 1.55em;
-
+    font-size:15px;
     width: 100%;
     padding: .4em .25em;
-
-    color: #afb5bb;
+    color: #000000;
     background: transparent;
 }
 
 .input__label--haruki
 {
     position: absolute;
-
     width: 100%;
-
     text-align: left;
     pointer-events: none;
 }
@@ -1604,7 +1590,7 @@ p.profile-description
 {
     /*border: 1px solid #000;*/
     width: 45%;
-    height: 55%;
+    height: 60%;
     margin-top: 170px;
     margin-left: 40px;
 }
