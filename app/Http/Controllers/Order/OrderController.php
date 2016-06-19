@@ -21,7 +21,7 @@ class OrderController extends Controller
 		$oComment = $_GET['oComment'];
     	$oNum = $_GET['oNum'];
     	$oPrice = $_GET['oPrice'];
-		
+
     	$orderTime = date('y-m-d H:i:s', time());
 
     	$userId = $_SESSION['userId'];
@@ -55,7 +55,9 @@ class OrderController extends Controller
 		//模版使用次数自增
 		\DB::table('templates')->where('id', $oTem)->increment('count');
 
-	    return $eid;
+	    //return $eid;
+
+		return $curAlbumName[0];
     }
 
 
@@ -71,11 +73,12 @@ class OrderController extends Controller
 	public function getTemplates(){
 		if(!isset($_SESSION)){
 			session_start();
-		}
+		} 
 		$curName = $_SESSION['userName'];
-		///$resSet = \DB::table('templates')->where('author_name', $curName)->get();
-    	//return $resSet;
-		return $curName;
+		$resSet = \DB::table('templates')->get();
+    	return $resSet;
+		//return $curName;
+
 	}
 
 	public function displayOrder(){

@@ -1,25 +1,7 @@
 window.imgList = "";
 window.temId = 0;
 
-function deleteOrder(){
-    $.ajax({
-        type: 'get',
-        url: '/deleteOrder',
 
-        dataType : "text",
-        success : function(data) {
-            if(data != null){
-                console.log(data);
-                //alert("删除成功!");
-                //window.location.href = "/home";
-            }
-        },
-        error : function() {
-            alert("false");
-        }
-    }); 
-    
-}
 
 function selectTemplate(objId){
     for (var i = 0; i < imgList.length; i++) {
@@ -59,10 +41,11 @@ yinjiApp.controller('orderController',
                     var ele = "<img src = '" + data[i].saving_path + "' id = 'img" + data[i].id + "' title = '" + data[i].description + "' onclick = 'selectTemplate(this.id)' class = 'noBorder'>";
                     $("div.order_text").append(ele);
                 }
-                //var tt = "img" + data[0].id;
-                //console.log(tt);
-                temId = "img" + data[0].id;
-                document.getElementById(temId).className = "hasBorder";
+                if(data.length != 0){
+                    temId = "img" + data[0].id;
+                    document.getElementById(temId).className = "hasBorder";
+                }
+                 
             }
             else{
                 console.log("false");
@@ -71,6 +54,7 @@ yinjiApp.controller('orderController',
 
         
         $scope.addOrder = function(){
+            
             if($("#text_box2").val() < $("#text_box1").val()){
                 alert("页码错误");
             }
@@ -83,7 +67,13 @@ yinjiApp.controller('orderController',
                     commentText = "无";
                 }
 
-                var oTem = temId.substring(3,4);
+                if(temId == 0){
+                    //console.log("00000");
+                    var oTem = 0;
+                }else{
+                    var oTem = temId.substring(3,4);
+
+                }
                 
                 $http({
                     method: 'GET',//注意，这里必须要用GET方法
@@ -92,17 +82,17 @@ yinjiApp.controller('orderController',
                         'oName': $scope.oName,
                         'oPhone': $scope.oPhone,
                         'oAddress' : $scope.oAddress,
-                        'oComment' : commentText,
-                        'oNum' : pageRange,
-                        'oPrice' : pagePrice,
-                        'oTemplate' : oTem
+                         'oComment' : commentText,
+                         'oNum' : pageRange,
+                         'oPrice' : pagePrice,
+                         'oTemplate' : oTem
                     }
                 })
                 .success(function(data) {
                     if(data != null){
                         console.log(data);
                         alert("成功！");
-                        window.location.href = "/";
+                        window.location.href = "/orderInfo";
                     }
                     else{
                         console.log("false");
