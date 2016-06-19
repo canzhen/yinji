@@ -1435,8 +1435,8 @@ img
 }
 .datep{
 	color:#FFFFFF;
-	font-size : 16px;
-	font-family : 微软雅黑;
+	font-size : 27px;
+	font-family : 楷体;
 	background-color:#7C5037;
 	font-weight:bold;
 	padding-left:10px;
@@ -1444,8 +1444,8 @@ img
 
 .datep1{
     color:#FFFFFF;
-    font-size : 16x;
-    font-family : 微软雅黑;
+    font-size : 27px;
+    font-family : 楷体;
     background-color:#7C5037;
     font-weight:bold;
     padding-left:10px;
@@ -1458,8 +1458,8 @@ img
 
 .diary{
 	color:black;
-	font-size : 16px;
-	font-family : 微软雅黑;
+	font-size : 20px;
+	font-family : 楷体;
 	padding-left:10px;
 }
 

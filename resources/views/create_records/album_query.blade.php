@@ -114,12 +114,12 @@
 						<form class="myForm">
 							<div>
 								<p>内容：</p>
-								<input type="text" style="width:500px;" ng-model="recordDetail.description"/>
+								<input type="text" style="width:500px;font-size : 15px" ng-model="recordDetail.description"/>
 								<span style="color:red" ng-show="recordDetail.description == ''"></span>
 							</div>
 							<div>
 								<p>自定义时间：</p>
-								<input type="text" ng-model="recordDetail.showTime"/>
+								<input type="text" style="font-size : 15px" ng-model="recordDetail.showTime"/>
 								<span style="color:red" ng-show="recordDetail.showTime == ''"></span>
 							</div>
 						</form>
