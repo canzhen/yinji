@@ -118,7 +118,7 @@ class CpyController extends Controller
             session_start();
         }
         $author_name = $_SESSION['userName'];
-        $path = app_path()."\\..\\public\\company\\template\\".$author_name.'\\';
+        $path = app_path()."/../public/company/template/".$author_name.'/';
         if (!empty($_FILES)){
             //得到上传文件的临时流
             $tempFile = $_FILES['myfile']['tmp_name'];
@@ -130,7 +130,7 @@ class CpyController extends Controller
                 mkdir($path,0777,true);
 
             //往templates表中新增数据
-            $saving_path = "company\\template\\".$_SESSION['userName'].'\\'.$fileName;
+            $saving_path = "company/template/".$_SESSION['userName'].'/'.$fileName;
             $response = 0;//初始化默认回复为0
             if ($this->addTemplate($fileName,$author_name,$saving_path,"没有描述")){
                 //成功往数据库添加数据之后才把图片保存到硬盘，这样可以防止重名
