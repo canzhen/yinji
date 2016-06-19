@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Order;
 
 use Illuminate\Http\Request;
 
+use App\Order;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -36,21 +37,18 @@ class OrderController extends Controller
     					->where('id', $curAlbum)
     					->pluck('name');
 
-    	$eid = \DB::table('orders')
-	        ->insertGetId(
-	            array(
-	                'user_name' => $curUserName[0],
-	                'album_name' =>$curAlbumName[0],
-	                'price' => $oPrice,
-	                'quantity' => $oNum,
-	                'address' => $oAddress,
-	                'status' => "未付款",
-	                'order_date' => $orderTime,
-	                'delivery_date' => $orderTime,
-	                'comment' => $oComment,
-					'template' => $oTem
-	            )
-	        );
+		$newOrder = new Order;
+		$newOrder->user_name = $curUserName[0];
+		$newOrder->album_name = $curAlbumName[0];
+		$newOrder->price = $oPrice;
+		$newOrder->quantity = $oNum;
+		$newOrder->address = $oAddress;
+		$newOrder->status = "未付款";
+		$newOrder->order_date = $orderTime;
+		$newOrder->delivery_date = $oComment;
+		$newOrder->comment = "";
+		$newOrder->template = $oTem;
+		$eid = $newOrder->save();
 
 		//模版使用次数自增
 		\DB::table('templates')->where('id', $oTem)->increment('count');

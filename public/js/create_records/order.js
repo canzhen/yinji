@@ -53,94 +53,48 @@ yinjiApp.controller('orderController',
         });
 
         
-        $scope.addOrder = function(){
-<<<<<<< HEAD
-            if($("#text_box2").val() == 0 || $("#text_box1").val() == 0){
-=======
-            
-            if($("#text_box2").val() < $("#text_box1").val()){
->>>>>>> d66a417a02acaa3755d91df5b496faa927fb490d
+        $scope.addOrder = function() {
+            if ($("#text_box2").val() == 0 || $("#text_box1").val() == 0 ||
+                ($("#text_box2").val() < $("#text_box1").val())) {
                 alert("页码错误");
-            }else{
-                if($("#text_box2").val() < $("#text_box1").val()){
-                
-                }
-                else{
-                    var pageRange = $("#text_box1").val() + "-" + $("#text_box2").val();
-                    var pagePrice = ($("#text_box2").val() - $("#text_box1").val()) * 10;//单价10块一张。。。
-                    
-                    var commentText = $scope.oComment;
-                    if(commentText ==  "" || commentText == null){
-                        commentText = "无";
-                    }
+            } else {
+                var pageRange = $("#text_box1").val() + "-" + $("#text_box2").val();
+                var pagePrice = ($("#text_box2").val() - $("#text_box1").val()) * 10;//单价10块一张。。。
 
-<<<<<<< HEAD
-                    if(temId == 0){
-                        var oTem = 0;
-                    }else{
-                        var oTem = temId.substring(3,4);
-
-                    }
-                    
-                    $http({
-                        method: 'GET',//注意，这里必须要用GET方法
-                        url:'/addOrder',
-                        params:{
-                            'oName': $scope.oName,
-                            'oPhone': $scope.oPhone,
-                            'oAddress' : $scope.oAddress,
-                            'oComment' : commentText,
-                            'oNum' : 1,
-                            'oPrice' : pagePrice,
-                            'oTemplate' : oTem
-                        }
-                    })
-                    .success(function(data) {
-                        if(data != null){
-                            console.log(data);
-                            alert("成功！");
-                            window.location.href = "/";
-                        }
-                        else{
-                            console.log("false");
-                        }
-                    });
+                var commentText = $scope.oComment;
+                if (commentText == "" || commentText == null) {
+                    commentText = "无";
                 }
-=======
-                if(temId == 0){
+                if (temId == 0) {
                     //console.log("00000");
                     var oTem = 0;
-                }else{
-                    var oTem = temId.substring(3,4);
+                } else {
+                    var oTem = temId.substring(3, 4);
 
                 }
-                
+
                 $http({
                     method: 'GET',//注意，这里必须要用GET方法
-                    url:'/addOrder',
-                    params:{
+                    url: '/addOrder',
+                    params: {
                         'oName': $scope.oName,
                         'oPhone': $scope.oPhone,
-                        'oAddress' : $scope.oAddress,
-                         'oComment' : commentText,
-                         'oNum' : pageRange,
-                         'oPrice' : pagePrice,
-                         'oTemplate' : oTem
+                        'oAddress': $scope.oAddress,
+                        'oComment': commentText,
+                        'oNum': pageRange,
+                        'oPrice': pagePrice,
+                        'oTemplate': oTem
                     }
-                })
-                .success(function(data) {
-                    if(data != null){
+                }).success(function (data) {
+                    if (data != null) {
                         console.log(data);
                         alert("成功！");
                         window.location.href = "/orderInfo";
                     }
-                    else{
+                    else {
                         console.log("false");
                     }
                 });
->>>>>>> d66a417a02acaa3755d91df5b496faa927fb490d
             }
-
-            
         }
     });

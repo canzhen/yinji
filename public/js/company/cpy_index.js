@@ -31,7 +31,6 @@ yinjiApp.controller('cpyIndexController',
 		$http.get("/cpy/getOrders")
 		.success(function (response)
 		{
-			console.log("Nihao ");
 			//首页这里只显示前5个订单
 			for (var i = 0 ; i < 5; i++){
 				if(response[i] != null)
@@ -39,10 +38,8 @@ yinjiApp.controller('cpyIndexController',
 			}
 			//获取首页报表数据
 			var date,quantity,orderDate,data=new Object();
-			console.log (response.length);
 			for (i=0; i<response.length; i++){
 				date = (response[i].order_date.split(" "))[0];
-				console.log("date:"+date);
 				quantity = parseInt(response[i].quantity);
 				if (data[date] == null)
 					data[date] = quantity;
@@ -50,7 +47,6 @@ yinjiApp.controller('cpyIndexController',
 					data[date] += quantity;
 				}
 			}
-			console.log("data:"+data);
 			setMorrisChart(data);
 		});
 
