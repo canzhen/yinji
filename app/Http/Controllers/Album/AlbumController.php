@@ -53,11 +53,17 @@ class AlbumController extends Controller
                 $newName = $clientName;
                 $path = $file[$i]->move(public_path() . '\uploads\album', $newName);
                 $tempPath = $tempPath . "/uploads/album/" . $newName . ";";
+                
             }
+            
         }
 
-        //var_dump($file);
+        // var_dump($file);
+        // echo "#".$tempPath."#";
 
+        if($tempPath == "" || $tempPath == null){
+            $tempPath = "/images/mo.jpg;";
+        }
         
 
         $name = \DB::table('users')->where('id', $uid)->pluck('name');
@@ -76,7 +82,7 @@ class AlbumController extends Controller
 	        );
 
         
-        //return "asdfasf";
+        //return ".";
     	return \Redirect::intended('/showAlbums');
 
         //return $file123;
