@@ -1,7 +1,6 @@
 @extends('layouts.content')
 
 @section('title','公司信息')
-@section('cpy_subtitle','公司信息')
 
 @section('header')
 	@parent

@@ -25,7 +25,7 @@ class Orders extends Migration
             $table->string('comment')->nullable();//备注
             $table->timestamps();
             $table->string('assess')->nullable();//评价
-            $table->integer('<te></te>mplate')->default(0);//模版ID
+            $table->integer('template')->default(0);//模版ID
         });
 
         Schema::table('orders', function (Blueprint $table) {
@@ -41,7 +41,8 @@ class Orders extends Migration
                     'quantity' => 23,
                     'address' => '山西省阳泉市盂县xx镇',
                     'status'=> '已付款',
-                    'comment'=>'可不可以给我弄瘦一点啊！'
+                    'comment'=>'可不可以给我弄瘦一点啊！',
+                    'order_date'=>'2016-03-12 23:42:23'
                 ),
                 array(
                     'user_name' => 'zcz',
@@ -49,8 +50,10 @@ class Orders extends Migration
                     'price'=> 48,
                     'quantity' => 32,
                     'address' => '福建省厦门市思明区厦大海滨7-602',
-                    'status'=> '已付款',
-                    'comment'=>''
+                    'status'=> '已送达',
+                    'comment'=>'',
+                    'order_date'=>'2016-03-24 14:25:43',
+                    'delivery_date'=>'2016-03-26 18:42:42'
                 ),
                 array(
                     'user_name' => 'yhc',
@@ -59,7 +62,8 @@ class Orders extends Migration
                     'quantity' => 11,
                     'address' => '辽宁省沈阳市和平区',
                     'status'=> '送货中',
-                    'comment'=>'我要帅帅哒'
+                    'comment'=>'我要帅帅哒',
+                    'order_date'=>'2016-04-23 13:32:21'
                 ),
                 array(
                     'user_name' => 'jp',
@@ -68,7 +72,9 @@ class Orders extends Migration
                     'quantity' => 25,
                     'address' => '山西省阳泉市盂县xx镇',
                     'status'=> '已送达',
-                    'comment'=>''
+                    'comment'=>'减肥日记哈哈哈哈哈',
+                    'order_date'=>'2016-05-09 14:42:54',
+                    'delivery_date'=>'2016-05-11 15:47:22',
                 ),
                 array(
                     'user_name' => 'yhc',
@@ -77,7 +83,8 @@ class Orders extends Migration
                     'quantity' => 12,
                     'address' => '辽宁省沈阳市和平区',
                     'status'=> '送货中',
-                    'comment'=>'我要帅帅哒'
+                    'comment'=>'我要帅帅哒',
+                    'order_date'=>'2016-06-17 19:22:51'
                 ),
             )
         );

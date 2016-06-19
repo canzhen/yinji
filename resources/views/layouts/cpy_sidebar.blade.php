@@ -55,6 +55,10 @@
 						<i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-alerts">
+						<li ng-show="!(evaHour!='' ||evaMinute!=''||evaSecond!='')"
+							style="padding-left:5%;">
+							oops..暂无新消息哟
+						</li>
 						<li ng-show="evaHour!='' ||evaMinute!=''||evaSecond!=''">
 							<a href="/cpy_checkEvaluation">
 								<div>

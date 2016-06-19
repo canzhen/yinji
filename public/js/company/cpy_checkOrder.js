@@ -68,8 +68,8 @@ yinjiApp.controller('checkOrderCtrl',
 				alert("对不起，您没有进行任何修改！");
 				return;
 			}
-			if (!/^[0-9]*$/.test($scope.orderDetail.price)) {
-				alert("对不起，单价必须为整数！");
+			if (isNaN($scope.orderDetail.price)) {
+				alert("对不起，单价必须为数字！");
 				return;
 			}
 

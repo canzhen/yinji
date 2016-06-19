@@ -121,7 +121,6 @@
 								<div>
 									<span>备注信息：</span>
 									<input type="text" ng-model="orderDetail.comment"/>
-									<span style="color:red" ng-show="orderDetail.comment == ''">*此项必填</span>
 								</div>
 							</form>
 						</div>

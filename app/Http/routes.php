@@ -30,6 +30,16 @@ Route::group(['middleware'=>'web'],function(){
         return view('about_us');
     });
 
+    Route::get('/contact_us',function(){
+        return view('contact_us');
+    });
+
+
+    Route::get('/cpy_info',function(){
+        return view('company.cpy_info');
+    });
+
+
     //在前端获取当前用户名
     Route::get('/getUserName',function(){
         if(!isset($_SESSION)){
@@ -46,10 +56,6 @@ Route::group(['middleware'=>'web'],function(){
             session_start();
         }
         return $_SESSION['privilege'];
-    });
-
-    Route::get('/contact_us',function(){
-        return view('contact_us');
     });
 
 Route::group(['middleware'=>'auth'], function() {//中间件，拦截，用于登录验证
@@ -247,6 +253,7 @@ Route::get('/usr/checkExistUser','UserController@checkExistUser');
 Route::get('/usr/editUsername','UserController@editUsername');
 Route::get('/usr/checkPwd','UserController@checkPwd');
 Route::get('/usr/editPwd','UserController@editPwd');
+Route::get('/usr/editInfo','UserController@editInfo');
 Route::get('/usr/checkIfMobile','UserController@checkIfMobile');
 Route::get('/usr/getCpyUsers','UserController@getCpyUsers');
 Route::get('/usr/getCommonUsers','UserController@getCommonUsers');

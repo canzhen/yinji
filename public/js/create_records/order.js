@@ -1,25 +1,7 @@
 window.imgList = "";
 window.temId = 0;
 
-function deleteOrder(){
-    $.ajax({
-        type: 'get',
-        url: '/deleteOrder',
 
-        dataType : "text",
-        success : function(data) {
-            if(data != null){
-                console.log(data);
-                //alert("删除成功!");
-                //window.location.href = "/home";
-            }
-        },
-        error : function() {
-            alert("false");
-        }
-    }); 
-    
-}
 
 function selectTemplate(objId){
     for (var i = 0; i < imgList.length; i++) {
@@ -53,15 +35,15 @@ yinjiApp.controller('orderController',
         })
         .success(function(data) {
             if(data != null){
-                console.log(data.length);
+                console.log(data);
                 imgList = data;
                 for(var i = 0; i < data.length; i++){
-                     var ele = "<img src = '" + data[i].saving_path + "' id = 'img" + data[i].id + "' title = '" + data[i].description + "' onclick = 'selectTemplate(this.id)' class = 'noBorder'>";
-                     $("div.order_text").append(ele);
+                    var ele = "<img src = '" + data[i].saving_path + "' id = 'img" + data[i].id + "' title = '" + data[i].description + "' onclick = 'selectTemplate(this.id)' class = 'noBorder'>";
+                    $("div.order_text").append(ele);
                 }
                 if(data.length != 0){
                     temId = "img" + data[0].id;
-                	document.getElementById(temId).className = "hasBorder";
+                    document.getElementById(temId).className = "hasBorder";
                 }
                  
             }
@@ -72,7 +54,12 @@ yinjiApp.controller('orderController',
 
         
         $scope.addOrder = function(){
+<<<<<<< HEAD
             if($("#text_box2").val() == 0 || $("#text_box1").val() == 0){
+=======
+            
+            if($("#text_box2").val() < $("#text_box1").val()){
+>>>>>>> d66a417a02acaa3755d91df5b496faa927fb490d
                 alert("页码错误");
             }else{
                 if($("#text_box2").val() < $("#text_box1").val()){
@@ -87,6 +74,7 @@ yinjiApp.controller('orderController',
                         commentText = "无";
                     }
 
+<<<<<<< HEAD
                     if(temId == 0){
                         var oTem = 0;
                     }else{
@@ -118,6 +106,39 @@ yinjiApp.controller('orderController',
                         }
                     });
                 }
+=======
+                if(temId == 0){
+                    //console.log("00000");
+                    var oTem = 0;
+                }else{
+                    var oTem = temId.substring(3,4);
+
+                }
+                
+                $http({
+                    method: 'GET',//注意，这里必须要用GET方法
+                    url:'/addOrder',
+                    params:{
+                        'oName': $scope.oName,
+                        'oPhone': $scope.oPhone,
+                        'oAddress' : $scope.oAddress,
+                         'oComment' : commentText,
+                         'oNum' : pageRange,
+                         'oPrice' : pagePrice,
+                         'oTemplate' : oTem
+                    }
+                })
+                .success(function(data) {
+                    if(data != null){
+                        console.log(data);
+                        alert("成功！");
+                        window.location.href = "/orderInfo";
+                    }
+                    else{
+                        console.log("false");
+                    }
+                });
+>>>>>>> d66a417a02acaa3755d91df5b496faa927fb490d
             }
 
             

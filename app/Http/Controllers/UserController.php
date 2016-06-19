@@ -67,6 +67,43 @@ class UserController extends BaseController
 	}
 
 
+	public function editInfo(){
+		if(!isset($_SESSION)){
+			session_start();
+		}
+		$name=$_SESSION['username'];
+		$email=$_GET['email'];
+
+
+		$user = User::where('name',$name)->update(array('email'=>$email));
+		$result = false;
+		if ($user != null)
+			$result = true;
+		if ($result)
+			return 1;
+		else
+			return 0;
+	}
+
+	public function editPhone(){
+		if(!isset($_SESSION)){
+			session_start();
+		}
+
+		$name=$_GET['username'];
+		$phone=$_GET['email'];
+
+
+		$user = User::where('name',$name)->update(array('phone_number'=>$phone));
+		$result = false;
+		if ($user != null)
+			$result = true;
+		if ($result)
+			return 1;
+		else
+			return 0;
+	}
+
 	public function editPwd(){
 		if(!isset($_SESSION)){
 			session_start();

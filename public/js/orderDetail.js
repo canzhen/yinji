@@ -16,7 +16,8 @@ function deleteOrder(objId, obj){
 			if(data != null){
 				console.log(data);
 				alert("删除成功!");
-				deleteCurRow(obj);
+				//deleteCurRow(obj);
+				window.location.reload();
 			}
 		},
 		error : function() {
