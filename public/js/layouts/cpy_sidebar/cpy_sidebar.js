@@ -63,8 +63,11 @@ yinjiApp.controller('cpyNavController',
         $http.get("/cpy/getEvaluations")
         .success(function (response)
         {
+            console.log(response);
+            console.log(response.length);
+            console.log(response[response.length-1]);
             if (response != null && response.length > 0){
-                var fullDateInfo = response[response.length-1].created_at.split(" ");
+                var fullDateInfo = response[0].created_at.split(" ");
                 var date = fullDateInfo[0].split("-");
                 date[0]=parseInt(date[0]);
                 date[1]=parseInt(date[1]);
@@ -88,6 +91,7 @@ yinjiApp.controller('cpyNavController',
         $http.get("/cpy/getOrders")
         .success(function (response)
         {
+            console.log(response);
             if (response != null && response.length > 0) {
                 var fullDateInfo = response[response.length - 1].order_date.split(" ");
                 var date = fullDateInfo[0].split("-");

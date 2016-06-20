@@ -72,7 +72,7 @@ class CpyController extends Controller
      * @return 所有订单
      */
     public function getOrders(){
-        return Order::all();
+        return Order::where([])->orderBy('id')->get();
     }
 
     /**

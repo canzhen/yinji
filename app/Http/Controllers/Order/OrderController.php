@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Order;
 use Illuminate\Http\Request;
 
 use App\Order;
+use App\Evaluation;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -98,18 +99,29 @@ class OrderController extends Controller
 		//\DB::table('orders')->where('id', $orderId)->update(['assess' => $detail]);
 		
 
-		$eid = \DB::table('evaluation')
-	        ->insertGetId(
-	            array(
-	                'order_id' => $orderId,
-	                'parent_eva_id' => "-1",
-	                'user_name' => $curName,
-	                'reply_user_name' => "",
-	                'content' => $detail
-	            )
-	        );
+		$newEvaluation = new Evaluation;
+		$newEvaluation->order_id=$orderId;
+		$newEvaluation->parent_eva_id="-1";
+		$newEvaluation->user_name=$curName;
+		$newEvaluation->reply_user_name="";
+		$newEvaluation->content=$detail;
+		$eid = $newEvaluation->save();
+//		$eid = \DB::table('evaluation')
+//	        ->insertGetId(
+//	            array(
+//	                'order_id' => $orderId,
+//	                'parent_eva_id' => "-1",
+//	                'user_name' => $curName,
+//	                'reply_user_name' => "",
+//	                'content' => $detail
+//	            )
+//	        );
 
 		//return $detail. "#".$orderId."#".$curName;
+		if ($eid)
+			return 1;
+		else
+			return null;
 		return $eid;
 	}
 }
